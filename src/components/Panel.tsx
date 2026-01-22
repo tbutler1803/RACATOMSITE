@@ -23,6 +23,27 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  // Autoplay video on mobile when in viewport
+  useEffect(() => {
+    if (!isMobile || !isVideo || !videoRef.current) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && videoRef.current) {
+            videoRef.current.play().catch(() => {
+              // Autoplay failed, user interaction needed
+            });
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(videoRef.current);
+    return () => observer.disconnect();
+  }, [isMobile, isVideo]);
+
   console.log('Panel rendered:', { letter, imageUrl, isVideo });
 
   // Handle hover with direct video control for Safari compatibility
@@ -59,7 +80,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
 
   return (
     <div
-      className="relative flex-1 cursor-pointer overflow-hidden group"
+      className="relative flex-1 cursor-pointer overflow-hidden group min-h-[23vh] lg:min-h-0"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={onClick}
@@ -106,11 +127,11 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
             pointerEvents: 'none',
             visibility: 'visible'
           }}
-          autoPlay={isHovered}
+          autoPlay={isMobile || isHovered}
           loop
           muted
           playsInline
-          preload="metadata"
+          preload="auto"
           onLoadedMetadata={() => console.log('Video metadata loaded')}
           onError={(e) => console.error('Video error:', e)}
           onPlay={() => console.log('Video playing')}
@@ -143,7 +164,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
           className="font-heading tracking-widest text-center leading-none gold-texture-text"
           data-text={letter}
           style={{
-            fontSize: 'clamp(8rem, 28vw, 70rem)',
+            fontSize: isMobile ? 'clamp(6rem, 20vw, 12rem)' : 'clamp(8rem, 28vw, 70rem)',
             fontFamily: "var(--font-heading)",
             fontWeight: 400,
             opacity: 1,
@@ -152,7 +173,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
             justifyContent: 'center',
             alignItems: 'center',
             width: '100%',
-            marginBottom: 'clamp(0.5rem, 2vw, 1rem)'
+            marginBottom: isMobile ? 'clamp(1.5rem, 4vw, 3rem)' : 'clamp(0.5rem, 2vw, 1rem)'
           }}
         >
           {letter}
