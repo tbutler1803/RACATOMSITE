@@ -1,5 +1,6 @@
 import Header from '../components/Header';
 import ArtDecoDivider from '../components/ArtDecoDivider';
+import { getAssetPath } from '../utils/paths';
 import { useState } from 'react';
 import { Car, Globe2, MapPin, Utensils } from 'lucide-react';
 import BookTourModal from '../components/BookTourModal';
@@ -36,17 +37,17 @@ function About() {
     },
     {
       title: 'Secure Parking',
-      image: '/IMAGES/253A6720.JPG',
+      image: getAssetPath('/IMAGES/253A6720.JPG'),
       description: 'Member-priority parking with easy club access for weekday and evening visits.'
     },
     {
       title: 'Wellness & Gym',
-      image: '/IMAGES/images/ClubGym.jpeg',
+      image: getAssetPath('/IMAGES/images/ClubGym.jpeg'),
       description: 'Modern gym facilities and changing rooms to balance work, life, and wellbeing.'
     },
     {
       title: 'Food & Beverage',
-      image: '/IMAGES/images/DSC_1545.jpg',
+      image: getAssetPath('/IMAGES/images/DSC_1545.jpg'),
       description: 'Seasonal menus, club classics, and private dining experiences across our venues.'
     },
     {
@@ -68,7 +69,7 @@ function About() {
       <div
         className="relative h-[70vh] md:h-screen w-full bg-cover bg-center flex items-center justify-center overflow-hidden pt-16 md:pt-20"
         style={{
-          backgroundImage: 'url(/IMAGES/images/DSC_1410.jpg)',
+          backgroundImage: `url(${getAssetPath('/IMAGES/images/DSC_1410.jpg')})`,
         }}
       >
         <div

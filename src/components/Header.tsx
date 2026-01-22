@@ -1,6 +1,7 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ChevronLeft } from 'lucide-react';
 import HamburgerMenu from './HamburgerMenu';
+import { getAssetPath } from '../utils/paths';
 
 function Header() {
   const navigate = useNavigate();
@@ -31,7 +32,7 @@ function Header() {
           className="p-0 flex items-center gap-4 sm:gap-5"
         >
           <img
-            src="/company_logo.png"
+            src={getAssetPath('/company_logo.png')}
             alt="RACA Logo"
             className="h-16 sm:h-20 w-auto cursor-pointer logo-img"
           />

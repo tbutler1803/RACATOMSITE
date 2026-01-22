@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import ArtDecoDivider from '../components/ArtDecoDivider';
+import { getAssetPath } from '../utils/paths';
 import { Calendar, Users, Music, Wine, Award, ChevronRight } from 'lucide-react';
 
 function Events() {
@@ -12,7 +13,7 @@ function Events() {
       date: 'March 15, 2026',
       time: '7:00 PM',
       description: 'An elegant evening celebrating our heritage with fine dining and entertainment',
-      image: '/IMAGES/Events/Longevity Oct 25.jpg',
+      image: getAssetPath('/IMAGES/Events/Longevity Oct 25.jpg'),
       category: 'Social'
     },
     {
@@ -20,7 +21,7 @@ function Events() {
       date: 'April 22, 2026',
       time: '10:00 AM',
       description: 'Showcase of vintage and classic automobiles from our members\' collections',
-      image: '/IMAGES/Events/cAR aUCTION.jpg',
+      image: getAssetPath('/IMAGES/Events/cAR aUCTION.jpg'),
       category: 'Automotive'
     },
     {
@@ -28,7 +29,7 @@ function Events() {
       date: 'May 8, 2026',
       time: '6:00 PM',
       description: 'Curated selection of premium wines with expert sommelier guidance',
-      image: '/IMAGES/Events/Cigars and Whiskey (2).jpg',
+      image: getAssetPath('/IMAGES/Events/Cigars and Whiskey (2).jpg'),
       category: 'Culinary'
     },
     {
@@ -36,7 +37,7 @@ function Events() {
       date: 'May 20, 2026',
       time: '12:00 PM',
       description: 'Connect with fellow members in a refined business setting',
-      image: '/IMAGES/EventsDec/WPS Australia Day Lunch.jpg',
+      image: getAssetPath('/IMAGES/EventsDec/WPS Australia Day Lunch.jpg'),
       category: 'Business'
     }
   ];
@@ -46,28 +47,28 @@ function Events() {
       name: 'Grand Ballroom',
       capacity: '200 guests',
       description: 'Our premier event space featuring Art Deco architecture and crystal chandeliers',
-      image: 'public/IMAGES/images/DSC_1659.jpg',
+      image: getAssetPath('/IMAGES/images/DSC_1659.jpg'),
       features: ['Dance floor', 'Stage', 'Full AV setup', 'Private bar']
     },
     {
       name: 'Heritage Dining Room',
       capacity: '50 guests',
       description: 'Intimate setting with historic charm, perfect for corporate dinners',
-      image: '/IMAGES/images/DSC_1525.jpg',
+      image: getAssetPath('/IMAGES/images/DSC_1525.jpg'),
       features: ['Private dining', 'Fireplace', 'Garden views', 'Custom menus']
     },
     {
       name: 'Terrace Lounge',
       capacity: '80 guests',
       description: 'Modern space with harbor views, ideal for cocktail events',
-      image: '/IMAGES/RACA Rooftop/DSC00136.JPG',
+      image: getAssetPath('/IMAGES/RACA Rooftop/DSC00136.JPG'),
       features: ['Outdoor area', 'Bar service', 'Lounge seating', 'City views']
     },
     {
       name: 'Board Room',
       capacity: '20 guests',
       description: 'Professional setting for business meetings and presentations',
-      image: '/IMAGES/images/DSC_1302.jpg',
+      image: getAssetPath('/IMAGES/images/DSC_1302.jpg'),
       features: ['Video conferencing', 'Presentation equipment', 'Catering available', 'Private entrance']
     }
   ];
@@ -86,7 +87,7 @@ function Events() {
       <div
         className="relative h-[70vh] md:h-screen w-full bg-cover bg-center flex items-center justify-center overflow-hidden pt-16 md:pt-20"
         style={{
-          backgroundImage: 'url(/IMAGES/images/DSC_1633.jpg)',
+          backgroundImage: `url(${getAssetPath('/IMAGES/images/DSC_1633.jpg')})`,
         }}
       >
         <div

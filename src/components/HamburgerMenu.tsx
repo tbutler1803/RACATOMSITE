@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { X, Instagram, Facebook } from 'lucide-react';
+import { getAssetPath } from '../utils/paths';
 
 interface HamburgerMenuProps {
   onOpen?: () => void;
@@ -76,7 +77,8 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         style={{
-          backgroundImage: 'linear-gradient(rgba(4, 15, 42, 0.6), rgba(4, 15, 42, 0.6)), url(/textures/BG%20TEXTURE.png)',
+          backgroundImage: `linear-gradient(rgba(4, 15, 42, 0.6), rgba(4, 15, 42, 0.6)), url(${getAssetPath('/textures/BG%20TEXTURE.png')})`,
+
           backgroundSize: 'auto',
           backgroundPosition: '0 0',
           backgroundRepeat: 'repeat'
@@ -85,7 +87,7 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
         {/* Large decorative logo background - positioned on right, only left half visible */}
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[140%] h-auto opacity-10 pointer-events-none overflow-hidden">
           <img 
-            src="/company_logo.png" 
+            src={getAssetPath('/company_logo.png')} 
             alt="" 
             className="w-full h-auto object-contain"
             style={{ transform: 'translateX(35%)' }}

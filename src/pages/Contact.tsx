@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import ArtDecoDivider from '../components/ArtDecoDivider';
 import BookTourModal from '../components/BookTourModal';
 import MembershipCard from '../components/MembershipCard';
+import { getAssetPath } from '../utils/paths';
 import { MapPin, Phone, Mail, Clock, Users, Utensils, Zap, Award, Calendar } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 
@@ -120,7 +121,7 @@ function Contact() {
       <div
         className="relative h-[70vh] md:h-screen w-full bg-cover bg-center flex items-center justify-center overflow-hidden pt-16 md:pt-20"
         style={{
-          backgroundImage: 'url(/IMAGES/RACA%20Rooftop/RACA%20Rooftop/DSC00146.JPG)',
+          backgroundImage: `url(${getAssetPath('/IMAGES/RACA%20Rooftop/RACA%20Rooftop/DSC00146.JPG')})`,
         }}
       >
         <div
@@ -155,17 +156,17 @@ function Contact() {
               },
               {
                 title: 'Secure Parking',
-                image: '/IMAGES/253A6720.JPG',
+                image: getAssetPath('/IMAGES/253A6720.JPG'),
                 description: 'Member-priority parking with easy club access for weekday and evening visits.'
               },
               {
                 title: 'Wellness & Gym',
-                image: '/IMAGES/images/ClubGym.jpeg',
+                image: getAssetPath('/IMAGES/images/ClubGym.jpeg'),
                 description: 'Modern gym facilities and changing rooms to balance work, life, and wellbeing.'
               },
               {
                 title: 'Food & Beverage',
-                image: '/IMAGES/images/DSC_1545.jpg',
+                image: getAssetPath('/IMAGES/images/DSC_1545.jpg'),
                 description: 'Seasonal menus, club classics, and private dining experiences across our venues.'
               },
               {

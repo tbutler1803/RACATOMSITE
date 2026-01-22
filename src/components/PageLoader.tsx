@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './PageLoader.css';
+import { getAssetPath } from '../utils/paths';
 
 interface PageLoaderProps {
   isLoading: boolean;
@@ -12,7 +13,7 @@ function PageLoader({ isLoading }: PageLoaderProps) {
     <div className="page-loader-overlay">
       <div className="page-loader-container">
         <img
-          src="/Steering-Wheel-Loader.png"
+          src={getAssetPath('/Steering-Wheel-Loader.png')}
           alt="Loading..."
           className="steering-wheel-loader"
         />

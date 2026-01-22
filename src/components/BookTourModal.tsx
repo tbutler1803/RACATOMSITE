@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
+import { getAssetPath } from '../utils/paths';
 
 interface BookTourModalProps {
   isOpen: boolean;
@@ -89,7 +90,7 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-2">
             {/* Left Side - Information */}
-            <div className="p-4 md:p-8 flex flex-col justify-between relative bg-cover bg-center" style={{ backgroundImage: 'url(/IMAGES/images/DSC_1410.jpg)' }}>
+            <div className="p-4 md:p-8 flex flex-col justify-between relative bg-cover bg-center" style={{ backgroundImage: `url(${getAssetPath('/IMAGES/images/DSC_1410.jpg')})` }}>
               <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 to-gray-900/70"></div>
               <div className="relative z-10">
                 <h2 className="text-3xl md:text-4xl font-heading text-[var(--color-gold-accent)] mb-3 md:mb-6 tracking-wide">
