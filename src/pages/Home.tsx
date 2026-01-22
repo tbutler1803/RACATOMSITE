@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Panel from '../components/Panel';
+import { getAssetPath } from '../utils/paths';
 
 interface PanelData {
   letter: string;
@@ -16,25 +17,25 @@ function Home() {
     {
       letter: 'R',
       label: 'ABOUT US',
-      imageUrl: '/IMAGES/images/DSC_1410.jpg',
+      imageUrl: getAssetPath('/IMAGES/images/DSC_1410.jpg'),
       path: '/about'
     },
     {
       letter: 'A',
       label: 'EVENTS',
-      imageUrl: '/IMAGES/images/DSC_1629.jpg',
+      imageUrl: getAssetPath('/IMAGES/images/DSC_1629.jpg'),
       path: '/events'
     },
     {
       letter: 'C',
       label: 'CONTACT',
-      imageUrl: '/IMAGES/images/DSC_1653-Enhanced-NR.jpg',
+      imageUrl: getAssetPath('/IMAGES/images/DSC_1653-Enhanced-NR.jpg'),
       path: '/contact'
     },
     {
       letter: 'A',
       label: 'MEMBER LOGIN',
-      imageUrl: '/IMAGES/attached_assets/SloMo.mp4',
+      imageUrl: getAssetPath('/IMAGES/attached_assets/SloMo.mp4'),
       path: 'http://raca.k8.membershiphouse.com/login'
     }
   ];
