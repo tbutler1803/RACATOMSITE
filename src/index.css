@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-  /* Fonts */
-  --font-heading: "fino-sans", serif;
-  --font-subheading: "nanum-gothic-coding", monospace;
-  --font-body: "gill-sans-nova", sans-serif;
+  /* Fonts - Using Google Fonts with system font fallbacks in case CDN is blocked by adblocker */
+  --font-heading: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-subheading: "IBM Plex Mono", "Courier New", monospace;
+  --font-body: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   
   /* Brand Color Palette */
   --color-dark-navy: #0A1530;
