@@ -95,10 +95,10 @@ function Events() {
           style={{ backgroundColor: 'rgba(4, 15, 42, 0.85)' }}
         />
         <div className="relative z-10 text-center px-4">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-light text-[var(--color-gold-accent)] mb-3 md:mb-4 tracking-wide">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-light text-[var(--color-gold-accent)] mb-3 md:mb-4 tracking-wide leading-tight">
             EVENTS
           </h1>
-          <p className="text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2">
             Celebrate, connect, and create lasting memories
           </p>
         </div>
@@ -107,7 +107,7 @@ function Events() {
       <div className="max-w-6xl mx-auto px-6 py-14 md:py-18 text-center">
         <section className="mb-16 md:mb-20">
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8" />
-          <h2 className="text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-10 md:mb-12 tracking-wide">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-10 md:mb-12 tracking-wide px-2">
             Event Categories
           </h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
@@ -132,7 +132,7 @@ function Events() {
 
         <section className="mb-16 md:mb-20">
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-12" />
-          <h2 className="text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-10 md:mb-12 tracking-wide">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-10 md:mb-12 tracking-wide px-2">
             Event Spaces
           </h2>
           <div className="grid grid-cols-2 gap-6 md:space-y-0 md:block">

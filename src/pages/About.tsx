@@ -77,10 +77,10 @@ function About() {
           style={{ backgroundColor: 'rgba(4, 15, 42, 0.85)' }}
         />
         <div className="relative z-10 text-center px-4">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-light text-[var(--color-gold-accent)] mb-3 md:mb-4 tracking-wide">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-light text-[var(--color-gold-accent)] mb-3 md:mb-4 tracking-wide leading-tight">
             ABOUT US
           </h1>
-          <p className="text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2">
             Founded in 1903, RACA is Australia's first automobile club and a symbol of motoring prestige.
           </p>
         </div>
@@ -89,13 +89,13 @@ function About() {
       <div className="max-w-6xl mx-auto px-6 py-14 md:py-18 text-center">
         <section className="mb-16 md:mb-20">
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 md:mb-10 mx-auto" />
-          <h2 className="text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-6 md:mb-8 tracking-wide">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-6 md:mb-8 tracking-wide px-2">
             Driving the Future, Honouring the Past
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-5xl mx-auto px-4">
             <div className="text-left">
-              <h3 className="text-xl md:text-2xl font-heading text-[var(--color-gold-accent)] mb-3">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-heading text-[var(--color-gold-accent)] mb-3">
                 Innovation is in our DNA
               </h3>
               <p className="text-sm md:text-base text-[var(--color-cream)]/90 font-light mb-3 leading-relaxed">

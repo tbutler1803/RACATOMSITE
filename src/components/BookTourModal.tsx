@@ -66,18 +66,18 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
 
   return (
     <>
-      {/* Backdrop overlay with heavy blur effect - excluding header area */}
+      {/* Backdrop overlay with blur effect - lighter blur on mobile for performance */}
       {isAnimating && (
         <div 
-          className="fixed inset-0 z-40 backdrop-blur-md transition-all duration-500 ease-out"
+          className="fixed inset-0 z-40 backdrop-blur-sm md:backdrop-blur-md transition-all duration-500 ease-out bg-black/30"
           style={{ top: '120px' }}
           onClick={onClose}
         />
       )}
       
-      <div className="fixed inset-0 z-50 flex items-start md:items-center justify-center p-4 pt-32 md:pt-4 pointer-events-none" onClick={onClose}>
+      <div className="fixed inset-0 z-50 flex items-start md:items-center justify-center p-2 sm:p-4 pt-24 sm:pt-32 md:pt-4 pointer-events-none" onClick={onClose}>
         <div 
-          className={`relative bg-[var(--color-dark-navy)] border-2 border-[var(--color-gold-accent)] w-[92%] max-w-sm md:w-full md:max-w-lg lg:max-w-5xl rounded-lg max-h-[72vh] md:max-h-[92vh] overflow-y-auto shadow-2xl transition-all duration-500 ease-out pointer-events-auto ${isAnimating ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+          className={`relative bg-[var(--color-dark-navy)] border-2 border-[var(--color-gold-accent)] w-full max-w-[95%] sm:max-w-sm md:w-full md:max-w-lg lg:max-w-5xl rounded-lg max-h-[80vh] sm:max-h-[75vh] md:max-h-[92vh] overflow-y-auto shadow-2xl transition-all duration-500 ease-out pointer-events-auto ${isAnimating ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
           onClick={(e) => e.stopPropagation()}
         >
           {/* Close Button */}

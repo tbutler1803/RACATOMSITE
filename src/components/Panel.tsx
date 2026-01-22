@@ -9,8 +9,19 @@ interface PanelProps {
 
 function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const isVideo = imageUrl.endsWith('.mp4') || imageUrl.endsWith('.webm') || imageUrl.endsWith('.ogg');
+
+  // Detect mobile/tablet devices
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 1024 || ('ontouchstart' in window));
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   console.log('Panel rendered:', { letter, imageUrl, isVideo });
 
@@ -91,7 +102,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
           ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-out"
           style={{ 
-            opacity: isHovered ? 0.75 : 0.001,
+            opacity: isMobile ? 0.1 : (isHovered ? 0.75 : 0.001),
             pointerEvents: 'none',
             visibility: 'visible'
           }}
@@ -112,7 +123,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
           className="absolute inset-0 bg-cover bg-center transition-opacity duration-500 ease-out"
           style={{
             backgroundImage: `url(${imageUrl})`,
-            opacity: isHovered ? 0.75 : 0
+            opacity: isMobile ? 0.1 : (isHovered ? 0.75 : 0)
           }}
         />
       )}
@@ -147,16 +158,18 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
           {letter}
         </div>
 
-        <div className="absolute bottom-3 md:bottom-6 flex flex-col items-center gap-1 md:gap-0 w-full px-4">
+        <div className="absolute bottom-3 md:bottom-6 flex flex-col items-center gap-1 md:gap-0 w-full px-2 sm:px-4">
           <div
-            className="text-[var(--color-gold-accent)] tracking-[0.26em] md:tracking-[0.22em] lg:tracking-[0.18em] font-subheading transition-all duration-500 text-center whitespace-nowrap"
+            className="text-[var(--color-gold-accent)] tracking-[0.18em] sm:tracking-[0.22em] md:tracking-[0.22em] lg:tracking-[0.18em] font-subheading transition-all duration-500 text-center max-w-full overflow-hidden"
             style={{
-              fontSize: 'clamp(0.75rem, 2.5vw, 1rem)',
+              fontSize: 'clamp(0.625rem, 2.2vw, 1rem)',
               fontFamily: "var(--font-subheading)",
               fontWeight: 400,
               textTransform: 'uppercase',
-              opacity: isHovered ? 1 : 0.85,
-              lineHeight: '1'
+              opacity: isMobile ? 1 : (isHovered ? 1 : 0.85),
+              lineHeight: '1.1',
+              whiteSpace: 'nowrap',
+              textOverflow: 'ellipsis'
             }}
           >
             {label}
