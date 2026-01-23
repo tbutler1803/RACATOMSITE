@@ -127,7 +127,7 @@ function Contact() {
             {[
               {
                 title: 'Historic Clubhouse',
-                image: 'public/IMAGES/attached_assets/architecture_1750917074639.webp',
+                image: getAssetPath('/IMAGES/attached_assets/architecture_1750917074639.webp'),
                 description: 'Art Deco interiors, grand rooms, and intimate lounges for every occasion.'
               },
               {
@@ -147,12 +147,12 @@ function Contact() {
               },
               {
                 title: 'Reciprocal Clubs',
-                image: 'public/IMAGES/attached_assets/plane.jpg',
+                image: getAssetPath('/IMAGES/attached_assets/plane.jpg'),
                 description: 'Global reciprocal privileges to stay, dine, and meet while travelling.'
               },
               {
                 title: 'Prime Location',
-                image: 'public/IMAGES/attached_assets/pexels-pat-saengcharoen-774865114-31726433.jpg',
+                image: getAssetPath('/IMAGES/attached_assets/pexels-pat-saengcharoen-774865114-31726433.jpg'),
                 description: 'Moments from the Royal Botanic Garden, the Harbour, and the heart of the CBD.'
               }
             ].map((perk, idx) => (
