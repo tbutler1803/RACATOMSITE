@@ -339,15 +339,15 @@ function Contact() {
           <h2 className="text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-12 tracking-wide">
             Location
           </h2>
-          <div className="w-full h-96 bg-[var(--color-dark-navy)] bg-opacity-80 border border-[var(--color-gold-accent)]/20 rounded-lg overflow-hidden">
+          <div className="w-full rounded-lg overflow-hidden border border-[var(--color-gold-accent)]/20" style={{ height: '500px' }}>
             <iframe
+              title="Royal Automobile Club of Australia - 89 Macquarie Street, Circular Quay Sydney"
               width="100%"
               height="100%"
               frameBorder="0"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.4234180891866!2d151.20622351564686!3d-33.86403098065457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae6855a7ba25%3A0x1eb6754ad60316a!2sRoyal%20Automobile%20Club%20of%20Australia!5e0!3m2!1sen!2sau!4v1703264400000!5m2!1sen!2sau"
-              title="Royal Automobile Club of Australia location"
-              style={{ border: 0 }}
-              allowFullScreen
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.397775!2d151.208533!3d-33.863889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae6855a7ba25%3A0x1eb6754ad60316a!2sRoyal%20Automobile%20Club%20of%20Australia%2089%20Macquarie%20St!5e0!3m2!1sen!2sau!4v1706043600000"
+              style={{ border: 'none' }}
+              allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
