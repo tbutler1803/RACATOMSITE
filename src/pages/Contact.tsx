@@ -65,52 +65,28 @@ function Contact() {
 
   const categories = [
     {
-      name: 'Town',
-      price: 'Individual',
-      description: 'For residents within Sydney metropolitan area',
-      highlights: ['All venue access', 'Dining privileges', 'Events & galas', 'Reciprocal clubs worldwide', 'Gym & wellness facilities', 'Private event spaces']
-    },
-    {
-      name: 'Country',
-      price: 'Individual',
-      description: 'NSW Country & ACT residents',
-      highlights: ['Flexible access', 'Holiday rates', 'Full dining access', 'Reciprocal clubs', 'Event access', 'Priority booking']
-    },
-    {
-      name: 'Interstate',
-      price: 'Individual',
-      description: 'All Australian states except NSW & ACT',
-      highlights: ['Reciprocal access', 'Flexible benefits', 'Virtual events', 'Full dining access', 'Priority booking', 'Extended stay benefits']
-    },
-    {
       name: 'Defence/Emergency',
       price: 'Individual',
       description: 'Active or retired service members',
-      highlights: ['Discounted rates', 'All venue access', 'Dining privileges', 'Social events', 'Reciprocal clubs', 'Special recognition']
+      highlights: ['Discounted rates', 'All venue access', 'Special recognition']
     },
     {
       name: 'Young Executive',
       price: 'Individual',
       description: 'For members aged 18-29 years',
-      highlights: ['Discounted rates', 'Social events', 'Mentorship opportunities', 'Full benefits access', 'Networking events', 'Professional development']
+      highlights: ['Discounted rates', 'Networking events', 'Professional development']
     },
     {
       name: 'Under 40s',
       price: 'Individual',
       description: 'For members aged 30-39 years',
-      highlights: ['Reduced rates', 'All venue access', 'Networking events', 'Dining privileges', 'Reciprocal clubs', 'Social gatherings']
+      highlights: ['Reduced rates', 'All venue access', 'Dining privileges']
     },
     {
       name: 'Corporate',
       price: 'Group',
       description: 'For businesses with 5+ members',
-      highlights: ['Multi-user access', 'Event packages', 'Hospitality rates', 'Custom solutions', 'Board meetings & breakouts', 'Team building opportunities']
-    },
-    {
-      name: 'Associate',
-      price: 'Individual',
-      description: 'Limited membership option',
-      highlights: ['Dining access', 'Select venue access', 'Event invitations', 'Social events', 'Limited reciprocal access', 'Member discounts']
+      highlights: ['Multi-user access', 'Event packages', 'Team building']
     }
   ];
 
