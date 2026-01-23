@@ -70,7 +70,6 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
       {isAnimating && (
         <div 
           className="fixed inset-0 z-40 backdrop-blur-sm md:backdrop-blur-md transition-all duration-500 ease-out bg-black/30"
-          style={{ top: '120px' }}
           onClick={onClose}
         />
       )}

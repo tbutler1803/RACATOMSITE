@@ -77,11 +77,10 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         style={{
-          backgroundImage: `linear-gradient(rgba(4, 15, 42, 0.6), rgba(4, 15, 42, 0.6)), url(${getAssetPath('/textures/BG%20TEXTURE.png')})`,
-
-          backgroundSize: 'auto',
-          backgroundPosition: '0 0',
-          backgroundRepeat: 'repeat'
+          backgroundImage: `url(${getAssetPath('/textures/BLUEBG.png')})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
         }}
       >
         {/* Large decorative logo background - positioned on right, only left half visible */}

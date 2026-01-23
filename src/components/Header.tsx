@@ -23,7 +23,14 @@ function Header() {
   };
 
   return (
-    <div className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 ${isHome ? 'pointer-events-none' : 'bg-[var(--color-dark-navy)]'}`}>
+    <div 
+      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 ${isHome ? 'pointer-events-none' : 'border-b border-[var(--color-gold-accent)]/40'}`}
+      style={!isHome ? {
+        backgroundImage: `url(${getAssetPath('/textures/BLUEBG.png')})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      } : undefined}
+    >
       <div className="flex items-center gap-3 sm:gap-4 md:gap-5">
         <button
           type="button"
