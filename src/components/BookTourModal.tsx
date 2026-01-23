@@ -70,13 +70,14 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
       {isAnimating && (
         <div 
           className="fixed inset-0 z-40 backdrop-blur-sm md:backdrop-blur-md transition-all duration-500 ease-out bg-black/30"
+          style={{ top: '120px' }}
           onClick={onClose}
         />
       )}
       
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 pointer-events-none" onClick={onClose}>
+      <div className="fixed inset-0 z-50 flex items-start md:items-center justify-center p-2 sm:p-4 pt-24 sm:pt-32 md:pt-4 pointer-events-none" onClick={onClose}>
         <div 
-          className={`relative bg-[var(--color-dark-navy)] border-2 border-[var(--color-gold-accent)] w-full max-w-[95%] sm:max-w-md md:max-w-3xl lg:max-w-5xl rounded-lg max-h-[90vh] md:max-h-[92vh] shadow-2xl transition-all duration-500 ease-out pointer-events-auto overflow-hidden ${isAnimating ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+          className={`relative bg-[var(--color-dark-navy)] border-2 border-[var(--color-gold-accent)] w-full max-w-[95%] sm:max-w-sm md:w-full md:max-w-lg lg:max-w-5xl rounded-lg max-h-[80vh] sm:max-h-[75vh] md:max-h-[92vh] overflow-y-auto shadow-2xl transition-all duration-500 ease-out pointer-events-auto ${isAnimating ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
           onClick={(e) => e.stopPropagation()}
         >
           {/* Close Button */}
@@ -87,20 +88,20 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
             <X size={24} />
           </button>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 h-full">
+          <div className="grid grid-cols-1 md:grid-cols-2">
             {/* Left Side - Information */}
-            <div className="p-4 sm:p-5 md:p-6 lg:p-8 flex flex-col justify-between gap-4 relative bg-cover bg-center" style={{ backgroundImage: `url(${getAssetPath('/IMAGES/images/DSC_1410.jpg')})` }}>
+            <div className="p-4 md:p-8 flex flex-col justify-between relative bg-cover bg-center" style={{ backgroundImage: `url(${getAssetPath('/IMAGES/images/DSC_1410.jpg')})` }}>
               <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 to-gray-900/70"></div>
               <div className="relative z-10">
-                <h2 className="text-2xl sm:text-3xl md:text-3xl font-heading text-[var(--color-gold-accent)] mb-2 sm:mb-3 md:mb-4 tracking-wide leading-tight">
+                <h2 className="text-3xl md:text-4xl font-heading text-[var(--color-gold-accent)] mb-3 md:mb-6 tracking-wide">
                   BOOK A<br />CLUB TOUR
                 </h2>
-                <p className="text-[var(--color-cream)] font-light leading-relaxed mb-4 sm:mb-5 md:mb-6 text-sm md:text-base">
+                <p className="text-[var(--color-cream)] font-light leading-relaxed mb-6 md:mb-8 text-sm md:text-base">
                   We're ready to show you around. Fill out the form and we'll be in touch to arrange your private tour.
                 </p>
               </div>
 
-              <div className="space-y-4 sm:space-y-5 md:space-y-6 relative z-10">
+              <div className="space-y-6 md:space-y-10 relative z-10">
                 <div>
                   <h3 className="text-[var(--color-gold-accent)] font-heading text-xs md:text-sm tracking-widest mb-2 uppercase">
                     Address
@@ -134,8 +135,8 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
             </div>
 
             {/* Right Side - Form */}
-            <div className="p-4 sm:p-5 md:p-6 lg:p-8 overflow-y-auto max-h-[90vh] md:max-h-[92vh]">
-              <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 md:space-y-5">
+            <div className="p-4 md:p-8">
+              <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
                 <div className="grid grid-cols-2 gap-2 md:gap-4">
                   <div>
                     <label className="text-[var(--color-gold-accent)] font-heading text-xs tracking-widest block mb-2">
