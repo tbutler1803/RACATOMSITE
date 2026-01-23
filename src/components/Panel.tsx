@@ -127,12 +127,12 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
         style={{ opacity: isHovered ? 1 : 0 }}
       />
 
-      <div className="relative h-full flex flex-col items-center justify-center px-4 md:px-8 z-10">
+      <div className="relative h-full flex flex-col items-center justify-start md:justify-center pt-12 md:pt-0 px-4 md:px-8 z-10">
         <div
           className="font-heading tracking-widest text-center leading-none gold-texture-text"
           data-text={letter}
           style={{
-            fontSize: isMobile ? 'clamp(6rem, 20vw, 12rem)' : 'clamp(8rem, 28vw, 70rem)',
+            fontSize: isMobile ? 'clamp(8rem, 25vw, 14rem)' : 'clamp(8rem, 28vw, 70rem)',
             fontFamily: "var(--font-heading)",
             fontWeight: 400,
             opacity: 1,
