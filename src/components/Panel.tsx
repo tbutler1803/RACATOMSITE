@@ -85,38 +85,6 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
       onMouseLeave={handleMouseLeave}
       onClick={onClick}
     >
-      {/* Art Deco Corner Ornaments - Top Corners */}
-      <div className="absolute top-0 left-0 w-16 h-16 pointer-events-none overflow-hidden z-20">
-        <svg className={`w-full h-full transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`} viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 0 2px rgba(0,0,0,0.5))' }}>
-          <path d="M8 8L56 8L8 56Z" fill="none" stroke="var(--color-gold-accent)" strokeWidth="1"/>
-          <path d="M12 12L52 12L12 52Z" fill="none" stroke="var(--color-gold-accent)" strokeWidth="0.5" opacity="0.6"/>
-          <circle cx="8" cy="8" r="4" fill="none" stroke="var(--color-gold-accent)" strokeWidth="1"/>
-        </svg>
-      </div>
-      <div className="absolute top-0 right-0 w-16 h-16 pointer-events-none overflow-hidden z-20">
-        <svg className={`w-full h-full transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'} transform scale-x-[-1]`} viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 0 2px rgba(0,0,0,0.5))' }}>
-          <path d="M8 8L56 8L8 56Z" fill="none" stroke="var(--color-gold-accent)" strokeWidth="1"/>
-          <path d="M12 12L52 12L12 52Z" fill="none" stroke="var(--color-gold-accent)" strokeWidth="0.5" opacity="0.6"/>
-          <circle cx="8" cy="8" r="4" fill="none" stroke="var(--color-gold-accent)" strokeWidth="1"/>
-        </svg>
-      </div>
-
-      {/* Art Deco Corner Ornaments - Bottom Corners */}
-      <div className="absolute bottom-0 left-0 w-16 h-16 pointer-events-none overflow-hidden z-20">
-        <svg className={`w-full h-full transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'} transform scale-y-[-1]`} viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 0 2px rgba(0,0,0,0.5))' }}>
-          <path d="M8 8L56 8L8 56Z" fill="none" stroke="var(--color-gold-accent)" strokeWidth="1"/>
-          <path d="M12 12L52 12L12 52Z" fill="none" stroke="var(--color-gold-accent)" strokeWidth="0.5" opacity="0.6"/>
-          <circle cx="8" cy="8" r="4" fill="none" stroke="var(--color-gold-accent)" strokeWidth="1"/>
-        </svg>
-      </div>
-      <div className="absolute bottom-0 right-0 w-16 h-16 pointer-events-none overflow-hidden z-20">
-        <svg className={`w-full h-full transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'} transform scale-[-1]`} viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0 0 2px rgba(0,0,0,0.5))' }}>
-          <path d="M8 8L56 8L8 56Z" fill="none" stroke="var(--color-gold-accent)" strokeWidth="1"/>
-          <path d="M12 12L52 12L12 52Z" fill="none" stroke="var(--color-gold-accent)" strokeWidth="0.5" opacity="0.6"/>
-          <circle cx="8" cy="8" r="4" fill="none" stroke="var(--color-gold-accent)" strokeWidth="1"/>
-        </svg>
-      </div>
-
       {/* Background media - video or image */}
       {isVideo ? (
         <video
@@ -168,7 +136,8 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
             fontFamily: "var(--font-heading)",
             fontWeight: 400,
             opacity: 1,
-            color: '#AD8B49',
+            color: 'transparent',
+            WebkitTextFillColor: 'transparent',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
