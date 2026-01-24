@@ -13,19 +13,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const isVideo = imageUrl.endsWith('.mp4') || imageUrl.endsWith('.webm') || imageUrl.endsWith('.ogg');
 
-  // Small optical centering offsets per glyph to correct perceived misalignment
-  const getOpticalShift = (ch: string): string => {
-    switch (ch) {
-      case 'A':
-        return '0.6%';
-      case 'R':
-        return '0.4%';
-      case 'C':
-        return '0.3%';
-      default:
-        return '0%';
-    }
-  };
+  // No optical shifts; rely on strict centering for consistency across devices.
 
   // Detect mobile/tablet devices
   useEffect(() => {
@@ -146,7 +134,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
           className="font-heading text-center leading-none gold-texture-text"
           data-text={letter}
           style={{
-            fontSize: isMobile ? 'clamp(7.5rem, 24vw, 14rem)' : 'clamp(8rem, 28vw, 70rem)',
+            fontSize: isMobile ? 'clamp(7.5rem, 24vw, 14rem)' : 'clamp(10rem, 32vw, 72rem)',
             fontFamily: "var(--font-heading)",
             fontWeight: 400,
             opacity: 1,
@@ -156,9 +144,8 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
             justifyContent: 'center',
             alignItems: 'center',
             width: '100%',
-            marginBottom: isMobile ? 'clamp(0rem, 1vw, 0.5rem)' : 'clamp(0.5rem, 2vw, 1rem)',
-            letterSpacing: '0.05em',
-            transform: isMobile ? 'none' : `translateX(${getOpticalShift(letter)})`
+            marginBottom: isMobile ? 'clamp(0rem, 1vw, 0.5rem)' : '0',
+            letterSpacing: '0em'
           }}
         >
           {letter}
