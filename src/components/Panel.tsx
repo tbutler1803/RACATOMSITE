@@ -10,15 +10,30 @@ interface PanelProps {
 function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isLaptop, setIsLaptop] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const isVideo = imageUrl.endsWith('.mp4') || imageUrl.endsWith('.webm') || imageUrl.endsWith('.ogg');
 
-  // No optical shifts; rely on strict centering for consistency across devices.
+  // Laptop-only optical centering to correct slight left bias on some widths
+  const getLaptopShift = (ch: string): string => {
+    switch ((ch || '').toUpperCase()) {
+      case 'A':
+        return '0.5%';
+      case 'R':
+        return '0.4%';
+      case 'C':
+        return '0.3%';
+      default:
+        return '0%';
+    }
+  };
 
-  // Detect mobile/tablet devices
+  // Detect mobile/tablet devices and a typical laptop band
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 1024 || ('ontouchstart' in window));
+      const w = window.innerWidth;
+      setIsMobile(w <= 1024 || ('ontouchstart' in window));
+      setIsLaptop(w > 1024 && w < 1600);
     };
     checkMobile();
     window.addEventListener('resize', checkMobile);
@@ -145,7 +160,8 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
             alignItems: 'center',
             width: '100%',
             marginBottom: isMobile ? 'clamp(0rem, 1vw, 0.5rem)' : '0',
-            letterSpacing: '0em'
+            letterSpacing: '0em',
+            transform: isLaptop ? `translateX(${getLaptopShift(letter)})` : 'none'
           }}
         >
           {letter}
