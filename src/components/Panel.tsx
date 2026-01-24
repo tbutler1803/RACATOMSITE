@@ -91,7 +91,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
           ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-out"
           style={{ 
-            opacity: isMobile ? 0.1 : (isHovered ? 0.75 : 0.001),
+            opacity: isMobile ? 0.3 : (isHovered ? 0.75 : 0.001),
             pointerEvents: 'none',
             visibility: 'visible'
           }}
@@ -112,7 +112,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
           className="absolute inset-0 bg-cover bg-center transition-opacity duration-500 ease-out"
           style={{
             backgroundImage: `url(${imageUrl})`,
-            opacity: isMobile ? 0.1 : (isHovered ? 0.75 : 0)
+            opacity: isMobile ? 0.3 : (isHovered ? 0.75 : 0)
           }}
         />
       )}
@@ -132,7 +132,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
           className="font-heading tracking-widest text-center leading-none gold-texture-text"
           data-text={letter}
           style={{
-            fontSize: isMobile ? 'clamp(6rem, 20vw, 12rem)' : 'clamp(8rem, 28vw, 70rem)',
+            fontSize: isMobile ? 'clamp(7.5rem, 24vw, 14rem)' : 'clamp(8rem, 28vw, 70rem)',
             fontFamily: "var(--font-heading)",
             fontWeight: 400,
             opacity: 1,
@@ -142,7 +142,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
             justifyContent: 'center',
             alignItems: 'center',
             width: '100%',
-            marginBottom: isMobile ? 'clamp(1.5rem, 4vw, 3rem)' : 'clamp(0.5rem, 2vw, 1rem)'
+            marginBottom: isMobile ? 'clamp(0rem, 1vw, 0.5rem)' : 'clamp(0.5rem, 2vw, 1rem)'
           }}
         >
           {letter}
@@ -171,6 +171,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
             // Increase space between subheader and ornament on larger screens
             className="mt-3 sm:mt-4 md:mt-5 lg:mt-6 transition-all duration-500 w-[72%]"
             style={{
+              display: isMobile ? 'none' : 'block',
               opacity: isHovered ? 1 : 0,
               transform: `scaleX(${isHovered ? 1 : 0.95})`,
               transformOrigin: 'center',
