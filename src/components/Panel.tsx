@@ -129,7 +129,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
 
       <div className="relative h-full flex flex-col items-center justify-center px-4 md:px-8 z-10">
         <div
-          className="font-heading tracking-widest text-center leading-none gold-texture-text"
+          className="font-heading text-center leading-none gold-texture-text"
           data-text={letter}
           style={{
             fontSize: isMobile ? 'clamp(7.5rem, 24vw, 14rem)' : 'clamp(8rem, 28vw, 70rem)',
@@ -142,7 +142,8 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
             justifyContent: 'center',
             alignItems: 'center',
             width: '100%',
-            marginBottom: isMobile ? 'clamp(0rem, 1vw, 0.5rem)' : 'clamp(0.5rem, 2vw, 1rem)'
+            marginBottom: isMobile ? 'clamp(0rem, 1vw, 0.5rem)' : 'clamp(0.5rem, 2vw, 1rem)',
+            letterSpacing: '0.05em'
           }}
         >
           {letter}
