@@ -152,7 +152,8 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
           <div
             className="text-[var(--color-gold-accent)] tracking-[0.18em] sm:tracking-[0.22em] md:tracking-[0.22em] lg:tracking-[0.18em] font-subheading transition-all duration-500 text-center max-w-full overflow-hidden"
             style={{
-              fontSize: 'clamp(0.625rem, 2.2vw, 1rem)',
+              // Slightly reduce subheader size on large screens
+              fontSize: 'clamp(0.7rem, 1.1vw, 1.15rem)',
               fontFamily: "var(--font-subheading)",
               fontWeight: 400,
               textTransform: 'uppercase',
@@ -167,7 +168,8 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
 
           {/* Art-deco ornament appears only on hover */}
           <div
-            className="mt-3 md:-mt-1 transition-all duration-500 w-[72%] sm:w-[72%] md:w-[72%] lg:w-[72%] xl:w-[72%]"
+            // Increase space between subheader and ornament on larger screens
+            className="mt-3 sm:mt-4 md:mt-5 lg:mt-6 transition-all duration-500 w-[72%]"
             style={{
               opacity: isHovered ? 1 : 0,
               transform: `scaleX(${isHovered ? 1 : 0.95})`,
@@ -176,10 +178,14 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
           >
             <svg
               viewBox="0 0 520 28"
-              className="block h-3 sm:h-4 md:h-10 lg:h-10 xl:h-10 w-full"
+              className="block w-full"
               preserveAspectRatio="xMidYMid meet"
               xmlns="http://www.w3.org/2000/svg"
-              style={{ color: 'var(--color-gold-accent)' }}
+              // Height scales with viewport but capped to keep proportion with subheader
+              style={{ 
+                color: 'var(--color-gold-accent)',
+                height: 'clamp(0.6rem, 1.1vw, 1.2rem)'
+              }}
             >
               {/* Draw left half once, mirror for perfect symmetry */}
               <g>
