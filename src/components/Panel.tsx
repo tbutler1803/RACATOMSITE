@@ -13,6 +13,20 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const isVideo = imageUrl.endsWith('.mp4') || imageUrl.endsWith('.webm') || imageUrl.endsWith('.ogg');
 
+  // Small optical centering offsets per glyph to correct perceived misalignment
+  const getOpticalShift = (ch: string): string => {
+    switch (ch) {
+      case 'A':
+        return '0.6%';
+      case 'R':
+        return '0.4%';
+      case 'C':
+        return '0.3%';
+      default:
+        return '0%';
+    }
+  };
+
   // Detect mobile/tablet devices
   useEffect(() => {
     const checkMobile = () => {
@@ -143,7 +157,8 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
             alignItems: 'center',
             width: '100%',
             marginBottom: isMobile ? 'clamp(0rem, 1vw, 0.5rem)' : 'clamp(0.5rem, 2vw, 1rem)',
-            letterSpacing: '0.05em'
+            letterSpacing: '0.05em',
+            transform: isMobile ? 'none' : `translateX(${getOpticalShift(letter)})`
           }}
         >
           {letter}
