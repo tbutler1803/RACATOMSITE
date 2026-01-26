@@ -128,7 +128,10 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
           ))}
         </nav>
         {/* Contact/footer block */}
-        <div className="relative z-10 px-6 pt-6 pb-10 border-t border-[var(--color-gold-accent)]/20 space-y-2 text-[var(--color-cream)]/85 text-sm tracking-[0.18em]">
+        <div
+          className="relative z-10 px-6 pt-6 pb-16 sm:pb-12 border-t border-[var(--color-gold-accent)]/20 space-y-2 text-[var(--color-cream)]/85 text-sm tracking-[0.18em]"
+          style={{ paddingBottom: 'max(16px, env(safe-area-inset-bottom, 16px))' }}
+        >
           <p className="text-[var(--color-cream)]/75">Contact: +61 2 8296 2800</p>
           <p className="text-[var(--color-cream)]/75">89 Macquarie St, Sydney NSW 2000</p>
           <div className="flex items-center gap-4 pt-2 text-[var(--color-gold-accent)]">
