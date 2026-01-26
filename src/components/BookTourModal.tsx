@@ -95,38 +95,38 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
                 <h2 className="text-[28px] sm:text-3xl md:text-4xl font-heading text-[var(--color-gold-accent)] mb-2 sm:mb-4 md:mb-5 tracking-wide">
                   BOOK A<br />CLUB TOUR
                 </h2>
-                <p className="text-[var(--color-cream)] font-light leading-relaxed mb-6 md:mb-8 text-sm md:text-base">
                 <p className="text-[var(--color-cream)] font-light leading-relaxed mb-4 sm:mb-6 md:mb-8 text-[13px] sm:text-sm md:text-base">
+                  We're ready to show you around. Fill out the form and we'll be in touch to arrange your private tour.
                 </p>
               </div>
 
-              <div className="space-y-6 md:space-y-10 relative z-10">
               <div className="space-y-5 md:space-y-8 relative z-10">
-                  <h3 className="text-[var(--color-gold-accent)] font-heading text-xs md:text-sm tracking-widest mb-2 uppercase">
+                <div>
                   <h3 className="text-[var(--color-gold-accent)] font-heading text-[11px] sm:text-xs md:text-sm tracking-widest mb-2 uppercase">
+                    Address
                   </h3>
-                  <p className="text-[var(--color-cream)] font-light text-xs md:text-sm">
                   <p className="text-[var(--color-cream)] font-light text-[12px] sm:text-xs md:text-sm">
+                    89 Macquarie Street<br />
                     Sydney NSW 2000, Australia
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-[var(--color-gold-accent)] font-heading text-xs md:text-sm tracking-widest mb-2 uppercase">
                   <h3 className="text-[var(--color-gold-accent)] font-heading text-[11px] sm:text-xs md:text-sm tracking-widest mb-2 uppercase">
+                    Contact
                   </h3>
-                  <p className="text-[var(--color-cream)] font-light text-xs md:text-sm">
                   <p className="text-[var(--color-cream)] font-light text-[12px] sm:text-xs md:text-sm">
+                    +61 (02) 8273 2300<br />
                     ambassador@raca.com.au
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-[var(--color-gold-accent)] font-heading text-xs md:text-sm tracking-widest mb-2 uppercase">
                   <h3 className="text-[var(--color-gold-accent)] font-heading text-[11px] sm:text-xs md:text-sm tracking-widest mb-2 uppercase">
+                    Hours
                   </h3>
-                  <p className="text-[var(--color-cream)] font-light text-xs md:text-sm">
                   <p className="text-[var(--color-cream)] font-light text-[12px] sm:text-xs md:text-sm">
+                    Club Reception is accessible 24 hours, 7<br />
                     days a week
                   </p>
                 </div>
@@ -134,10 +134,10 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
             </div>
 
             {/* Right Side - Form */}
-            <div className="p-4 md:p-8">
             <div className="p-4 sm:p-6 md:p-8">
               <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
                 <div className="grid grid-cols-2 gap-2 md:gap-4">
+                  <div>
                     <label className="text-[var(--color-gold-accent)] font-heading text-xs tracking-widest block mb-2">
                       FIRST NAME <span className="text-red-400">*</span>
                     </label>
