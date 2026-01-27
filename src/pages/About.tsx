@@ -169,10 +169,10 @@ function About() {
         <section>
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 mx-auto" />
           <div className="art-deco-container gold-texture-overlay px-8 md:px-12 py-10 md:py-12 text-center rounded-lg">
-            <h2 className="hidden md:block text-xl md:text-2xl font-heading text-[var(--color-dark-navy)] mb-3 md:mb-4 relative z-10">
+            <h2 className="text-xl md:text-2xl font-heading text-[var(--color-dark-navy)] mb-3 md:mb-4 relative z-10">
               Book a Private Tour
             </h2>
-            <p className="hidden md:block text-[var(--color-dark-navy)] font-light mb-6 md:mb-8 max-w-2xl mx-auto text-sm md:text-base relative z-10">
+            <p className="text-[var(--color-dark-navy)] font-light mb-6 md:mb-8 max-w-2xl mx-auto text-sm md:text-base relative z-10">
               Explore the main room, see the gym and parking, and experience our dining venues firsthand. Our team will tailor the visit to what matters most to you.
             </p>
             <button
