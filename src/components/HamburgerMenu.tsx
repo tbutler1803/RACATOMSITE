@@ -73,7 +73,7 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
 
       {/* Side panel menu with textured navy background and large decorative logo */}
       <div
-        className={`fixed top-0 right-0 h-screen max-h-[100svh] w-[72vw] sm:w-[320px] md:w-[400px] z-50 transform transition-all duration-500 ease-in-out flex flex-col border-l-2 border-[var(--color-gold-accent)]/30 shadow-[0_0_50px_rgba(223,189,114,0.25)] overflow-y-auto ${
+        className={`fixed top-0 right-0 h-screen max-h-[100svh] w-[72vw] sm:w-[320px] md:w-[400px] z-50 transform transition-all duration-500 ease-in-out flex flex-col border-l-2 border-[var(--color-gold-accent)]/30 shadow-[0_0_50px_rgba(223,189,114,0.25)] ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         style={{
@@ -106,7 +106,7 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
         </div>
 
         {/* Menu items with stagger animation */}
-        <nav className="relative z-10 flex-1 flex flex-col justify-center py-6 overflow-y-auto px-6">
+        <nav className="relative z-10 flex-1 flex flex-col justify-center py-6 px-6">
           {menuItems.map((item, index) => (
             <div
               key={item.path}
@@ -127,6 +127,10 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
             </div>
           ))}
         </nav>
+
+        {/* Filler spacer to push contact section to bottom */}
+        <div className="relative z-10 flex-1" />
+
         {/* Contact/footer block */}
         <div
           className="relative z-10 px-6 pt-6 pb-16 sm:pb-12 border-t border-[var(--color-gold-accent)]/20 space-y-2 text-[var(--color-cream)]/85 text-sm tracking-[0.18em]"
