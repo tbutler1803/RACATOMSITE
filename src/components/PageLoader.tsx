@@ -7,6 +7,18 @@ interface PageLoaderProps {
 }
 
 function PageLoader({ isLoading }: PageLoaderProps) {
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isLoading]);
+
   if (!isLoading) return null;
 
   return (

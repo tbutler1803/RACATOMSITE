@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { X, Instagram, Facebook } from 'lucide-react';
 import { getAssetPath } from '../utils/paths';
@@ -18,6 +18,18 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
     { label: 'CONTACT', path: '/contact' },
     { label: 'MEMBERSHIP LOGIN', path: 'http://raca.k8.membershiphouse.com/login' }
   ];
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   const handleNavigate = (path: string) => {
     if (path.startsWith('http')) {
