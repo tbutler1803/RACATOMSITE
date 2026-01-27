@@ -25,7 +25,7 @@ function About() {
   const whyJoin = [
     { icon: Car, title: 'Members-First Service', description: 'Valet-style care, concierge support, and seamless hosting.' },
     { icon: MapPin, title: 'CBD Convenience', description: 'Steps from Circular Quay with transport, harbour, and culture on the doorstep.' },
-    { icon: Globe2, title: 'Reciprocal Network', description: 'Access to distinguished clubs worldwide for business and travel.' },
+    { icon: Globe2, title: 'Reciprocal Networks', description: 'Access to distinguished clubs worldwide for business and travel.' },
     { icon: Utensils, title: 'Food & Beverage', description: 'Signature dining, wine dinners, and elegant bars crafted for members.' }
   ];
 
@@ -101,7 +101,7 @@ function About() {
               <p className="text-sm md:text-base text-[var(--color-cream)]/90 font-light mb-3 leading-relaxed">
                 Welcome to the Royal Automobile Club of Australia, where innovation takes the driver's seat. We don't just cruise on legacy; we strive for progression. Our historic Macquarie Street location is a testament to our rich heritage, a true landmark in motoring excellence.
               </p>
-              <p className="text-sm md:text-base text-[var(--color-cream)]/90 font-light leading-relaxed">
+              <p className="hidden md:block text-sm md:text-base text-[var(--color-cream)]/90 font-light leading-relaxed">
                 Our service is well-oiled. Enjoy seamless experiences executed with precision. From valet parking to private corporate events, our expert team is on hand to fine-tune every detail. Our members are our fuel, and we can't wait to start the journey with you.
               </p>
             </div>
@@ -145,7 +145,7 @@ function About() {
           <p className="text-base md:text-lg text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10">
             Membership brings the best of location, reciprocal privileges, crafted hospitality, and spaces designed for business, celebration, and wellbeing.
           </p>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {whyJoin.map((item, idx) => {
               const Icon = item.icon;
               return (
