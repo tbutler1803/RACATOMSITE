@@ -73,14 +73,15 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
 
       {/* Side panel menu with textured navy background and large decorative logo */}
       <div
-        className={`fixed top-0 right-0 bottom-0 w-[72vw] sm:w-[320px] md:w-[400px] z-50 transform transition-all duration-500 ease-in-out flex flex-col border-l-2 border-[var(--color-gold-accent)]/30 shadow-[0_0_50px_rgba(223,189,114,0.25)] ${
+        className={`fixed top-0 right-0 bottom-0 w-[72vw] sm:w-[320px] md:w-[400px] z-50 transform transition-all duration-500 ease-in-out flex flex-col overflow-hidden border-l-2 border-[var(--color-gold-accent)]/30 shadow-[0_0_50px_rgba(223,189,114,0.25)] ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         style={{
           backgroundImage: `url(${getAssetPath('/textures/BLUEBG.png')})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+          backgroundRepeat: 'no-repeat',
+          paddingBottom: 'env(safe-area-inset-bottom, 16px)'
         }}
       >
         {/* Large decorative logo background - positioned on right, only left half visible */}
@@ -128,12 +129,10 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
           ))}
         </nav>
 
-        {/* Filler spacer to push contact section to bottom */}
-        <div className="relative z-10 flex-1" />
-
         {/* Contact/footer block */}
         <div
-          className="relative z-10 px-6 pt-6 pb-6 border-t border-[var(--color-gold-accent)]/20 space-y-2 text-[var(--color-cream)]/85 text-sm tracking-[0.18em]"
+          className="relative z-10 px-6 pt-6 pb-10 border-t border-[var(--color-gold-accent)]/20 space-y-2 text-[var(--color-cream)]/85 text-sm tracking-[0.18em]"
+          style={{ paddingBottom: 'max(20px, env(safe-area-inset-bottom, 20px))' }}
         >
           <p className="text-[var(--color-cream)]/75">Contact: +61 2 8296 2800</p>
           <p className="text-[var(--color-cream)]/75">89 Macquarie St, Sydney NSW 2000</p>
