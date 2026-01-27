@@ -155,7 +155,7 @@ function Events() {
                   <h3 className="text-lg md:text-3xl font-heading font-light text-[var(--color-gold-accent)] mb-2 md:mb-4">
                     {space.name}
                   </h3>
-                  <p className="text-base md:text-base text-[var(--color-cream)]/80 font-light mb-3 md:mb-6">
+                  <p className="hidden md:block text-base md:text-base text-[var(--color-cream)]/80 font-light mb-3 md:mb-6">
                     {space.description}
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 hidden md:grid">

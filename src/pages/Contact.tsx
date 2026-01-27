@@ -158,7 +158,7 @@ function Contact() {
             ].map((perk, idx) => (
               <div
                 key={idx}
-                className={`overflow-hidden rounded-lg group h-full flex flex-col ${idx > 3 ? 'hidden md:flex' : ''}`}
+                className="overflow-hidden rounded-lg group h-full flex flex-col"
               >
                 <div className="relative h-44 md:h-56 overflow-hidden">
                   <img
@@ -172,7 +172,7 @@ function Contact() {
                   <h3 className="text-[var(--color-gold-accent)] font-heading mb-2 md:mb-3 text-base md:text-lg">
                     {perk.title}
                   </h3>
-                  <p className="text-[var(--color-cream)]/80 font-light text-sm md:text-base">
+                  <p className="hidden md:block text-[var(--color-cream)]/80 font-light text-sm md:text-base">
                     {perk.description}
                   </p>
                 </div>
