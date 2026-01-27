@@ -177,7 +177,7 @@ function About() {
             </p>
             <button
               onClick={() => setIsBookTourOpen(true)}
-              className="inline-block px-8 md:px-10 py-3 bg-[var(--color-cream)] text-[var(--color-red-accent)] font-heading tracking-widest hover:scale-105 transition-all duration-300 relative z-10"
+              className="inline-block px-8 md:px-10 py-3 md:py-3 bg-[#040f2a] text-[var(--color-gold-accent)] font-heading tracking-widest hover:scale-105 transition-all duration-300 relative z-10 md:text-base px-8 py-3 sm:px-10 sm:py-4 md:px-10 md:py-3"
             >
               Book a Tour
             </button>
