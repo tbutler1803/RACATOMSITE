@@ -21,12 +21,15 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
 
   useEffect(() => {
     if (isOpen) {
+      document.documentElement.style.overflow = 'hidden';
       document.body.style.overflow = 'hidden';
     } else {
+      document.documentElement.style.overflow = 'unset';
       document.body.style.overflow = 'unset';
     }
     
     return () => {
+      document.documentElement.style.overflow = 'unset';
       document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
@@ -80,6 +83,7 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
         <div
           className="fixed inset-0 backdrop-veil z-40 transition-opacity duration-300"
           onClick={() => toggleMenu(false)}
+          style={{ touchAction: 'none', overscrollBehavior: 'none' }}
         />
       )}
 
