@@ -94,7 +94,7 @@ function About() {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-5xl mx-auto px-4">
-            <div className="text-left">
+            <div className="text-center md:text-left">
               <h3 className="text-lg sm:text-xl md:text-2xl font-heading text-[var(--color-gold-accent)] mb-3">
                 Innovation is in our DNA
               </h3>
@@ -172,7 +172,7 @@ function About() {
             <h2 className="text-xl md:text-2xl font-heading text-[var(--color-dark-navy)] mb-3 md:mb-4 relative z-10">
               Book a Private Tour
             </h2>
-            <p className="text-[var(--color-dark-navy)] font-light mb-6 md:mb-8 max-w-2xl mx-auto text-sm md:text-base relative z-10">
+            <p className="hidden md:block text-[var(--color-dark-navy)] font-light mb-6 md:mb-8 max-w-2xl mx-auto text-sm md:text-base relative z-10">
               Explore the main room, see the gym and parking, and experience our dining venues firsthand. Our team will tailor the visit to what matters most to you.
             </p>
             <button
