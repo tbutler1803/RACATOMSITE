@@ -73,7 +73,7 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
 
       {/* Side panel menu with textured navy background and large decorative logo */}
       <div
-        className={`fixed top-0 right-0 bottom-0 w-[72vw] sm:w-[320px] md:w-[400px] z-50 transform transition-all duration-500 ease-in-out flex flex-col overflow-hidden border-l-2 border-[var(--color-gold-accent)]/30 shadow-[0_0_50px_rgba(223,189,114,0.25)] ${
+        className={`fixed top-0 right-0 left-auto w-[72vw] sm:w-[320px] md:w-[400px] z-50 transform transition-all duration-500 ease-in-out flex flex-col overflow-hidden border-l-2 border-[var(--color-gold-accent)]/30 shadow-[0_0_50px_rgba(223,189,114,0.25)] ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         style={{
@@ -81,7 +81,8 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          paddingBottom: 'env(safe-area-inset-bottom, 16px)'
+          height: '100dvh',
+          paddingBottom: 'env(safe-area-inset-bottom, 0px)'
         }}
       >
         {/* Large decorative logo background - positioned on right, only left half visible */}
