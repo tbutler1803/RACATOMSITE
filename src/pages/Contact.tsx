@@ -65,7 +65,7 @@ function Contact() {
 
   const categories = [
     {
-      name: 'Defence/Emergency',
+      name: 'Defence',
       price: 'Individual',
       description: 'Active or retired service members',
       highlights: ['Discounted rates', 'All venue access', 'Special recognition']
