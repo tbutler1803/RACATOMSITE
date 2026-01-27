@@ -73,7 +73,7 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
 
       {/* Side panel menu with textured navy background and large decorative logo */}
       <div
-        className={`fixed top-0 right-0 h-screen max-h-[100svh] w-[72vw] sm:w-[320px] md:w-[400px] z-50 transform transition-all duration-500 ease-in-out flex flex-col border-l-2 border-[var(--color-gold-accent)]/30 shadow-[0_0_50px_rgba(223,189,114,0.25)] ${
+        className={`fixed top-0 right-0 h-screen max-h-[100svh] w-[72vw] sm:w-[320px] md:w-[400px] z-50 transform transition-all duration-500 ease-in-out flex flex-col border-l-2 border-[var(--color-gold-accent)]/30 shadow-[0_0_50px_rgba(223,189,114,0.25)] overflow-y-auto ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         style={{
@@ -133,8 +133,8 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
 
         {/* Contact/footer block */}
         <div
-          className="relative z-10 px-6 pt-6 pb-16 sm:pb-12 border-t border-[var(--color-gold-accent)]/20 space-y-2 text-[var(--color-cream)]/85 text-sm tracking-[0.18em]"
-          style={{ paddingBottom: 'max(16px, env(safe-area-inset-bottom, 16px))' }}
+          className="relative z-10 px-6 pt-6 pb-20 sm:pb-16 border-t border-[var(--color-gold-accent)]/20 space-y-2 text-[var(--color-cream)]/85 text-sm tracking-[0.18em]"
+          style={{ paddingBottom: 'max(80px, env(safe-area-inset-bottom, 80px))' }}
         >
           <p className="text-[var(--color-cream)]/75">Contact: +61 2 8296 2800</p>
           <p className="text-[var(--color-cream)]/75">89 Macquarie St, Sydney NSW 2000</p>
