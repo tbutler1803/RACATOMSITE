@@ -145,7 +145,7 @@ function About() {
           <p className="text-base md:text-lg text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10">
             Membership brings the best of location, reciprocal privileges, crafted hospitality, and spaces designed for business, celebration, and wellbeing.
           </p>
-          <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {whyJoin.map((item, idx) => {
               const Icon = item.icon;
               return (
@@ -156,7 +156,7 @@ function About() {
                   <h3 className="text-base md:text-lg font-heading text-[var(--color-gold-accent)] mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-[var(--color-cream)]/80 font-light text-sm md:text-base">
+                  <p className="hidden md:block text-[var(--color-cream)]/80 font-light text-sm md:text-base">
                     {item.description}
                   </p>
                 </div>
@@ -169,7 +169,7 @@ function About() {
         <section>
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 mx-auto" />
           <div className="art-deco-container gold-texture-overlay px-8 md:px-12 py-10 md:py-12 text-center rounded-lg">
-            <h2 className="text-xl md:text-2xl font-heading text-[var(--color-dark-navy)] mb-3 md:mb-4 relative z-10">
+            <h2 className="hidden md:block text-xl md:text-2xl font-heading text-[var(--color-dark-navy)] mb-3 md:mb-4 relative z-10">
               Book a Private Tour
             </h2>
             <p className="hidden md:block text-[var(--color-dark-navy)] font-light mb-6 md:mb-8 max-w-2xl mx-auto text-sm md:text-base relative z-10">
@@ -177,7 +177,7 @@ function About() {
             </p>
             <button
               onClick={() => setIsBookTourOpen(true)}
-              className="inline-block px-8 md:px-10 py-3 bg-[#040f2a] text-[var(--color-gold-accent)] font-heading tracking-widest hover:scale-105 transition-all duration-300 relative z-10"
+              className="inline-block px-8 md:px-10 py-3 bg-[var(--color-cream)] text-[var(--color-red-accent)] font-heading tracking-widest hover:scale-105 transition-all duration-300 relative z-10"
             >
               Book a Tour
             </button>
