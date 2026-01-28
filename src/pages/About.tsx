@@ -169,7 +169,7 @@ function About() {
         <section>
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 mx-auto" />
           <div className="art-deco-container gold-texture-overlay px-8 md:px-12 py-10 md:py-12 text-center rounded-lg">
-            <h2 className="text-3xl md:text-4xl font-heading font-extrabold text-[var(--color-dark-navy)] mb-6 md:mb-8 relative z-10">
+            <h2 className="text-3xl md:text-5xl font-heading font-bold text-[var(--color-dark-navy)] mb-6 md:mb-8 relative z-10">
               Book a Private Tour
             </h2>
             <p className="text-[var(--color-dark-navy)] font-semibold mb-6 md:mb-8 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed relative z-10">
