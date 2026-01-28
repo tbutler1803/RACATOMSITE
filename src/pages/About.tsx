@@ -169,15 +169,15 @@ function About() {
         <section>
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 mx-auto" />
           <div className="art-deco-container gold-texture-overlay px-8 md:px-12 py-10 md:py-12 text-center rounded-lg">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-[var(--color-dark-navy)] mb-6 md:mb-8 relative z-10">
+            <h2 className="text-xl md:text-2xl font-heading text-[var(--color-dark-navy)] mb-3 md:mb-4 relative z-10">
               Book a Private Tour
             </h2>
-            <p className="text-[var(--color-dark-navy)] font-semibold mb-6 md:mb-8 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed relative z-10">
-              Explore the main room, see the gym and parking, and experience our dining venues firsthand. <span className="hidden md:inline">Our team will tailor the visit to what matters most to you.</span>
+            <p className="text-[var(--color-dark-navy)] font-light mb-6 md:mb-8 max-w-2xl mx-auto text-sm md:text-base relative z-10">
+              Explore the main room, see the gym and parking, and experience our dining venues firsthand.<span className="hidden md:inline"> Our team will tailor the visit to what matters most to you.</span>
             </p>
             <button
               onClick={() => setIsBookTourOpen(true)}
-              className="inline-block px-8 md:px-10 py-3 md:py-3 bg-[#040f2a] text-[var(--color-gold-accent)] font-heading tracking-widest hover:scale-105 hover:bg-red-600 transition-all duration-300 relative z-10 md:text-base px-8 py-3 sm:px-10 sm:py-4 md:px-10 md:py-3"
+              className="inline-block px-8 md:px-10 py-3 md:py-3 bg-[#040f2a] text-[var(--color-gold-accent)] font-heading tracking-widest hover:bg-red-600 hover:text-white transition-all duration-300 relative z-10 md:text-base px-8 py-3 sm:px-10 sm:py-4 md:px-10 md:py-3"
             >
               Book a Tour
             </button>
