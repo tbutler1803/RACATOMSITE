@@ -23,7 +23,7 @@ function AppContent() {
 
   return (
     <div className="page-textured-bg min-h-screen">
-      {location.pathname !== '/' && <PageLoader isLoading={isLoading} />}
+      <PageLoader isLoading={isLoading} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
