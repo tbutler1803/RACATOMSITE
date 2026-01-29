@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import ArtDecoDivider from '../components/ArtDecoDivider';
-import LazyImage from '../components/LazyImage';
 import { getAssetPath } from '../utils/paths';
 import { Calendar, Users, Music, Wine, Award, ChevronRight } from 'lucide-react';
 
@@ -143,11 +142,10 @@ function Events() {
                 className={`md:grid md:grid-cols-2 md:gap-6 lg:gap-8 md:items-center md:mb-10 lg:mb-12 ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
               >
                 <div className={idx % 2 === 1 ? 'lg:order-2' : ''}>
-                  <LazyImage
+                  <img
                     src={space.image}
                     alt={space.name}
-                    className="w-full aspect-square md:h-64 lg:h-80 md:aspect-auto object-cover rounded-lg"
-                    containerClassName="mb-3 md:mb-0"
+                    className="w-full aspect-square md:h-64 lg:h-80 md:aspect-auto object-cover rounded-lg mb-3 md:mb-0"
                   />
                 </div>
                 <div className={idx % 2 === 1 ? 'lg:order-1' : ''}>
