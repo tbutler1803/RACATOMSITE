@@ -8,6 +8,14 @@ export default defineConfig({
   build: {
     outDir: 'docs', // match GitHub Pages source (main/docs)
     emptyOutDir: true,
+    // Optimize images and assets
+    assetsInlineLimit: 4096, // Inline assets smaller than 4kb
+    rollupOptions: {
+      output: {
+        // Better chunk splitting for images
+        assetFileNames: 'assets/[name]-[hash][extname]'
+      }
+    }
   },
   plugins: [
     react(),
@@ -24,4 +32,10 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  // Optimize serving of static files
+  server: {
+    headers: {
+      'Cache-Control': 'public, max-age=3600'
+    }
+  }
 });

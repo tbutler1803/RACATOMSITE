@@ -1,5 +1,6 @@
 import Header from '../components/Header';
 import ArtDecoDivider from '../components/ArtDecoDivider';
+import LazyImage from '../components/LazyImage';
 import { getAssetPath } from '../utils/paths';
 import { useState } from 'react';
 import { Car, Globe2, MapPin, Utensils } from 'lucide-react';
@@ -162,6 +163,33 @@ function About() {
                 </div>
               );
             })}
+          </div>
+          <div className="mt-8 md:mt-12" />
+        </section>
+
+        <section className="mb-16 md:mb-20">
+          <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 md:mb-10 mx-auto" />
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-6 md:mb-8 tracking-wide px-2">
+            Member Perks & Amenities
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {perkCards.map((card, idx) => (
+              <div key={idx} className="art-deco-card overflow-hidden group cursor-pointer">
+                <LazyImage
+                  src={card.image}
+                  alt={card.title}
+                  className="w-full h-48 md:h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="p-5 md:p-6">
+                  <h3 className="text-lg md:text-xl font-heading text-[var(--color-gold-accent)] mb-2">
+                    {card.title}
+                  </h3>
+                  <p className="text-sm md:text-base text-[var(--color-cream)]/80 font-light">
+                    {card.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
           <div className="mt-8 md:mt-12" />
         </section>

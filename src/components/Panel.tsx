@@ -116,7 +116,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
           loop
           muted
           playsInline
-          preload="auto"
+          preload="metadata"
           onLoadedMetadata={() => console.log('Video metadata loaded')}
           onError={(e) => console.error('Video error:', e)}
           onPlay={() => console.log('Video playing')}
