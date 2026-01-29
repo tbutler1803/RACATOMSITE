@@ -2,7 +2,6 @@ import Header from '../components/Header';
 import ArtDecoDivider from '../components/ArtDecoDivider';
 import { getAssetPath } from '../utils/paths';
 import { useState } from 'react';
-import { Car, Globe2, MapPin, Utensils } from 'lucide-react';
 import BookTourModal from '../components/BookTourModal';
 
 function About() {
@@ -22,44 +21,53 @@ function About() {
     }
   ];
 
-  const whyJoin = [
-    { icon: Car, title: 'Members-First Service', description: 'Valet-style care, concierge support, and seamless hosting.' },
-    { icon: MapPin, title: 'CBD Convenience', description: 'Steps from Circular Quay with transport, harbour, and culture on the doorstep.' },
-    { icon: Globe2, title: 'Reciprocal Networks', description: 'Access to distinguished clubs worldwide for business and travel.' },
-    { icon: Utensils, title: 'Food & Beverage', description: 'Signature dining, wine dinners, and elegant bars crafted for members.' }
-  ];
-
   const perkCards = [
     {
-      title: 'Historic Clubhouse',
-      image: getAssetPath('/IMAGES/attached_assets/architecture_1750917074639.webp'),
-      description: 'Art Deco interiors, grand rooms, and intimate lounges for every occasion.'
+      title: 'Accessing Club Facilities',
+      image: getAssetPath('/IMAGES/Images for Members Perks/Image1.jpg'),
+      description: 'Including: Harbour Dining Room, Sydney CBD accommodation & parking, Member’s Bar, Gymnasium, Business Centre and function rooms for hire.'
     },
     {
-      title: 'Secure Parking',
-      image: getAssetPath('/IMAGES/253A6720.JPG'),
-      description: 'Member-priority parking with easy club access for weekday and evening visits.'
+      title: 'Getting Social with Club Communities',
+      image: getAssetPath('/IMAGES/Images for Members Perks/Image2.jpg'),
+      description: 'Explore arts and culture, savour fine wines and dining, perfect your snooker skills, or simply connect with fellow members. These groups aren’t just about hobbies, they are engines of discovery.'
     },
     {
-      title: 'Wellness & Gym',
-      image: getAssetPath('/IMAGES/images/ClubGym.jpeg'),
-      description: 'Modern gym facilities and changing rooms to balance work, life, and wellbeing.'
+      title: 'Global Reciprocal Club Access',
+      image: getAssetPath('/IMAGES/Images for Members Perks/Image3.jpg'),
+      description: 'A RACA membership opens the doors to an exclusive network spanning over 200 reciprocal clubs. From Sydney to Singapore, our members enjoy privileged access to a diverse range of services.'
     },
     {
-      title: 'Food & Beverage',
-      image: getAssetPath('/IMAGES/images/DSC_1545.jpg'),
-      description: 'Seasonal menus, club classics, and private dining experiences across our venues.'
+      title: 'Your Historic Vehicle Rego, covered',
+      image: getAssetPath('/IMAGES/Images for Members Perks/Image4.jpg'),
+      description: 'Need help with your Historic Vehicle Registration (HVS)? The Club offers a complimentary service to guide current members through the process. This service is exclusive to members, and is provided at no additional cost.'
     },
     {
-      title: 'Reciprocal Clubs',
-      image: getAssetPath('/IMAGES/attached_assets/plane.jpg'),
-      description: 'Global reciprocal privileges to stay, dine, and meet while travelling.'
+      title: 'Onsite Car Wash',
+      image: getAssetPath('/IMAGES/Images for Members Perks/Image5.jpg'),
+      description: 'Your vehicle deserves the VIP treatment. You can now enjoy our premium car wash service! Rinseless, convenient, and available for booking every Monday and Friday. Using only top-tier products and techniques found in luxury showrooms, we ensure your car gleams inside and out, all while you relax at your Club'
     },
     {
-      title: 'Prime Location',
-      image: getAssetPath('/IMAGES/attached_assets/pexels-pat-saengcharoen-774865114-31726433.jpg'),
-      description: 'Moments from the Royal Botanic Garden, the Harbour, and the heart of the CBD.'
+      title: 'Best Possible Car Insurance',
+      image: getAssetPath('/IMAGES/Images for Members Perks/Image6.jpg'),
+      description: 'RACA has formed an association with Compare the Market to obtain the best possible car insurance premium for our members'
+    },
+    {
+      title: 'RACA x Willed',
+      image: getAssetPath('/IMAGES/Images for Members Perks/Image7.jpg'),
+      description: 'RACA members enjoy an exclusive 15% discount with Willed, Australia\'s leading online Will-writing service. In as little as 15 minutes, you can create a legally valid will with unlimited edits for 12 months, all reviewed by Australian lawyers. Click to know more.'
+    },
+    {
+      title: 'Discounts Around the City',
+      image: getAssetPath('/IMAGES/Images for Members Perks/Image8.jpg'),
+      description: 'RACA members enjoy exclusive discounts at events across the city. From Concours d\'Elegance vintage car shows to Naval Historical Society cruises with morning tea on the water. Members receive special pricing on some of the city\'s most distinctive experiences.'
+    },
+    {
+      title: 'Member Noticeboard',
+      image: getAssetPath('/IMAGES/Images for Members Perks/Image9.jpg'),
+      description: 'Promoting your own event has never been easier. Use the Club Member Noticeboard to share your functions and invite fellow members. From private gatherings to spectacular outings, connect with members and bring your ideas to life'
     }
+    
   ];
 
   return (
@@ -69,7 +77,7 @@ function About() {
       <div
         className="relative h-[70vh] md:h-screen w-full bg-cover bg-center flex items-center justify-center overflow-hidden pt-16 md:pt-20"
         style={{
-          backgroundImage: `url(${getAssetPath('/IMAGES/images/DSC_1410.jpg')})`,
+          backgroundImage: `url(${getAssetPath('/IMAGES/About-Us-Background.jpg')})`,
         }}
       >
         <div
@@ -139,40 +147,49 @@ function About() {
 
         <section className="mb-16 md:mb-20">
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 md:mb-10 mx-auto" />
-          <h2 className="text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-5 md:mb-6 tracking-wide">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-5 md:mb-6 tracking-wide px-2">
             Why Join RACA
           </h2>
-          <p className="text-base md:text-lg text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10">
-            Membership brings the best of location, reciprocal privileges, crafted hospitality, and spaces designed for business, celebration, and wellbeing.
+          <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10 px-4">
+            From secure parking and a fully-equipped gym to dining, reciprocal clubs, and our iconic rooms, membership is designed to serve every visit.
           </p>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {whyJoin.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <div key={idx} className="art-deco-card p-6 md:p-8 h-full flex flex-col items-center text-center">
-                  <div className="mb-3 md:mb-4 inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full border border-[var(--color-gold-accent)]/40">
-                    <Icon size={26} className="text-[var(--color-gold-accent)]" />
-                  </div>
-                  <h3 className="text-base md:text-lg font-heading text-[var(--color-gold-accent)] mb-2">
-                    {item.title}
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {perkCards.map((perk, idx) => (
+              <div
+                key={idx}
+                className="overflow-hidden rounded-lg group h-full flex flex-col"
+              >
+                <div className="relative h-44 md:h-56 overflow-hidden">
+                  <img
+                    src={perk.image}
+                    alt={perk.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-dark-navy)]/80 via-transparent to-transparent" />
+                </div>
+                <div className="bg-[var(--color-dark-navy)] bg-opacity-80 p-5 md:p-6 flex-1 flex flex-col justify-between">
+                  <h3 className="text-[var(--color-gold-accent)] font-heading mb-2 md:mb-3 text-base md:text-lg">
+                    {perk.title}
                   </h3>
                   <p className="hidden md:block text-[var(--color-cream)]/80 font-light text-sm md:text-base">
-                    {item.description}
+                    {perk.description}
                   </p>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
-          <div className="mt-8 md:mt-12" />
         </section>
 
         <section>
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 mx-auto" />
-          <div className="art-deco-container gold-texture-overlay px-8 md:px-12 py-10 md:py-12 text-center rounded-lg">
-            <h2 className="text-xl md:text-2xl font-heading text-[var(--color-dark-navy)] mb-3 md:mb-4 relative z-10">
-              Book a Private Tour
+          <div className="art-deco-container gold-texture-overlay px-8 md:px-12 py-10 md:py-12 text-center rounded-lg relative">
+            <div className="absolute inset-0 bg-[var(--color-dark-navy)]/30 rounded-lg"></div>
+            <h2 className="text-xl md:text-2xl font-heading text-[var(--color-dark-navy)] mb-3 md:mb-4 relative z-10 font-semibold">
+              Discover Your Space
             </h2>
-            <p className="text-[var(--color-dark-navy)] font-light mb-6 md:mb-8 max-w-2xl mx-auto text-sm md:text-base relative z-10">
+            <p className="text-[var(--color-dark-navy)] font-medium mb-6 md:mb-8 max-w-2xl mx-auto text-sm md:text-base relative z-10">
               Explore the main room, see the gym and parking, and experience our dining venues firsthand.<span className="hidden md:inline"> Our team will tailor the visit to what matters most to you.</span>
             </p>
             <button

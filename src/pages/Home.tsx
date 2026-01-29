@@ -17,7 +17,7 @@ function Home() {
     {
       letter: 'R',
       label: 'ABOUT US',
-      imageUrl: getAssetPath('/IMAGES/images/DSC_1410.jpg'),
+      imageUrl: getAssetPath('/IMAGES/About-Us-Panel.jpg'),
       path: '/about'
     },
     {

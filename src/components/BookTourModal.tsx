@@ -89,7 +89,7 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-2">
             {/* Left Side - Information */}
-            <div className="p-3 sm:p-5 md:p-8 flex flex-col justify-between relative bg-cover bg-center" style={{ backgroundImage: `url(${getAssetPath('/IMAGES/images/DSC_1410.jpg')})` }}>
+            <div className="p-3 sm:p-5 md:p-8 flex flex-col justify-between relative bg-cover bg-bottom" style={{ backgroundImage: `url(${getAssetPath('/IMAGES/About-Us-Background.jpg')})` }}>
               <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 to-gray-900/70"></div>
               <div className="relative z-10">
                 <h2 className="text-[26px] sm:text-3xl md:text-4xl font-heading text-[var(--color-gold-accent)] mb-2 sm:mb-4 md:mb-5 tracking-wide">
