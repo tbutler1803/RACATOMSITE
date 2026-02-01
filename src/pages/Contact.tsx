@@ -4,6 +4,7 @@ import ArtDecoDivider from '../components/ArtDecoDivider';
 import BookTourModal from '../components/BookTourModal';
 import MembershipCard from '../components/MembershipCard';
 import { getAssetPath } from '../utils/paths';
+import { MapPin, Phone, Mail, Clock, Users, Utensils, Zap, Award, Calendar, Car, Globe2 } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 
 function Contact() {
@@ -45,6 +46,29 @@ function Contact() {
       setTimeout(() => setSubmitStatus('idle'), 3000);
     }
   };
+
+  const contactInfo = [
+    { icon: MapPin, label: 'Address', value: '89 Macquarie St, Sydney NSW 2000' },
+    { icon: Phone, label: 'Phone', value: '+61 2 8296 2800' },
+    { icon: Mail, label: 'Email', value: 'membership@raca.com.au' },
+    { icon: Clock, label: 'Hours', value: 'Mon-Fri: 9am-5pm, Sat: 10am-4pm' }
+  ];
+
+  const benefits = [
+    { icon: Utensils, title: 'Fine Dining', description: 'Access to world-class restaurants and bars' },
+    { icon: Calendar, title: 'Exclusive Events', description: 'Members-only galas, automotive events, and social gatherings' },
+    { icon: Zap, title: 'Car Heritage', description: 'Connect with automotive enthusiasts and heritage vehicle community' },
+    { icon: Users, title: 'Lounge Access', description: 'Exclusive lounges with premium facilities and services' },
+    { icon: MapPin, title: 'Reciprocal Clubs', description: 'Access to partner clubs worldwide' },
+    { icon: Award, title: 'Venue Hire', description: 'Private rooms and premier event spaces' }
+  ];
+
+  const whyJoin = [
+    { icon: Car, title: 'Members-First Service', description: 'Valet-style care, concierge support, and seamless hosting.' },
+    { icon: MapPin, title: 'CBD Convenience', description: 'Steps from Circular Quay with transport, harbour, and culture on the doorstep.' },
+    { icon: Globe2, title: 'Reciprocal Networks', description: 'Access to distinguished clubs worldwide for business and travel.' },
+    { icon: Utensils, title: 'Food & Beverage', description: 'Signature dining, wine dinners, and elegant bars crafted for members.' }
+  ];
 
   const categories = [
     {
@@ -89,17 +113,46 @@ function Contact() {
         />
         <div className="relative z-10 text-center px-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-light text-[var(--color-gold-accent)] mb-3 md:mb-4 tracking-wide leading-tight">
-            CONTACT & MEMBERSHIP
+            MEMBERSHIP APPLICATIONS & CONTACT
           </h1>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2">
-            Get in touch with us or explore membership options
+            Join our community or get in touch with us today
           </p>
         </div>
       </div>
 
       <div className="max-w-6xl mx-auto px-6 py-14 md:py-18 text-center">
         <section className="mb-16 md:mb-20">
-          <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-12 mx-auto" />
+          <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 md:mb-10 mx-auto" />
+          <h2 className="text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-5 md:mb-6 tracking-wide">
+            Why Join RACA
+          </h2>
+          <p className="text-base md:text-lg text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10">
+            Membership brings the best of location, reciprocal privileges, crafted hospitality, and spaces designed for business, celebration, and wellbeing.
+          </p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {whyJoin.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <div key={idx} className="art-deco-card p-6 md:p-8 h-full flex flex-col items-center text-center">
+                  <div className="mb-3 md:mb-4 inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full border border-[var(--color-gold-accent)]/40">
+                    <Icon size={26} className="text-[var(--color-gold-accent)]" />
+                  </div>
+                  <h3 className="text-base md:text-lg font-heading text-[var(--color-gold-accent)] mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="hidden md:block text-[var(--color-cream)]/80 font-light text-sm md:text-base">
+                    {item.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+          <div className="mt-8 md:mt-12" />
+        </section>
+
+        <section className="mb-16 md:mb-20">
+          <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-12" />
           <h2 className="text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-10 md:mb-12 tracking-wide">
             Membership Categories
           </h2>
@@ -119,10 +172,58 @@ function Contact() {
           </div>
         </section>
 
+        <section className="mb-16 md:mb-20">
+          <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-12" />
+          <h2 className="text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-10 md:mb-12 tracking-wide">
+            Contact Information
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-2 gap-6 md:gap-8">
+            {contactInfo.map((info, idx) => {
+              const Icon = info.icon;
+              return (
+                <div key={idx} className="flex flex-col items-center gap-3 text-center">
+                  <div className="p-3 bg-[var(--color-dark-navy)] bg-opacity-80 rounded-lg">
+                    <Icon size={18} className="text-[var(--color-gold-accent)]" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm tracking-widest text-[var(--color-gold-accent)] font-heading mb-2">
+                      {info.label}
+                    </h3>
+                    <p className="text-[var(--color-cream)] font-light">
+                      {info.value}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
         <section className="mb-20">
-          <ArtDecoDivider width="w-64 md:w-80" height="h-6 md:h-20" className="mb-8 mx-auto" />
-          <div ref={messageFormRef}>
-            <div className="max-w-xl mx-auto">
+          <ArtDecoDivider width="w-64 md:w-80" height="h-6 md:h-20" className="mb-8" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+            <div>
+              <h2 className="text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-8 tracking-wide">
+                Quick Actions
+              </h2>
+              <div className="space-y-4">
+                <button 
+                  onClick={() => setIsBookTourOpen(true)}
+                  className={`w-full px-6 py-4 border border-[var(--color-gold-accent)] text-[var(--color-gold-accent)] font-heading tracking-widest hover:bg-[var(--color-gold-accent)] hover:text-[var(--color-dark-navy)] transition-all duration-300 ${isBookTourOpen ? 'bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)]' : ''}`}>
+                  Book a Tour
+                </button>
+                <a 
+                  href="https://membership.raca.com.au/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block w-full px-6 py-4 border border-[var(--color-gold-accent)] text-[var(--color-gold-accent)] font-heading tracking-widest hover:bg-[var(--color-gold-accent)] hover:text-[var(--color-dark-navy)] transition-all duration-300 text-center"
+                >
+                  Apply Here
+                </a>
+              </div>
+            </div>
+
+            <div ref={messageFormRef}>
               <h2 className="text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-8 tracking-wide">
                 Send us a Message
               </h2>
@@ -192,7 +293,7 @@ function Contact() {
               frameBorder="0"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.397775!2d151.208533!3d-33.863889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae6855a7ba25%3A0x1eb6754ad60316a!2sRoyal%20Automobile%20Club%20of%20Australia%2089%20Macquarie%20St!5e0!3m2!1sen!2sau!4v1706043600000"
               style={{ border: 'none' }}
-              allowFullScreen
+              allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />

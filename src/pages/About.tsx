@@ -169,7 +169,7 @@ function About() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-dark-navy)]/80 via-transparent to-transparent" />
                 </div>
-                <div className="bg-[var(--color-dark-navy)] bg-opacity-80 p-5 md:p-6 flex-1 flex flex-col justify-between">
+                <div className="bg-[var(--color-dark-navy)] bg-opacity-80 p-5 md:p-6 flex-1 flex flex-col justify-start">
                   <h3 className="text-[var(--color-gold-accent)] font-heading mb-2 md:mb-3 text-base md:text-lg">
                     {perk.title}
                   </h3>
