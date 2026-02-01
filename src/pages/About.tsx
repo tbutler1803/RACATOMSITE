@@ -2,7 +2,6 @@ import Header from '../components/Header';
 import ArtDecoDivider from '../components/ArtDecoDivider';
 import { getAssetPath } from '../utils/paths';
 import { useState } from 'react';
-import { Car, Globe2, MapPin, Utensils } from 'lucide-react';
 import BookTourModal from '../components/BookTourModal';
 
 function About() {
@@ -20,13 +19,6 @@ function About() {
       title: 'Connected Community',
       description: 'Leaders, innovators, and enthusiasts who gather to exchange ideas and celebrate motoring culture.'
     }
-  ];
-
-  const whyJoin = [
-    { icon: Car, title: 'Members-First Service', description: 'Valet-style care, concierge support, and seamless hosting.' },
-    { icon: MapPin, title: 'CBD Convenience', description: 'Steps from Circular Quay with transport, harbour, and culture on the doorstep.' },
-    { icon: Globe2, title: 'Reciprocal Networks', description: 'Access to distinguished clubs worldwide for business and travel.' },
-    { icon: Utensils, title: 'Food & Beverage', description: 'Signature dining, wine dinners, and elegant bars crafted for members.' }
   ];
 
   const perkCards = [
@@ -139,31 +131,37 @@ function About() {
 
         <section className="mb-16 md:mb-20">
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 md:mb-10 mx-auto" />
-          <h2 className="text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-5 md:mb-6 tracking-wide">
-            Why Join RACA
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-5 md:mb-6 tracking-wide px-2">
+            Members Perks
           </h2>
-          <p className="text-base md:text-lg text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10">
-            Membership brings the best of location, reciprocal privileges, crafted hospitality, and spaces designed for business, celebration, and wellbeing.
+          <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10 px-4">
+            From secure parking and a fully-equipped gym to dining, reciprocal clubs, and our iconic rooms, membership is designed to serve every visit.
           </p>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {whyJoin.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <div key={idx} className="art-deco-card p-6 md:p-8 h-full flex flex-col items-center text-center">
-                  <div className="mb-3 md:mb-4 inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full border border-[var(--color-gold-accent)]/40">
-                    <Icon size={26} className="text-[var(--color-gold-accent)]" />
-                  </div>
-                  <h3 className="text-base md:text-lg font-heading text-[var(--color-gold-accent)] mb-2">
-                    {item.title}
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {perkCards.map((perk, idx) => (
+              <div
+                key={idx}
+                className="overflow-hidden rounded-lg group h-full flex flex-col"
+              >
+                <div className="relative h-44 md:h-56 overflow-hidden">
+                  <img
+                    src={perk.image}
+                    alt={perk.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-dark-navy)]/80 via-transparent to-transparent" />
+                </div>
+                <div className="bg-[var(--color-dark-navy)] bg-opacity-80 p-5 md:p-6 flex-1 flex flex-col justify-between">
+                  <h3 className="text-[var(--color-gold-accent)] font-heading mb-2 md:mb-3 text-base md:text-lg">
+                    {perk.title}
                   </h3>
                   <p className="hidden md:block text-[var(--color-cream)]/80 font-light text-sm md:text-base">
-                    {item.description}
+                    {perk.description}
                   </p>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
-          <div className="mt-8 md:mt-12" />
         </section>
 
         <section>

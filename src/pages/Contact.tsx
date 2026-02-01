@@ -4,7 +4,7 @@ import ArtDecoDivider from '../components/ArtDecoDivider';
 import BookTourModal from '../components/BookTourModal';
 import MembershipCard from '../components/MembershipCard';
 import { getAssetPath } from '../utils/paths';
-import { MapPin, Phone, Mail, Clock, Users, Utensils, Zap, Award, Calendar } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Users, Utensils, Zap, Award, Calendar, Car, Globe2 } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 
 function Contact() {
@@ -63,6 +63,13 @@ function Contact() {
     { icon: Award, title: 'Venue Hire', description: 'Private rooms and premier event spaces' }
   ];
 
+  const whyJoin = [
+    { icon: Car, title: 'Members-First Service', description: 'Valet-style care, concierge support, and seamless hosting.' },
+    { icon: MapPin, title: 'CBD Convenience', description: 'Steps from Circular Quay with transport, harbour, and culture on the doorstep.' },
+    { icon: Globe2, title: 'Reciprocal Networks', description: 'Access to distinguished clubs worldwide for business and travel.' },
+    { icon: Utensils, title: 'Food & Beverage', description: 'Signature dining, wine dinners, and elegant bars crafted for members.' }
+  ];
+
   const categories = [
     {
       name: 'Defence',
@@ -117,68 +124,31 @@ function Contact() {
       <div className="max-w-6xl mx-auto px-6 py-14 md:py-18 text-center">
         <section className="mb-16 md:mb-20">
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 md:mb-10 mx-auto" />
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-5 md:mb-6 tracking-wide px-2">
-            Members Perks
+          <h2 className="text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-5 md:mb-6 tracking-wide">
+            Why Join RACA
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10 px-4">
-            From secure parking and a fully-equipped gym to dining, reciprocal clubs, and our iconic rooms, membership is designed to serve every visit.
+          <p className="text-base md:text-lg text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10">
+            Membership brings the best of location, reciprocal privileges, crafted hospitality, and spaces designed for business, celebration, and wellbeing.
           </p>
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {[
-              {
-                title: 'Historic Clubhouse',
-                image: getAssetPath('/IMAGES/attached_assets/architecture_1750917074639.webp'),
-                description: 'Art Deco interiors, grand rooms, and intimate lounges for every occasion.'
-              },
-              {
-                title: 'Secure Parking',
-                image: getAssetPath('/IMAGES/253A6720.JPG'),
-                description: 'Member-priority parking with easy club access for weekday and evening visits.'
-              },
-              {
-                title: 'Wellness & Gym',
-                image: getAssetPath('/IMAGES/images/ClubGym.jpeg'),
-                description: 'Modern gym facilities and changing rooms to balance work, life, and wellbeing.'
-              },
-              {
-                title: 'Food & Beverage',
-                image: getAssetPath('/IMAGES/images/DSC_1545.jpg'),
-                description: 'Seasonal menus, club classics, and private dining experiences across our venues.'
-              },
-              {
-                title: 'Reciprocal Clubs',
-                image: getAssetPath('/IMAGES/attached_assets/plane.jpg'),
-                description: 'Global reciprocal privileges to stay, dine, and meet while travelling.'
-              },
-              {
-                title: 'Prime Location',
-                image: getAssetPath('/IMAGES/attached_assets/pexels-pat-saengcharoen-774865114-31726433.jpg'),
-                description: 'Moments from the Royal Botanic Garden, the Harbour, and the heart of the CBD.'
-              }
-            ].map((perk, idx) => (
-              <div
-                key={idx}
-                className="overflow-hidden rounded-lg group h-full flex flex-col"
-              >
-                <div className="relative h-44 md:h-56 overflow-hidden">
-                  <img
-                    src={perk.image}
-                    alt={perk.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-dark-navy)]/80 via-transparent to-transparent" />
-                </div>
-                <div className="bg-[var(--color-dark-navy)] bg-opacity-80 p-5 md:p-6 flex-1 flex flex-col justify-between">
-                  <h3 className="text-[var(--color-gold-accent)] font-heading mb-2 md:mb-3 text-base md:text-lg">
-                    {perk.title}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {whyJoin.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <div key={idx} className="art-deco-card p-6 md:p-8 h-full flex flex-col items-center text-center">
+                  <div className="mb-3 md:mb-4 inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full border border-[var(--color-gold-accent)]/40">
+                    <Icon size={26} className="text-[var(--color-gold-accent)]" />
+                  </div>
+                  <h3 className="text-base md:text-lg font-heading text-[var(--color-gold-accent)] mb-2">
+                    {item.title}
                   </h3>
                   <p className="hidden md:block text-[var(--color-cream)]/80 font-light text-sm md:text-base">
-                    {perk.description}
+                    {item.description}
                   </p>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
+          <div className="mt-8 md:mt-12" />
         </section>
 
         <section className="mb-16 md:mb-20">
