@@ -181,7 +181,7 @@ function Contact() {
             {contactInfo.map((info, idx) => {
               const Icon = info.icon;
               return (
-                <div key={idx} className="flex flex-col items-center gap-3 text-center px-4 py-5 sm:px-5 sm:py-6 bg-[var(--color-dark-navy)]/40 rounded-xl">
+                <div key={idx} className="flex flex-col items-center gap-3 text-center px-4 py-5 sm:px-5 sm:py-6 bg-[var(--color-dark-navy)]/40 rounded-xl border border-[var(--color-gold-accent)]/20">
                   <div className="p-3 bg-[var(--color-dark-navy)] bg-opacity-80 rounded-lg">
                     <Icon size={18} className="text-[var(--color-gold-accent)]" />
                   </div>
