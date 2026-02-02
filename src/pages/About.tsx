@@ -149,7 +149,11 @@ function About() {
         <section className="mb-16 md:mb-20">
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 md:mb-10 mx-auto" />
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-5 md:mb-6 tracking-wide px-2">
+<<<<<<< HEAD
             Why Join RACA
+=======
+            Members Perks
+>>>>>>> dfcafc877fbdd367bfa343ddd627327f5ae9ac45
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10 px-4">
             From secure parking and a fully-equipped gym to dining, reciprocal clubs, and our iconic rooms, membership is designed to serve every visit.
@@ -170,7 +174,11 @@ function About() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-dark-navy)]/80 via-transparent to-transparent" />
                 </div>
+<<<<<<< HEAD
                 <div className="bg-[var(--color-dark-navy)] bg-opacity-80 p-5 md:p-6 flex-1 flex flex-col justify-start">
+=======
+                <div className="bg-[var(--color-dark-navy)] bg-opacity-80 p-5 md:p-6 flex-1 flex flex-col justify-between">
+>>>>>>> dfcafc877fbdd367bfa343ddd627327f5ae9ac45
                   <h3 className="text-[var(--color-gold-accent)] font-heading mb-2 md:mb-3 text-base md:text-lg">
                     {perk.title}
                   </h3>
@@ -180,6 +188,7 @@ function About() {
                 </div>
               </div>
             ))}
+<<<<<<< HEAD
           </div>
         </section>
 
@@ -206,8 +215,9 @@ function About() {
                 </div>
               </div>
             ))}
+=======
+>>>>>>> dfcafc877fbdd367bfa343ddd627327f5ae9ac45
           </div>
-          <div className="mt-8 md:mt-12" />
         </section>
 
         <section>

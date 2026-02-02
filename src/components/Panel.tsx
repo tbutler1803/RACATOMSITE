@@ -106,10 +106,13 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
           muted
           playsInline
           preload="metadata"
+<<<<<<< HEAD
           onLoadedMetadata={() => console.log('Video metadata loaded')}
           onError={(e) => console.error('Video error:', e)}
           onPlay={() => console.log('Video playing')}
           onPause={() => console.log('Video paused')}
+=======
+>>>>>>> dfcafc877fbdd367bfa343ddd627327f5ae9ac45
         >
           <source src={imageUrl} type="video/mp4" />
         </video>
