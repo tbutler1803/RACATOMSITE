@@ -49,6 +49,7 @@ function PageLoader({ isLoading }: PageLoaderProps) {
         <img
           src={getAssetPath('/Steering-Wheel-Loader.png')}
           alt="Loading..."
+          decoding="async"
           className="steering-wheel-loader"
         />
       </div>
