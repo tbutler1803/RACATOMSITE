@@ -177,19 +177,19 @@ function Contact() {
           <h2 className="text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-10 md:mb-12 tracking-wide">
             Contact Information
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-2 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-8">
             {contactInfo.map((info, idx) => {
               const Icon = info.icon;
               return (
-                <div key={idx} className="flex flex-col items-center gap-3 text-center">
+                <div key={idx} className="flex flex-col items-center gap-3 text-center px-4 py-5 sm:px-5 sm:py-6 bg-[var(--color-dark-navy)]/40 rounded-xl border border-[var(--color-gold-accent)]/20">
                   <div className="p-3 bg-[var(--color-dark-navy)] bg-opacity-80 rounded-lg">
                     <Icon size={18} className="text-[var(--color-gold-accent)]" />
                   </div>
-                  <div>
+                  <div className="max-w-[12rem] sm:max-w-[18rem]">
                     <h3 className="text-sm tracking-widest text-[var(--color-gold-accent)] font-heading mb-2">
                       {info.label}
                     </h3>
-                    <p className="text-[var(--color-cream)] font-light">
+                    <p className="text-[var(--color-cream)] font-light text-sm sm:text-base leading-relaxed break-words">
                       {info.value}
                     </p>
                   </div>
