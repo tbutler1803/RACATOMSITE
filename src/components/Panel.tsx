@@ -61,27 +61,17 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
     return () => observer.disconnect();
   }, [isMobile, isVideo]);
 
-  console.log('Panel rendered:', { letter, imageUrl, isVideo });
-
   // Handle hover with direct video control for Safari compatibility
   const handleMouseEnter = () => {
-    console.log('handleMouseEnter called:', { isVideo, videoRef: videoRef.current });
     setIsHovered(true);
     // Play video immediately on hover (during user interaction)
     if (videoRef.current && isVideo) {
-      console.log('Mouse enter - attempting to play video');
       const playPromise = videoRef.current.play();
       if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            console.log('Video playing successfully');
-          })
-          .catch((err) => {
-            console.error('Video autoplay failed:', err);
-          });
+        playPromise.catch(() => {
+          // Autoplay failed, user interaction needed
+        });
       }
-    } else {
-      console.log('Video ref not ready or not a video:', { hasRef: !!videoRef.current, isVideo });
     }
   };
 
@@ -89,7 +79,6 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
     setIsHovered(false);
     // Pause and reset video
     if (videoRef.current && isVideo) {
-      console.log('Mouse leave - pausing video');
       videoRef.current.pause();
       videoRef.current.currentTime = 0;
     }
@@ -116,19 +105,19 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
           loop
           muted
           playsInline
-          preload="auto"
-          onLoadedMetadata={() => console.log('Video metadata loaded')}
-          onError={(e) => console.error('Video error:', e)}
-          onPlay={() => console.log('Video playing')}
-          onPause={() => console.log('Video paused')}
+          preload="metadata"
         >
           <source src={imageUrl} type="video/mp4" />
         </video>
       ) : (
-        <div
-          className="absolute inset-0 bg-cover bg-center transition-opacity duration-500 ease-out"
+        <img
+          src={imageUrl}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-out"
           style={{
-            backgroundImage: `url(${imageUrl})`,
             opacity: isMobile ? 0.3 : (isHovered ? 0.75 : 0)
           }}
         />

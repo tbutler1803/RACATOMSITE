@@ -41,6 +41,8 @@ function Header() {
           <img
             src={getAssetPath('/company_logo.png')}
             alt="RACA Logo"
+            decoding="async"
+            fetchpriority="high"
             className="h-12 sm:h-16 md:h-20 w-auto cursor-pointer logo-img"
           />
           <div className="hidden md:flex flex-col leading-tight">

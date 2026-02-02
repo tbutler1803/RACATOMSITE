@@ -106,6 +106,8 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
           <img 
             src={getAssetPath('/company_logo.png')} 
             alt="" 
+            loading="lazy"
+            decoding="async"
             className="w-full h-auto object-contain"
             style={{ transform: 'translateX(35%)' }}
           />

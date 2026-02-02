@@ -145,6 +145,8 @@ function Events() {
                   <img
                     src={space.image}
                     alt={space.name}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full aspect-square md:h-64 lg:h-80 md:aspect-auto object-cover rounded-lg mb-3 md:mb-0"
                   />
                 </div>
