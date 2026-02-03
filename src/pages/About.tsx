@@ -143,7 +143,7 @@ function About() {
                   <h3 className="text-base md:text-lg font-heading text-[var(--color-gold-accent)] mb-2">
                     {item.title}
                   </h3>
-                  <p className="hidden md:block text-[var(--color-cream)]/80 font-light text-sm md:text-base">
+                  <p className="text-sm sm:text-base md:text-base text-[var(--color-cream)]/80 font-light">
                     {item.description}
                   </p>
                 </div>

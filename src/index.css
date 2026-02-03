@@ -169,6 +169,13 @@ body {
   isolation: isolate; /* ensure blend overlays interact with body only */
 }
 
+/* Fix mobile background - keep parallax but stretch to fill viewport without zooming */
+@media (max-width: 1024px) {
+  body {
+    background-size: 100% 100%;
+  }
+}
+
 p, li {
   color: rgba(240, 239, 209, 0.9);
   letter-spacing: 0.01em;

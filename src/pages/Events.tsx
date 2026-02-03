@@ -101,14 +101,14 @@ function Events() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-10 md:mb-12 tracking-wide px-2">
             Event Spaces
           </h2>
-          <div className="space-y-6 md:space-y-16 lg:space-y-20">
+          <div className="grid grid-cols-2 gap-4 md:space-y-16 lg:space-y-20 md:block">
             {eventSpaces.map((space, idx) => (
               <div 
                 key={idx} 
                 className={`grid grid-cols-1 md:grid-cols-2 md:gap-6 lg:gap-8 md:items-center ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
               >
                 <div className={idx % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className="art-deco-card overflow-hidden">
+                  <div className="art-deco-card overflow-hidden mb-2 md:mb-0">
                     <LazyImage
                       src={space.image}
                       alt={space.name}
@@ -118,7 +118,7 @@ function Events() {
                   </div>
                 </div>
                 <div className={idx % 2 === 1 ? 'lg:order-1' : ''}>
-                  <div className="text-sm md:text-sm tracking-widest text-[var(--color-gold-accent)] font-heading mb-1 md:mb-2">
+                  <div className="text-sm md:text-sm tracking-widest text-[var(--color-gold-accent)] font-heading mb-0.5 md:mb-2">
                     {space.capacity}
                   </div>
                   <h3 className="text-base md:text-3xl font-heading font-light text-[var(--color-gold-accent)] mb-0 md:mb-4">
@@ -153,24 +153,24 @@ function Events() {
             <p className="text-[var(--color-cream)]/80 font-light mb-6 md:mb-8 max-w-2xl mx-auto text-sm md:text-base">
               Reserve your table or book an event space through our convenient online booking system.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 max-w-4xl mx-auto px-4 md:px-0">
               <a
                 href="https://www.tripleseat.com/raca"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)] font-heading tracking-widest hover:bg-red-600 hover:text-white transition-all duration-300 text-center"
+                className="px-6 py-3 md:px-8 md:py-4 bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)] font-heading tracking-widest hover:bg-red-600 hover:text-white transition-all duration-300 text-center text-sm md:text-base"
               >
                 Book Your Event
               </a>
               <button
                 onClick={() => setIsBookTourOpen(true)}
-                className="px-8 py-4 bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)] font-heading tracking-widest hover:bg-red-600 hover:text-white transition-all duration-300 text-center cursor-pointer"
+                className="px-6 py-3 md:px-8 md:py-4 bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)] font-heading tracking-widest hover:bg-red-600 hover:text-white transition-all duration-300 text-center cursor-pointer text-sm md:text-base"
               >
                 Book a Tour
               </button>
               <a
                 href="/#/contact?section=contact-information"
-                className="px-8 py-4 bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)] font-heading tracking-widest hover:bg-red-600 hover:text-white transition-all duration-300 text-center"
+                className="px-6 py-3 md:px-8 md:py-4 bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)] font-heading tracking-widest hover:bg-red-600 hover:text-white transition-all duration-300 text-center text-sm md:text-base"
               >
                 Contact Info
               </a>
