@@ -257,7 +257,7 @@ function Contact() {
                 <button
                   type="submit"
                   disabled={submitStatus === 'loading'}
-                  className="w-full px-6 py-3 bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)] font-heading tracking-widest hover:scale-105 disabled:opacity-50 disabled:hover:scale-100 transition-all duration-300"
+                  className="w-full px-6 py-3 bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)] font-heading tracking-widest hover:bg-red-600 hover:text-white disabled:opacity-50 disabled:hover:bg-[var(--color-gold-accent)] transition-all duration-300"
                 >
                   {submitStatus === 'loading' ? 'Sending...' : 'Send Message'}
                 </button>
