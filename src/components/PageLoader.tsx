@@ -8,36 +8,17 @@ interface PageLoaderProps {
 
 function PageLoader({ isLoading }: PageLoaderProps) {
   useEffect(() => {
-    if (isLoading) {
-      // Prevent scrolling on all screen sizes
-      document.documentElement.style.overflow = 'hidden';
-      document.documentElement.style.height = '100%';
+    // Only prevent scrolling on desktop for smoother mobile experience
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isLoading && !isMobile) {
       document.body.style.overflow = 'hidden';
-      document.body.style.height = '100%';
-      document.body.style.position = 'fixed';
-      document.body.style.width = '100%';
-      document.body.style.top = '0';
-      document.body.style.left = '0';
     } else {
-      document.documentElement.style.overflow = 'unset';
-      document.documentElement.style.height = 'unset';
       document.body.style.overflow = 'unset';
-      document.body.style.height = 'unset';
-      document.body.style.position = 'unset';
-      document.body.style.width = 'unset';
-      document.body.style.top = 'unset';
-      document.body.style.left = 'unset';
     }
     
     return () => {
-      document.documentElement.style.overflow = 'unset';
-      document.documentElement.style.height = 'unset';
       document.body.style.overflow = 'unset';
-      document.body.style.height = 'unset';
-      document.body.style.position = 'unset';
-      document.body.style.width = 'unset';
-      document.body.style.top = 'unset';
-      document.body.style.left = 'unset';
     };
   }, [isLoading]);
 

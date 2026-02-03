@@ -14,8 +14,10 @@ function AppContent() {
     setIsLoading(true);
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
     
-    // Simulate page load completion
-    const timer = setTimeout(() => setIsLoading(false), 2000);
+    // Shorter delay on mobile for better perceived performance
+    const isMobile = window.innerWidth <= 768;
+    const delay = isMobile ? 800 : 2000;
+    const timer = setTimeout(() => setIsLoading(false), delay);
     return () => clearTimeout(timer);
   }, [location.pathname]);
 
