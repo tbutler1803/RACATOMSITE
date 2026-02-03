@@ -18,10 +18,10 @@
   --gradient-gold: linear-gradient(135deg, #9C7B3B 50%, #DFBD72 50%);
   --color-red-accent: #DB150D;
   /* Texture controls */
-  --texture-blend-mode: soft-light; /* try: overlay | soft-light | multiply */
-  --texture-size: 400px;          /* cover | contain | 1200px etc. */
-  --texture-opacity: 0.25;        /* overall texture strength (higher = more visible) */
-  --texture-overlay-blend-mode: soft-light;
+  --texture-blend-mode: normal; /* no blending - just the background image */
+  --texture-size: 400px;
+  --texture-opacity: 1;        /* full opacity - show the image as-is */
+  --texture-overlay-blend-mode: normal;
 }
 
 /*
@@ -269,10 +269,9 @@ a, button {
   filter: drop-shadow(0 0 12px rgba(223, 189, 114, 0.5));
 }
 
-/* Mobile: adjust blending and attachment to avoid initial light tint */
+/* Mobile: consistent with desktop */
 @media (hover: none) and (pointer: coarse) {
   :root {
-    --texture-overlay-blend-mode: soft-light;
-    --texture-opacity: 0.25;
+    /* No changes - use same settings as desktop */
   }
 }
