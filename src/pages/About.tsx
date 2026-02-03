@@ -1,26 +1,11 @@
 import Header from '../components/Header';
 import ArtDecoDivider from '../components/ArtDecoDivider';
-import LazyImage from '../components/LazyImage';
 import { getAssetPath } from '../utils/paths';
 import { useState } from 'react';
 import BookTourModal from '../components/BookTourModal';
 
 function About() {
   const [isBookTourOpen, setIsBookTourOpen] = useState(false);
-  const drivingHighlights = [
-    {
-      title: 'Driving the Future',
-      description: 'A heritage clubhouse that keeps evolving, championing innovation in mobility and member experience.'
-    },
-    {
-      title: 'Crafted Hospitality',
-      description: 'Personalised service, curated events, and thoughtful details in every room of the Club.'
-    },
-    {
-      title: 'Connected Community',
-      description: 'Leaders, innovators, and enthusiasts who gather to exchange ideas and celebrate motoring culture.'
-    }
-  ];
 
   const perkCards = [
     {
@@ -149,11 +134,7 @@ function About() {
         <section className="mb-16 md:mb-20">
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 md:mb-10 mx-auto" />
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-5 md:mb-6 tracking-wide px-2">
-<<<<<<< HEAD
-            Why Join RACA
-=======
             Members Perks
->>>>>>> dfcafc877fbdd367bfa343ddd627327f5ae9ac45
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10 px-4">
             From secure parking and a fully-equipped gym to dining, reciprocal clubs, and our iconic rooms, membership is designed to serve every visit.
@@ -168,17 +149,12 @@ function About() {
                   <img
                     src={perk.image}
                     alt={perk.title}
-                    loading="lazy"
                     decoding="async"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-dark-navy)]/80 via-transparent to-transparent" />
                 </div>
-<<<<<<< HEAD
-                <div className="bg-[var(--color-dark-navy)] bg-opacity-80 p-5 md:p-6 flex-1 flex flex-col justify-start">
-=======
                 <div className="bg-[var(--color-dark-navy)] bg-opacity-80 p-5 md:p-6 flex-1 flex flex-col justify-between">
->>>>>>> dfcafc877fbdd367bfa343ddd627327f5ae9ac45
                   <h3 className="text-[var(--color-gold-accent)] font-heading mb-2 md:mb-3 text-base md:text-lg">
                     {perk.title}
                   </h3>
@@ -188,35 +164,6 @@ function About() {
                 </div>
               </div>
             ))}
-<<<<<<< HEAD
-          </div>
-        </section>
-
-        <section className="mb-16 md:mb-20">
-          <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 md:mb-10 mx-auto" />
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-6 md:mb-8 tracking-wide px-2">
-            Member Perks & Amenities
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {perkCards.map((card, idx) => (
-              <div key={idx} className="art-deco-card overflow-hidden group cursor-pointer">
-                <LazyImage
-                  src={card.image}
-                  alt={card.title}
-                  className="w-full h-48 md:h-56 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="p-5 md:p-6">
-                  <h3 className="text-lg md:text-xl font-heading text-[var(--color-gold-accent)] mb-2">
-                    {card.title}
-                  </h3>
-                  <p className="text-sm md:text-base text-[var(--color-cream)]/80 font-light">
-                    {card.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-=======
->>>>>>> dfcafc877fbdd367bfa343ddd627327f5ae9ac45
           </div>
         </section>
 

@@ -8,7 +8,8 @@
   bottom: 0;
   width: 100%;
   height: 100%;
-  background: rgba(4, 15, 42, 0.9);
+  background: rgba(4, 15, 42, 0.2);
+  backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,6 +48,7 @@
   object-fit: contain;
   display: block;
   margin: 0 auto;
+  opacity: 1;
 }
 
 @keyframes spin {

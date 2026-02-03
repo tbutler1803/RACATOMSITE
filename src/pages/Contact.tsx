@@ -4,7 +4,7 @@ import ArtDecoDivider from '../components/ArtDecoDivider';
 import BookTourModal from '../components/BookTourModal';
 import MembershipCard from '../components/MembershipCard';
 import { getAssetPath } from '../utils/paths';
-import { MapPin, Phone, Mail, Clock, Users, Utensils, Zap, Award, Calendar, Car, Globe2 } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Car, Globe2, Utensils } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 
 function Contact() {
@@ -52,15 +52,6 @@ function Contact() {
     { icon: Phone, label: 'Phone', value: '+61 2 8296 2800' },
     { icon: Mail, label: 'Email', value: 'membership@raca.com.au' },
     { icon: Clock, label: 'Hours', value: 'Mon-Fri: 9am-5pm, Sat: 10am-4pm' }
-  ];
-
-  const benefits = [
-    { icon: Utensils, title: 'Fine Dining', description: 'Access to world-class restaurants and bars' },
-    { icon: Calendar, title: 'Exclusive Events', description: 'Members-only galas, automotive events, and social gatherings' },
-    { icon: Zap, title: 'Car Heritage', description: 'Connect with automotive enthusiasts and heritage vehicle community' },
-    { icon: Users, title: 'Lounge Access', description: 'Exclusive lounges with premium facilities and services' },
-    { icon: MapPin, title: 'Reciprocal Clubs', description: 'Access to partner clubs worldwide' },
-    { icon: Award, title: 'Venue Hire', description: 'Private rooms and premier event spaces' }
   ];
 
   const whyJoin = [
@@ -290,10 +281,10 @@ function Contact() {
               title="Royal Automobile Club of Australia - 89 Macquarie Street, Circular Quay Sydney"
               width="100%"
               height="100%"
-              frameBorder="0"
+              frameBorder={0}
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.397775!2d151.208533!3d-33.863889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae6855a7ba25%3A0x1eb6754ad60316a!2sRoyal%20Automobile%20Club%20of%20Australia%2089%20Macquarie%20St!5e0!3m2!1sen!2sau!4v1706043600000"
               style={{ border: 'none' }}
-              allowFullScreen=""
+              allowFullScreen={true}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />

@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import ArtDecoDivider from '../components/ArtDecoDivider';
 import LazyImage from '../components/LazyImage';
@@ -6,43 +5,6 @@ import { getAssetPath } from '../utils/paths';
 import { Calendar, Users, Music, Wine, Award, ChevronRight } from 'lucide-react';
 
 function Events() {
-  const navigate = useNavigate();
-
-  const upcomingEvents = [
-    {
-      title: 'Annual Gala Dinner',
-      date: 'March 15, 2026',
-      time: '7:00 PM',
-      description: 'An elegant evening celebrating our heritage with fine dining and entertainment',
-      image: getAssetPath('/IMAGES/Events/Longevity Oct 25.jpg'),
-      category: 'Social'
-    },
-    {
-      title: 'Classic Car Show',
-      date: 'April 22, 2026',
-      time: '10:00 AM',
-      description: 'Showcase of vintage and classic automobiles from our members\' collections',
-      image: getAssetPath('/IMAGES/Events/cAR aUCTION.jpg'),
-      category: 'Automotive'
-    },
-    {
-      title: 'Wine Tasting Evening',
-      date: 'May 8, 2026',
-      time: '6:00 PM',
-      description: 'Curated selection of premium wines with expert sommelier guidance',
-      image: getAssetPath('/IMAGES/Events/Cigars and Whiskey (2).jpg'),
-      category: 'Culinary'
-    },
-    {
-      title: 'Business Networking Lunch',
-      date: 'May 20, 2026',
-      time: '12:00 PM',
-      description: 'Connect with fellow members in a refined business setting',
-      image: getAssetPath('/IMAGES/EventsDec/WPS Australia Day Lunch.jpg'),
-      category: 'Business'
-    }
-  ];
-
   const eventSpaces = [
     {
       name: 'Grand Ballroom',
@@ -146,8 +108,6 @@ function Events() {
                   <LazyImage
                     src={space.image}
                     alt={space.name}
-                    loading="lazy"
-                    decoding="async"
                     className="w-full aspect-square md:h-64 lg:h-80 md:aspect-auto object-cover rounded-lg mb-3 md:mb-0"
                     containerClassName="mb-3 md:mb-0"
                   />
@@ -177,29 +137,6 @@ function Events() {
         </section>
 
         <section className="mb-16 md:mb-20">
-          <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-12" />
-          <div className="art-deco-card p-10 md:p-12 text-center">
-            <div className="inline-block p-4 bg-[var(--color-gold-accent)]/10 rounded-lg mb-6">
-              <Calendar size={40} className="text-[var(--color-gold-accent)]" />
-            </div>
-            <h2 className="text-2xl md:text-3xl font-heading font-light text-[var(--color-gold-accent)] mb-4">
-              Book Your Event
-            </h2>
-            <p className="text-[var(--color-cream)]/80 font-light mb-6 md:mb-8 max-w-2xl mx-auto text-sm md:text-base">
-              Reserve your table or book an event space through our convenient online booking system.
-            </p>
-            <a
-              href="https://www.tripleseat.com/raca"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-8 py-3 bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)] font-heading tracking-widest hover:scale-105 transition-all duration-300"
-            >
-              Book Now
-            </a>
-          </div>
-        </section>
-
-        <section className="mb-16 md:mb-20">
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-12 mx-auto" />
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-10 md:mb-12 tracking-wide px-2">
             Quick Actions
@@ -224,6 +161,29 @@ function Events() {
               className="px-8 py-4 border-2 border-[var(--color-gold-accent)] text-[var(--color-gold-accent)] font-heading tracking-widest hover:bg-[var(--color-gold-accent)] hover:text-[var(--color-dark-navy)] transition-all duration-300 text-center"
             >
               3. Contact Info
+            </a>
+          </div>
+        </section>
+
+        <section className="mb-16 md:mb-20">
+          <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-12" />
+          <div className="art-deco-card p-10 md:p-12 text-center">
+            <div className="inline-block p-4 bg-[var(--color-gold-accent)]/10 rounded-lg mb-6">
+              <Calendar size={40} className="text-[var(--color-gold-accent)]" />
+            </div>
+            <h2 className="text-2xl md:text-3xl font-heading font-light text-[var(--color-gold-accent)] mb-4">
+              Book Your Event
+            </h2>
+            <p className="text-[var(--color-cream)]/80 font-light mb-6 md:mb-8 max-w-2xl mx-auto text-sm md:text-base">
+              Reserve your table or book an event space through our convenient online booking system.
+            </p>
+            <a
+              href="https://www.tripleseat.com/raca"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-3 bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)] font-heading tracking-widest hover:scale-105 transition-all duration-300"
+            >
+              Book Now
             </a>
           </div>
         </section>

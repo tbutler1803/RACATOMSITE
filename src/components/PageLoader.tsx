@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import './PageLoader.css';
 import { getAssetPath } from '../utils/paths';
 
