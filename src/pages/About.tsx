@@ -3,9 +3,17 @@ import ArtDecoDivider from '../components/ArtDecoDivider';
 import { getAssetPath } from '../utils/paths';
 import { useState } from 'react';
 import BookTourModal from '../components/BookTourModal';
+import { Car, MapPin, Globe2, Utensils } from 'lucide-react';
 
 function About() {
   const [isBookTourOpen, setIsBookTourOpen] = useState(false);
+
+  const whyJoin = [
+    { icon: Car, title: 'Members-First Service', description: 'Valet-style care, concierge support, and seamless hosting.' },
+    { icon: MapPin, title: 'CBD Convenience', description: 'Steps from Circular Quay with transport, harbour, and culture on the doorstep.' },
+    { icon: Globe2, title: 'Reciprocal Networks', description: 'Access to distinguished clubs worldwide for business and travel.' },
+    { icon: Utensils, title: 'Food & Beverage', description: 'Signature dining, wine dinners, and elegant bars crafted for members.' }
+  ];
 
   const perkCards = [
     {
@@ -37,21 +45,6 @@ function About() {
       title: 'Best Possible Car Insurance',
       image: getAssetPath('/IMAGES/Images for Members Perks/Image6.jpg'),
       description: 'RACA has formed an association with Compare the Market to obtain the best possible car insurance premium for our members'
-    },
-    {
-      title: 'RACA x Willed',
-      image: getAssetPath('/IMAGES/Images for Members Perks/Image7.jpg'),
-      description: 'RACA members enjoy an exclusive 15% discount with Willed, Australia\'s leading online Will-writing service. In as little as 15 minutes, you can create a legally valid will with unlimited edits for 12 months, all reviewed by Australian lawyers. Click to know more.'
-    },
-    {
-      title: 'Discounts Around the City',
-      image: getAssetPath('/IMAGES/Images for Members Perks/Image8.jpg'),
-      description: 'RACA members enjoy exclusive discounts at events across the city. From Concours d\'Elegance vintage car shows to Naval Historical Society cruises with morning tea on the water. Members receive special pricing on some of the city\'s most distinctive experiences.'
-    },
-    {
-      title: 'Member Noticeboard',
-      image: getAssetPath('/IMAGES/Images for Members Perks/Image9.jpg'),
-      description: 'Promoting your own event has never been easier. Use the Club Member Noticeboard to share your functions and invite fellow members. From private gatherings to spectacular outings, connect with members and bring your ideas to life'
     }
     
   ];
@@ -63,7 +56,7 @@ function About() {
       <div
         className="relative h-[70vh] md:h-screen w-full bg-cover bg-center flex items-center justify-center overflow-hidden pt-16 md:pt-20"
         style={{
-          backgroundImage: `url(${getAssetPath('/IMAGES/About-Us-Background.jpg')})`,
+          backgroundImage: `url(${getAssetPath('/IMAGES/DSC_1641.jpg')})`,
         }}
       >
         <div
@@ -89,46 +82,75 @@ function About() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-5xl mx-auto px-4">
             <div className="text-center md:text-left">
-              <h3 className="text-lg sm:text-xl md:text-2xl font-heading text-[var(--color-gold-accent)] mb-3">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-heading text-[var(--color-gold-accent)] mb-3">
                 Innovation is in our DNA
               </h3>
-              <p className="text-sm md:text-base text-[var(--color-cream)]/90 font-light mb-3 leading-relaxed">
+              <p className="text-base md:text-lg text-[var(--color-cream)]/90 font-light mb-3 leading-relaxed">
                 Welcome to the Royal Automobile Club of Australia, where innovation takes the driver's seat. We don't just cruise on legacy; we strive for progression. Our historic Macquarie Street location is a testament to our rich heritage, a true landmark in motoring excellence.
               </p>
-              <p className="hidden md:block text-sm md:text-base text-[var(--color-cream)]/90 font-light leading-relaxed">
+              <p className="hidden md:block text-base md:text-lg text-[var(--color-cream)]/90 font-light leading-relaxed">
                 Our service is well-oiled. Enjoy seamless experiences executed with precision. From valet parking to private corporate events, our expert team is on hand to fine-tune every detail. Our members are our fuel, and we can't wait to start the journey with you.
               </p>
             </div>
             
             <div className="space-y-3 md:space-y-4">
               <div className="art-deco-card p-4 md:p-5">
-                <h3 className="text-base md:text-lg font-heading text-[var(--color-gold-accent)] mb-2">
+                <h3 className="text-lg md:text-xl font-heading text-[var(--color-gold-accent)] mb-2">
                   Heritage & Prestige
                 </h3>
-                <p className="text-sm text-[var(--color-cream)]/80 font-light">
+                <p className="text-base text-[var(--color-cream)]/80 font-light">
                   Over 120 years of automotive excellence and club traditions.
                 </p>
               </div>
               
               <div className="art-deco-card p-4 md:p-5">
-                <h3 className="text-base md:text-lg font-heading text-[var(--color-gold-accent)] mb-2">
+                <h3 className="text-lg md:text-xl font-heading text-[var(--color-gold-accent)] mb-2">
                   Premium Location
                 </h3>
-                <p className="text-sm text-[var(--color-cream)]/80 font-light">
+                <p className="text-base text-[var(--color-cream)]/80 font-light">
                   Centrally positioned at Circular Quay, with direct transport access and moments from Sydney Airport.
                 </p>
               </div>
               
               <div className="art-deco-card p-4 md:p-5">
-                <h3 className="text-base md:text-lg font-heading text-[var(--color-gold-accent)] mb-2">
+                <h3 className="text-lg md:text-xl font-heading text-[var(--color-gold-accent)] mb-2">
                   Progressive Spirit
                 </h3>
-                <p className="text-sm text-[var(--color-cream)]/80 font-light">
+                <p className="text-base text-[var(--color-cream)]/80 font-light">
                   Connecting motoring enthusiasts with industry leaders and emerging technology.
                 </p>
               </div>
             </div>
           </div>
+        </section>
+
+        <section className="mb-16 md:mb-20">
+          <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 md:mb-10 mx-auto" />
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-5 md:mb-6 tracking-wide">
+            Why Join RACA
+          </h2>
+          <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10">
+            Membership brings the best of location, reciprocal privileges, crafted hospitality, and spaces designed for business, celebration, and wellbeing.
+          </p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {whyJoin.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <div key={idx} className="art-deco-card p-6 md:p-8 h-full flex flex-col items-center text-center">
+                  <div className="mb-3 md:mb-4 inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full border border-[var(--color-gold-accent)]/40">
+                    <Icon size={26} className="text-[var(--color-gold-accent)]" />
+                  </div>
+                  <h3 className="text-base md:text-lg font-heading text-[var(--color-gold-accent)] mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="hidden md:block text-[var(--color-cream)]/80 font-light text-sm md:text-base">
+                    {item.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+          <div className="mt-8 md:mt-12" />
         </section>
 
         <section className="mb-16 md:mb-20">
@@ -143,7 +165,7 @@ function About() {
             {perkCards.map((perk, idx) => (
               <div
                 key={idx}
-                className="overflow-hidden rounded-lg group h-full flex flex-col"
+                className="art-deco-card overflow-hidden group h-full flex flex-col"
               >
                 <div className="relative h-44 md:h-56 overflow-hidden">
                   <img
@@ -154,8 +176,8 @@ function About() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-dark-navy)]/80 via-transparent to-transparent" />
                 </div>
-                <div className="bg-[var(--color-dark-navy)] bg-opacity-80 p-5 md:p-6 flex-1 flex flex-col justify-start">
-                  <h3 className="text-[var(--color-gold-accent)] font-heading mb-2 md:mb-3 text-base md:text-lg">
+                <div className="p-5 md:p-6 flex-1 flex flex-col justify-start">
+                  <h3 className="text-[var(--color-gold-accent)] font-heading mb-2 md:mb-3 text-lg md:text-xl">
                     {perk.title}
                   </h3>
                   <p className="hidden md:block text-[var(--color-cream)]/80 font-light text-sm md:text-base">
@@ -167,19 +189,18 @@ function About() {
           </div>
         </section>
 
-        <section>
-          <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 mx-auto" />
-          <div className="art-deco-container gold-texture-overlay px-8 md:px-12 py-10 md:py-12 text-center rounded-lg relative">
-            <div className="absolute inset-0 bg-[var(--color-dark-navy)]/30 rounded-lg"></div>
-            <h2 className="text-xl md:text-2xl font-heading text-[var(--color-dark-navy)] mb-3 md:mb-4 relative z-10 font-semibold">
+        <section className="mb-16 md:mb-20">
+          <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-12" />
+          <div className="art-deco-card p-10 md:p-12 text-center">
+            <h2 className="text-2xl md:text-3xl font-heading font-light text-[var(--color-gold-accent)] mb-4">
               Discover Your Space
             </h2>
-            <p className="text-[var(--color-dark-navy)] font-medium mb-6 md:mb-8 max-w-2xl mx-auto text-sm md:text-base relative z-10">
-              Explore the main room, see the gym and parking, and experience our dining venues firsthand.<span className="hidden md:inline"> Our team will tailor the visit to what matters most to you.</span>
+            <p className="text-[var(--color-cream)]/80 font-light mb-8 md:mb-10 max-w-2xl mx-auto text-base md:text-lg">
+              Explore the main room, see the gym and parking, and experience our dining venues firsthand. Our team will tailor the visit to what matters most to you.
             </p>
             <button
               onClick={() => setIsBookTourOpen(true)}
-              className="inline-block px-8 md:px-10 py-3 md:py-3 bg-[#040f2a] text-[var(--color-gold-accent)] font-heading tracking-widest hover:bg-red-600 hover:text-white transition-all duration-300 relative z-10 md:text-base px-8 py-3 sm:px-10 sm:py-4 md:px-10 md:py-3"
+              className="px-8 py-4 bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)] font-heading tracking-widest hover:bg-red-600 hover:text-white transition-all duration-300"
             >
               Book a Tour
             </button>

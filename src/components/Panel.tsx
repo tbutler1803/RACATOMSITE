@@ -14,17 +14,19 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const isVideo = imageUrl.endsWith('.mp4') || imageUrl.endsWith('.webm') || imageUrl.endsWith('.ogg');
 
-  // Laptop-only optical centering to correct slight left bias on some widths
-  const getLaptopShift = (ch: string): string => {
+  // Laptop-only optical centering and vertical alignment
+  const getLetterTransform = (ch: string, isMobileView: boolean): string => {
+    if (isMobileView) return 'none';
+    
     switch ((ch || '').toUpperCase()) {
       case 'A':
-        return '0.5%';
+        return 'translateX(0.5%)';
       case 'R':
-        return '0.4%';
+        return 'translateX(0.4%)';
       case 'C':
-        return '0.3%';
+        return 'translateX(-3%)';
       default:
-        return '0%';
+        return 'none';
     }
   };
 
@@ -150,7 +152,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
             width: '100%',
             marginBottom: isMobile ? 'clamp(0rem, 1vw, 0.5rem)' : '0',
             letterSpacing: '0em',
-            transform: isLaptop ? `translateX(${getLaptopShift(letter)})` : 'none'
+            transform: getLetterTransform(letter, isMobile)
           }}
         >
           {letter}

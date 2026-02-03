@@ -23,15 +23,19 @@ function Contact() {
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     if (params.get('section') === 'contact-information') {
-      // Wait a bit for DOM to render, then scroll
+      // Wait for DOM to render, then scroll
       const timer = setTimeout(() => {
         const element = document.getElementById('contact-information');
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          // Scroll up to get better positioning
-          window.scrollBy(0, -175);
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - 100;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
         }
-      }, 100);
+      }, 300);
       return () => clearTimeout(timer);
     }
   }, [location]);
@@ -130,34 +134,7 @@ function Contact() {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 py-14 md:py-18 text-center">
-        <section className="mb-16 md:mb-20">
-          <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 md:mb-10 mx-auto" />
-          <h2 className="text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-5 md:mb-6 tracking-wide">
-            Why Join RACA
-          </h2>
-          <p className="text-base md:text-lg text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10">
-            Membership brings the best of location, reciprocal privileges, crafted hospitality, and spaces designed for business, celebration, and wellbeing.
-          </p>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {whyJoin.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <div key={idx} className="art-deco-card p-6 md:p-8 h-full flex flex-col items-center text-center">
-                  <div className="mb-3 md:mb-4 inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full border border-[var(--color-gold-accent)]/40">
-                    <Icon size={26} className="text-[var(--color-gold-accent)]" />
-                  </div>
-                  <h3 className="text-base md:text-lg font-heading text-[var(--color-gold-accent)] mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="hidden md:block text-[var(--color-cream)]/80 font-light text-sm md:text-base">
-                    {item.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-          <div className="mt-8 md:mt-12" />
-        </section>
+
 
         <section className="mb-16 md:mb-20">
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-12" />
@@ -190,7 +167,7 @@ function Contact() {
               const Icon = info.icon;
               return (
                 <div key={idx} className="flex flex-col items-center gap-3 text-center px-4 py-5 sm:px-5 sm:py-6">
-                  <div className="p-3 bg-[var(--color-dark-navy)] bg-opacity-80 rounded-lg">
+                  <div>
                     <Icon size={18} className="text-[var(--color-gold-accent)]" />
                   </div>
                   <div className="max-w-[12rem] sm:max-w-[18rem]">
@@ -215,19 +192,19 @@ function Contact() {
                 Quick Actions
               </h2>
               <div className="space-y-4">
-                <button 
-                  onClick={() => setIsBookTourOpen(true)}
-                  className={`w-full px-6 py-4 border border-[var(--color-gold-accent)] text-[var(--color-gold-accent)] font-heading tracking-widest hover:bg-[var(--color-gold-accent)] hover:text-[var(--color-dark-navy)] transition-all duration-300 ${isBookTourOpen ? 'bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)]' : ''}`}>
-                  Book a Tour
-                </button>
                 <a 
-                  href="https://membership.raca.com.au/" 
+                  href="https://royalautomobileclubofaustralia.peoplevine.co.uk/survey/group/620" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="block w-full px-6 py-4 border border-[var(--color-gold-accent)] text-[var(--color-gold-accent)] font-heading tracking-widest hover:bg-[var(--color-gold-accent)] hover:text-[var(--color-dark-navy)] transition-all duration-300 text-center"
                 >
                   Apply Here
                 </a>
+                <button 
+                  onClick={() => setIsBookTourOpen(true)}
+                  className={`w-full px-6 py-4 border border-[var(--color-gold-accent)] text-[var(--color-gold-accent)] font-heading tracking-widest hover:bg-[var(--color-gold-accent)] hover:text-[var(--color-dark-navy)] transition-all duration-300 ${isBookTourOpen ? 'bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)]' : ''}`}>
+                  Book a Tour
+                </button>
               </div>
             </div>
 

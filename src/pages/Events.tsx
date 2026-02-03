@@ -53,7 +53,7 @@ function Events() {
       <div
         className="relative h-[70vh] md:h-screen w-full bg-cover bg-center flex items-center justify-center overflow-hidden pt-16 md:pt-20"
         style={{
-          backgroundImage: `url(${getAssetPath('/IMAGES/images/DSC_1633.jpg')})`,
+          backgroundImage: `url(${getAssetPath('/IMAGES/DSC_1595.jpg')})`,
         }}
       >
         <div
@@ -81,8 +81,8 @@ function Events() {
               const Icon = category.icon;
               return (
                 <div key={idx} className="group cursor-pointer text-center">
-                  <div className="mb-4 inline-block p-4 bg-[var(--color-dark-navy)] bg-opacity-80 rounded-lg group-hover:bg-[var(--color-gold-accent)]/10 transition-colors">
-                    <Icon size={32} className="text-[var(--color-gold-accent)]" />
+                  <div className="mb-4">
+                    <Icon size={32} className="text-[var(--color-gold-accent)] inline-block" />
                   </div>
                   <h3 className="text-lg font-heading text-[var(--color-gold-accent)] mb-2">
                     {category.title}
@@ -101,25 +101,27 @@ function Events() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-10 md:mb-12 tracking-wide px-2">
             Event Spaces
           </h2>
-          <div className="grid grid-cols-2 gap-6 md:space-y-0 md:block">
+          <div className="space-y-6 md:space-y-16 lg:space-y-20">
             {eventSpaces.map((space, idx) => (
               <div 
                 key={idx} 
-                className={`md:grid md:grid-cols-2 md:gap-6 lg:gap-8 md:items-center md:mb-10 lg:mb-12 ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+                className={`grid grid-cols-1 md:grid-cols-2 md:gap-6 lg:gap-8 md:items-center ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
               >
                 <div className={idx % 2 === 1 ? 'lg:order-2' : ''}>
-                  <LazyImage
-                    src={space.image}
-                    alt={space.name}
-                    className="w-full aspect-square md:h-64 lg:h-80 md:aspect-auto object-cover rounded-lg mb-3 md:mb-0"
-                    containerClassName="mb-3 md:mb-0"
-                  />
+                  <div className="art-deco-card overflow-hidden">
+                    <LazyImage
+                      src={space.image}
+                      alt={space.name}
+                      className="w-full aspect-square md:h-64 lg:h-80 md:aspect-auto object-cover"
+                      containerClassName=""
+                    />
+                  </div>
                 </div>
                 <div className={idx % 2 === 1 ? 'lg:order-1' : ''}>
-                  <div className="text-base md:text-sm tracking-widest text-[var(--color-gold-accent)] font-heading mb-1 md:mb-2">
+                  <div className="text-sm md:text-sm tracking-widest text-[var(--color-gold-accent)] font-heading mb-1 md:mb-2">
                     {space.capacity}
                   </div>
-                  <h3 className="text-lg md:text-3xl font-heading font-light text-[var(--color-gold-accent)] mb-2 md:mb-4">
+                  <h3 className="text-base md:text-3xl font-heading font-light text-[var(--color-gold-accent)] mb-0 md:mb-4">
                     {space.name}
                   </h3>
                   <p className="hidden md:block text-base md:text-base text-[var(--color-cream)]/80 font-light mb-3 md:mb-6">

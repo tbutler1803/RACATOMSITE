@@ -93,7 +93,7 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         style={{
-          backgroundImage: `url(${getAssetPath('/textures/BLUEBG.png')})`,
+          backgroundImage: `url(${getAssetPath('/textures/kseniya-lapteva-A4rqd2g-eLo-unsplash.png')})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
