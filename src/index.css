@@ -169,10 +169,10 @@ body {
   isolation: isolate; /* ensure blend overlays interact with body only */
 }
 
-/* Fix mobile background - keep parallax but stretch to fill viewport without zooming */
+/* Fix mobile background - keep parallax and use cover for better aspect ratio */
 @media (max-width: 1024px) {
   body {
-    background-size: 100% 100%;
+    background-size: cover;
   }
 }
 

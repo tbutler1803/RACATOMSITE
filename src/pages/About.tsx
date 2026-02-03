@@ -85,7 +85,7 @@ function About() {
               <h3 className="text-xl sm:text-2xl md:text-3xl font-heading text-[var(--color-gold-accent)] mb-3">
                 Innovation is in our DNA
               </h3>
-              <p className="text-base md:text-lg text-[var(--color-cream)]/90 font-light mb-3 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)]/90 font-light mb-3 leading-relaxed">
                 Welcome to the Royal Automobile Club of Australia, where innovation takes the driver's seat. We don't just cruise on legacy; we strive for progression. Our historic Macquarie Street location is a testament to our rich heritage, a true landmark in motoring excellence.
               </p>
               <p className="hidden md:block text-base md:text-lg text-[var(--color-cream)]/90 font-light leading-relaxed">
@@ -98,7 +98,7 @@ function About() {
                 <h3 className="text-lg md:text-xl font-heading text-[var(--color-gold-accent)] mb-2">
                   Heritage & Prestige
                 </h3>
-                <p className="text-base text-[var(--color-cream)]/80 font-light">
+                <p className="text-sm sm:text-base md:text-base text-[var(--color-cream)]/80 font-light">
                   Over 120 years of automotive excellence and club traditions.
                 </p>
               </div>
@@ -107,7 +107,7 @@ function About() {
                 <h3 className="text-lg md:text-xl font-heading text-[var(--color-gold-accent)] mb-2">
                   Premium Location
                 </h3>
-                <p className="text-base text-[var(--color-cream)]/80 font-light">
+                <p className="text-sm sm:text-base md:text-base text-[var(--color-cream)]/80 font-light">
                   Centrally positioned at Circular Quay, with direct transport access and moments from Sydney Airport.
                 </p>
               </div>
@@ -116,7 +116,7 @@ function About() {
                 <h3 className="text-lg md:text-xl font-heading text-[var(--color-gold-accent)] mb-2">
                   Progressive Spirit
                 </h3>
-                <p className="text-base text-[var(--color-cream)]/80 font-light">
+                <p className="text-sm sm:text-base md:text-base text-[var(--color-cream)]/80 font-light">
                   Connecting motoring enthusiasts with industry leaders and emerging technology.
                 </p>
               </div>
@@ -143,7 +143,7 @@ function About() {
                   <h3 className="text-base md:text-lg font-heading text-[var(--color-gold-accent)] mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-sm sm:text-base md:text-base text-[var(--color-cream)]/80 font-light">
+                  <p className="hidden md:block text-sm md:text-base text-[var(--color-cream)]/80 font-light">
                     {item.description}
                   </p>
                 </div>
@@ -177,7 +177,7 @@ function About() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-dark-navy)]/80 via-transparent to-transparent" />
                 </div>
                 <div className="p-5 md:p-6 flex-1 flex flex-col justify-start">
-                  <h3 className="text-[var(--color-gold-accent)] font-heading mb-2 md:mb-3 text-lg md:text-xl">
+                  <h3 className="text-[var(--color-gold-accent)] font-heading mb-2 md:mb-3 text-base md:text-xl">
                     {perk.title}
                   </h3>
                   <p className="hidden md:block text-[var(--color-cream)]/80 font-light text-sm md:text-base">
@@ -195,7 +195,7 @@ function About() {
             <h2 className="text-2xl md:text-3xl font-heading font-light text-[var(--color-gold-accent)] mb-4">
               Discover Your Space
             </h2>
-            <p className="text-[var(--color-cream)]/80 font-light mb-8 md:mb-10 max-w-2xl mx-auto text-base md:text-lg">
+            <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)]/80 font-light mb-8 md:mb-10 max-w-2xl mx-auto">
               Explore the main room, see the gym and parking, and experience our dining venues firsthand. Our team will tailor the visit to what matters most to you.
             </p>
             <button
