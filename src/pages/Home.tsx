@@ -49,7 +49,7 @@ function Home() {
   };
 
   return (
-    <div className="relative min-h-[100dvh] h-[100svh] w-screen overflow-hidden flex flex-col lg:flex-row">
+    <div className="relative h-[100dvh] w-screen overflow-hidden flex flex-col lg:flex-row">
       <Header />
       {panels.map((panel, index) => (
         <Panel

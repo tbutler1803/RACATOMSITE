@@ -16,9 +16,20 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
 
   // Laptop-only optical centering and vertical alignment
   const getLetterTransform = (ch: string, isMobileView: boolean): string => {
-    if (isMobileView) return 'none';
+    const upperChar = (ch || '').toUpperCase();
     
-    switch ((ch || '').toUpperCase()) {
+    if (isMobileView) {
+      // Mobile adjustments for better centering
+      switch (upperChar) {
+        case 'C':
+          return 'translateX(-2%)';
+        default:
+          return 'none';
+      }
+    }
+    
+    // Desktop adjustments
+    switch (upperChar) {
       case 'A':
         return 'translateX(0.5%)';
       case 'R':
@@ -88,7 +99,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
 
   return (
     <div
-      className="relative flex-1 cursor-pointer overflow-hidden group min-h-[23vh] lg:min-h-0"
+      className="relative flex-1 cursor-pointer overflow-hidden group"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onClick={onClick}
@@ -99,7 +110,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
           ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-out"
           style={{ 
-            opacity: isMobile ? 0.45 : (isHovered ? 0.75 : 0.001),
+            opacity: isMobile ? (isHovered ? 1 : 0) : (isHovered ? 0.75 : 0.001),
             pointerEvents: 'none',
             visibility: 'visible'
           }}
@@ -120,7 +131,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-out"
           style={{
-            opacity: isMobile ? 0.45 : (isHovered ? 0.75 : 0)
+            opacity: isMobile ? (isHovered ? 1 : 0) : (isHovered ? 0.75 : 0)
           }}
         />
       )}

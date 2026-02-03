@@ -132,8 +132,9 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
             </div>
 
             {/* Right Side - Form */}
-            <div className="p-3 sm:p-5 md:p-8">
-              <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+            <div className="p-3 sm:p-5 md:p-8 relative bg-cover bg-center" style={{ backgroundImage: `url(${getAssetPath('/textures/kseniya-lapteva-A4rqd2g-eLo-unsplash.png')})` }}>
+              <div className="absolute inset-0 bg-[var(--color-dark-navy)]/95"></div>
+              <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 relative z-10">
                 <div className="grid grid-cols-2 gap-2 md:gap-4">
                   <div>
                     <label className="text-[var(--color-gold-accent)] font-heading text-[11px] tracking-widest block mb-2">
