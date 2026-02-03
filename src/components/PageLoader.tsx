@@ -8,10 +8,7 @@ interface PageLoaderProps {
 
 function PageLoader({ isLoading }: PageLoaderProps) {
   useEffect(() => {
-    // Only prevent scrolling on desktop for smoother mobile experience
-    const isMobile = window.innerWidth <= 768;
-    
-    if (isLoading && !isMobile) {
+    if (isLoading) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
