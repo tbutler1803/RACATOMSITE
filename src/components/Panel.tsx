@@ -97,11 +97,34 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
     }
   };
 
+  // Handle touch events for mobile
+  const handleTouchStart = () => {
+    setIsHovered(true);
+    if (videoRef.current && isVideo) {
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Autoplay failed
+        });
+      }
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsHovered(false);
+    if (videoRef.current && isVideo) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  };
+
   return (
     <div
       className="relative flex-1 cursor-pointer overflow-hidden group"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
       onClick={onClick}
     >
       {/* Background media - video or image */}
