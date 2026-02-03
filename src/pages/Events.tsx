@@ -1,10 +1,13 @@
 import Header from '../components/Header';
 import ArtDecoDivider from '../components/ArtDecoDivider';
 import LazyImage from '../components/LazyImage';
+import BookTourModal from '../components/BookTourModal';
 import { getAssetPath } from '../utils/paths';
 import { Calendar, Users, Music, Wine, Award, ChevronRight } from 'lucide-react';
+import { useState } from 'react';
 
 function Events() {
+  const [isBookTourOpen, setIsBookTourOpen] = useState(false);
   const eventSpaces = [
     {
       name: 'Grand Ballroom',
@@ -157,14 +160,14 @@ function Events() {
               >
                 Book Your Event
               </a>
-              <a
-                href="/contact"
-                className="px-8 py-4 bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)] font-heading tracking-widest hover:bg-red-600 hover:text-white transition-all duration-300 text-center"
+              <button
+                onClick={() => setIsBookTourOpen(true)}
+                className="px-8 py-4 bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)] font-heading tracking-widest hover:bg-red-600 hover:text-white transition-all duration-300 text-center cursor-pointer"
               >
                 Book a Tour
-              </a>
+              </button>
               <a
-                href="tel:+61292571711"
+                href="/#/contact?section=contact-information"
                 className="px-8 py-4 bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)] font-heading tracking-widest hover:bg-red-600 hover:text-white transition-all duration-300 text-center"
               >
                 Contact Info
@@ -175,6 +178,11 @@ function Events() {
 
         <section />
       </div>
+
+      <BookTourModal 
+        isOpen={isBookTourOpen} 
+        onClose={() => setIsBookTourOpen(false)}
+      />
     </div>
   );
 }
