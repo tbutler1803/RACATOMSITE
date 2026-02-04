@@ -74,7 +74,7 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
         />
       )}
       
-      <div className="fixed inset-0 z-50 flex items-start md:items-center justify-center p-2 sm:p-4 pt-16 sm:pt-20 md:pt-6 lg:pt-8 pointer-events-none" onClick={onClose}>
+      <div className="fixed inset-0 z-50 flex items-start md:items-center justify-center p-2 sm:p-4 pt-24 sm:pt-24 md:pt-6 lg:pt-8 pointer-events-none" onClick={onClose}>
         <div 
           className={`relative bg-[var(--color-dark-navy)] border-2 border-[var(--color-gold-accent)] w-full max-w-[96%] sm:max-w-[640px] md:w-full md:max-w-3xl lg:max-w-5xl rounded-lg max-h-[88svh] sm:max-h-[90vh] md:max-h-[92vh] overflow-y-auto shadow-2xl transition-all duration-500 ease-out pointer-events-auto ${isAnimating ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
           onClick={(e) => e.stopPropagation()}
@@ -93,38 +93,38 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
               <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 to-gray-900/70"></div>
               <div className="relative z-10">
                 <h2 className="text-[26px] sm:text-3xl md:text-4xl font-heading text-[var(--color-gold-accent)] mb-2 sm:mb-4 md:mb-5 tracking-wide">
-                  BOOK A<br />CLUB TOUR
+                  BOOK A CLUB TOUR<br className="hidden sm:inline" />
                 </h2>
-                <p className="text-[var(--color-cream)] font-light leading-relaxed mb-3 sm:mb-5 md:mb-7 text-[12px] sm:text-sm md:text-base">
+                <p className="hidden sm:block text-[var(--color-cream)] font-light leading-relaxed mb-3 sm:mb-5 md:mb-7 text-sm md:text-base">
                   We're ready to show you around. Fill out the form and we'll be in touch to arrange your private tour.
                 </p>
               </div>
 
               <div className="space-y-4 sm:space-y-5 md:space-y-7 relative z-10">
                 <div>
-                  <h3 className="text-[var(--color-gold-accent)] font-heading text-[10px] sm:text-[11px] md:text-sm tracking-widest mb-2 uppercase">
+                  <h3 className="text-[var(--color-gold-accent)] font-heading text-xs sm:text-[11px] md:text-sm tracking-widest mb-2 uppercase">
                     Address
                   </h3>
-                  <p className="text-[var(--color-cream)] font-light text-[11px] sm:text-xs md:text-sm leading-relaxed">
-                    89 Macquarie Street<br />
-                    Sydney NSW 2000, Australia
+                  <p className="text-[var(--color-cream)] font-light text-sm sm:text-xs md:text-sm leading-relaxed">
+                    89 Macquarie Street,<br className="hidden sm:inline" />
+                    <span className="sm:hidden"> </span>Sydney, NSW 2000, Australia
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-[var(--color-gold-accent)] font-heading text-[10px] sm:text-[11px] md:text-sm tracking-widest mb-2 uppercase">
+                  <h3 className="text-[var(--color-gold-accent)] font-heading text-xs sm:text-[11px] md:text-sm tracking-widest mb-2 uppercase">
                     Contact
                   </h3>
-                  <p className="text-[var(--color-cream)] font-light text-[11px] sm:text-xs md:text-sm leading-relaxed">
+                  <p className="text-[var(--color-cream)] font-light text-sm sm:text-xs md:text-sm leading-relaxed">
                     +61 (02) 8273 2300 · ambassador@raca.com.au
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-[var(--color-gold-accent)] font-heading text-[10px] sm:text-[11px] md:text-sm tracking-widest mb-2 uppercase">
+                  <h3 className="text-[var(--color-gold-accent)] font-heading text-xs sm:text-[11px] md:text-sm tracking-widest mb-2 uppercase">
                     Hours
                   </h3>
-                  <p className="text-[var(--color-cream)] font-light text-[11px] sm:text-xs md:text-sm leading-relaxed">
+                  <p className="text-[var(--color-cream)] font-light text-sm sm:text-xs md:text-sm leading-relaxed">
                     Club Reception is accessible 24 hours, 7 days a week
                   </p>
                 </div>
@@ -137,7 +137,7 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
               <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 relative z-10">
                 <div className="grid grid-cols-2 gap-2 md:gap-4">
                   <div>
-                    <label className="text-[var(--color-gold-accent)] font-heading text-[11px] tracking-widest block mb-2">
+                    <label className="text-[var(--color-gold-accent)] font-heading text-xs tracking-widest block mb-2">
                       FIRST NAME <span className="text-red-400">*</span>
                     </label>
                     <input
@@ -150,7 +150,7 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
                     />
                   </div>
                   <div>
-                    <label className="text-[var(--color-gold-accent)] font-heading text-[11px] tracking-widest block mb-2">
+                    <label className="text-[var(--color-gold-accent)] font-heading text-xs tracking-widest block mb-2">
                       LAST NAME <span className="text-red-400">*</span>
                     </label>
                     <input
@@ -165,7 +165,7 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
                 </div>
 
                 <div>
-                  <label className="text-[var(--color-gold-accent)] font-heading text-[11px] tracking-widest block mb-2">
+                  <label className="text-[var(--color-gold-accent)] font-heading text-xs tracking-widest block mb-2">
                     EMAIL <span className="text-red-400">*</span>
                   </label>
                   <input
@@ -179,7 +179,7 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
                 </div>
 
                 <div>
-                  <label className="text-[var(--color-gold-accent)] font-heading text-[11px] tracking-widest block mb-2">
+                  <label className="text-[var(--color-gold-accent)] font-heading text-xs tracking-widest block mb-2">
                     MESSAGE <span className="text-red-400">*</span>
                   </label>
                   <textarea

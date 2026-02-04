@@ -154,7 +154,8 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-out"
           style={{
-            opacity: isMobile ? (isHovered ? 1 : 0) : (isHovered ? 0.75 : 0)
+            opacity: isMobile ? (isHovered ? 1 : 0) : (isHovered ? 0.75 : 0),
+            objectPosition: (isMobile && letter === 'R') ? 'bottom' : 'center'
           }}
         />
       )}
