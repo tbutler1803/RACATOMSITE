@@ -76,7 +76,7 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
       
       <div className="fixed inset-0 z-50 flex items-start md:items-center justify-center p-2 sm:p-4 pt-24 sm:pt-24 md:pt-6 lg:pt-8 pointer-events-none" onClick={onClose}>
         <div 
-          className={`relative bg-[var(--color-dark-navy)] border-2 border-[var(--color-gold-accent)] w-full max-w-[96%] sm:max-w-[640px] md:w-full md:max-w-3xl lg:max-w-5xl rounded-lg max-h-[88svh] sm:max-h-[90vh] md:max-h-[92vh] overflow-y-auto shadow-2xl transition-all duration-500 ease-out pointer-events-auto ${isAnimating ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+          className={`relative bg-[var(--color-dark-navy)] border-2 border-[var(--color-gold-accent)] w-full max-w-[96%] sm:max-w-[640px] md:w-full md:max-w-3xl lg:max-w-5xl rounded-lg max-h-[70svh] sm:max-h-[75svh] md:max-h-[92vh] overflow-y-auto shadow-2xl transition-all duration-500 ease-out pointer-events-auto ${isAnimating ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
           onClick={(e) => e.stopPropagation()}
         >
           {/* Close Button */}
