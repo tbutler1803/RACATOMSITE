@@ -178,14 +178,16 @@ body {
   background-repeat: no-repeat;
 }
 
-/* Fix mobile background - keep parallax and use cover for better aspect ratio */
+/* Fix mobile background - remove fixed attachment for better mobile compatibility */
 @media (max-width: 1024px) {
   body {
     background-size: cover;
+    background-attachment: scroll;
   }
   
   .page-textured-bg {
     background-size: cover;
+    background-attachment: scroll;
   }
 }
 
