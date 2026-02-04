@@ -181,12 +181,12 @@ body {
 /* Fix mobile background - remove fixed attachment for better mobile compatibility */
 @media (max-width: 1024px) {
   body {
-    background-size: cover;
+    background-size: 100% 100%;
     background-attachment: scroll;
   }
   
   .page-textured-bg {
-    background-size: cover;
+    background-size: 100% 100%;
     background-attachment: scroll;
   }
 }
