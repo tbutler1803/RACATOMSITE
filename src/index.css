@@ -178,42 +178,45 @@ body {
   background-repeat: no-repeat;
 }
 
-/* Fix mobile background - use repeat with controlled size and blend seams */
-@media (max-width: 1024px) {
+/* iPad background (tablet sizes) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    background-image: url('/textures/IpadBG.jpg');
+    background-size: cover;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+  }
+  
+  .page-textured-bg {
+    background-image: url('/textures/IpadBG.jpg');
+    background-size: cover;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+  }
+}
+
+/* Phone background (mobile sizes) */
+@media (max-width: 767px) {
   body {
     background-image: url('/textures/PhoneBG.jpg');
-    background-size: 100vw auto;
+    background-size: cover;
     background-attachment: scroll;
-    background-repeat: repeat-y;
+    background-repeat: no-repeat;
+    background-position: center;
     position: relative;
   }
   
   .page-textured-bg {
     background-image: url('/textures/PhoneBG.jpg');
-    background-size: 100vw auto;
+    background-size: cover;
     background-attachment: scroll;
-    background-repeat: repeat-y;
+    background-repeat: no-repeat;
+    background-position: center;
     position: relative;
-  }
-  
-  /* Add a subtle gradient overlay to blend seams */
-  .page-textured-bg::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: repeating-linear-gradient(
-      to bottom,
-      transparent 0,
-      transparent calc(100vw * 1.5 - 80px),
-      rgba(10, 21, 48, 0.15) calc(100vw * 1.5 - 40px),
-      rgba(10, 21, 48, 0.15) calc(100vw * 1.5 + 40px),
-      transparent calc(100vw * 1.5 + 80px)
-    );
-    pointer-events: none;
-    z-index: 0;
   }
 }
 
