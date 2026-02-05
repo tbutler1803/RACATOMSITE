@@ -49,9 +49,9 @@ function Home() {
   };
 
   return (
-    <div className="relative w-screen flex flex-col lg:flex-row lg:h-[100dvh] lg:overflow-hidden">
+    <div className="relative h-[100dvh] w-screen overflow-hidden flex flex-col lg:flex-row">
       <Header />
-      <div className="flex flex-1 flex-col lg:flex-row min-h-screen lg:min-h-0 lg:h-full">
+      <div className="flex flex-1 flex-col lg:flex-row">
         {panels.map((panel, index) => (
           <Panel
             key={`${panel.letter}-${index}`}
