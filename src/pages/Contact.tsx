@@ -113,27 +113,28 @@ function Contact() {
     <div className="min-h-screen text-[var(--color-cream)] overflow-x-hidden">
       <Header />
 
-      <div
-        className="relative h-[70vh] md:h-screen w-full bg-cover bg-center flex items-center justify-center overflow-hidden pt-16 md:pt-20"
-        style={{
-          backgroundImage: `url(${getAssetPath('/IMAGES/RACA%20Rooftop/RACA%20Rooftop/DSC00146.JPG')})`,
-        }}
-      >
+      <div>
         <div
-          className="absolute inset-0"
-          style={{ backgroundColor: 'rgba(4, 15, 42, 0.85)' }}
-        />
-        <div className="relative z-10 text-center px-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-light text-[var(--color-gold-accent)] mb-3 md:mb-4 tracking-wide leading-tight">
-            MEMBERSHIP APPLICATIONS & CONTACT
-          </h1>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2">
-            Join our community or get in touch with us today
-          </p>
+          className="relative h-[70vh] md:h-screen w-full bg-cover bg-center flex items-center justify-center overflow-hidden pt-16 md:pt-20"
+          style={{
+            backgroundImage: `url(${getAssetPath('/IMAGES/RACA%20Rooftop/RACA%20Rooftop/DSC00146.JPG')})`,
+          }}
+        >
+          <div
+            className="absolute inset-0"
+            style={{ backgroundColor: 'rgba(4, 15, 42, 0.85)' }}
+          />
+          <div className="relative z-10 text-center px-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-light text-[var(--color-gold-accent)] mb-3 md:mb-4 tracking-wide leading-tight">
+              MEMBERSHIP APPLICATIONS & CONTACT
+            </h1>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2">
+              Join our community or get in touch with us today
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div className="max-w-6xl mx-auto px-6 py-14 md:py-18 text-center">
+        <div className="max-w-6xl mx-auto px-6 py-14 md:py-18 text-center">
 
 
         <section className="mb-16 md:mb-20">
@@ -201,6 +202,7 @@ function Contact() {
                   Apply Here
                 </a>
                 <button 
+                  type="button"
                   onClick={() => setIsBookTourOpen(true)}
                   className={`w-full px-6 py-4 border border-[var(--color-gold-accent)] text-[var(--color-gold-accent)] font-heading tracking-widest hover:bg-[var(--color-gold-accent)] hover:text-[var(--color-dark-navy)] transition-all duration-300 ${isBookTourOpen ? 'bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)]' : ''}`}>
                   Book a Tour
@@ -213,8 +215,10 @@ function Contact() {
                 Send us a Message
               </h2>
               <form onSubmit={handleSubmit} className="space-y-4">
+                <label htmlFor="contact-name" className="sr-only">Your Name</label>
                 <input
                   type="text"
+                  id="contact-name"
                   name="name"
                   placeholder="Your Name"
                   value={formData.name}
@@ -222,8 +226,10 @@ function Contact() {
                   required
                   className="w-full bg-[var(--color-dark-navy)] bg-opacity-80 border border-[var(--color-gold-accent)]/20 px-4 py-3 text-[var(--color-cream)] placeholder-gray-500 font-light focus:border-[var(--color-gold-accent)] focus:outline-none transition-colors text-left"
                 />
+                <label htmlFor="contact-email" className="sr-only">Email Address</label>
                 <input
                   type="email"
+                  id="contact-email"
                   name="email"
                   placeholder="Email Address"
                   value={formData.email}
@@ -231,16 +237,20 @@ function Contact() {
                   required
                   className="w-full bg-[var(--color-dark-navy)] bg-opacity-80 border border-[var(--color-gold-accent)]/20 px-4 py-3 text-[var(--color-cream)] placeholder-gray-500 font-light focus:border-[var(--color-gold-accent)] focus:outline-none transition-colors text-left"
                 />
+                <label htmlFor="contact-phone" className="sr-only">Phone (optional)</label>
                 <input
                   type="tel"
+                  id="contact-phone"
                   name="phone"
                   placeholder="Phone (optional)"
                   value={formData.phone}
                   onChange={handleInputChange}
                   className="w-full bg-[var(--color-dark-navy)] bg-opacity-80 border border-[var(--color-gold-accent)]/20 px-4 py-3 text-[var(--color-cream)] placeholder-gray-500 font-light focus:border-[var(--color-gold-accent)] focus:outline-none transition-colors text-left"
                 />
+                <label htmlFor="contact-message" className="sr-only">Your Message</label>
                 <textarea
                   name="message"
+                  id="contact-message"
                   placeholder="Your Message"
                   value={formData.message}
                   onChange={handleInputChange}
@@ -284,6 +294,7 @@ function Contact() {
             />
           </div>
         </section>
+        </div>
       </div>
 
       <BookTourModal 

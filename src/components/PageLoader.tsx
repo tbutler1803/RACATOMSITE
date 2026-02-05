@@ -22,7 +22,7 @@ function PageLoader({ isLoading }: PageLoaderProps) {
   if (!isLoading) return null;
 
   return (
-    <div className="page-loader-overlay">
+    <div className="page-loader-overlay" role="status" aria-live="polite">
       <div className="page-loader-container">
         <img
           src={getAssetPath('/Steering-Wheel-Loader.png')}

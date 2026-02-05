@@ -63,6 +63,7 @@ function Header() {
       ) : (
         <div className="flex items-center gap-4">
           <button
+            type="button"
             onClick={handleBackClick}
             className="flex items-center gap-2 text-[var(--color-gold-accent)] hover:opacity-70 transition-opacity"
           >

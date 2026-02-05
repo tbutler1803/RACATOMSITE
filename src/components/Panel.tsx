@@ -119,8 +119,10 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
   };
 
   return (
-    <div
-      className="relative flex-1 cursor-pointer overflow-hidden group"
+    <button
+      type="button"
+      aria-label={label}
+      className="relative flex-1 cursor-pointer overflow-hidden group text-left bg-transparent border-0 p-0"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onTouchStart={handleTouchStart}
@@ -137,6 +139,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
             pointerEvents: 'none',
             visibility: 'visible'
           }}
+          aria-hidden="true"
           autoPlay={isMobile || isHovered}
           loop
           muted
@@ -227,6 +230,8 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
               className="block w-full"
               preserveAspectRatio="xMidYMid meet"
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              focusable="false"
               // Height scales with viewport but capped to keep proportion with subheader
               style={{ 
                 color: 'var(--color-gold-accent)',
@@ -286,7 +291,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
       </div>
 
       {/* removed vertical separator between panels */}
-    </div>
+    </button>
   );
 }
 

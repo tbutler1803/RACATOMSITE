@@ -17,10 +17,13 @@ function MembershipCard({ name, price, description, highlights }: MembershipCard
   };
 
   return (
-    <div
-      className="h-56 md:h-72 cursor-pointer group"
+    <button
+      type="button"
+      className="h-56 md:h-72 cursor-pointer group text-left bg-transparent border-0 p-0"
       style={{ perspective: '1200px' }}
       onClick={handleClick}
+      aria-pressed={isFlipped}
+      aria-label={`${name} membership details`}
     >
       <div
         className="relative w-full h-full transition-transform duration-700 ease-in-out"
@@ -131,7 +134,7 @@ function MembershipCard({ name, price, description, highlights }: MembershipCard
           </div>
         </div>
       </div>
-    </div>
+    </button>
   );
 }
 

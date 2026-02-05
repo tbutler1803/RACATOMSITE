@@ -53,27 +53,28 @@ function About() {
     <div className="min-h-screen text-[var(--color-cream)] overflow-x-hidden">
       <Header />
 
-      <div
-        className="relative h-[70vh] md:h-screen w-full bg-cover bg-center flex items-center justify-center overflow-hidden pt-16 md:pt-20"
-        style={{
-          backgroundImage: `url(${getAssetPath('/IMAGES/DSC_1641.jpg')})`,
-        }}
-      >
+      <div>
         <div
-          className="absolute inset-0"
-          style={{ backgroundColor: 'rgba(4, 15, 42, 0.85)' }}
-        />
-        <div className="relative z-10 text-center px-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-light text-[var(--color-gold-accent)] mb-3 md:mb-4 tracking-wide leading-tight">
-            ABOUT US
-          </h1>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2">
-            Founded in 1903, RACA is Australia's first automobile club and a symbol of motoring prestige.
-          </p>
+          className="relative h-[70vh] md:h-screen w-full bg-cover bg-center flex items-center justify-center overflow-hidden pt-16 md:pt-20"
+          style={{
+            backgroundImage: `url(${getAssetPath('/IMAGES/DSC_1641.jpg')})`,
+          }}
+        >
+          <div
+            className="absolute inset-0"
+            style={{ backgroundColor: 'rgba(4, 15, 42, 0.85)' }}
+          />
+          <div className="relative z-10 text-center px-4">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-light text-[var(--color-gold-accent)] mb-3 md:mb-4 tracking-wide leading-tight">
+              ABOUT US
+            </h1>
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2">
+              Founded in 1903, RACA is Australia's first automobile club and a symbol of motoring prestige.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div className="max-w-6xl mx-auto px-6 py-14 md:py-18 text-center">
+        <div className="max-w-6xl mx-auto px-6 py-14 md:py-18 text-center">
         <section className="mb-16 md:mb-20">
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 md:mb-10 mx-auto" />
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-6 md:mb-8 tracking-wide px-2">
@@ -199,6 +200,7 @@ function About() {
               Explore the main room, see the gym and parking, and experience our dining venues firsthand. Our team will tailor the visit to what matters most to you.
             </p>
             <button
+              type="button"
               onClick={() => setIsBookTourOpen(true)}
               className="px-8 py-4 bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)] font-heading tracking-widest hover:bg-red-600 hover:text-white transition-all duration-300"
             >
@@ -206,6 +208,7 @@ function About() {
             </button>
           </div>
         </section>
+        </div>
       </div>
 
       <BookTourModal

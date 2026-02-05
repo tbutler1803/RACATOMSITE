@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { X, Instagram, Facebook } from 'lucide-react';
 import { getAssetPath } from '../utils/paths';
@@ -10,6 +10,8 @@ interface HamburgerMenuProps {
 function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const menuRef = useRef<HTMLDivElement>(null);
+  const previouslyFocusedRef = useRef<HTMLElement | null>(null);
 
   const menuItems = [
     { label: 'HOME', path: '/' },
@@ -19,10 +21,19 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
     { label: 'MEMBERSHIP LOGIN', path: 'http://raca.k8.membershiphouse.com/login' }
   ];
 
+  const toggleMenu = useCallback((next: boolean) => {
+    setIsOpen(next);
+    window.dispatchEvent(new CustomEvent('hamburger-toggle', { detail: { isOpen: next } }));
+    if (next && onOpen) {
+      onOpen();
+    }
+  }, [onOpen]);
+
   useEffect(() => {
     if (isOpen) {
       document.documentElement.style.overflow = 'hidden';
       document.body.style.overflow = 'hidden';
+      previouslyFocusedRef.current = document.activeElement as HTMLElement | null;
     } else {
       document.documentElement.style.overflow = 'unset';
       document.body.style.overflow = 'unset';
@@ -34,6 +45,56 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const menu = menuRef.current;
+    if (!menu) return;
+
+    const focusableSelectors = [
+      'a[href]',
+      'button:not([disabled])',
+      'textarea',
+      'input',
+      'select',
+      '[tabindex]:not([tabindex="-1"])'
+    ].join(',');
+
+    const focusableElements = Array.from(
+      menu.querySelectorAll<HTMLElement>(focusableSelectors)
+    );
+
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    firstElement?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        toggleMenu(false);
+        return;
+      }
+
+      if (event.key !== 'Tab' || focusableElements.length === 0) return;
+
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault();
+        lastElement?.focus();
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault();
+        firstElement?.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      previouslyFocusedRef.current?.focus();
+    };
+  }, [isOpen, toggleMenu]);
+
   const handleNavigate = (path: string) => {
     if (path.startsWith('http')) {
       window.open(path, '_blank');
@@ -43,21 +104,16 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
     setIsOpen(false);
   };
 
-  const toggleMenu = (next: boolean) => {
-    setIsOpen(next);
-    window.dispatchEvent(new CustomEvent('hamburger-toggle', { detail: { isOpen: next } }));
-    if (next && onOpen) {
-      onOpen();
-    }
-  };
-
   return (
     <>
       {/* Animated hamburger button */}
       <button
+        type="button"
         onClick={() => toggleMenu(!isOpen)}
         className="relative p-3 text-[var(--color-gold-accent)] transition-all duration-300 group rounded-full border-2 border-[var(--color-gold-accent)] hover:border-[var(--color-cream)] hover:bg-[var(--color-cream)]/5"
         aria-label={isOpen ? 'Close menu' : 'Open menu'}
+        aria-expanded={isOpen}
+        aria-controls="site-menu"
       >
         <div className="w-7 h-5 relative flex flex-col justify-between">
           <span 
@@ -84,14 +140,21 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
           className="fixed inset-0 backdrop-veil z-40 transition-opacity duration-300"
           onClick={() => toggleMenu(false)}
           style={{ touchAction: 'none', overscrollBehavior: 'none' }}
+          aria-hidden="true"
         />
       )}
 
       {/* Side panel menu with textured navy background and large decorative logo */}
       <div
+        id="site-menu"
         className={`fixed top-0 right-0 left-auto w-[72vw] sm:w-[320px] md:w-[400px] z-50 transform transition-all duration-500 ease-in-out flex flex-col overflow-hidden border-l-2 border-[var(--color-gold-accent)]/30 shadow-[0_0_50px_rgba(223,189,114,0.25)] ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
+        role="dialog"
+        aria-modal="true"
+        aria-hidden={!isOpen}
+        aria-label="Site menu"
+        ref={menuRef}
         style={{
           backgroundImage: `url(${getAssetPath('/textures/kseniya-lapteva-A4rqd2g-eLo-unsplash.png')})`,
           backgroundSize: 'cover',
@@ -117,8 +180,10 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
         <div className="relative z-10 px-6 py-6 border-b border-[var(--color-gold-accent)]/20">
           <div className="flex items-center justify-end">
             <button
+              type="button"
               onClick={() => toggleMenu(false)}
               className="text-[var(--color-gold-accent)] hover:text-[var(--color-gold-light)] transition-all duration-300 hover:rotate-90"
+              aria-label="Close menu"
             >
               <X size={30} strokeWidth={1.5} />
             </button>
@@ -126,7 +191,7 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
         </div>
 
         {/* Menu items with stagger animation */}
-        <nav className="relative z-10 flex-1 flex flex-col justify-center py-6 px-6 overflow-y-auto">
+        <nav className="relative z-10 flex-1 flex flex-col justify-center py-6 px-6 overflow-y-auto" aria-label="Main navigation">
           {menuItems.map((item, index) => (
             <div
               key={item.path}
@@ -136,6 +201,7 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
               style={{ transitionDelay: isOpen ? `${index * 50}ms` : '0ms' }}
             >
               <button
+                type="button"
                 onClick={() => handleNavigate(item.path)}
                 className="group w-full text-left px-6 py-4 text-[var(--color-gold-accent)] font-heading text-xl md:text-[28px] tracking-[0.24em] transition-all duration-300 relative"
               >

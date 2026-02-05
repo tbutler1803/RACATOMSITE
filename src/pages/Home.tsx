@@ -51,15 +51,17 @@ function Home() {
   return (
     <div className="relative h-[100dvh] w-screen overflow-hidden flex flex-col lg:flex-row">
       <Header />
-      {panels.map((panel, index) => (
-        <Panel
-          key={`${panel.letter}-${index}`}
-          letter={panel.letter}
-          label={panel.label}
-          imageUrl={panel.imageUrl}
-          onClick={() => handlePanelClick(panel.path)}
-        />
-      ))}
+      <div className="flex flex-1 flex-col lg:flex-row">
+        {panels.map((panel, index) => (
+          <Panel
+            key={`${panel.letter}-${index}`}
+            letter={panel.letter}
+            label={panel.label}
+            imageUrl={panel.imageUrl}
+            onClick={() => handlePanelClick(panel.path)}
+          />
+        ))}
+      </div>
     </div>
   );
 }
