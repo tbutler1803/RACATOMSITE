@@ -17,6 +17,7 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [isAnimating, setIsAnimating] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isIPad, setIsIPad] = useState(false);
   const dialogRef = useRef<HTMLDivElement>(null);
   const previouslyFocusedRef = useRef<HTMLElement | null>(null);
 
@@ -41,6 +42,13 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
     window.addEventListener('close-modals', handleCloseModals);
     return () => window.removeEventListener('close-modals', handleCloseModals);
   }, [isOpen, onClose]);
+
+  // Detect iPad devices
+  useEffect(() => {
+    const ua = navigator.userAgent;
+    const isIPadDevice = /iPad|Mac/.test(ua) && 'ontouchstart' in window;
+    setIsIPad(isIPadDevice);
+  }, []);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -128,7 +136,11 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
         />
       )}
       
-      <div className="fixed inset-0 z-50 flex items-start md:items-center justify-center p-2 sm:p-4 pt-20 pb-4 sm:pt-24 sm:pb-4 md:pt-6 lg:pt-8 pointer-events-none" onClick={onClose}>
+      <div 
+        className="fixed inset-0 z-50 flex items-start md:items-center justify-center p-2 sm:p-4 pt-20 pb-4 sm:pt-24 sm:pb-4 md:pt-6 lg:pt-8 pointer-events-none" 
+        onClick={onClose}
+        style={isIPad ? { paddingTop: '8rem' } : undefined}
+      >
         <div 
           className={`relative bg-[var(--color-dark-navy)] border-2 border-[var(--color-gold-accent)] w-full max-w-[96%] sm:max-w-[640px] md:w-full md:max-w-3xl lg:max-w-5xl rounded-lg max-h-full overflow-y-auto shadow-2xl transition-all duration-500 ease-out pointer-events-auto ${isAnimating ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
           onClick={(e) => e.stopPropagation()}

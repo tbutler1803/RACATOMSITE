@@ -10,6 +10,7 @@ interface PanelProps {
 function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isIPad, setIsIPad] = useState(false);
   const [isLaptop, setIsLaptop] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const isVideo = imageUrl.endsWith('.mp4') || imageUrl.endsWith('.webm') || imageUrl.endsWith('.ogg');
@@ -45,7 +46,11 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
   useEffect(() => {
     const checkMobile = () => {
       const w = window.innerWidth;
-      setIsMobile(w <= 1024 || ('ontouchstart' in window));
+      const ua = navigator.userAgent;
+      const isIPadDevice = /iPad|Mac/.test(ua) && 'ontouchstart' in window;
+      
+      setIsIPad(isIPadDevice);
+      setIsMobile(w <= 1024 && !isIPadDevice || ('ontouchstart' in window && !isIPadDevice));
       setIsLaptop(w > 1024 && w < 1600);
     };
     checkMobile();
@@ -53,9 +58,9 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Autoplay video on mobile when in viewport
+  // Autoplay video on mobile/iPad when in viewport
   useEffect(() => {
-    if (!isMobile || !isVideo || !videoRef.current) return;
+    if (!isMobile && !isIPad || !isVideo || !videoRef.current) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -72,7 +77,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
 
     observer.observe(videoRef.current);
     return () => observer.disconnect();
-  }, [isMobile, isVideo]);
+  }, [isMobile, isIPad, isVideo]);
 
   // Handle hover with direct video control for Safari compatibility
   const handleMouseEnter = () => {
@@ -122,7 +127,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
     <button
       type="button"
       aria-label={label}
-      className="relative flex-1 cursor-pointer overflow-hidden group text-left bg-transparent border-0 p-0"
+      className="relative flex-1 cursor-pointer overflow-hidden group text-left bg-transparent border-0 p-0 min-h-screen lg:min-h-0"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       onTouchStart={handleTouchStart}
@@ -135,12 +140,12 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
           ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-out"
           style={{ 
-            opacity: isMobile ? (isHovered ? 1 : 0) : (isHovered ? 0.75 : 0.001),
+            opacity: (isMobile || isIPad) ? (isHovered ? 1 : 0) : (isHovered ? 0.75 : 0.001),
             pointerEvents: 'none',
             visibility: 'visible'
           }}
           aria-hidden="true"
-          autoPlay={isMobile || isHovered}
+          autoPlay={isMobile || isIPad || isHovered}
           loop
           muted
           playsInline
@@ -157,8 +162,8 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-out"
           style={{
-            opacity: isMobile ? (isHovered ? 1 : 0) : (isHovered ? 0.75 : 0),
-            objectPosition: (isMobile && letter === 'R') ? 'bottom' : 'center'
+            opacity: (isMobile || isIPad) ? (isHovered ? 1 : 0) : (isHovered ? 0.75 : 0),
+            objectPosition: ((isMobile || isIPad) && letter === 'R') ? 'bottom' : 'center'
           }}
         />
       )}
@@ -178,7 +183,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
           className="font-heading text-center leading-none gold-texture-text"
           data-text={letter}
           style={{
-            fontSize: isMobile ? 'clamp(7.5rem, 24vw, 14rem)' : 'clamp(10rem, 32vw, 72rem)',
+            fontSize: isIPad ? 'clamp(9rem, 28vw, 16rem)' : isMobile ? 'clamp(7.5rem, 24vw, 14rem)' : 'clamp(10rem, 32vw, 72rem)',
             fontFamily: "var(--font-heading)",
             fontWeight: 400,
             opacity: 1,
@@ -188,7 +193,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
             justifyContent: 'center',
             alignItems: 'center',
             width: '100%',
-            marginBottom: isMobile ? 'clamp(0rem, 1vw, 0.5rem)' : '0',
+            marginBottom: (isMobile || isIPad) ? 'clamp(0rem, 1vw, 0.5rem)' : '0',
             letterSpacing: '0em',
             transform: getLetterTransform(letter, isMobile)
           }}
@@ -205,7 +210,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
               fontFamily: "var(--font-subheading)",
               fontWeight: 400,
               textTransform: 'uppercase',
-              opacity: isMobile ? 1 : (isHovered ? 1 : 0.85),
+              opacity: (isMobile || isIPad) ? 1 : (isHovered ? 1 : 0.85),
               lineHeight: '1.1',
               whiteSpace: 'nowrap',
               textOverflow: 'ellipsis'
@@ -219,7 +224,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
             // Increase space between subheader and ornament on larger screens
             className="mt-3 sm:mt-4 md:mt-5 lg:mt-6 transition-all duration-500 w-[72%]"
             style={{
-              display: isMobile ? 'none' : 'block',
+              display: (isMobile || isIPad) ? 'none' : 'block',
               opacity: isHovered ? 1 : 0,
               transform: `scaleX(${isHovered ? 1 : 0.95})`,
               transformOrigin: 'center',
