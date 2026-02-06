@@ -65,7 +65,9 @@ function Header() {
           <button
             type="button"
             onClick={handleBackClick}
-            className="flex items-center gap-2 text-[var(--color-gold-accent)] hover:opacity-70 transition-opacity"
+            aria-label="Go back to home"
+            className="flex items-center gap-2 text-[var(--color-gold-accent)] hover:opacity-70 transition-opacity cursor-pointer px-2 py-2 -mx-2 -my-2"
+            style={{ touchAction: 'manipulation' }}
           >
             <ChevronLeft size={24} />
             <span className="text-sm tracking-widest font-heading">BACK</span>

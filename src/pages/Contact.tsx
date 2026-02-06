@@ -192,7 +192,7 @@ function Contact() {
               <h2 className="text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-8 tracking-wide">
                 Quick Actions
               </h2>
-              <div className="space-y-4">
+              <div className="space-y-4 mt-12">
                 <a 
                   href="https://royalautomobileclubofaustralia.peoplevine.co.uk/survey/group/620" 
                   target="_blank" 
@@ -280,7 +280,7 @@ function Contact() {
           <h2 className="text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-12 tracking-wide">
             Location
           </h2>
-          <div className="w-full rounded-lg overflow-hidden border border-[var(--color-gold-accent)]/20" style={{ height: '500px' }}>
+          <div className="art-deco-card art-deco-card-glowing w-full rounded-lg overflow-hidden" style={{ height: '500px' }}>
             <iframe
               title="Royal Automobile Club of Australia - 89 Macquarie Street, Circular Quay Sydney"
               width="100%"

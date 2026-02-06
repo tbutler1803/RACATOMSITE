@@ -305,6 +305,10 @@ a, button {
   box-shadow: 0 8px 20px rgba(223, 189, 114, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
+.art-deco-card-glowing {
+  box-shadow: 0 8px 20px rgba(223, 189, 114, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+}
+
 .gold-shine {
   background: linear-gradient(135deg, var(--color-gold-accent) 0%, var(--color-gold-light) 50%, var(--color-gold-accent) 100%);
   background-size: 200% 200%;
