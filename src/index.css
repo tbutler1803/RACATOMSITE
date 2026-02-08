@@ -203,18 +203,18 @@ body {
 @media (max-width: 767px) {
   body {
     background-image: url('/textures/PhoneBG.jpg');
-    background-size: cover;
+    background-size: 100%;
     background-attachment: scroll;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-position: center;
     position: relative;
   }
   
   .page-textured-bg {
     background-image: url('/textures/PhoneBG.jpg');
-    background-size: cover;
+    background-size: 100%;
     background-attachment: scroll;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-position: center;
     position: relative;
   }
