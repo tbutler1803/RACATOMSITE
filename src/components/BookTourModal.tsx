@@ -137,7 +137,7 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
       )}
       
       <div 
-        className="fixed inset-0 z-50 flex items-start md:items-center justify-center p-2 sm:p-4 pt-14 pb-4 sm:pt-24 sm:pb-4 md:pt-6 lg:pt-8 pointer-events-none" 
+        className="fixed inset-0 z-50 flex items-start md:items-center justify-center p-2 sm:p-4 pt-6 pb-4 sm:pt-24 sm:pb-4 md:pt-6 lg:pt-8 pointer-events-none" 
         onClick={onClose}
         style={isIPad ? { paddingTop: '8rem' } : undefined}
       >
