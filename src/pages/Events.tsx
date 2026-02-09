@@ -155,14 +155,19 @@ function Events() {
               Reserve your table or book an event space through our convenient online booking system.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 max-w-4xl mx-auto px-4 md:px-0">
-              <a
-                href="https://www.tripleseat.com/raca"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-3 md:px-8 md:py-4 bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)] font-heading tracking-widest hover:bg-red-600 hover:text-white transition-all duration-300 text-center text-sm md:text-base"
+              <button
+                type="button"
+                onClick={() => {
+                  if (window.Mews && window.Mews.D) {
+                    window.Mews.D('open');
+                  } else {
+                    alert('Booking widget is still loading. Please try again in a moment.');
+                  }
+                }}
+                className="px-6 py-3 md:px-8 md:py-4 bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)] font-heading tracking-widest hover:bg-red-600 hover:text-white transition-all duration-300 text-center cursor-pointer text-sm md:text-base"
               >
                 Book Your Event
-              </a>
+              </button>
               <button
                 type="button"
                 onClick={() => setIsBookTourOpen(true)}
