@@ -200,9 +200,9 @@ function Events() {
               <p className="text-[var(--color-cream)]/80 font-light mb-6 md:mb-8 max-w-2xl mx-auto text-sm md:text-base">
                 Reserve your table or book an event space through our convenient online booking system.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 max-w-4xl mx-auto px-4 md:px-0">
+              <div className="flex justify-center max-w-4xl mx-auto px-4 md:px-0">
                 {/* Fallback direct booking link */}
-                <div className="event-btn-group">
+                  <div className="event-btn-group flex flex-row gap-8">
                   <a
                     href="https://app.mews.com/distributor/adee2521-407e-4c2f-af36-b38d01263bf4"
                     target="_blank"
