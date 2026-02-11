@@ -1,12 +1,38 @@
 import Header from '../components/Header';
+// Declare Mews on window for TypeScript
+declare global {
+  interface Window {
+    Mews?: {
+      D: (...args: any[]) => void;
+    };
+  }
+}
 import ArtDecoDivider from '../components/ArtDecoDivider';
 import LazyImage from '../components/LazyImage';
 import BookTourModal from '../components/BookTourModal';
 import { getAssetPath } from '../utils/paths';
 import { Calendar, Users, Music, Wine, Award, ChevronRight } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+// Force-load the Mews script on page load
+function useMewsScript() {
+  useEffect(() => {
+    if (!document.getElementById('mews-distributor-script')) {
+      // Use client's recommended snippet
+      (function(m,e,w,s){
+        const c = m.createElement(e);
+        c.id = 'mews-distributor-script';
+        c.onload = function(){ Mews.D.apply(null,s); };
+        c.async = 1;
+        c.src = w;
+        const t = m.getElementsByTagName(e)[0];
+        t.parentNode.insertBefore(c,t);
+      })(document,'script','https://app.mews.com/distributor/distributor.min.js',[['adee2521-407e-4c2f-af36-b38d01263bf4']]);
+    }
+  }, []);
+}
 
 function Events() {
+  useMewsScript();
   const [isBookTourOpen, setIsBookTourOpen] = useState(false);
   const eventSpaces = [
     {
@@ -46,9 +72,29 @@ function Events() {
     { icon: Award, title: 'Private Functions', description: 'Bespoke events for members and guests' }
   ];
 
+  // Add a ref for the booking widget container
+  const bookingWidgetRef = useRef(null);
+
   return (
     <div className="min-h-screen text-[var(--color-cream)] overflow-x-hidden">
       <Header />
+
+      {/* Dedicated container for Mews BookingEngine */}
+      <div
+        id="mews-widget-container"
+        style={{ zIndex: 9999, position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.5)', display: 'none' }}
+      >
+        <button
+          id="mews-widget-close"
+          style={{ position: 'absolute', top: 20, right: 20, zIndex: 10000, background: '#fff', color: '#222', border: 'none', borderRadius: 4, padding: '8px 16px', cursor: 'pointer', fontWeight: 'bold' }}
+          onClick={() => {
+            const widgetContainer = document.getElementById('mews-widget-container');
+            if (widgetContainer) widgetContainer.style.display = 'none';
+          }}
+        >
+          Close
+        </button>
+      </div>
 
       <div>
         <div
@@ -144,45 +190,43 @@ function Events() {
 
         <section className="mb-16 md:mb-20">
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-12" />
-          <div className="art-deco-card p-10 md:p-12 text-center">
-            <div className="inline-block p-4 bg-[var(--color-gold-accent)]/10 rounded-lg mb-6">
-              <Calendar size={40} className="text-[var(--color-gold-accent)]" />
-            </div>
-            <h2 className="text-2xl md:text-3xl font-heading font-light text-[var(--color-gold-accent)] mb-4">
-              Book Your Event
-            </h2>
-            <p className="text-[var(--color-cream)]/80 font-light mb-6 md:mb-8 max-w-2xl mx-auto text-sm md:text-base">
-              Reserve your table or book an event space through our convenient online booking system.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 max-w-4xl mx-auto px-4 md:px-0">
-              <button
-                type="button"
-                onClick={() => {
-                  if (window.Mews && window.Mews.D) {
-                    window.Mews.D('open');
-                  } else {
-                    alert('Booking widget is still loading. Please try again in a moment.');
-                  }
-                }}
-                className="px-6 py-3 md:px-8 md:py-4 bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)] font-heading tracking-widest hover:bg-red-600 hover:text-white transition-all duration-300 text-center cursor-pointer text-sm md:text-base"
-              >
+            <div className="art-deco-card p-10 md:p-12 text-center">
+              <div className="inline-block p-4 bg-[var(--color-gold-accent)]/10 rounded-lg mb-6">
+                <Calendar size={40} className="text-[var(--color-gold-accent)]" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-heading font-light text-[var(--color-gold-accent)] mb-4">
                 Book Your Event
-              </button>
-              <button
-                type="button"
-                onClick={() => setIsBookTourOpen(true)}
-                className="px-6 py-3 md:px-8 md:py-4 bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)] font-heading tracking-widest hover:bg-red-600 hover:text-white transition-all duration-300 text-center cursor-pointer text-sm md:text-base"
-              >
-                Book a Tour
-              </button>
-              <a
-                href="/#/contact?section=contact-information"
-                className="px-6 py-3 md:px-8 md:py-4 bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)] font-heading tracking-widest hover:bg-red-600 hover:text-white transition-all duration-300 text-center text-sm md:text-base"
-              >
-                Contact Info
-              </a>
+              </h2>
+              <p className="text-[var(--color-cream)]/80 font-light mb-6 md:mb-8 max-w-2xl mx-auto text-sm md:text-base">
+                Reserve your table or book an event space through our convenient online booking system.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 max-w-4xl mx-auto px-4 md:px-0">
+                {/* Fallback direct booking link */}
+                <div className="event-btn-group">
+                  <a
+                    href="https://app.mews.com/distributor/adee2521-407e-4c2f-af36-b38d01263bf4"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="event-btn"
+                  >
+                    Book your event
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => setIsBookTourOpen(true)}
+                    className="event-btn"
+                  >
+                    Book a Tour
+                  </button>
+                  <a
+                    href="/#/contact?section=contact-information"
+                    className="event-btn"
+                  >
+                    Contact Info
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
         </section>
 
         <section />

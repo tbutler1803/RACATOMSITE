@@ -1,3 +1,57 @@
+/* Modern event button group styling */
+.event-btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+.art-deco-card .event-btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.event-btn {
+  min-width: 220px;
+  max-width: 260px;
+  height: 60px;
+  background-color: var(--color-gold-accent);
+  color: var(--color-dark-navy);
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.event-btn:hover, .event-btn:focus {
+  background-color: #c00;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(200,0,0,0.15);
+}
+/* Event page button styling */
+.event-btn {
+  background-color: var(--color-gold-accent);
+  color: var(--color-dark-navy);
+  border: none;
+  border-radius: 0;
+  font-weight: 500;
+}
+.event-btn:hover, .event-btn:focus {
+  background-color: #c00;
+  color: #fff;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
