@@ -209,14 +209,14 @@ function Events() {
                     rel="noopener noreferrer"
                     className="event-btn"
                   >
-                    Book your event
+                    Book A Room
                   </a>
                   <button
                     type="button"
                     onClick={() => setIsBookTourOpen(true)}
                     className="event-btn"
                   >
-                    Book a Tour
+                    Book Your Event
                   </button>
                   <a
                     href="/#/contact?section=contact-information"
