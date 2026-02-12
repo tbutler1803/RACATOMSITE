@@ -211,13 +211,14 @@ function Events() {
                   >
                     Book A Room
                   </a>
-                  <button
-                    type="button"
-                    onClick={() => setIsBookTourOpen(true)}
+                  <a
+                    href="https://royalautomobileclubofaustralia.tripleseat.com/party_request/47431"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="event-btn max-w-xs w-full px-4 py-2 text-sm md:text-base"
                   >
                     Book Your Event
-                  </button>
+                  </a>
                   <a
                     href="/#/contact?section=contact-information"
                     className="event-btn max-w-xs w-full px-4 py-2 text-sm md:text-base"
