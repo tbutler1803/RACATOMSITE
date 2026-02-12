@@ -137,9 +137,14 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
       )}
       
       <div 
-        className="fixed inset-0 z-50 flex items-start md:items-center justify-center p-2 sm:p-4 pt-10 pb-4 sm:pt-24 sm:pb-4 md:pt-6 lg:pt-8 pointer-events-none" 
+        className="fixed inset-0 z-50 flex items-start md:items-center justify-center p-2 sm:p-4 pb-4 sm:pt-24 sm:pb-4 md:pt-6 lg:pt-8 pointer-events-none" 
         onClick={onClose}
-        style={isIPad ? { paddingTop: '8rem' } : undefined}
+        style={{
+          ...(isIPad ? { paddingTop: '8rem' } : {}),
+          // On mobile, increase top padding to avoid touching header
+          paddingTop: `max(18vw, 2.8rem)`,
+          // On larger screens, let Tailwind handle it
+        }}
       >
         <div 
           className={`relative bg-[var(--color-dark-navy)] border-2 border-[var(--color-gold-accent)] w-full max-w-[96%] sm:max-w-[640px] md:w-full md:max-w-3xl lg:max-w-5xl rounded-lg max-h-full overflow-y-auto shadow-2xl transition-all duration-500 ease-out pointer-events-auto ${isAnimating ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
