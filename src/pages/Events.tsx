@@ -97,25 +97,25 @@ function Events() {
       </div>
 
       <div>
-        <div
-          className="relative h-[70vh] md:h-screen w-full bg-cover bg-center flex items-center justify-center overflow-hidden pt-16 md:pt-20"
-          style={{
-            backgroundImage: `url(${getAssetPath('/IMAGES/DSC_1595.jpg')})`,
-          }}
-        >
           <div
-            className="absolute inset-0"
-            style={{ backgroundColor: 'rgba(4, 15, 42, 0.85)' }}
-          />
-          <div className="relative z-10 text-center px-4">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-light text-[var(--color-gold-accent)] mb-3 md:mb-4 tracking-wide leading-tight">
-              EVENTS
-            </h1>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2">
-              Celebrate, connect, and create lasting memories
-            </p>
+            className="relative h-[70vh] md:h-screen w-full bg-cover bg-center flex items-center justify-center overflow-hidden pt-16 md:pt-20"
+            style={{
+              backgroundImage: `url(${getAssetPath('/IMAGES/DSC_1595.jpg')})`,
+            }}
+          >
+            <div
+              className="absolute inset-0"
+              style={{ backgroundColor: 'rgba(4, 15, 42, 0.85)' }}
+            />
+            <div className="relative z-10 text-center px-4">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-light text-[var(--color-gold-accent)] mb-3 md:mb-4 tracking-wide leading-tight">
+                EVENTS
+              </h1>
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2">
+                Celebrate, connect, and create lasting memories
+              </p>
+            </div>
           </div>
-        </div>
 
         <div className="max-w-6xl mx-auto px-6 py-14 md:py-18 text-center">
         <section className="mb-16 md:mb-20">
@@ -200,27 +200,27 @@ function Events() {
               <p className="text-[var(--color-cream)]/80 font-light mb-6 md:mb-8 max-w-2xl mx-auto text-sm md:text-base">
                 Reserve your table or book an event space through our convenient online booking system.
               </p>
-              <div className="flex justify-center max-w-4xl mx-auto px-4 md:px-0">
+              <div className="flex justify-center max-w-4xl mx-auto px-4 md:px-0 mt-2 md:mt-8">
                 {/* Fallback direct booking link */}
-                  <div className="event-btn-group flex flex-row gap-8">
+                <div className="event-btn-group flex flex-col md:flex-row gap-3 md:gap-8 w-full items-center">
                   <a
                     href="https://app.mews.com/distributor/adee2521-407e-4c2f-af36-b38d01263bf4"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="event-btn"
+                    className="event-btn max-w-xs w-full px-4 py-2 text-sm md:text-base"
                   >
                     Book A Room
                   </a>
                   <button
                     type="button"
                     onClick={() => setIsBookTourOpen(true)}
-                    className="event-btn"
+                    className="event-btn max-w-xs w-full px-4 py-2 text-sm md:text-base"
                   >
                     Book Your Event
                   </button>
                   <a
                     href="/#/contact?section=contact-information"
-                    className="event-btn"
+                    className="event-btn max-w-xs w-full px-4 py-2 text-sm md:text-base"
                   >
                     Contact Info
                   </a>
