@@ -25,10 +25,14 @@ function MembershipModal({ isOpen, onClose, title, description, price }: Members
       setIsAnimating(false);
       const timer = setTimeout(() => {
         setIsVisible(false);
-        document.body.style.overflow = 'unset';
+        document.body.style.overflow = '';
       }, 400);
       return () => clearTimeout(timer);
     }
+    // Cleanup: always restore scroll on unmount
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [isOpen]);
 
   useEffect(() => {
