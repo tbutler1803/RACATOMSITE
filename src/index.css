@@ -1,3 +1,40 @@
+/* Ensure all text inside design boxes is white and consistent size */
+.art-deco-card p, .art-deco-card li {
+  color: #fff;
+  font-size: 1.125rem;
+}
+/* Gold Outline Button - Transparent, Gold Border, Heading Font, Gold Hover */
+.btn-outline-gold {
+  background: transparent;
+  color: var(--color-gold-accent);
+  border: 2px solid var(--color-gold-accent);
+  font-family: var(--font-heading);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  font-size: 1.125rem;
+  font-size: clamp(1.125rem, 2vw, 1.5rem); /* text-lg to md:text-2xl responsive */
+  border-radius: 0;
+  padding: 0.75rem 2rem;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(223, 189, 114, 0.08);
+  cursor: pointer;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  display: inline-block;
+  margin: 0;
+  text-align: center;
+  font-variant: normal;
+  font-style: normal;
+  /* tracking-wide mimic */
+  letter-spacing: 0.05em;
+}
+
+.btn-outline-gold:hover, .btn-outline-gold:focus {
+  background: var(--color-gold-accent);
+  color: var(--color-dark-navy);
+  box-shadow: 0 4px 16px rgba(223, 189, 114, 0.18);
+  text-decoration: none;
+}
 /* Modern event button group styling */
 .event-btn-group {
   display: flex;
@@ -22,11 +59,12 @@
   background-color: var(--color-gold-accent);
   color: var(--color-dark-navy);
   border: none;
-  border-radius: 6px;
-  font-weight: 500;
+  border-radius: 0;
   font-family: var(--font-heading);
-  font-size: 1.1rem;
-  letter-spacing: 0.12em;
+  font-weight: 400;
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  letter-spacing: 0.05em;
+  text-transform: none;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   text-align: center;
@@ -34,6 +72,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0;
+  font-variant: normal;
+  font-style: normal;
 }
 /* Only apply red on hover, not focus (click) */
 .event-btn:hover {
@@ -275,8 +316,10 @@ body {
   }
 }
 
+/* Standardize all body text to white and consistent size */
 p, li {
-  color: rgba(240, 239, 209, 0.9);
+  color: #fff;
+  font-size: 1.125rem; /* 18px, matches text-lg */
   letter-spacing: 0.01em;
 }
 
@@ -296,9 +339,26 @@ h1 {
   font-weight: 400;
 }
 
-h2, h3 {
+h2 {
   color: var(--color-gold-accent);
+  font-family: var(--font-heading);
   font-weight: 400;
+  font-size: clamp(2rem, 4vw, 2.5rem); /* Responsive, matches example */
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  text-transform: none;
+  line-height: 1.2;
+}
+
+h3 {
+  color: var(--color-gold-accent);
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: clamp(1.25rem, 2vw, 1.75rem); /* Responsive, matches example */
+  letter-spacing: 0.08em;
+  margin-bottom: 1rem;
+  text-transform: none;
+  line-height: 1.2;
 }
 
 /* Subheadings: nanum-gothic-coding in ALL CAPS */

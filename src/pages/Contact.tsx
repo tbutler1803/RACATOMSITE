@@ -70,9 +70,9 @@ function Contact() {
 
   const contactInfo = [
     { icon: MapPin, label: 'Address', value: '89 Macquarie St, Sydney NSW 2000' },
-    { icon: Phone, label: 'Phone', value: '+61 2 8296 2800' },
+    { icon: Phone, label: 'Phone', value: '+61 (02) 8273 2300' },
     { icon: Mail, label: 'Email', value: 'membership@raca.com.au' },
-    { icon: Clock, label: 'Hours', value: 'Mon-Fri: 9am-5pm, Sat: 10am-4pm' }
+    { icon: Clock, label: 'Hours', value: '24/7 Reception Availability' }
   ];
 
   const whyJoin = [
@@ -84,28 +84,60 @@ function Contact() {
 
   const categories = [
     {
-      name: 'Defence',
-      price: 'Individual',
-      description: 'Active or retired service members',
-      highlights: ['Discounted rates', 'All venue access', 'Special recognition']
+      name: 'Town',
+      price: '$3,590',
+      description: 'Permanently reside within the area bounded by the City of Wollongong to the south, Katoomba to the west, and the City of Newcastle to the north.',
+      highlights: [
+        "Exclusively for residents within the region from Wollongong to Newcastle and Katoomba, Town Membership brings the Royal Automobile Club of Australia's heritage, events, and privileges closer to home. Access our iconic Macquarie Street clubhouse, curated motoring experiences, fine dining, and a vibrant community, where tradition meets innovation at RACA."
+      ]
+    },
+    {
+      name: 'Country',
+      price: '$2,440',
+      description: 'NSW Country & ACT',
+      highlights: [
+        "Country Membership offers a trusted city base for members living outside Sydney. Located on Macquarie Street, moments from the Opera House and Circular Quay, the Club provides a convenient place to stay, with easy access to ferries, trains, and light rail. Enjoy full access to our iconic Macquarie Street clubhouse, where welcoming spaces, curated motoring events, fine dining, and a vibrant community of fellow enthusiasts await."
+      ]
+    },
+    {
+      name: 'Interstate',
+      price: '$2,020',
+      description: 'All Australian states and territories except NSW & ACT',
+      highlights: [
+        "Interstate Membership provides a welcoming home away from home for members who visit Sydney for leisure or business. Enjoy full access to our iconic Macquarie Street clubhouse, where refined spaces, curated events, fine dining, and a friendly community await. Whether for work, relaxation, or social connection, RACA offers a place to feel at home while experiencing the tradition, comfort, and vibrant spirit of Australia's premier automotive and social club."
+      ]
+    },
+    {
+      name: 'Defence/Emergency Services',
+      price: '$2,020',
+      description: 'Active or Retired',
+      highlights: [
+        "This membership is designed for active or retired members of Australia's defence and emergency services, as well as those who have served in affiliated international forces. It offers a welcoming home away from home where service is recognised and connections are celebrated. Members enjoy full access to our iconic Macquarie Street clubhouse, curated events, fine dining and a vibrant community of like-minded individuals. Experience the tradition, camaraderie, and privileges of RACA while staying connected to those who share your dedication and passion."
+      ]
+    },
+    {
+      name: "Under 40's",
+      price: '',
+      description: 'For members ages 30-39 years',
+      highlights: [
+        "Under 40s Membership connects you to the Royal Automobile Club of Australia in a way that fits your pace and lifestyle.\n\nEnjoy access to our iconic Macquarie Street clubhouse, standout events, refined dining and a dynamic community of driven, like-minded professionals. Whether you're building your network, hosting clients, or simply unwinding in the heart of the city, this is a membership that blends heritage with modern energy."
+      ]
     },
     {
       name: 'Young Executive',
-      price: 'Individual',
-      description: 'For members aged 18-29 years',
-      highlights: ['Discounted rates', 'Networking events', 'Professional development']
+      price: '',
+      description: 'For members ages 18-29 years',
+      highlights: [
+        "Young Executive Membership is designed for ambitious members aged 18 to 29 who want to experience the Royal Automobile Club of Australia in a vibrant, stylish, and connected way. With access to our iconic Macquarie Street clubhouse, established networks, industry leaders, and curated networking events, members step into a community rich in experience, influence, and opportunity. Join early, connect with purpose, and gain access to the relationships, resources, and environment that can shape your career."
+      ]
     },
     {
-      name: 'Under 40s',
-      price: 'Individual',
-      description: 'For members aged 30-39 years',
-      highlights: ['Reduced rates', 'All venue access', 'Dining privileges']
-    },
-    {
-      name: 'Corporate',
-      price: 'Group',
-      description: 'For businesses with 5+ members',
-      highlights: ['Multi-user access', 'Event packages', 'Team building']
+      name: 'Corporate/Community',
+      price: '',
+      description: 'Designed for businesses, organisations, and community groups',
+      highlights: [
+        "Designed for organisations enrolling with multiple members, this membership offers preferential rates and collective access to the Club. Perfect for businesses and community groups, it provides a distinguished city base for team gatherings, client entertaining and business networking. Enjoy our Macquarie Street clubhouse, boardrooms, and refined dining all in a setting built for connection and collaboration. Bring your team, host with confidence, and grow your network at RACA."
+      ]
     }
   ];
 
@@ -126,7 +158,7 @@ function Contact() {
           />
           <div className="relative z-10 text-center px-4">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-light text-[var(--color-gold-accent)] mb-3 md:mb-4 tracking-wide leading-tight">
-              MEMBERSHIP APPLICATIONS & CONTACT
+              MEMBERSHIP APPLICATION & CONTACT
             </h1>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2">
               Join our community or get in touch with us today
@@ -139,14 +171,15 @@ function Contact() {
 
         <section className="mb-16 md:mb-20">
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-12" />
-          <h2 className="text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-10 md:mb-12 tracking-wide">
+          <h2>
             Membership Categories
           </h2>
-          <p className="text-base md:text-lg text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10">
             Choose the path that fits you best; all categories share core privileges, with tailored rates and access to suit your lifestyle.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-            {categories.map((cat, idx) => (
+            {/* Top row: 4 cards */}
+            {categories.slice(0, 4).map((cat, idx) => (
               <MembershipCard
                 key={idx}
                 name={cat.name}
@@ -155,12 +188,26 @@ function Contact() {
                 highlights={cat.highlights}
               />
             ))}
+            {/* Bottom row: 3 cards, centered */}
+            <div className="col-span-2 md:col-span-3 lg:col-span-4 flex justify-center mt-4">
+              <div className="grid grid-cols-3 gap-4 md:gap-6" style={{width: '75%'}}>
+                {categories.slice(4).map((cat, idx) => (
+                  <MembershipCard
+                    key={4 + idx}
+                    name={cat.name}
+                    price={cat.price}
+                    description={cat.description}
+                    highlights={cat.highlights}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
         <section className="mb-16 md:mb-20" id="contact-information">
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-12" />
-          <h2 className="text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-10 md:mb-12 tracking-wide">
+          <h2>
             Contact Information
           </h2>
           <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-8">
@@ -169,13 +216,13 @@ function Contact() {
               return (
                 <div key={idx} className="flex flex-col items-center gap-3 text-center px-4 py-5 sm:px-5 sm:py-6">
                   <div>
-                    <Icon size={18} className="text-[var(--color-gold-accent)]" />
+                    <Icon size={32} className="text-[var(--color-gold-accent)]" />
                   </div>
                   <div className="max-w-[12rem] sm:max-w-[18rem]">
-                    <h3 className="text-sm tracking-widest text-[var(--color-gold-accent)] font-heading mb-2">
+                    <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
                       {info.label}
                     </h3>
-                    <p className="text-[var(--color-cream)] font-light text-sm sm:text-base leading-relaxed break-words">
+                    <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] font-light leading-relaxed break-words">
                       {info.value}
                     </p>
                   </div>
@@ -189,7 +236,7 @@ function Contact() {
           <ArtDecoDivider width="w-64 md:w-80" height="h-6 md:h-20" className="mb-8" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
             <div>
-              <h2 className="text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-8 tracking-wide">
+              <h2>
                 Quick Actions
               </h2>
               <div className="space-y-4 mt-12">
@@ -197,21 +244,21 @@ function Contact() {
                   href="https://royalautomobileclubofaustralia.peoplevine.co.uk/survey/group/620" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="block w-full px-6 py-4 border border-[var(--color-gold-accent)] text-[var(--color-gold-accent)] font-heading tracking-widest hover:bg-[var(--color-gold-accent)] hover:text-[var(--color-dark-navy)] transition-all duration-300 text-center"
+                  className="btn-outline-gold w-full"
                 >
-                  Apply Here
+                  APPLY HERE
                 </a>
                 <button 
                   type="button"
                   onClick={() => setIsBookTourOpen(true)}
-                  className={`w-full px-6 py-4 border border-[var(--color-gold-accent)] text-[var(--color-gold-accent)] font-heading tracking-widest hover:bg-[var(--color-gold-accent)] hover:text-[var(--color-dark-navy)] transition-all duration-300 ${isBookTourOpen ? 'bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)]' : ''}`}>
-                  Book a Tour
+                  className={`btn-outline-gold w-full ${isBookTourOpen ? 'bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)]' : ''}`}>
+                  BOOK A TOUR
                 </button>
               </div>
             </div>
 
             <div ref={messageFormRef}>
-              <h2 className="text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-8 tracking-wide">
+              <h2>
                 Send us a Message
               </h2>
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -261,9 +308,9 @@ function Contact() {
                 <button
                   type="submit"
                   disabled={submitStatus === 'loading'}
-                  className="w-full px-6 py-3 bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)] font-heading tracking-widest hover:bg-red-600 hover:text-white disabled:opacity-50 disabled:hover:bg-[var(--color-gold-accent)] transition-all duration-300"
+                  className="btn-outline-gold w-full disabled:opacity-50"
                 >
-                  {submitStatus === 'loading' ? 'Sending...' : 'Send Message'}
+                  {submitStatus === 'loading' ? 'Sending...' : 'SEND MESSAGE'}
                 </button>
                 {submitStatus === 'success' && (
                   <p className="text-green-400 text-sm text-center font-light">
@@ -277,7 +324,7 @@ function Contact() {
 
         <section className="mb-20">
           <ArtDecoDivider width="w-64 md:w-80" height="h-6 md:h-20" className="mb-8" />
-          <h2 className="text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-12 tracking-wide">
+          <h2>
             Location
           </h2>
           <div className="art-deco-card art-deco-card-glowing w-full rounded-lg overflow-hidden" style={{ height: '500px' }}>

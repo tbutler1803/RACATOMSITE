@@ -28,7 +28,7 @@ function Home() {
     },
     {
       letter: 'C',
-      label: 'CONTACT',
+      label: 'MEMBER APPLICATION & CONTACT',
       imageUrl: getAssetPath('/IMAGES/images/DSC_1653-Enhanced-NR.jpg'),
       path: '/contact'
     },

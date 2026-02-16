@@ -36,32 +36,60 @@ function Events() {
   const [isBookTourOpen, setIsBookTourOpen] = useState(false);
   const eventSpaces = [
     {
-      name: 'Grand Ballroom',
-      capacity: '200 guests',
-      description: 'Our premier event space featuring Art Deco architecture and crystal chandeliers',
-      image: getAssetPath('/IMAGES/images/DSC_1659.jpg'),
-      features: ['Dance floor', 'Stage', 'Full AV setup', 'Private bar']
+      name: 'Victoria Room',
+      capacity: 'Banquet 130 / Cocktail 180',
+      description: 'Elegant space for large banquets or cocktail receptions.',
+      image: 'https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&w=400&h=300&fit=crop',
+      features: []
     },
     {
-      name: 'Heritage Dining Room',
-      capacity: '50 guests',
-      description: 'Intimate setting with historic charm, perfect for corporate dinners',
-      image: getAssetPath('/IMAGES/images/DSC_1525.jpg'),
-      features: ['Private dining', 'Fireplace', 'Garden views', 'Custom menus']
+      name: 'Rooftop',
+      capacity: 'Cocktail 70',
+      description: 'Open-air rooftop with city views, perfect for cocktail events.',
+      image: 'https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&w=400&h=300&fit=crop',
+      features: []
     },
     {
-      name: 'Terrace Lounge',
-      capacity: '80 guests',
-      description: 'Modern space with harbor views, ideal for cocktail events',
-      image: getAssetPath('/IMAGES/RACA Rooftop/DSC00136.JPG'),
-      features: ['Outdoor area', 'Bar service', 'Lounge seating', 'City views']
+      name: 'Macquarie Room',
+      capacity: 'Banquet 120 / Cocktail 150',
+      description: 'Spacious room for banquets and cocktail functions.',
+      image: 'https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&w=400&h=300&fit=crop',
+      features: []
     },
     {
-      name: 'Board Room',
-      capacity: '20 guests',
-      description: 'Professional setting for business meetings and presentations',
-      image: getAssetPath('/IMAGES/images/DSC_1302.jpg'),
-      features: ['Video conferencing', 'Presentation equipment', 'Catering available', 'Private entrance']
+      name: 'ISC Room',
+      capacity: 'Banquet 60 / Cocktail 70',
+      description: 'Versatile space for mid-sized events.',
+      image: 'https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&w=400&h=300&fit=crop',
+      features: []
+    },
+    {
+      name: 'Pioneer Room',
+      capacity: 'Banquet 25 / Cocktail 30',
+      description: 'Intimate room for small gatherings.',
+      image: 'https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&w=400&h=300&fit=crop',
+      features: []
+    },
+    {
+      name: 'Vintage Room',
+      capacity: 'Boardroom Style 20',
+      description: 'Classic boardroom for meetings and private dining.',
+      image: 'https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&w=400&h=300&fit=crop',
+      features: []
+    },
+    {
+      name: 'Boardroom',
+      capacity: 'Boardroom Style 15',
+      description: 'Professional boardroom for executive meetings.',
+      image: 'https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&w=400&h=300&fit=crop',
+      features: []
+    },
+    {
+      name: 'Hordern',
+      capacity: '',
+      description: 'Flexible event space.',
+      image: 'https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&w=400&h=300&fit=crop',
+      features: []
     }
   ];
 
@@ -120,21 +148,21 @@ function Events() {
         <div className="max-w-6xl mx-auto px-6 py-14 md:py-18 text-center">
         <section className="mb-16 md:mb-20">
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8" />
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-10 md:mb-12 tracking-wide px-2">
+            <h2>
             Event Categories
           </h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {eventCategories.map((category, idx) => {
               const Icon = category.icon;
               return (
-                <div key={idx} className="group cursor-pointer text-center">
+                <div key={idx} className="group text-center">
                   <div className="mb-4">
                     <Icon size={32} className="text-[var(--color-gold-accent)] inline-block" />
                   </div>
-                  <h3 className="text-lg font-heading text-[var(--color-gold-accent)] mb-2">
+                  <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
                     {category.title}
                   </h3>
-                  <p className="text-[var(--color-cream)]/80 font-light text-sm">
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2 mb-3 md:mb-6">
                     {category.description}
                   </p>
                 </div>
@@ -142,10 +170,21 @@ function Events() {
             })}
           </div>
         </section>
+        <div className="mt-6 flex justify-center">
+          <div className="event-btn-group mt-0 mb-10">
+            <button
+              className="btn-outline-gold max-w-xs w-full mx-auto"
+              type="button"
+              onClick={() => setIsBookTourOpen(true)}
+            >
+              ENQUIRE HERE
+            </button>
+          </div>
+        </div>
 
         <section className="mb-16 md:mb-20">
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-12" />
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-10 md:mb-12 tracking-wide px-2">
+            <h2>
             Event Spaces
           </h2>
           <div className="grid grid-cols-2 gap-4 md:space-y-16 lg:space-y-20 md:block">
@@ -165,23 +204,16 @@ function Events() {
                   </div>
                 </div>
                 <div className={idx % 2 === 1 ? 'lg:order-1' : ''}>
-                  <div className="text-sm md:text-sm tracking-widest text-[var(--color-gold-accent)] font-heading mb-0.5 md:mb-2">
+                  <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
                     {space.capacity}
-                  </div>
-                  <h3 className="text-base md:text-3xl font-heading font-light text-[var(--color-gold-accent)] mb-0 md:mb-4">
-                    {space.name}
                   </h3>
-                  <p className="hidden md:block text-base md:text-base text-[var(--color-cream)]/80 font-light mb-3 md:mb-6">
+                  <h2>
+                    {space.name}
+                  </h2>
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2 mb-2 md:mb-3">
                     {space.description}
                   </p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 hidden md:grid">
-                    {space.features.map((feature, i) => (
-                      <div key={i} className="flex items-center gap-2 text-sm text-[var(--color-cream)]/80 font-light">
-                        <ChevronRight size={16} className="text-[var(--color-gold-accent)]" />
-                        {feature}
-                      </div>
-                    ))}
-                  </div>
+                  {/* Features list removed as requested */}
                 </div>
               </div>
             ))}
@@ -194,7 +226,7 @@ function Events() {
               <div className="inline-block p-4 bg-[var(--color-gold-accent)]/10 rounded-lg mb-6">
                 <Calendar size={40} className="text-[var(--color-gold-accent)]" />
               </div>
-              <h2 className="text-2xl md:text-3xl font-heading font-light text-[var(--color-gold-accent)] mb-4">
+              <h2>
                 Book Your Event
               </h2>
               <p className="text-[var(--color-cream)]/80 font-light mb-6 md:mb-8 max-w-2xl mx-auto text-sm md:text-base">
@@ -203,25 +235,24 @@ function Events() {
               <div className="flex justify-center max-w-4xl mx-auto px-4 md:px-0 mt-2 md:mt-8">
                 {/* Fallback direct booking link */}
                 <div className="event-btn-group flex flex-col md:flex-row gap-3 md:gap-8 w-full items-center">
-                  <a
-                    href="https://app.mews.com/distributor/adee2521-407e-4c2f-af36-b38d01263bf4"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="event-btn max-w-xs w-full px-4 py-2 text-sm md:text-base"
+                  <button
+                    type="button"
+                    className="btn-outline-gold max-w-xs w-full mx-auto"
+                    onClick={() => setIsBookTourOpen(true)}
                   >
-                    Book A Room
-                  </a>
+                    Enquire Now
+                  </button>
                   <a
                     href="https://royalautomobileclubofaustralia.tripleseat.com/party_request/47431"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="event-btn max-w-xs w-full px-4 py-2 text-sm md:text-base"
+                    className="btn-outline-gold max-w-xs w-full mx-auto"
                   >
                     Book Your Event
                   </a>
                   <a
                     href="/#/contact?section=contact-information"
-                    className="event-btn max-w-xs w-full px-4 py-2 text-sm md:text-base"
+                    className="btn-outline-gold max-w-xs w-full mx-auto"
                   >
                     Contact Info
                   </a>

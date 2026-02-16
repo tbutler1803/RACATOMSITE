@@ -164,7 +164,7 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
             <div className="p-3 sm:p-5 md:p-8 flex flex-col justify-between relative bg-cover bg-bottom" style={{ backgroundImage: `url(${getAssetPath('/IMAGES/About-Us-Background.jpg')})` }}>
               <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 to-gray-900/70"></div>
               <div className="relative z-10">
-                <h2 id="book-tour-title" className="text-[26px] sm:text-3xl md:text-4xl font-heading text-[var(--color-gold-accent)] mb-2 sm:mb-4 md:mb-5 tracking-wide">
+                <h2 id="book-tour-title">
                   BOOK A CLUB TOUR<br className="hidden sm:inline" />
                 </h2>
                 <p className="hidden sm:block text-[var(--color-cream)] font-light leading-relaxed mb-3 sm:mb-5 md:mb-7 text-sm md:text-base">
@@ -272,7 +272,7 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
                 <button
                   type="submit"
                   disabled={submitStatus === 'loading'}
-                  className="w-full py-3 md:py-4 bg-red-600 text-white font-heading text-[11px] sm:text-xs md:text-sm tracking-widest hover:bg-red-700 disabled:opacity-50 transition-colors uppercase"
+                  className="w-full py-3 md:py-4 bg-transparent border-2 border-[var(--color-gold-accent)] text-[var(--color-gold-accent)] font-heading text-base md:text-lg tracking-widest hover:bg-[var(--color-gold-accent)] hover:text-[var(--color-dark-navy)] disabled:opacity-50 transition-colors uppercase"
                 >
                   {submitStatus === 'loading' ? 'REQUESTING...' : 'REQUEST TOUR'}
                 </button>

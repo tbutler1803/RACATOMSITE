@@ -3,16 +3,16 @@ import ArtDecoDivider from '../components/ArtDecoDivider';
 import { getAssetPath } from '../utils/paths';
 import { useState } from 'react';
 import BookTourModal from '../components/BookTourModal';
-import { Car, MapPin, Globe2, Utensils } from 'lucide-react';
+import { CalendarCheck, BedDouble, Share2, Utensils } from 'lucide-react';
 
 function About() {
   const [isBookTourOpen, setIsBookTourOpen] = useState(false);
 
   const whyJoin = [
-    { icon: Car, title: 'Members-First Service', description: 'Valet-style care, concierge support, and seamless hosting.' },
-    { icon: MapPin, title: 'CBD Convenience', description: 'Steps from Circular Quay with transport, harbour, and culture on the doorstep.' },
-    { icon: Globe2, title: 'Reciprocal Networks', description: 'Access to distinguished clubs worldwide for business and travel.' },
-    { icon: Utensils, title: 'Food & Beverage', description: 'Signature dining, wine dinners, and elegant bars crafted for members.' }
+    { icon: CalendarCheck, title: 'Events-Driven Excellence', description: 'Impeccable hosting tailored experiences, and flawless execution' },
+    { icon: BedDouble, title: 'Rest Assured', description: 'Heritage surroundings, contemporary luxury, and effortless comfort in our accommodation.' },
+    { icon: Share2, title: 'Your Gateway to Connections', description: 'Influential connections, shared experiences, and access to our worldwide reciprocal network' },
+    { icon: Utensils, title: 'The Art of Hospitality', description: 'From intimate gatherings to grand occasions, hospitality that impresses at every turn.' }
   ];
 
   const perkCards = [
@@ -77,26 +77,29 @@ function About() {
         <div className="max-w-6xl mx-auto px-6 py-14 md:py-18 text-center">
         <section className="mb-16 md:mb-20">
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 md:mb-10 mx-auto" />
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-6 md:mb-8 tracking-wide px-2">
+          <h2>
             Driving the Future, Honouring the Past
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-5xl mx-auto px-4">
             <div className="text-center md:text-left">
-              <h3 className="text-xl sm:text-2xl md:text-3xl font-heading text-[var(--color-gold-accent)] mb-3">
+              <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
                 Innovation is in our DNA
               </h3>
               <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)]/90 font-light mb-3 leading-relaxed">
-                Welcome to the Royal Automobile Club of Australia, where innovation takes the driver's seat. We don't just cruise on legacy; we strive for progression. Our historic Macquarie Street location is a testament to our rich heritage, a true landmark in motoring excellence.
+                Since 1903, the Royal Automobile Club of Australia has championed motoring excellence. Established as Australia’s first automobile club, RACA was founded to advocate for motorists and has remained at the forefront of the automotive landscape ever since — from campaigning for improved roads to hosting distinguished motoring events across generations.
               </p>
-              <p className="hidden md:block text-base md:text-lg text-[var(--color-cream)]/90 font-light leading-relaxed">
-                Our service is well-oiled. Enjoy seamless experiences executed with precision. From valet parking to private corporate events, our expert team is on hand to fine-tune every detail. Our members are our fuel, and we can't wait to start the journey with you.
+              <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)]/90 font-light mb-3 leading-relaxed">
+                Our landmark Macquarie Street clubhouse stands as a symbol of this enduring legacy, welcoming members in the heart of Sydney’s CBD. Here, tradition and modernity meet, bringing together individuals connected by a shared appreciation for heritage, hospitality, and meaningful professional and social networks.
+              </p>
+              <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)]/90 font-light mb-3 leading-relaxed">
+                While our foundations were built on motoring, today RACA is driven by something even more enduring: community. Through shared experiences, gatherings, and conversation, our members create the atmosphere that defines the Club — one of belonging, connection, and continuity into the future.
               </p>
             </div>
             
             <div className="space-y-3 md:space-y-4">
               <div className="art-deco-card p-4 md:p-5">
-                <h3 className="text-lg md:text-xl font-heading text-[var(--color-gold-accent)] mb-2">
+                <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
                   Heritage & Prestige
                 </h3>
                 <p className="text-sm sm:text-base md:text-base text-[var(--color-cream)]/80 font-light">
@@ -105,7 +108,7 @@ function About() {
               </div>
               
               <div className="art-deco-card p-4 md:p-5">
-                <h3 className="text-lg md:text-xl font-heading text-[var(--color-gold-accent)] mb-2">
+                <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
                   Premium Location
                 </h3>
                 <p className="text-sm sm:text-base md:text-base text-[var(--color-cream)]/80 font-light">
@@ -114,7 +117,7 @@ function About() {
               </div>
               
               <div className="art-deco-card p-4 md:p-5">
-                <h3 className="text-lg md:text-xl font-heading text-[var(--color-gold-accent)] mb-2">
+                <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
                   Progressive Spirit
                 </h3>
                 <p className="text-sm sm:text-base md:text-base text-[var(--color-cream)]/80 font-light">
@@ -127,7 +130,7 @@ function About() {
 
         <section className="mb-16 md:mb-20">
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 md:mb-10 mx-auto" />
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-5 md:mb-6 tracking-wide">
+          <h2>
             Why Join RACA
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10">
@@ -141,7 +144,7 @@ function About() {
                   <div className="mb-3 md:mb-4 inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full border border-[var(--color-gold-accent)]/40">
                     <Icon size={26} className="text-[var(--color-gold-accent)]" />
                   </div>
-                  <h3 className="text-base md:text-lg font-heading text-[var(--color-gold-accent)] mb-2">
+                  <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
                     {item.title}
                   </h3>
                   <p className="hidden md:block text-sm md:text-base text-[var(--color-cream)]/80 font-light">
@@ -156,7 +159,7 @@ function About() {
 
         <section className="mb-16 md:mb-20">
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 md:mb-10 mx-auto" />
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading font-light text-[var(--color-gold-accent)] mb-5 md:mb-6 tracking-wide px-2">
+          <h2>
             Members Perks
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10 px-4">
@@ -178,7 +181,7 @@ function About() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-dark-navy)]/80 via-transparent to-transparent" />
                 </div>
                 <div className="p-5 md:p-6 flex-1 flex flex-col justify-start">
-                  <h3 className="text-[var(--color-gold-accent)] font-heading mb-2 md:mb-3 text-base md:text-xl">
+                  <h3 className="text-[var(--color-gold-accent)] font-heading mb-2 md:mb-3 text-lg md:text-2xl tracking-wide">
                     {perk.title}
                   </h3>
                   <p className="hidden md:block text-[var(--color-cream)]/80 font-light text-sm md:text-base">
@@ -190,19 +193,70 @@ function About() {
           </div>
         </section>
 
+        {/* Accommodation Section (moved below Members Perks) */}
+        <section className="mb-16 md:mb-20" id="accommodation">
+          <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 md:mb-10 mx-auto" />
+          <h2>
+            Stay at the RACA
+          </h2>
+          <div className="max-w-4xl mx-auto text-center mb-6">
+              <p className="text-base md:text-lg text-[var(--color-cream)]/90 font-light mb-3 leading-relaxed">
+                The Royal Automobile Club of Australia offers 28 accommodation rooms for members, reciprocal members and their guests. With styles ranging from our original 1920s single bedrooms, rich in character, to our most sought-after Deluxe Harbour Suite overlooking Sydney Harbour or for that special weekend getaway or mid-week home away from home stay, our accommodation facilities provide unparalleled comfort. You will have access to all the Club’s amenities, with our professional and helpful concierge team always ready to assist.
+              </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
+            {/* 1. Deluxe Harbour Suite image */}
+            <div className="art-deco-card overflow-hidden flex flex-col items-center">
+              <img src={getAssetPath('/IMAGES/images/DSC_1304.jpg')} alt="Deluxe Harbour Suite" className="w-full h-48 object-cover mb-3" />
+              <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">Deluxe Harbour Suite</h3>
+              {/* Removed: Breathtaking Sydney Harbour Views */}
+            </div>
+            {/* 2. Breakfast Image */}
+            <div className="art-deco-card overflow-hidden flex flex-col items-center">
+              <img src="https://images.pexels.com/photos/6364372/pexels-photo-6364372.jpeg?auto=compress&w=600&h=300&fit=crop" alt="Complimentary Breakfast - Bacon and Eggs" className="w-full h-48 object-cover mb-3" />
+              <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">Complimentary Breakfast</h3>
+              {/* Removed: Start your day with a delicious breakfast included in your stay */}
+            </div>
+            {/* 3. Room Image - Quiet sophistication */}
+            <div className="art-deco-card overflow-hidden flex flex-col items-center">
+              <img src={getAssetPath('/IMAGES/images/DSC_1302.jpg')} alt="Room - Quiet Sophistication" className="w-full h-48 object-cover mb-3" />
+              <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">Quiet Sophistication</h3>
+              {/* Removed: Enjoy peaceful comfort and elegant design */}
+            </div>
+          </div>
+            <div className="max-w-4xl mx-auto text-center mb-4">
+              <p className="text-base md:text-lg text-white font-bold mb-1">
+                All accommodation bookings come with complimentary breakfast.
+              </p>
+              <p className="text-base md:text-lg text-white font-bold mb-1">
+                Room rates are subject to seasonal pricing
+              </p>
+            </div>
+          <div className="flex justify-center">
+            <a
+              href="https://app.mews.com/distributor/adee2521-407e-4c2f-af36-b38d01263bf4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline-gold max-w-xs w-full mx-auto"
+            >
+              Book Your Stay
+            </a>
+          </div>
+        </section>
+
         <section className="mb-16 md:mb-20">
           <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-12" />
           <div className="art-deco-card p-10 md:p-12 text-center">
-            <h2 className="text-2xl md:text-3xl font-heading font-light text-[var(--color-gold-accent)] mb-4">
-              Discover Your Space
+            <h2>
+              Discover In Style
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)]/80 font-light mb-8 md:mb-10 max-w-2xl mx-auto">
-              Explore the main room, see the gym and parking, and experience our dining venues firsthand. Our team will tailor the visit to what matters most to you.
+              Explore the main room, see the gym and parking, and experience our dining venues firsthaDeluxe Harbour Suitend. Our team will tailor the visit to what matters most to you.
             </p>
             <button
               type="button"
               onClick={() => setIsBookTourOpen(true)}
-              className="px-8 py-4 bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)] font-heading tracking-widest hover:bg-red-600 hover:text-white transition-all duration-300"
+              className="btn-outline-gold w-full max-w-xs mx-auto"
             >
               Book a Tour
             </button>
