@@ -47,7 +47,7 @@ function MembershipCard({ name, price, description, highlights }: MembershipCard
           <p className="text-[10px] sm:text-base md:text-lg text-[var(--color-cream)] leading-relaxed mb-2 font-normal sm:font-bold md:font-bold">
             {/* On mobile: smaller and normal weight, on sm+/md+: larger and bold */}
             <span className="font-normal sm:font-bold md:font-bold text-[10px] sm:text-base md:text-lg">
-              {name === 'Corporate/Community' ? 'Group Membership' : 'Individual Membership'}
+              {name === 'Corporate / Community' ? 'Group Membership' : 'Individual Membership'}
             </span>
           </p>
           <span className="block text-xs md:text-sm text-[var(--color-gold-accent)] font-semibold tracking-wider mt-2 italic">
