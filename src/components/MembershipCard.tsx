@@ -44,8 +44,8 @@ function MembershipCard({ name, price, description, highlights }: MembershipCard
             <span className="block text-lg sm:text-lg md:text-2xl sm:font-bold md:font-bold">{name}</span>
           </h3>
           <div className="h-[2px] w-12 bg-gradient-to-r from-transparent via-[var(--color-gold-accent)] to-transparent mx-auto mb-4 rounded-full opacity-90"></div>
-          <p className="text-base md:text-lg text-[var(--color-cream)] leading-relaxed mb-2 sm:font-bold md:font-bold font-normal">
-            {/* On mobile: font-normal, on sm+/md+: font-bold */}
+          <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)] leading-relaxed mb-2 font-normal sm:font-bold md:font-bold">
+            {/* On mobile: smaller and normal weight, on sm+/md+: larger and bold */}
             {name === 'Corporate/Community' ? 'Group Membership' : 'Individual Membership'}
           </p>
           <span className="block text-xs md:text-sm text-[var(--color-gold-accent)] font-semibold tracking-wider mt-2 italic">
