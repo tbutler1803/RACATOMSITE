@@ -1,0 +1,160 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="woven-grain" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#040f2a" />
+      <rect x="0" y="0" width="4" height="4" fill="#051020" opacity="0.3" />
+      <rect x="4" y="4" width="4" height="4" fill="#0a1835" opacity="0.25" />
+    </pattern>
+  </defs>
+  
+  <!-- Base color -->
+  <rect width="512" height="512" fill="#040f2a" />
+  
+  <!-- Woven grain pattern -->
+  <rect width="512" height="512" fill="url(#woven-grain)" opacity="0.8" />
+  
+  <!-- Subtle horizontal texture waves -->
+  <g opacity="0.1">
+    <path d="M 0 32 Q 128 28 256 32 T 512 32" stroke="#0a1835" stroke-width="0.8" fill="none" />
+    <path d="M 0 80 Q 128 76 256 80 T 512 80" stroke="#0a1835" stroke-width="0.8" fill="none" />
+    <path d="M 0 128 Q 128 124 256 128 T 512 128" stroke="#0a1835" stroke-width="0.8" fill="none" />
+    <path d="M 0 176 Q 128 172 256 176 T 512 176" stroke="#0a1835" stroke-width="0.8" fill="none" />
+    <path d="M 0 224 Q 128 220 256 224 T 512 224" stroke="#0a1835" stroke-width="0.8" fill="none" />
+    <path d="M 0 272 Q 128 268 256 272 T 512 272" stroke="#0a1835" stroke-width="0.8" fill="none" />
+    <path d="M 0 320 Q 128 316 256 320 T 512 320" stroke="#0a1835" stroke-width="0.8" fill="none" />
+    <path d="M 0 368 Q 128 364 256 368 T 512 368" stroke="#0a1835" stroke-width="0.8" fill="none" />
+    <path d="M 0 416 Q 128 412 256 416 T 512 416" stroke="#0a1835" stroke-width="0.8" fill="none" />
+    <path d="M 0 464 Q 128 460 256 464 T 512 464" stroke="#0a1835" stroke-width="0.8" fill="none" />
+  </g>
+  
+  <!-- Vertical fabric lines -->
+  <g opacity="0.08">
+    <line x1="16" y1="0" x2="16" y2="512" stroke="#0a1835" stroke-width="0.6" />
+    <line x1="48" y1="0" x2="48" y2="512" stroke="#051020" stroke-width="0.5" />
+    <line x1="80" y1="0" x2="80" y2="512" stroke="#0a1835" stroke-width="0.6" />
+    <line x1="112" y1="0" x2="112" y2="512" stroke="#051020" stroke-width="0.5" />
+    <line x1="144" y1="0" x2="144" y2="512" stroke="#0a1835" stroke-width="0.6" />
+    <line x1="176" y1="0" x2="176" y2="512" stroke="#051020" stroke-width="0.5" />
+    <line x1="208" y1="0" x2="208" y2="512" stroke="#0a1835" stroke-width="0.6" />
+    <line x1="240" y1="0" x2="240" y2="512" stroke="#051020" stroke-width="0.5" />
+    <line x1="272" y1="0" x2="272" y2="512" stroke="#0a1835" stroke-width="0.6" />
+    <line x1="304" y1="0" x2="304" y2="512" stroke="#051020" stroke-width="0.5" />
+    <line x1="336" y1="0" x2="336" y2="512" stroke="#0a1835" stroke-width="0.6" />
+    <line x1="368" y1="0" x2="368" y2="512" stroke="#051020" stroke-width="0.5" />
+    <line x1="400" y1="0" x2="400" y2="512" stroke="#0a1835" stroke-width="0.6" />
+    <line x1="432" y1="0" x2="432" y2="512" stroke="#051020" stroke-width="0.5" />
+    <line x1="464" y1="0" x2="464" y2="512" stroke="#0a1835" stroke-width="0.6" />
+    <line x1="496" y1="0" x2="496" y2="512" stroke="#051020" stroke-width="0.5" />
+  </g>
+  
+  <!-- Organic noise spots for texture depth -->
+  <g opacity="0.12">
+    <circle cx="40" cy="60" r="1" fill="#0a1835" />
+    <circle cx="120" cy="140" r="0.8" fill="#051020" />
+    <circle cx="200" cy="100" r="0.9" fill="#0a1835" />
+    <circle cx="280" cy="200" r="0.8" fill="#051020" />
+    <circle cx="360" cy="120" r="1" fill="#0a1835" />
+    <circle cx="440" cy="280" r="0.8" fill="#051020" />
+    
+    <circle cx="80" cy="280" r="0.9" fill="#051020" />
+    <circle cx="160" cy="380" r="1" fill="#0a1835" />
+    <circle cx="240" cy="320" r="0.8" fill="#051020" />
+    <circle cx="320" cy="420" r="0.9" fill="#0a1835" />
+    <circle cx="400" cy="360" r="1" fill="#051020" />
+    <circle cx="480" cy="460" r="0.8" fill="#0a1835" />
+  </g>
+  
+  <!-- Fine speckles -->
+  <g opacity="0.06">
+    <circle cx="64" cy="96" r="0.5" fill="#0a1835" />
+    <circle cx="192" cy="224" r="0.5" fill="#051020" />
+    <circle cx="320" cy="160" r="0.5" fill="#0a1835" />
+    <circle cx="416" cy="352" r="0.5" fill="#051020" />
+    <circle cx="96" cy="352" r="0.5" fill="#0a1835" />
+    <circle cx="256" cy="480" r="0.5" fill="#051020" />
+    <circle cx="384" cy="256" r="0.5" fill="#0a1835" />
+  </g>
+  
+  <!-- Very subtle overall shadow -->
+  <rect width="512" height="512" fill="#000000" opacity="0.02" />
+</svg>
+  <defs>
+    <filter id="velvet-filter">
+      <feTurbulence type="fractalNoise" baseFrequency="2.5" numOctaves="5" result="noise" seed="1" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </defs>
+  
+  <!-- Base color -->
+  <rect width="200" height="200" fill="#040f2a" />
+  
+  <!-- Velvet pile texture - random circles and spots for nubby effect -->
+  <circle cx="12" cy="18" r="1.2" fill="#0a1835" opacity="0.4" />
+  <circle cx="35" cy="8" r="0.8" fill="#051020" opacity="0.3" />
+  <circle cx="58" cy="22" r="1" fill="#0a1835" opacity="0.35" />
+  <circle cx="78" cy="12" r="0.9" fill="#051020" opacity="0.32" />
+  <circle cx="102" cy="18" r="1.1" fill="#0a1835" opacity="0.38" />
+  <circle cx="125" cy="8" r="0.8" fill="#051020" opacity="0.3" />
+  <circle cx="148" cy="20" r="1" fill="#0a1835" opacity="0.36" />
+  <circle cx="172" cy="10" r="0.9" fill="#051020" opacity="0.31" />
+  <circle cx="192" cy="16" r="1.1" fill="#0a1835" opacity="0.37" />
+  
+  <circle cx="22" cy="42" r="0.9" fill="#051020" opacity="0.34" />
+  <circle cx="45" cy="48" r="1.2" fill="#0a1835" opacity="0.41" />
+  <circle cx="68" cy="38" r="0.8" fill="#051020" opacity="0.32" />
+  <circle cx="88" cy="52" r="1" fill="#0a1835" opacity="0.39" />
+  <circle cx="112" cy="42" r="0.9" fill="#051020" opacity="0.33" />
+  <circle cx="135" cy="48" r="1.1" fill="#0a1835" opacity="0.37" />
+  <circle cx="158" cy="38" r="0.8" fill="#051020" opacity="0.31" />
+  <circle cx="182" cy="50" r="1" fill="#0a1835" opacity="0.38" />
+  
+  <circle cx="8" cy="68" r="1" fill="#0a1835" opacity="0.36" />
+  <circle cx="32" cy="75" r="0.9" fill="#051020" opacity="0.33" />
+  <circle cx="55" cy="65" r="1.1" fill="#0a1835" opacity="0.39" />
+  <circle cx="78" cy="78" r="0.8" fill="#051020" opacity="0.31" />
+  <circle cx="102" cy="68" r="1" fill="#0a1835" opacity="0.37" />
+  <circle cx="125" cy="75" r="0.9" fill="#051020" opacity="0.34" />
+  <circle cx="148" cy="65" r="1.1" fill="#0a1835" opacity="0.38" />
+  <circle cx="172" cy="78" r="0.8" fill="#051020" opacity="0.32" />
+  <circle cx="195" cy="68" r="1" fill="#0a1835" opacity="0.36" />
+  
+  <circle cx="18" cy="95" r="1.1" fill="#051020" opacity="0.35" />
+  <circle cx="42" cy="102" r="0.8" fill="#0a1835" opacity="0.32" />
+  <circle cx="65" cy="92" r="1" fill="#051020" opacity="0.38" />
+  <circle cx="88" cy="105" r="0.9" fill="#0a1835" opacity="0.33" />
+  <circle cx="112" cy="95" r="1.1" fill="#051020" opacity="0.37" />
+  <circle cx="135" cy="102" r="0.8" fill="#0a1835" opacity="0.31" />
+  <circle cx="158" cy="92" r="1" fill="#051020" opacity="0.36" />
+  <circle cx="182" cy="105" r="0.9" fill="#0a1835" opacity="0.34" />
+  
+  <circle cx="28" cy="125" r="0.9" fill="#0a1835" opacity="0.34" />
+  <circle cx="52" cy="132" r="1" fill="#051020" opacity="0.37" />
+  <circle cx="75" cy="120" r="0.8" fill="#0a1835" opacity="0.32" />
+  <circle cx="98" cy="135" r="1.1" fill="#051020" opacity="0.39" />
+  <circle cx="122" cy="125" r="0.9" fill="#0a1835" opacity="0.35" />
+  <circle cx="145" cy="132" r="1" fill="#051020" opacity="0.36" />
+  <circle cx="168" cy="120" r="0.8" fill="#0a1835" opacity="0.31" />
+  <circle cx="192" cy="135" r="1.1" fill="#051020" opacity="0.38" />
+  
+  <circle cx="15" cy="152" r="1" fill="#051020" opacity="0.36" />
+  <circle cx="38" cy="160" r="0.9" fill="#0a1835" opacity="0.33" />
+  <circle cx="62" cy="148" r="1.1" fill="#051020" opacity="0.38" />
+  <circle cx="85" cy="162" r="0.8" fill="#0a1835" opacity="0.32" />
+  <circle cx="108" cy="152" r="1" fill="#051020" opacity="0.37" />
+  <circle cx="132" cy="160" r="0.9" fill="#0a1835" opacity="0.34" />
+  <circle cx="155" cy="148" r="1.1" fill="#051020" opacity="0.36" />
+  <circle cx="178" cy="162" r="0.8" fill="#0a1835" opacity="0.31" />
+  <circle cx="198" cy="152" r="1" fill="#051020" opacity="0.35" />
+  
+  <circle cx="25" cy="182" r="1.1" fill="#0a1835" opacity="0.37" />
+  <circle cx="48" cy="190" r="0.8" fill="#051020" opacity="0.32" />
+  <circle cx="72" cy="178" r="1" fill="#0a1835" opacity="0.36" />
+  <circle cx="95" cy="192" r="0.9" fill="#051020" opacity="0.34" />
+  <circle cx="118" cy="182" r="1.1" fill="#0a1835" opacity="0.38" />
+  <circle cx="142" cy="190" r="0.8" fill="#051020" opacity="0.31" />
+  <circle cx="165" cy="178" r="1" fill="#0a1835" opacity="0.35" />
+  <circle cx="188" cy="192" r="0.9" fill="#051020" opacity="0.33" />
+  
+  <!-- Very subtle highlights for depth -->
+  <rect x="0" y="0" width="200" height="200" fill="#0d1630" opacity="0.08" />
+</svg>
