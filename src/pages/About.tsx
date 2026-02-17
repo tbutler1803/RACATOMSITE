@@ -228,7 +228,7 @@ function About() {
             </div>
           </div>
             <div className="max-w-4xl mx-auto text-center mb-4">
-              <p className="text-base md:text-lg text-white font-bold mb-1">
+              <p className="text-sm sm:text-base md:text-lg text-white font-normal mb-1">
                 All accommodation bookings come with complimentary breakfast. Room rates are subject to seasonal pricing.
               </p>
             </div>
