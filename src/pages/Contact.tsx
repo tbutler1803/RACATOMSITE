@@ -108,11 +108,11 @@ function Contact() {
       ]
     },
     {
-      name: 'Defence/Emergency Services',
-      price: '$2,020',
-      description: 'Active or Retired',
+      name: 'Young Executive',
+      price: '',
+      description: 'For members ages 18-29 years',
       highlights: [
-        "This membership is designed for active or retired members of Australia's defence and emergency services, as well as those who have served in affiliated international forces. It offers a welcoming home away from home where service is recognised and connections are celebrated. Members enjoy full access to our iconic Macquarie Street clubhouse, curated events, fine dining and a vibrant community of like-minded individuals. Experience the tradition, camaraderie, and privileges of RACA while staying connected to those who share your dedication and passion."
+        "Young Executive Membership is designed for ambitious members aged 18 to 29 who want to experience the Royal Automobile Club of Australia in a vibrant, stylish, and connected way. With access to our iconic Macquarie Street clubhouse, established networks, industry leaders, and curated networking events, members step into a community rich in experience, influence, and opportunity. Join early, connect with purpose, and gain access to the relationships, resources, and environment that can shape your career."
       ]
     },
     {
@@ -124,11 +124,11 @@ function Contact() {
       ]
     },
     {
-      name: 'Young Executive',
-      price: '',
-      description: 'For members ages 18-29 years',
+      name: 'Defence/Emergency Services',
+      price: '$2,020',
+      description: 'Active or Retired',
       highlights: [
-        "Young Executive Membership is designed for ambitious members aged 18 to 29 who want to experience the Royal Automobile Club of Australia in a vibrant, stylish, and connected way. With access to our iconic Macquarie Street clubhouse, established networks, industry leaders, and curated networking events, members step into a community rich in experience, influence, and opportunity. Join early, connect with purpose, and gain access to the relationships, resources, and environment that can shape your career."
+        "This membership is designed for active or retired members of Australia's defence and emergency services, as well as those who have served in affiliated international forces. It offers a welcoming home away from home where service is recognised and connections are celebrated. Members enjoy full access to our iconic Macquarie Street clubhouse, curated events, fine dining and a vibrant community of like-minded individuals. Experience the tradition, camaraderie, and privileges of RACA while staying connected to those who share your dedication and passion."
       ]
     },
     {
@@ -177,30 +177,37 @@ function Contact() {
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10">
             Choose the path that fits you best; all categories share core privileges, with tailored rates and access to suit your lifestyle.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-            {/* Top row: 4 cards */}
-            {categories.slice(0, 4).map((cat, idx) => (
-              <MembershipCard
-                key={idx}
-                name={cat.name}
-                price={cat.price}
-                description={cat.description}
-                highlights={cat.highlights}
-              />
-            ))}
-            {/* Bottom row: 3 cards, centered */}
-            <div className="col-span-2 md:col-span-3 lg:col-span-4 flex justify-center mt-4">
-              <div className="grid grid-cols-3 gap-4 md:gap-6" style={{width: '75%'}}>
-                {categories.slice(4).map((cat, idx) => (
+          {/* Membership cards grid: top row and bottom row separated for custom layout */}
+          <div>
+            {/* Top row: 4 cards, always grid-cols-2 on mobile, grid-cols-4 on desktop */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+              {categories.slice(0, 4).map((cat, idx) => (
+                <div key={idx} className="flex justify-center items-stretch">
                   <MembershipCard
-                    key={4 + idx}
                     name={cat.name}
                     price={cat.price}
                     description={cat.description}
                     highlights={cat.highlights}
                   />
-                ))}
-              </div>
+                </div>
+              ))}
+            </div>
+            {/* Larger gap between rows */}
+            <div className="my-6 md:my-10"></div>
+            {/* Bottom row: 3 cards, centered and constrained in width on desktop/tablet, 2 columns on mobile with last card centered */}
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 justify-center">
+              {categories.slice(4, 7).map((cat, idx) => (
+                <div key={4 + idx} className="flex justify-center items-stretch">
+                  <div className="w-full max-w-[370px]">
+                    <MembershipCard
+                      name={cat.name}
+                      price={cat.price}
+                      description={cat.description}
+                      highlights={cat.highlights}
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
