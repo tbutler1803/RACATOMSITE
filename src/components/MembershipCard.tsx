@@ -39,13 +39,13 @@ function MembershipCard({ name, price, description, highlights }: MembershipCard
             background: 'var(--color-dark-navy)'
           }}
         >
-          <h3 className="text-[var(--color-gold-accent)] font-heading mb-2 md:mb-3 text-base sm:text-lg md:text-2xl tracking-wide uppercase leading-tight font-semibold sm:font-bold md:font-bold">
+          <h3 className="text-[var(--color-gold-accent)] font-heading mb-2 md:mb-3 text-base sm:text-lg md:text-2xl tracking-wide uppercase leading-tight sm:font-bold md:font-bold">
             {/* On mobile: font-normal, smaller size; on sm+/md+: bolder, larger */}
-            <span className="block text-lg font-semibold sm:text-lg md:text-2xl md:font-bold">{name}</span>
+            <span className="block text-lg sm:text-lg md:text-2xl sm:font-bold md:font-bold">{name}</span>
           </h3>
           <div className="h-[2px] w-12 bg-gradient-to-r from-transparent via-[var(--color-gold-accent)] to-transparent mx-auto mb-4 rounded-full opacity-90"></div>
-          <p className="text-base md:text-lg text-[var(--color-cream)] font-semibold sm:font-bold leading-relaxed mb-2">
-            {/* On mobile: font-semibold, on sm+/md+: font-bold */}
+          <p className="text-base md:text-lg text-[var(--color-cream)] leading-relaxed mb-2 sm:font-bold md:font-bold font-normal">
+            {/* On mobile: font-normal, on sm+/md+: font-bold */}
             {name === 'Corporate/Community' ? 'Group Membership' : 'Individual Membership'}
           </p>
           <span className="block text-xs md:text-sm text-[var(--color-gold-accent)] font-semibold tracking-wider mt-2 italic">
