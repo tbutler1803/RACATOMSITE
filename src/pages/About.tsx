@@ -86,14 +86,17 @@ function About() {
               <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
                 Innovation is in our DNA
               </h3>
-              <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)]/90 font-light mb-3 leading-relaxed">
+              <p className="hidden sm:block text-base md:text-base text-[var(--color-cream)]/80 font-light mb-3 leading-relaxed">
                 Since 1903, the Royal Automobile Club of Australia has championed motoring excellence. Established as Australia’s first automobile club, RACA was founded to advocate for motorists and has remained at the forefront of the automotive landscape ever since — from campaigning for improved roads to hosting distinguished motoring events across generations.
               </p>
-              <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)]/90 font-light mb-3 leading-relaxed">
+              <p className="hidden sm:block text-base md:text-base text-[var(--color-cream)]/80 font-light mb-3 leading-relaxed">
                 Our landmark Macquarie Street clubhouse stands as a symbol of this enduring legacy, welcoming members in the heart of Sydney’s CBD. Here, tradition and modernity meet, bringing together individuals connected by a shared appreciation for heritage, hospitality, and meaningful professional and social networks.
               </p>
-              <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)]/90 font-light mb-3 leading-relaxed">
+              <p className="hidden sm:block text-base md:text-base text-[var(--color-cream)]/80 font-light mb-3 leading-relaxed">
                 While our foundations were built on motoring, today RACA is driven by something even more enduring: community. Through shared experiences, gatherings, and conversation, our members create the atmosphere that defines the Club — one of belonging, connection, and continuity into the future.
+              </p>
+              <p className="block sm:hidden text-base md:text-base text-[var(--color-cream)]/80 font-light mb-3 leading-relaxed">
+                Since 1903, RACA has led Australian motoring and club life. Today, we unite tradition, community, and excellence in the heart of Sydney.
               </p>
             </div>
             
@@ -102,27 +105,27 @@ function About() {
                 <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
                   Heritage & Prestige
                 </h3>
-                <p className="text-sm sm:text-base md:text-base text-[var(--color-cream)]/80 font-light">
-                  Over 120 years of automotive excellence and club traditions.
-                </p>
+                  <p className="text-sm md:text-lg text-[var(--color-cream)]/80 font-light">
+                    Over 120 years of automotive excellence and club traditions.
+                  </p>
               </div>
               
               <div className="art-deco-card p-4 md:p-5">
                 <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
                   Premium Location
                 </h3>
-                <p className="text-sm sm:text-base md:text-base text-[var(--color-cream)]/80 font-light">
-                  Centrally positioned at Circular Quay, with direct transport access and moments from Sydney Airport.
-                </p>
+                  <p className="text-sm md:text-lg text-[var(--color-cream)]/80 font-light">
+                    Centrally positioned at Circular Quay, with direct transport access and moments from Sydney Airport.
+                  </p>
               </div>
               
               <div className="art-deco-card p-4 md:p-5">
                 <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
                   Progressive Spirit
                 </h3>
-                <p className="text-sm sm:text-base md:text-base text-[var(--color-cream)]/80 font-light">
-                  Connecting motoring enthusiasts with industry leaders and emerging technology.
-                </p>
+                  <p className="text-sm md:text-lg text-[var(--color-cream)]/80 font-light">
+                    Connecting motoring enthusiasts with industry leaders and emerging technology.
+                  </p>
               </div>
             </div>
           </div>
@@ -133,7 +136,7 @@ function About() {
           <h2>
             Why Join RACA
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10">
+          <p className="text-base md:text-lg text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10">
             Membership brings the best of location, reciprocal privileges, crafted hospitality, and spaces designed for business, celebration, and wellbeing.
           </p>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
@@ -162,7 +165,7 @@ function About() {
           <h2>
             Members Perks
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10 px-4">
+          <p className="text-base md:text-lg text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10 px-4">
             From secure parking and a fully-equipped gym to dining, reciprocal clubs, and our iconic rooms, membership is designed to serve every visit.
           </p>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -201,7 +204,7 @@ function About() {
           </h2>
           <div className="max-w-4xl mx-auto text-center mb-6">
               <p className="text-base md:text-lg text-[var(--color-cream)]/90 font-light mb-3 leading-relaxed">
-                The Royal Automobile Club of Australia offers 28 accommodation rooms for members, reciprocal members and their guests. With styles ranging from our original 1920s single bedrooms, rich in character, to our most sought-after Deluxe Harbour Suite overlooking Sydney Harbour or for that special weekend getaway or mid-week home away from home stay, our accommodation facilities provide unparalleled comfort. You will have access to all the Club’s amenities, with our professional and helpful concierge team always ready to assist.
+                Enjoy 28 unique rooms, from heritage singles to our Deluxe Harbour Suite. All guests have access to club amenities and a helpful concierge team.
               </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
@@ -226,10 +229,7 @@ function About() {
           </div>
             <div className="max-w-4xl mx-auto text-center mb-4">
               <p className="text-base md:text-lg text-white font-bold mb-1">
-                All accommodation bookings come with complimentary breakfast.
-              </p>
-              <p className="text-base md:text-lg text-white font-bold mb-1">
-                Room rates are subject to seasonal pricing
+                All accommodation bookings come with complimentary breakfast. Room rates are subject to seasonal pricing.
               </p>
             </div>
           <div className="flex justify-center">
@@ -251,7 +251,8 @@ function About() {
               Discover In Style
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)]/80 font-light mb-8 md:mb-10 max-w-2xl mx-auto">
-              Explore the main room, see the gym and parking, and experience our dining venues firsthaDeluxe Harbour Suitend. Our team will tailor the visit to what matters most to you.
+              <span className="hidden sm:inline">Explore the main room, see the gym and parking, and experience our dining venues firsthand. Our team will tailor the visit to what matters most to you.</span>
+              <span className="inline sm:hidden text-sm">Tour the club, gym, parking, and dining—our team tailors your visit to what matters most.</span>
             </p>
             <button
               type="button"
