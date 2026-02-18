@@ -147,25 +147,6 @@ function Contact() {
       <Header />
 
       <div>
-        {/* Mobile-only larger text for key content */}
-        <div className="mobile-large-text sm:hidden px-4 py-6 text-left">
-          <div className="mb-4 font-heading font-semibold">Innovation is in our DNA<br/>Heritage & Prestige<br/>Premium Location<br/>Progressive Spirit<br/>Events-Driven Excellence<br/>Rest Assured<br/>Your Gateway to Connections<br/>The Art of Hospitality</div>
-          <div className="mb-4">Membership brings the best of location, reciprocal privileges, crafted hospitality, and spaces designed for business, celebration, and wellbeing.<br/>From secure parking and a fully-equipped gym to dining, reciprocal clubs, and our iconic rooms, membership is designed to serve every visit.</div>
-          <div className="mb-4">
-            <span className="font-heading font-semibold">Social Events</span><br/>Galas, dinners, and member gatherings<br/>
-            <span className="font-heading font-semibold">Networking</span><br/>Business lunches and professional connections<br/>
-            <span className="font-heading font-semibold">Entertainment</span><br/>Live performances and cultural experiences<br/>
-            <span className="font-heading font-semibold">Private Functions</span><br/>Bespoke events for members and guests
-          </div>
-          <div className="mb-4">Explore the main room, see the gym and parking, and experience our dining venues firsthand. Our team will tailor the visit to what matters most to you.</div>
-          <div className="mb-4">
-            <span className="font-heading font-semibold">Address</span><br/>89 Macquarie St, Sydney NSW 2000<br/>
-            <span className="font-heading font-semibold">Phone</span><br/>+61 (02) 8273 2300<br/>
-            <span className="font-heading font-semibold">Email</span><br/>membership@raca.com.au<br/>
-            <span className="font-heading font-semibold">Hours</span><br/>24/7 Reception Availability
-          </div>
-          <div>Choose the path that fits you best; all categories share core privileges, with tailored rates and access to suit your lifestyle.</div>
-        </div>
         <div
           className="relative h-[70vh] md:h-screen w-full bg-cover bg-center flex items-center justify-center overflow-hidden pt-16 md:pt-20"
           style={{
@@ -216,7 +197,8 @@ function Contact() {
             <div className="my-6 md:my-10"></div>
             {/* Bottom row: 3 cards, centered and constrained in width on desktop/tablet, 2 columns on mobile with last card centered */}
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 justify-center">
-              {categories.slice(4, 7).map((cat, idx) => (
+              {/* First two cards in a row on mobile, all three in a row on desktop */}
+              {categories.slice(4, 6).map((cat, idx) => (
                 <div key={4 + idx} className="flex justify-center items-stretch">
                   <div className="w-full max-w-[370px]">
                     <MembershipCard
@@ -228,6 +210,28 @@ function Contact() {
                   </div>
                 </div>
               ))}
+              {/* On desktop, show the third card in the row; on mobile, show it centered below */}
+              <div className="hidden lg:flex justify-center items-stretch">
+                <div className="w-full max-w-[370px]">
+                  <MembershipCard
+                    name={categories[6].name}
+                    price={categories[6].price}
+                    description={categories[6].description}
+                    highlights={categories[6].highlights}
+                  />
+                </div>
+              </div>
+            </div>
+            {/* On mobile only, center the last card below the two above */}
+            <div className="flex lg:hidden justify-center mt-4">
+              <div className="w-full max-w-[370px]">
+                <MembershipCard
+                  name={categories[6].name}
+                  price={categories[6].price}
+                  description={categories[6].description}
+                  highlights={categories[6].highlights}
+                />
+              </div>
             </div>
           </div>
         </section>
