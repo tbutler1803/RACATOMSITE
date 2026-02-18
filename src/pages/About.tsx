@@ -83,7 +83,7 @@ function About() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-5xl mx-auto px-4">
             <div className="text-center md:text-left">
-              <h3 className="text-xl md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
+              <h3 className="mobile-large-text md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
                 Innovation is in our DNA
               </h3>
               {/* Full text for md and up */}
@@ -100,7 +100,7 @@ function About() {
               </div>
               {/* Reduced text for mobile only */}
               <div className="block md:hidden">
-                <p className="text-lg text-[var(--color-cream)]/80 font-light mb-3">
+                <p className="text-lg text-[var(--color-cream)]/80 font-light mb-3 mobile-large-text">
                   Tour the club, gym, parking, and dining—our team tailors your visit to what matters most.
                 </p>
               </div>
@@ -142,9 +142,9 @@ function About() {
           <h2>
             Why Join RACA
           </h2>
-          <p className="text-base md:text-lg text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10">
-            Membership brings the best of location, reciprocal privileges, crafted hospitality, and spaces designed for business, celebration, and wellbeing.
-          </p>
+            <p className="text-base md:text-lg text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10">
+              Membership brings the best of location, reciprocal privileges, crafted hospitality, and spaces designed for business, celebration, and wellbeing.
+            </p>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {whyJoin.map((item, idx) => {
               const Icon = item.icon;
@@ -171,9 +171,9 @@ function About() {
           <h2>
             Members Perks
           </h2>
-          <p className="text-base md:text-lg text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10 px-4">
-            From secure parking and a fully-equipped gym to dining, reciprocal clubs, and our iconic rooms, membership is designed to serve every visit.
-          </p>
+            <p className="text-base md:text-lg text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10 px-4">
+              From secure parking and a fully-equipped gym to dining, reciprocal clubs, and our iconic rooms, membership is designed to serve every visit.
+            </p>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {perkCards.map((perk, idx) => (
               <div
