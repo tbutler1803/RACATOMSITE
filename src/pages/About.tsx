@@ -32,7 +32,7 @@ function About() {
       description: 'A RACA membership opens the doors to an exclusive network spanning over 200 reciprocal clubs. From Sydney to Singapore, our members enjoy privileged access to a diverse range of services.'
     },
     {
-      title: 'Your Historic Vehicle Rego, covered',
+      title: 'Historic Vehicle Rego Covered',
       image: getAssetPath('/IMAGES/Images for Members Perks/Image4.jpg'),
       description: 'Need help with your Historic Vehicle Registration (HVS)? The Club offers a complimentary service to guide current members through the process. This service is exclusive to members, and is provided at no additional cost.'
     },
