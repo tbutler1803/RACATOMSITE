@@ -6,6 +6,7 @@ import MembershipCard from '../components/MembershipCard';
 import { getAssetPath } from '../utils/paths';
 import { MapPin, Phone, Mail, Clock, Car, Globe2, Utensils } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
+import '../index.mobile.css';
 
 function Contact() {
   const location = useLocation();
@@ -146,6 +147,25 @@ function Contact() {
       <Header />
 
       <div>
+        {/* Mobile-only larger text for key content */}
+        <div className="mobile-large-text sm:hidden px-4 py-6 text-left">
+          <div className="mb-4 font-heading font-semibold">Innovation is in our DNA<br/>Heritage & Prestige<br/>Premium Location<br/>Progressive Spirit<br/>Events-Driven Excellence<br/>Rest Assured<br/>Your Gateway to Connections<br/>The Art of Hospitality</div>
+          <div className="mb-4">Membership brings the best of location, reciprocal privileges, crafted hospitality, and spaces designed for business, celebration, and wellbeing.<br/>From secure parking and a fully-equipped gym to dining, reciprocal clubs, and our iconic rooms, membership is designed to serve every visit.</div>
+          <div className="mb-4">
+            <span className="font-heading font-semibold">Social Events</span><br/>Galas, dinners, and member gatherings<br/>
+            <span className="font-heading font-semibold">Networking</span><br/>Business lunches and professional connections<br/>
+            <span className="font-heading font-semibold">Entertainment</span><br/>Live performances and cultural experiences<br/>
+            <span className="font-heading font-semibold">Private Functions</span><br/>Bespoke events for members and guests
+          </div>
+          <div className="mb-4">Explore the main room, see the gym and parking, and experience our dining venues firsthand. Our team will tailor the visit to what matters most to you.</div>
+          <div className="mb-4">
+            <span className="font-heading font-semibold">Address</span><br/>89 Macquarie St, Sydney NSW 2000<br/>
+            <span className="font-heading font-semibold">Phone</span><br/>+61 (02) 8273 2300<br/>
+            <span className="font-heading font-semibold">Email</span><br/>membership@raca.com.au<br/>
+            <span className="font-heading font-semibold">Hours</span><br/>24/7 Reception Availability
+          </div>
+          <div>Choose the path that fits you best; all categories share core privileges, with tailored rates and access to suit your lifestyle.</div>
+        </div>
         <div
           className="relative h-[70vh] md:h-screen w-full bg-cover bg-center flex items-center justify-center overflow-hidden pt-16 md:pt-20"
           style={{

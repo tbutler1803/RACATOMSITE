@@ -1,0 +1,18 @@
+.mobile-large-text {
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 640px) {
+  .mobile-large-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-large-text {
+    font-size: 1.35rem;
+    line-height: 2;
+  }
+}
