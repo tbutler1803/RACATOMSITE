@@ -101,7 +101,7 @@ function About() {
               {/* Reduced text for mobile only */}
               <div className="block md:hidden">
                 <p className="text-lg text-[var(--color-cream)]/80 font-light mb-3 mobile-large-text">
-                  Tour the club, gym, parking, and dining—our team tailors your visit to what matters most.
+                  Since 1903, the Royal Automobile Club of Australia (RACA) has championed motoring excellence as the nation’s first automobile club. From advocating for motorists to welcoming members at its Macquarie Street clubhouse in Sydney’s CBD, RACA today blends heritage with contemporary hospitality — a community built on connection, belonging, and shared tradition.
                 </p>
               </div>
             </div>
