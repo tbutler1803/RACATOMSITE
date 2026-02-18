@@ -86,16 +86,16 @@ function About() {
               <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
                 Innovation is in our DNA
               </h3>
-              <p className="hidden sm:block text-base md:text-base text-[var(--color-cream)]/80 font-light mb-3 leading-relaxed">
+              <p className="text-sm md:text-lg text-[var(--color-cream)]/80 font-light mb-3">
                 Since 1903, the Royal Automobile Club of Australia has championed motoring excellence. Established as Australia’s first automobile club, RACA was founded to advocate for motorists and has remained at the forefront of the automotive landscape ever since — from campaigning for improved roads to hosting distinguished motoring events across generations.
               </p>
-              <p className="hidden sm:block text-base md:text-base text-[var(--color-cream)]/80 font-light mb-3 leading-relaxed">
+              <p className="text-sm md:text-lg text-[var(--color-cream)]/80 font-light mb-3">
                 Our landmark Macquarie Street clubhouse stands as a symbol of this enduring legacy, welcoming members in the heart of Sydney’s CBD. Here, tradition and modernity meet, bringing together individuals connected by a shared appreciation for heritage, hospitality, and meaningful professional and social networks.
               </p>
-              <p className="hidden sm:block text-base md:text-base text-[var(--color-cream)]/80 font-light mb-3 leading-relaxed">
+              <p className="text-sm md:text-lg text-[var(--color-cream)]/80 font-light mb-3">
                 While our foundations were built on motoring, today RACA is driven by something even more enduring: community. Through shared experiences, gatherings, and conversation, our members create the atmosphere that defines the Club — one of belonging, connection, and continuity into the future.
               </p>
-              <p className="block sm:hidden text-base md:text-base text-[var(--color-cream)]/80 font-light mb-3 leading-relaxed">
+              <p className="block sm:hidden text-sm md:text-lg text-[var(--color-cream)]/80 font-light mb-3">
                 Since 1903, RACA has led Australian motoring and club life. Today, we unite tradition, community, and excellence in the heart of Sydney.
               </p>
             </div>
@@ -204,7 +204,11 @@ function About() {
           </h2>
           <div className="max-w-4xl mx-auto text-center mb-6">
               <p className="text-base md:text-lg text-[var(--color-cream)]/90 font-light mb-3 leading-relaxed">
-                Enjoy 28 unique rooms, from heritage singles to our Deluxe Harbour Suite. All guests have access to club amenities and a helpful concierge team.
+                Enjoy 28 unique rooms, from heritage singles to our Deluxe Harbour Suite. All guests have access to club amenities and a helpful concierge team. All accommodation bookings come with complimentary breakfast. Room rates are subject to seasonal pricing.Since 1903, the Royal Automobile Club of Australia has championed motoring excellence. Established as Australia’s first automobile club, RACA was founded to advocate for motorists and has remained at the forefront of the automotive landscape ever since — from campaigning for improved roads to hosting distinguished motoring events across generations.
+
+Our landmark Macquarie Street clubhouse stands as a symbol of this enduring legacy, welcoming members in the heart of Sydney’s CBD. Here, tradition and modernity meet, bringing together individuals connected by a shared appreciation for heritage, hospitality, and meaningful professional and social networks.
+
+While our foundations were built on motoring, today RACA is driven by something even more enduring: community. Through shared experiences, gatherings, and conversation, our members create the atmosphere that defines the Club — one of belonging, connection, and continuity into the future. 
               </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
@@ -227,11 +231,7 @@ function About() {
               {/* Removed: Enjoy peaceful comfort and elegant design */}
             </div>
           </div>
-            <div className="max-w-4xl mx-auto text-center mb-4">
-              <p className="text-sm sm:text-base md:text-lg text-white font-normal mb-1">
-                All accommodation bookings come with complimentary breakfast. Room rates are subject to seasonal pricing.
-              </p>
-            </div>
+            
           <div className="flex justify-center">
             <a
               href="https://app.mews.com/distributor/adee2521-407e-4c2f-af36-b38d01263bf4"
