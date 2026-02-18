@@ -124,7 +124,7 @@ function Contact() {
       ]
     },
     {
-      name: 'Defence / Emergency Services',
+      name: 'Defence/ Emergency Services',
       price: '$2,020',
       description: 'Active or Retired',
       highlights: [
@@ -132,7 +132,7 @@ function Contact() {
       ]
     },
     {
-      name: 'Corporate / Community',
+      name: 'Corporate/ Community',
       price: '',
       description: 'Designed for businesses, organisations, and community groups',
       highlights: [
