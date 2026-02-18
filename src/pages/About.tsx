@@ -254,7 +254,7 @@ function About() {
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)]/80 font-light mb-8 md:mb-10 max-w-2xl mx-auto">
               <span className="hidden sm:inline">Explore the main room, see the gym and parking, and experience our dining venues firsthand. Our team will tailor the visit to what matters most to you.</span>
-              <span className="inline sm:hidden text-sm">Tour the club, gym, parking, and dining—our team tailors your visit to what matters most.</span>
+              <span className="inline sm:hidden text-lg">Tour the club, gym, parking, and dining—our team tailors your visit to what matters most.</span>
             </p>
             <button
               type="button"
