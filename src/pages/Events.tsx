@@ -204,10 +204,10 @@ function Events() {
                   </div>
                 </div>
                 <div className={idx % 2 === 1 ? 'lg:order-1' : ''}>
-                  <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
+                  <h3 className="text-sm md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
                     {space.capacity}
                   </h3>
-                  <h2>
+                  <h2 className="text-2xl md:text-xl font-heading text-[var(--color-gold-accent)] mb-1 tracking-wide">
                     {space.name}
                   </h2>
                   <p className="hidden sm:block text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2 mb-2 md:mb-3">

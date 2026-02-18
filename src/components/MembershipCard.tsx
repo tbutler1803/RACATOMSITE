@@ -44,13 +44,13 @@ function MembershipCard({ name, price, description, highlights }: MembershipCard
             <span className="block text-lg sm:text-lg md:text-2xl sm:font-bold md:font-bold">{name}</span>
           </h3>
           <div className="h-[2px] w-12 bg-gradient-to-r from-transparent via-[var(--color-gold-accent)] to-transparent mx-auto mb-4 rounded-full opacity-90"></div>
-          <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)] leading-relaxed mb-2 font-normal sm:font-bold md:font-bold">
-            {/* On mobile: small and normal weight, on sm+/md+: base/lg and bold */}
+          <p className="hidden sm:block text-sm sm:text-base md:text-lg text-[var(--color-cream)] leading-relaxed mb-2 font-normal sm:font-bold md:font-bold">
+            {/* Only show on sm+ */}
             <span className="font-normal sm:font-bold md:font-bold text-sm sm:text-base md:text-lg">
               {name === 'Corporate / Community' ? 'Group Membership' : 'Individual Membership'}
             </span>
           </p>
-          <span className="block text-xs md:text-sm text-[var(--color-gold-accent)] font-semibold tracking-wider mt-2 italic">
+          <span className="block text-sm md:text-base text-white font-semibold tracking-wider mt-2 italic">
             Click for more information
           </span>
           <img
@@ -67,7 +67,9 @@ function MembershipCard({ name, price, description, highlights }: MembershipCard
           onClose={handleCloseModal}
           title={name}
           price={price}
-          description={description + (highlights && highlights.length ? '\n\n' + highlights.join('\n\n') : '')}
+          description={
+            ((name === 'Corporate / Community' ? 'Group Membership' : 'Individual Membership') + '\n\n' + description + (highlights && highlights.length ? '\n\n' + highlights.join('\n\n') : ''))
+          }
         />
       )}
     </>
