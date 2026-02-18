@@ -167,8 +167,8 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
                 <h2 id="book-tour-title">
                   BOOK A CLUB TOUR<br className="hidden sm:inline" />
                 </h2>
-                <p className="hidden sm:block text-[var(--color-cream)] font-light leading-relaxed mb-3 sm:mb-5 md:mb-7 text-sm md:text-base">
-                  We're ready to show you around. Fill out the form and we'll be in touch to arrange your private tour.
+                <p className="text-[var(--color-cream)] font-light leading-relaxed mb-3 sm:mb-5 md:mb-7 text-sm md:text-base mobile-large-text">
+                  Tour the club, gym, parking, and dining—our team tailors your visit to what matters most.
                 </p>
               </div>
 
