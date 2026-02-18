@@ -322,6 +322,11 @@ p, li {
   font-size: 1.125rem; /* 18px, matches text-lg */
   letter-spacing: 0.01em;
 }
+p, li {
+  color: #fff;
+  font-size: 1.125rem; /* 18px, matches text-lg */
+  letter-spacing: 0.01em;
+}
 
 /* Texture applied directly to body, no overlay needed */
 

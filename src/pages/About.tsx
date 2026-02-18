@@ -65,10 +65,10 @@ function About() {
             style={{ backgroundColor: 'rgba(4, 15, 42, 0.85)' }}
           />
           <div className="relative z-10 text-center px-4">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-light text-[var(--color-gold-accent)] mb-3 md:mb-4 tracking-wide leading-tight">
+            <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-heading font-light text-[var(--color-gold-accent)] mb-3 md:mb-4 tracking-wide leading-tight">
               ABOUT US
             </h1>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2">
+            <p className="text-lg sm:text-xl md:text-lg lg:text-xl text-white max-w-2xl mx-auto font-light px-2">
               Founded in 1903, RACA is Australia's first automobile club and a symbol of motoring prestige.
             </p>
           </div>
@@ -83,7 +83,7 @@ function About() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-5xl mx-auto px-4">
             <div className="text-center md:text-left">
-              <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
+              <h3 className="text-xl md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
                 Innovation is in our DNA
               </h3>
               {/* Full text for md and up */}
@@ -100,14 +100,8 @@ function About() {
               </div>
               {/* Reduced text for mobile only */}
               <div className="block md:hidden">
-                <p className="text-base text-[var(--color-cream)]/80 font-light mb-3">
-                  The Royal Automobile Club of Australia (RACA), founded in 1903 as the nation’s first automobile club, has long championed motorists — from advocating for improved roads to hosting distinguished motoring events across generations.
-                </p>
-                <p className="text-base text-[var(--color-cream)]/80 font-light mb-3">
-                  Located in its landmark Macquarie Street clubhouse in the heart of Sydney’s CBD, the Club brings together tradition and modernity, welcoming members who value heritage, hospitality, and meaningful professional and social connections.
-                </p>
-                <p className="text-base text-[var(--color-cream)]/80 font-light mb-3">
-                  While built on motoring, RACA today is defined by community. Through shared experiences and conversation, members create a lasting sense of belonging, connection, and continuity into the future.
+                <p className="text-lg text-[var(--color-cream)]/80 font-light mb-3">
+                  Tour the club, gym, parking, and dining—our team tailors your visit to what matters most.
                 </p>
               </div>
             </div>

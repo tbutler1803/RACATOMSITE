@@ -132,7 +132,7 @@ function Contact() {
       ]
     },
     {
-      name: 'Corporate/Community',
+      name: 'Corporate / Community',
       price: '',
       description: 'Designed for businesses, organisations, and community groups',
       highlights: [
@@ -157,10 +157,10 @@ function Contact() {
             style={{ backgroundColor: 'rgba(4, 15, 42, 0.85)' }}
           />
           <div className="relative z-10 text-center px-4">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-light text-[var(--color-gold-accent)] mb-3 md:mb-4 tracking-wide leading-tight">
+            <h1 className="text-5xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-light text-[var(--color-gold-accent)] mb-3 md:mb-4 tracking-wide leading-tight">
               MEMBERSHIP APPLICATION & CONTACT
             </h1>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2">
+            <p className="text-lg sm:text-base md:text-lg lg:text-xl text-white max-w-2xl mx-auto font-light px-2">
               Join our community or get in touch with us today
             </p>
           </div>
@@ -174,7 +174,7 @@ function Contact() {
           <h2>
             Membership Categories
           </h2>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10">
+          <p className="text-base sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10">
             Choose the path that fits you best; all categories share core privileges, with tailored rates and access to suit your lifestyle.
           </p>
           {/* Membership cards grid: top row and bottom row separated for custom layout */}

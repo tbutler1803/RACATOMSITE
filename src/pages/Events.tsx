@@ -37,7 +37,7 @@ function Events() {
   const eventSpaces = [
     {
       name: 'Victoria Room',
-      capacity: 'Banquet 130 / Cocktail 180',
+      capacity: 'Banquet 130/Cocktail 180',
       description: 'Elegant space for large banquets or cocktail receptions.',
       image: 'https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&w=400&h=300&fit=crop',
       features: []
@@ -51,14 +51,14 @@ function Events() {
     },
     {
       name: 'Macquarie Room',
-      capacity: 'Banquet 120 / Cocktail 150',
+      capacity: 'Banquet 120/Cocktail 150',
       description: 'Spacious room for banquets and cocktail functions.',
       image: 'https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&w=400&h=300&fit=crop',
       features: []
     },
     {
       name: 'ISC Room',
-      capacity: 'Banquet 60 / Cocktail 70',
+      capacity: 'Banquet 60/Cocktail 70',
       description: 'Versatile space for mid-sized events.',
       image: 'https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&w=400&h=300&fit=crop',
       features: []
@@ -136,10 +136,10 @@ function Events() {
               style={{ backgroundColor: 'rgba(4, 15, 42, 0.85)' }}
             />
             <div className="relative z-10 text-center px-4">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-light text-[var(--color-gold-accent)] mb-3 md:mb-4 tracking-wide leading-tight">
+              <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-light text-[var(--color-gold-accent)] mb-3 md:mb-4 tracking-wide leading-tight">
                 EVENTS
               </h1>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2">
+              <p className="text-lg sm:text-base md:text-lg lg:text-xl text-white max-w-2xl mx-auto font-light px-2">
                 Celebrate, connect, and create lasting memories
               </p>
             </div>
@@ -162,7 +162,7 @@ function Events() {
                   <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
                     {category.title}
                   </h3>
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2 mb-3 md:mb-6">
+                  <p className="text-base sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2 mb-3 md:mb-6">
                     {category.description}
                   </p>
                 </div>
@@ -210,7 +210,7 @@ function Events() {
                   <h2>
                     {space.name}
                   </h2>
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2 mb-2 md:mb-3">
+                  <p className="hidden sm:block text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2 mb-2 md:mb-3">
                     {space.description}
                   </p>
                   {/* Features list removed as requested */}
