@@ -250,7 +250,7 @@ function Contact() {
                     <Icon size={32} className="text-[var(--color-gold-accent)]" />
                   </div>
                   <div className="max-w-[12rem] sm:max-w-[18rem]">
-                    <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
+                    <h3 className="text-lg gold-mobile-large md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
                       {info.label}
                     </h3>
                     <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] font-light leading-relaxed break-words">

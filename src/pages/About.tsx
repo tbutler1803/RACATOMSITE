@@ -83,7 +83,7 @@ function About() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-5xl mx-auto px-4">
             <div className="text-center md:text-left">
-              <h3 className="mobile-large-text md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
+              <h3 className="mobile-large-text gold-mobile-large md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
                 Innovation is in our DNA
               </h3>
               {/* Full text for md and up */}
@@ -108,7 +108,7 @@ function About() {
             
             <div className="space-y-3 md:space-y-4">
               <div className="art-deco-card p-4 md:p-5">
-                <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
+                <h3 className="text-lg gold-mobile-large md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
                   Heritage & Prestige
                 </h3>
                   <p className="text-sm md:text-lg text-[var(--color-cream)]/80 font-light">
@@ -117,7 +117,7 @@ function About() {
               </div>
               
               <div className="art-deco-card p-4 md:p-5">
-                <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
+                <h3 className="text-lg gold-mobile-large md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
                   Premium Location
                 </h3>
                   <p className="text-sm md:text-lg text-[var(--color-cream)]/80 font-light">
@@ -126,7 +126,7 @@ function About() {
               </div>
               
               <div className="art-deco-card p-4 md:p-5">
-                <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
+                <h3 className="text-lg gold-mobile-large md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
                   Progressive Spirit
                 </h3>
                   <p className="text-sm md:text-lg text-[var(--color-cream)]/80 font-light">
@@ -153,7 +153,7 @@ function About() {
                   <div className="mb-3 md:mb-4 inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full border border-[var(--color-gold-accent)]/40">
                     <Icon size={26} className="text-[var(--color-gold-accent)]" />
                   </div>
-                  <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
+                  <h3 className="text-lg gold-mobile-large md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
                     {item.title}
                   </h3>
                   <p className="hidden md:block text-sm md:text-base text-[var(--color-cream)]/80 font-light">
@@ -190,7 +190,7 @@ function About() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-dark-navy)]/80 via-transparent to-transparent" />
                 </div>
                 <div className="p-5 md:p-6 flex-1 flex flex-col justify-start">
-                  <h3 className="text-[var(--color-gold-accent)] font-heading mb-2 md:mb-3 text-lg md:text-2xl tracking-wide">
+                  <h3 className="text-[var(--color-gold-accent)] gold-mobile-large font-heading mb-2 md:mb-3 text-lg md:text-2xl tracking-wide">
                     {perk.title}
                   </h3>
                   <p className="hidden md:block text-[var(--color-cream)]/80 font-light text-sm md:text-base">
@@ -217,19 +217,19 @@ function About() {
             {/* 1. Deluxe Harbour Suite image */}
             <div className="art-deco-card overflow-hidden flex flex-col items-center">
               <img src={getAssetPath('/IMAGES/images/DSC_1304.jpg')} alt="Deluxe Harbour Suite" className="w-full h-48 object-cover mb-3" />
-              <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">Deluxe Harbour Suite</h3>
+                  <h3 className="text-lg gold-mobile-large md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">Deluxe Harbour Suite</h3>
               {/* Removed: Breathtaking Sydney Harbour Views */}
             </div>
             {/* 2. Breakfast Image */}
             <div className="art-deco-card overflow-hidden flex flex-col items-center">
               <img src="https://images.pexels.com/photos/6364372/pexels-photo-6364372.jpeg?auto=compress&w=600&h=300&fit=crop" alt="Complimentary Breakfast - Bacon and Eggs" className="w-full h-48 object-cover mb-3" />
-              <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">Complimentary Breakfast</h3>
+                  <h3 className="text-lg gold-mobile-large md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">Complimentary Breakfast</h3>
               {/* Removed: Start your day with a delicious breakfast included in your stay */}
             </div>
             {/* 3. Room Image - Quiet sophistication */}
             <div className="art-deco-card overflow-hidden flex flex-col items-center">
               <img src={getAssetPath('/IMAGES/images/DSC_1302.jpg')} alt="Room - Quiet Sophistication" className="w-full h-48 object-cover mb-3" />
-              <h3 className="text-lg md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">Quiet Sophistication</h3>
+                  <h3 className="text-lg gold-mobile-large md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">Quiet Sophistication</h3>
               {/* Removed: Enjoy peaceful comfort and elegant design */}
             </div>
           </div>
