@@ -1,8 +1,10 @@
 /* Ensure all text inside design boxes is white and consistent size */
-.art-deco-card p, .art-deco-card li {
+.art-deco-card p,
+.art-deco-card li {
   color: #fff;
   font-size: 1.125rem;
 }
+
 /* Gold Outline Button - Transparent, Gold Border, Heading Font, Gold Hover */
 .btn-outline-gold {
   background: transparent;
@@ -12,7 +14,8 @@
   font-weight: 400;
   letter-spacing: 0.02em;
   font-size: 1.125rem;
-  font-size: clamp(1.125rem, 2vw, 1.5rem); /* text-lg to md:text-2xl responsive */
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  /* text-lg to md:text-2xl responsive */
   border-radius: 0;
   padding: 0.75rem 2rem;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
@@ -29,12 +32,14 @@
   letter-spacing: 0.05em;
 }
 
-.btn-outline-gold:hover, .btn-outline-gold:focus {
+.btn-outline-gold:hover,
+.btn-outline-gold:focus {
   background: var(--color-gold-accent);
   color: var(--color-dark-navy);
   box-shadow: 0 4px 16px rgba(223, 189, 114, 0.18);
   text-decoration: none;
 }
+
 /* Modern event button group styling */
 .event-btn-group {
   display: flex;
@@ -44,6 +49,7 @@
   margin-top: 2rem;
   width: 100%;
 }
+
 .art-deco-card .event-btn-group {
   display: flex;
   justify-content: center;
@@ -52,6 +58,7 @@
   margin-right: auto;
   width: 100%;
 }
+
 .event-btn {
   min-width: 220px;
   max-width: 260px;
@@ -65,7 +72,7 @@
   font-size: clamp(1.125rem, 2vw, 1.5rem);
   letter-spacing: 0.05em;
   text-transform: none;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   text-align: center;
   cursor: pointer;
@@ -76,12 +83,14 @@
   font-variant: normal;
   font-style: normal;
 }
+
 /* Only apply red on hover, not focus (click) */
 .event-btn:hover {
   background-color: #c00;
   color: #fff;
-  box-shadow: 0 4px 16px rgba(200,0,0,0.15);
+  box-shadow: 0 4px 16px rgba(200, 0, 0, 0.15);
 }
+
 /* Event page button styling */
 .event-btn {
   background-color: var(--color-gold-accent);
@@ -90,10 +99,12 @@
   border-radius: 0;
   font-weight: 500;
 }
+
 .event-btn:hover {
   background-color: #c00;
   color: #fff;
 }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -103,7 +114,7 @@
   --font-heading: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --font-subheading: "IBM Plex Mono", "Courier New", monospace;
   --font-body: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-  
+
   /* Brand Color Palette */
   --color-dark-navy: #0A1530;
   --color-cream: #F0EFD1;
@@ -114,9 +125,11 @@
   --gradient-gold: linear-gradient(135deg, #9C7B3B 50%, #DFBD72 50%);
   --color-red-accent: #DB150D;
   /* Texture controls */
-  --texture-blend-mode: normal; /* no blending - just the background image */
+  --texture-blend-mode: normal;
+  /* no blending - just the background image */
   --texture-size: 400px;
-  --texture-opacity: 1;        /* full opacity - show the image as-is */
+  --texture-opacity: 1;
+  /* full opacity - show the image as-is */
   --texture-overlay-blend-mode: normal;
 }
 
@@ -262,7 +275,8 @@ body {
   background-repeat: no-repeat;
   color: var(--color-cream);
   line-height: 1.65;
-  isolation: isolate; /* ensure blend overlays interact with body only */
+  isolation: isolate;
+  /* ensure blend overlays interact with body only */
 }
 
 /* Page content background - matches body on mobile to avoid graininess */
@@ -284,7 +298,7 @@ body {
     background-position: center;
     position: relative;
   }
-  
+
   .page-textured-bg {
     background-image: url('/textures/IpadBG.jpg');
     background-size: auto;
@@ -305,7 +319,7 @@ body {
     background-position: center;
     position: relative;
   }
-  
+
   .page-textured-bg {
     background-image: url('/textures/PhoneBG.jpg');
     background-size: 100%;
@@ -317,14 +331,19 @@ body {
 }
 
 /* Standardize all body text to white and consistent size */
-p, li {
+p,
+li {
   color: #fff;
-  font-size: 1.125rem; /* 18px, matches text-lg */
+  font-size: 1.125rem;
+  /* 18px, matches text-lg */
   letter-spacing: 0.01em;
 }
-p, li {
+
+p,
+li {
   color: #fff;
-  font-size: 1.125rem; /* 18px, matches text-lg */
+  font-size: 1.125rem;
+  /* 18px, matches text-lg */
   letter-spacing: 0.01em;
 }
 
@@ -335,7 +354,12 @@ p, li {
 }
 
 /* Headings use the heading font */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
 }
 
@@ -348,7 +372,8 @@ h2 {
   color: var(--color-gold-accent);
   font-family: var(--font-heading);
   font-weight: 400;
-  font-size: clamp(2rem, 4vw, 2.5rem); /* Responsive, matches example */
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  /* Responsive, matches example */
   letter-spacing: 0.05em;
   margin-bottom: 1.5rem;
   text-transform: none;
@@ -359,7 +384,8 @@ h3 {
   color: var(--color-gold-accent);
   font-family: var(--font-heading);
   font-weight: 400;
-  font-size: clamp(1.25rem, 2vw, 1.75rem); /* Responsive, matches example */
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  /* Responsive, matches example */
   letter-spacing: 0.08em;
   margin-bottom: 1rem;
   text-transform: none;
@@ -367,7 +393,8 @@ h3 {
 }
 
 /* Subheadings: nanum-gothic-coding in ALL CAPS */
-.subheading, .subtitle {
+.subheading,
+.subtitle {
   font-family: var(--font-subheading);
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -379,13 +406,26 @@ h3 {
 }
 
 /* Utility classes for explicit usage in components */
-.font-heading { font-family: var(--font-heading); }
-.font-subheading { font-family: var(--font-subheading); text-transform:uppercase; }
-.font-body { font-family: var(--font-body); }
-.font-bonus { font-family: var(--font-bonus); }
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-subheading {
+  font-family: var(--font-subheading);
+  text-transform: uppercase;
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-bonus {
+  font-family: var(--font-bonus);
+}
 
 /* Buttons and links */
-a, button {
+a,
+button {
   color: var(--color-gold-accent);
 }
 
@@ -397,6 +437,7 @@ a, button {
 .accent-red {
   color: var(--color-red-accent);
 }
+
 /* Art Deco Container Shine Effects */
 .art-deco-container {
   background: linear-gradient(135deg, var(--color-gold-accent) 0%, var(--color-gold-light) 100%);

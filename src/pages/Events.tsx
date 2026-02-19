@@ -11,22 +11,26 @@ import ArtDecoDivider from '../components/ArtDecoDivider';
 import LazyImage from '../components/LazyImage';
 import BookTourModal from '../components/BookTourModal';
 import { getAssetPath } from '../utils/paths';
-import { Calendar, Users, Music, Wine, Award, ChevronRight } from 'lucide-react';
-import { useState, useEffect, useRef } from 'react';
+import { Calendar, Users, Music, Wine, Award } from 'lucide-react';
+import { useState, useEffect } from 'react';
 // Force-load the Mews script on page load
 function useMewsScript() {
   useEffect(() => {
     if (!document.getElementById('mews-distributor-script')) {
       // Use client's recommended snippet
-      (function(m,e,w,s){
-        const c = m.createElement(e);
+      (function (m: Document, e: string, w: string, s: any[]) {
+        const c = m.createElement(e) as HTMLScriptElement;
         c.id = 'mews-distributor-script';
-        c.onload = function(){ Mews.D.apply(null,s); };
-        c.async = 1;
+        c.onload = function () {
+          if (window.Mews) window.Mews.D.apply(null, s);
+        };
+        c.async = true;
         c.src = w;
         const t = m.getElementsByTagName(e)[0];
-        t.parentNode.insertBefore(c,t);
-      })(document,'script','https://app.mews.com/distributor/distributor.min.js',[['adee2521-407e-4c2f-af36-b38d01263bf4']]);
+        if (t && t.parentNode) {
+          t.parentNode.insertBefore(c, t);
+        }
+      })(document, 'script', 'https://app.mews.com/distributor/distributor.min.js', [['adee2521-407e-4c2f-af36-b38d01263bf4']]);
     }
   }, []);
 }
@@ -100,8 +104,6 @@ function Events() {
     { icon: Award, title: 'Private Functions', description: 'Bespoke events for members and guests' }
   ];
 
-  // Add a ref for the booking widget container
-  const bookingWidgetRef = useRef(null);
 
   return (
     <div className="min-h-screen text-[var(--color-cream)] overflow-x-hidden">
@@ -125,103 +127,103 @@ function Events() {
       </div>
 
       <div>
+        <div
+          className="relative h-[70vh] md:h-screen w-full bg-cover bg-center flex items-center justify-center overflow-hidden pt-16 md:pt-20"
+          style={{
+            backgroundImage: `url(${getAssetPath('/IMAGES/DSC_1595.jpg')})`,
+          }}
+        >
           <div
-            className="relative h-[70vh] md:h-screen w-full bg-cover bg-center flex items-center justify-center overflow-hidden pt-16 md:pt-20"
-            style={{
-              backgroundImage: `url(${getAssetPath('/IMAGES/DSC_1595.jpg')})`,
-            }}
-          >
-            <div
-              className="absolute inset-0"
-              style={{ backgroundColor: 'rgba(4, 15, 42, 0.85)' }}
-            />
-            <div className="relative z-10 text-center px-4">
-              <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-light text-[var(--color-gold-accent)] mb-3 md:mb-4 tracking-wide leading-tight">
-                EVENTS
-              </h1>
-              <p className="text-lg sm:text-base md:text-lg lg:text-xl text-white max-w-2xl mx-auto font-light px-2">
-                Celebrate, connect, and create lasting memories
-              </p>
-            </div>
-          </div>
-
-        <div className="max-w-6xl mx-auto px-6 py-14 md:py-18 text-center">
-        <section className="mb-16 md:mb-20">
-          <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8" />
-            <h2>
-            Event Categories
-          </h2>
-          <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {eventCategories.map((category, idx) => {
-              const Icon = category.icon;
-              return (
-                <div key={idx} className="group text-center">
-                  <div className="mb-4">
-                    <Icon size={32} className="text-[var(--color-gold-accent)] inline-block" />
-                  </div>
-                  <h3 className="text-lg gold-mobile-large md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
-                    {category.title}
-                  </h3>
-                  <p className="text-base sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2 mb-3 md:mb-6">
-                    {category.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-        <div className="mt-6 flex justify-center">
-          <div className="event-btn-group mt-0 mb-10">
-            <button
-              className="btn-outline-gold max-w-xs w-full mx-auto"
-              type="button"
-              onClick={() => setIsBookTourOpen(true)}
-            >
-              ENQUIRE HERE
-            </button>
+            className="absolute inset-0"
+            style={{ backgroundColor: 'rgba(4, 15, 42, 0.85)' }}
+          />
+          <div className="relative z-10 text-center px-4">
+            <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-light text-[var(--color-gold-accent)] mb-3 md:mb-4 tracking-wide leading-tight">
+              EVENTS
+            </h1>
+            <p className="text-lg sm:text-base md:text-lg lg:text-xl text-white max-w-2xl mx-auto font-light px-2">
+              Celebrate, connect, and create lasting memories
+            </p>
           </div>
         </div>
 
-        <section className="mb-16 md:mb-20">
-          <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-12" />
+        <div className="max-w-6xl mx-auto px-6 py-14 md:py-18 text-center">
+          <section className="mb-16 md:mb-20">
+            <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8" />
             <h2>
-            Event Spaces
-          </h2>
-          <div className="grid grid-cols-2 gap-4 md:space-y-16 lg:space-y-20 md:block">
-            {eventSpaces.map((space, idx) => (
-              <div 
-                key={idx} 
-                className={`grid grid-cols-1 md:grid-cols-2 md:gap-6 lg:gap-8 md:items-center ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
+              Event Categories
+            </h2>
+            <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+              {eventCategories.map((category, idx) => {
+                const Icon = category.icon;
+                return (
+                  <div key={idx} className="group text-center">
+                    <div className="mb-4">
+                      <Icon size={32} className="text-[var(--color-gold-accent)] inline-block" />
+                    </div>
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
+                      {category.title}
+                    </h3>
+                    <p className="text-base sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2 mb-3 md:mb-6">
+                      {category.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+          <div className="mt-6 flex justify-center">
+            <div className="event-btn-group mt-0 mb-10">
+              <button
+                className="btn-outline-gold max-w-xs w-full mx-auto"
+                type="button"
+                onClick={() => setIsBookTourOpen(true)}
               >
-                <div className={idx % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className="art-deco-card overflow-hidden mb-2 md:mb-0">
-                    <LazyImage
-                      src={space.image}
-                      alt={space.name}
-                      className="w-full aspect-square md:h-64 lg:h-80 md:aspect-auto object-cover"
-                      containerClassName=""
-                    />
+                ENQUIRE HERE
+              </button>
+            </div>
+          </div>
+
+          <section className="mb-16 md:mb-20">
+            <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-12" />
+            <h2>
+              Event Spaces
+            </h2>
+            <div className="grid grid-cols-2 gap-4 md:space-y-16 lg:space-y-20 md:block">
+              {eventSpaces.map((space, idx) => (
+                <div
+                  key={idx}
+                  className={`grid grid-cols-1 md:grid-cols-2 md:gap-6 lg:gap-8 md:items-center ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
+                >
+                  <div className={idx % 2 === 1 ? 'lg:order-2' : ''}>
+                    <div className="art-deco-card overflow-hidden mb-2 md:mb-0">
+                      <LazyImage
+                        src={space.image}
+                        alt={space.name}
+                        className="w-full aspect-square md:h-64 lg:h-80 md:aspect-auto object-cover"
+                        containerClassName=""
+                      />
+                    </div>
+                  </div>
+                  <div className={idx % 2 === 1 ? 'lg:order-1' : ''}>
+                    <h2 className="text-2xl md:text-4xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
+                      {space.name}
+                    </h2>
+                    <h3 className="text-lg sm:text-xl md:text-3xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
+                      {space.capacity}
+                    </h3>
+                    <p className="hidden sm:block text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2 mb-2 md:mb-3">
+                      {space.description}
+                    </p>
+                    {/* Features list removed as requested */}
                   </div>
                 </div>
-                <div className={idx % 2 === 1 ? 'lg:order-1' : ''}>
-                  <h3 className="text-sm gold-mobile-large md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
-                    {space.capacity}
-                  </h3>
-                  <h2 className="text-2xl md:text-xl font-heading text-[var(--color-gold-accent)] mb-1 tracking-wide">
-                    {space.name}
-                  </h2>
-                  <p className="hidden sm:block text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2 mb-2 md:mb-3">
-                    {space.description}
-                  </p>
-                  {/* Features list removed as requested */}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+              ))}
+            </div>
+          </section>
 
-        <section className="mb-16 md:mb-20">
-          <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-12" />
+          <section className="mb-16 md:mb-20">
+            <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-12" />
             <div className="art-deco-card p-10 md:p-12 text-center">
               <div className="inline-block p-4 bg-[var(--color-gold-accent)]/10 rounded-lg mb-6">
                 <Calendar size={40} className="text-[var(--color-gold-accent)]" />
@@ -259,14 +261,14 @@ function Events() {
                 </div>
               </div>
             </div>
-        </section>
+          </section>
 
-        <section />
+          <section />
         </div>
       </div>
 
-      <BookTourModal 
-        isOpen={isBookTourOpen} 
+      <BookTourModal
+        isOpen={isBookTourOpen}
         onClose={() => setIsBookTourOpen(false)}
       />
     </div>

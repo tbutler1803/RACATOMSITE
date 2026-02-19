@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { X, Instagram, Facebook } from 'lucide-react';
+import { X, Instagram, Facebook, MapPin } from 'lucide-react';
 import { getAssetPath } from '../utils/paths';
 
 interface HamburgerMenuProps {
@@ -38,7 +38,7 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
       document.documentElement.style.overflow = 'unset';
       document.body.style.overflow = 'unset';
     }
-    
+
     return () => {
       document.documentElement.style.overflow = 'unset';
       document.body.style.overflow = 'unset';
@@ -116,20 +116,17 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
         aria-controls="site-menu"
       >
         <div className="w-7 h-5 relative flex flex-col justify-between">
-          <span 
-            className={`w-full h-0.5 bg-current transition-all duration-300 origin-center ${
-              isOpen ? 'rotate-45 translate-y-2' : 'rotate-0 translate-y-0'
-            }`}
+          <span
+            className={`w-full h-0.5 bg-current transition-all duration-300 origin-center ${isOpen ? 'rotate-45 translate-y-2' : 'rotate-0 translate-y-0'
+              }`}
           />
-          <span 
-            className={`w-full h-0.5 bg-current transition-all duration-300 ${
-              isOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
-            }`}
+          <span
+            className={`w-full h-0.5 bg-current transition-all duration-300 ${isOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
+              }`}
           />
-          <span 
-            className={`w-full h-0.5 bg-current transition-all duration-300 origin-center ${
-              isOpen ? '-rotate-45 -translate-y-2' : 'rotate-0 translate-y-0'
-            }`}
+          <span
+            className={`w-full h-0.5 bg-current transition-all duration-300 origin-center ${isOpen ? '-rotate-45 -translate-y-2' : 'rotate-0 translate-y-0'
+              }`}
           />
         </div>
       </button>
@@ -147,9 +144,8 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
       {/* Side panel menu with textured navy background and large decorative logo */}
       <div
         id="site-menu"
-        className={`fixed top-0 right-0 left-auto w-[72vw] sm:w-[320px] md:w-[400px] z-50 transform transition-all duration-500 ease-in-out flex flex-col overflow-hidden border-l-2 border-[var(--color-gold-accent)]/30 shadow-[0_0_50px_rgba(223,189,114,0.25)] ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        className={`fixed top-0 right-0 left-auto w-[72vw] sm:w-[320px] md:w-[400px] z-50 transform transition-all duration-500 ease-in-out flex flex-col overflow-hidden border-l-2 border-[var(--color-gold-accent)]/30 shadow-[0_0_50px_rgba(223,189,114,0.25)] ${isOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
         role="dialog"
         aria-modal="true"
         aria-hidden={!isOpen}
@@ -166,16 +162,16 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
       >
         {/* Large decorative logo background - positioned on right, only left half visible */}
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[140%] h-auto opacity-10 pointer-events-none overflow-hidden">
-          <img 
-            src={getAssetPath('/company_logo.png')} 
-            alt="" 
+          <img
+            src={getAssetPath('/company_logo.png')}
+            alt=""
             loading="lazy"
             decoding="async"
             className="w-full h-auto object-contain"
             style={{ transform: 'translateX(35%)' }}
           />
         </div>
-        
+
         {/* Header with close button */}
         <div className="relative z-10 px-6 py-6 border-b border-[var(--color-gold-accent)]/20">
           <div className="flex items-center justify-end">
@@ -195,15 +191,14 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
           {menuItems.map((item, index) => (
             <div
               key={item.path}
-              className={`transition-all duration-300 ${
-                isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
-              }`}
+              className={`transition-all duration-300 ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+                }`}
               style={{ transitionDelay: isOpen ? `${index * 50}ms` : '0ms' }}
             >
               <button
                 type="button"
                 onClick={() => handleNavigate(item.path)}
-                className="group w-full text-left px-6 py-4 text-[var(--color-gold-accent)] font-heading text-xl md:text-[28px] tracking-[0.24em] transition-all duration-300 relative"
+                className="group w-full text-left px-6 py-4 text-[var(--color-gold-accent)] font-heading text-[22px] min-[400px]:text-2xl md:text-[28px] tracking-[0.24em] transition-all duration-300 relative"
               >
                 <span className="relative z-10 group-hover:text-[var(--color-red-accent)] transition-all duration-300">
                   {item.label}
@@ -219,9 +214,18 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
           className="relative z-10 px-6 pt-6 pb-10 border-t border-[var(--color-gold-accent)]/20 space-y-2 text-[var(--color-cream)]/85 text-sm tracking-[0.18em]"
           style={{ paddingBottom: 'max(20px, env(safe-area-inset-bottom, 20px))' }}
         >
-          <p className="text-[var(--color-cream)]/75 font-normal">Contact: +61 (02) 8273 2300</p>
+          <p className="text-[var(--color-cream)]/75 font-normal">+61 (02) 8273 2300</p>
           <p className="text-[var(--color-cream)]/75 font-normal">89 Macquarie St, Sydney NSW 2000</p>
           <div className="flex items-center gap-4 pt-2 text-[var(--color-gold-accent)]">
+            <a
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--color-gold-accent)]/35 hover:border-[var(--color-gold-accent)] hover:text-[var(--color-gold-light)] hover:bg-[var(--color-gold-accent)]/5 transition-all duration-300"
+              href="https://www.google.com/maps/search/?api=1&query=Royal+Automobile+Club+of+Australia+89+Macquarie+St+Sydney"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Location"
+            >
+              <MapPin size={22} strokeWidth={1.5} />
+            </a>
             <a
               className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--color-gold-accent)]/35 hover:border-[var(--color-gold-accent)] hover:text-[var(--color-gold-light)] hover:bg-[var(--color-gold-accent)]/5 transition-all duration-300"
               href="https://www.instagram.com/racaustralia/?hl=en"

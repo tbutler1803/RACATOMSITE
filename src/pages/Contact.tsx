@@ -4,7 +4,7 @@ import ArtDecoDivider from '../components/ArtDecoDivider';
 import BookTourModal from '../components/BookTourModal';
 import MembershipCard from '../components/MembershipCard';
 import { getAssetPath } from '../utils/paths';
-import { MapPin, Phone, Mail, Clock, Car, Globe2, Utensils } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import '../index.mobile.css';
 
@@ -30,7 +30,7 @@ function Contact() {
         if (element) {
           const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
           const offsetPosition = elementPosition - 100;
-          
+
           window.scrollTo({
             top: offsetPosition,
             behavior: 'smooth'
@@ -76,12 +76,7 @@ function Contact() {
     { icon: Clock, label: 'Hours', value: '24/7 Reception Availability' }
   ];
 
-  const whyJoin = [
-    { icon: Car, title: 'Members-First Service', description: 'Valet-style care, concierge support, and seamless hosting.' },
-    { icon: MapPin, title: 'CBD Convenience', description: 'Steps from Circular Quay with transport, harbour, and culture on the doorstep.' },
-    { icon: Globe2, title: 'Reciprocal Networks', description: 'Access to distinguished clubs worldwide for business and travel.' },
-    { icon: Utensils, title: 'Food & Beverage', description: 'Signature dining, wine dinners, and elegant bars crafted for members.' }
-  ];
+
 
   const categories = [
     {
@@ -125,7 +120,7 @@ function Contact() {
       ]
     },
     {
-      name: 'Defence/ Emergency Services',
+      name: 'Defence/Emergency Services',
       price: '$2,020',
       description: 'Active or Retired',
       highlights: [
@@ -133,7 +128,7 @@ function Contact() {
       ]
     },
     {
-      name: 'Corporate/ Community',
+      name: 'Corporate/Community',
       price: '',
       description: 'Designed for businesses, organisations, and community groups',
       highlights: [
@@ -158,7 +153,7 @@ function Contact() {
             style={{ backgroundColor: 'rgba(4, 15, 42, 0.85)' }}
           />
           <div className="relative z-10 text-center px-4">
-            <h1 className="text-5xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-light text-[var(--color-gold-accent)] mb-3 md:mb-4 tracking-wide leading-tight">
+            <h1 className="text-5xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-light text-[var(--color-gold-accent)] mb-3 md:mb-4 tracking-wide leading-tight">
               MEMBERSHIP APPLICATION & CONTACT
             </h1>
             <p className="text-lg sm:text-base md:text-lg lg:text-xl text-white max-w-2xl mx-auto font-light px-2">
@@ -170,37 +165,20 @@ function Contact() {
         <div className="max-w-6xl mx-auto px-6 py-14 md:py-18 text-center">
 
 
-        <section className="mb-16 md:mb-20">
-          <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-12" />
-          <h2>
-            Membership Categories
-          </h2>
-          <p className="text-base sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10">
-            Choose the path that fits you best; all categories share core privileges, with tailored rates and access to suit your lifestyle.
-          </p>
-          {/* Membership cards grid: top row and bottom row separated for custom layout */}
-          <div>
-            {/* Top row: 4 cards, always grid-cols-2 on mobile, grid-cols-4 on desktop */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-              {categories.slice(0, 4).map((cat, idx) => (
-                <div key={idx} className="flex justify-center items-stretch">
-                  <MembershipCard
-                    name={cat.name}
-                    price={cat.price}
-                    description={cat.description}
-                    highlights={cat.highlights}
-                  />
-                </div>
-              ))}
-            </div>
-            {/* Larger gap between rows */}
-            <div className="my-6 md:my-10"></div>
-            {/* Bottom row: 3 cards, centered and constrained in width on desktop/tablet, 2 columns on mobile with last card centered */}
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 justify-center">
-              {/* First two cards in a row on mobile, all three in a row on desktop */}
-              {categories.slice(4, 6).map((cat, idx) => (
-                <div key={4 + idx} className="flex justify-center items-stretch">
-                  <div className="w-full max-w-[370px]">
+          <section className="mb-16 md:mb-20">
+            <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-12" />
+            <h2>
+              Membership Categories
+            </h2>
+            <p className="text-base sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10">
+              Choose the path that fits you best; all categories share core privileges, with tailored rates and access to suit your lifestyle.
+            </p>
+            {/* Membership cards grid: top row and bottom row separated for custom layout */}
+            <div>
+              {/* Top row: 4 cards, always grid-cols-2 on mobile, grid-cols-4 on desktop */}
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                {categories.slice(0, 4).map((cat, idx) => (
+                  <div key={idx} className="flex justify-center items-stretch">
                     <MembershipCard
                       name={cat.name}
                       price={cat.price}
@@ -208,10 +186,39 @@ function Contact() {
                       highlights={cat.highlights}
                     />
                   </div>
+                ))}
+              </div>
+              {/* Larger gap between rows */}
+              <div className="my-6 md:my-10"></div>
+              {/* Bottom row: 3 cards, centered and constrained in width on desktop/tablet, 2 columns on mobile with last card centered */}
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 justify-center">
+                {/* First two cards in a row on mobile, all three in a row on desktop */}
+                {categories.slice(4, 6).map((cat, idx) => (
+                  <div key={4 + idx} className="flex justify-center items-stretch">
+                    <div className="w-full max-w-[370px]">
+                      <MembershipCard
+                        name={cat.name}
+                        price={cat.price}
+                        description={cat.description}
+                        highlights={cat.highlights}
+                      />
+                    </div>
+                  </div>
+                ))}
+                {/* On desktop, show the third card in the row; on mobile, show it centered below */}
+                <div className="hidden lg:flex justify-center items-stretch">
+                  <div className="w-full max-w-[370px]">
+                    <MembershipCard
+                      name={categories[6].name}
+                      price={categories[6].price}
+                      description={categories[6].description}
+                      highlights={categories[6].highlights}
+                    />
+                  </div>
                 </div>
-              ))}
-              {/* On desktop, show the third card in the row; on mobile, show it centered below */}
-              <div className="hidden lg:flex justify-center items-stretch">
+              </div>
+              {/* On mobile only, center the last card below the two above */}
+              <div className="flex lg:hidden justify-center mt-4">
                 <div className="w-full max-w-[370px]">
                   <MembershipCard
                     name={categories[6].name}
@@ -221,162 +228,149 @@ function Contact() {
                   />
                 </div>
               </div>
-            </div>
-            {/* On mobile only, center the last card below the two above */}
-            <div className="flex lg:hidden justify-center mt-4">
-              <div className="w-full max-w-[370px]">
-                <MembershipCard
-                  name={categories[6].name}
-                  price={categories[6].price}
-                  description={categories[6].description}
-                  highlights={categories[6].highlights}
-                />
-              </div>
-            </div>
-          </div>
-        </section>
 
-        <section className="mb-16 md:mb-20" id="contact-information">
-          <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-12" />
-          <h2>
-            Contact Information
-          </h2>
-          <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-8">
-            {contactInfo.map((info, idx) => {
-              const Icon = info.icon;
-              return (
-                <div key={idx} className="flex flex-col items-center gap-3 text-center px-4 py-5 sm:px-5 sm:py-6">
-                  <div>
-                    <Icon size={32} className="text-[var(--color-gold-accent)]" />
-                  </div>
-                  <div className="max-w-[12rem] sm:max-w-[18rem]">
-                    <h3 className="text-lg gold-mobile-large md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
-                      {info.label}
-                    </h3>
-                    <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] font-light leading-relaxed break-words">
-                      {info.value}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
-        <section className="mb-20">
-          <ArtDecoDivider width="w-64 md:w-80" height="h-6 md:h-20" className="mb-8" />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
-            <div>
-              <h2>
-                Quick Actions
-              </h2>
-              <div className="space-y-4 mt-12">
-                <a 
-                  href="https://royalautomobileclubofaustralia.peoplevine.co.uk/survey/group/620" 
-                  target="_blank" 
+              {/* Apply Here button below membership cards, before divider */}
+              <div className="flex justify-center mt-16 mb-0">
+                <a
+                  href="https://royalautomobileclubofaustralia.peoplevine.co.uk/survey/group/620"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-outline-gold w-full"
+                  className="btn-outline-gold max-w-xs w-full mx-auto"
                 >
                   APPLY HERE
                 </a>
-                <button 
-                  type="button"
-                  onClick={() => setIsBookTourOpen(true)}
-                  className={`btn-outline-gold w-full ${isBookTourOpen ? 'bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)]' : ''}`}>
-                  BOOK A TOUR
-                </button>
               </div>
             </div>
+          </section>
 
-            <div ref={messageFormRef}>
-              <h2>
-                Send us a Message
-              </h2>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <label htmlFor="contact-name" className="sr-only">Your Name</label>
-                <input
-                  type="text"
-                  id="contact-name"
-                  name="name"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  required
-                  className="w-full bg-[var(--color-dark-navy)] bg-opacity-80 border border-[var(--color-gold-accent)]/20 px-4 py-3 text-[var(--color-cream)] placeholder-gray-500 font-light focus:border-[var(--color-gold-accent)] focus:outline-none transition-colors text-left"
-                />
-                <label htmlFor="contact-email" className="sr-only">Email Address</label>
-                <input
-                  type="email"
-                  id="contact-email"
-                  name="email"
-                  placeholder="Email Address"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  required
-                  className="w-full bg-[var(--color-dark-navy)] bg-opacity-80 border border-[var(--color-gold-accent)]/20 px-4 py-3 text-[var(--color-cream)] placeholder-gray-500 font-light focus:border-[var(--color-gold-accent)] focus:outline-none transition-colors text-left"
-                />
-                <label htmlFor="contact-phone" className="sr-only">Phone (optional)</label>
-                <input
-                  type="tel"
-                  id="contact-phone"
-                  name="phone"
-                  placeholder="Phone (optional)"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  className="w-full bg-[var(--color-dark-navy)] bg-opacity-80 border border-[var(--color-gold-accent)]/20 px-4 py-3 text-[var(--color-cream)] placeholder-gray-500 font-light focus:border-[var(--color-gold-accent)] focus:outline-none transition-colors text-left"
-                />
-                <label htmlFor="contact-message" className="sr-only">Your Message</label>
-                <textarea
-                  name="message"
-                  id="contact-message"
-                  placeholder="Your Message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  required
-                  rows={4}
-                  className="w-full bg-[var(--color-dark-navy)] bg-opacity-80 border border-[var(--color-gold-accent)]/20 px-4 py-3 text-[var(--color-cream)] placeholder-gray-500 font-light focus:border-[var(--color-gold-accent)] focus:outline-none transition-colors resize-none text-left"
-                />
-                <button
-                  type="submit"
-                  disabled={submitStatus === 'loading'}
-                  className="btn-outline-gold w-full disabled:opacity-50"
-                >
-                  {submitStatus === 'loading' ? 'Sending...' : 'SEND MESSAGE'}
-                </button>
-                {submitStatus === 'success' && (
-                  <p className="text-green-400 text-sm text-center font-light">
-                    Message sent successfully!
-                  </p>
-                )}
-              </form>
+          <section className="mb-16 md:mb-20" id="contact-information">
+            <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-12" />
+            <h2>
+              Contact Information
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-6 md:gap-8">
+              {contactInfo.map((info, idx) => {
+                const Icon = info.icon;
+                return (
+                  <div key={idx} className="flex flex-col items-center gap-3 text-center px-4 py-5 sm:px-5 sm:py-6">
+                    <div>
+                      <Icon size={32} className="text-[var(--color-gold-accent)]" />
+                    </div>
+                    <div className="w-full">
+                      <h3 className="text-2xl md:text-3xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide uppercase">
+                        {info.label}
+                      </h3>
+                      <p className="text-lg md:text-xl lg:text-2xl text-[var(--color-cream)] font-light leading-relaxed whitespace-nowrap">
+                        {info.value}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-          </div>
-        </section>
+            {/* Book a Tour button below contact information grid */}
+            <div className="flex justify-center mt-12">
+              <button
+                type="button"
+                onClick={() => setIsBookTourOpen(true)}
+                className={`btn-outline-gold max-w-xs w-full ${isBookTourOpen ? 'bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)]' : ''}`}>
+                BOOK A TOUR
+              </button>
+            </div>
+          </section>
 
-        <section className="mb-20">
-          <ArtDecoDivider width="w-64 md:w-80" height="h-6 md:h-20" className="mb-8" />
-          <h2>
-            Location
-          </h2>
-          <div className="art-deco-card art-deco-card-glowing w-full rounded-lg overflow-hidden" style={{ height: '500px' }}>
-            <iframe
-              title="Royal Automobile Club of Australia - 89 Macquarie Street, Circular Quay Sydney"
-              width="100%"
-              height="100%"
-              frameBorder={0}
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.397775!2d151.208533!3d-33.863889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae6855a7ba25%3A0x1eb6754ad60316a!2sRoyal%20Automobile%20Club%20of%20Australia%2089%20Macquarie%20St!5e0!3m2!1sen!2sau!4v1706043600000"
-              style={{ border: 'none' }}
-              allowFullScreen={true}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
-        </section>
+          <section className="mb-20">
+            <ArtDecoDivider width="w-64 md:w-80" height="h-6 md:h-20" className="mb-8" />
+            <div className="flex justify-center mb-20">
+              <div ref={messageFormRef}>
+                <h2>
+                  Send us a Message
+                </h2>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <label htmlFor="contact-name" className="sr-only">Your Name</label>
+                  <input
+                    type="text"
+                    id="contact-name"
+                    name="name"
+                    placeholder="Your Name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full bg-[var(--color-dark-navy)] bg-opacity-80 border border-[var(--color-gold-accent)]/20 px-4 py-3 text-[var(--color-cream)] placeholder-gray-500 font-light focus:border-[var(--color-gold-accent)] focus:outline-none transition-colors text-left"
+                  />
+                  <label htmlFor="contact-email" className="sr-only">Email Address</label>
+                  <input
+                    type="email"
+                    id="contact-email"
+                    name="email"
+                    placeholder="Email Address"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full bg-[var(--color-dark-navy)] bg-opacity-80 border border-[var(--color-gold-accent)]/20 px-4 py-3 text-[var(--color-cream)] placeholder-gray-500 font-light focus:border-[var(--color-gold-accent)] focus:outline-none transition-colors text-left"
+                  />
+                  <label htmlFor="contact-phone" className="sr-only">Phone (optional)</label>
+                  <input
+                    type="tel"
+                    id="contact-phone"
+                    name="phone"
+                    placeholder="Phone (optional)"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="w-full bg-[var(--color-dark-navy)] bg-opacity-80 border border-[var(--color-gold-accent)]/20 px-4 py-3 text-[var(--color-cream)] placeholder-gray-500 font-light focus:border-[var(--color-gold-accent)] focus:outline-none transition-colors text-left"
+                  />
+                  <label htmlFor="contact-message" className="sr-only">Your Message</label>
+                  <textarea
+                    name="message"
+                    id="contact-message"
+                    placeholder="Your Message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    rows={4}
+                    className="w-full bg-[var(--color-dark-navy)] bg-opacity-80 border border-[var(--color-gold-accent)]/20 px-4 py-3 text-[var(--color-cream)] placeholder-gray-500 font-light focus:border-[var(--color-gold-accent)] focus:outline-none transition-colors resize-none text-left"
+                  />
+                  <button
+                    type="submit"
+                    disabled={submitStatus === 'loading'}
+                    className="btn-outline-gold w-full disabled:opacity-50"
+                  >
+                    {submitStatus === 'loading' ? 'Sending...' : 'SEND MESSAGE'}
+                  </button>
+                  {submitStatus === 'success' && (
+                    <p className="text-green-400 text-sm text-center font-light">
+                      Message sent successfully!
+                    </p>
+                  )}
+                </form>
+              </div>
+            </div>
+          </section>
+
+          <section className="mb-20">
+            <ArtDecoDivider width="w-64 md:w-80" height="h-6 md:h-20" className="mb-8" />
+            <h2>
+              Location
+            </h2>
+            <div className="art-deco-card art-deco-card-glowing w-full rounded-lg overflow-hidden" style={{ height: '500px' }}>
+              <iframe
+                title="Royal Automobile Club of Australia - 89 Macquarie Street, Circular Quay Sydney"
+                width="100%"
+                height="100%"
+                frameBorder={0}
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.397775!2d151.208533!3d-33.863889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae6855a7ba25%3A0x1eb6754ad60316a!2sRoyal%20Automobile%20Club%20of%20Australia%2089%20Macquarie%20St!5e0!3m2!1sen!2sau!4v1706043600000"
+                style={{ border: 'none' }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </section>
         </div>
       </div>
 
-      <BookTourModal 
-        isOpen={isBookTourOpen} 
+      <BookTourModal
+        isOpen={isBookTourOpen}
         onClose={() => setIsBookTourOpen(false)}
       />
     </div>

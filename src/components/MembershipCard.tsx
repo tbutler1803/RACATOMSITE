@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Wine, Globe } from 'lucide-react';
 import MembershipModal from './MembershipModal';
 import { getAssetPath } from '../utils/paths';
 
@@ -30,7 +31,7 @@ function MembershipCard({ name, price, description, highlights }: MembershipCard
         aria-label={`${name} membership details`}
       >
         <div
-          className="art-deco-card w-full flex flex-col items-center text-center px-6 py-8 md:px-8 md:py-10 transition-all duration-300 hover:scale-105 relative"
+          className="art-deco-card w-full flex flex-col items-center text-center px-6 py-8 md:px-8 md:py-10 transition-all duration-300 relative"
           style={{
             height: 340,
             maxWidth: 370,
@@ -39,15 +40,22 @@ function MembershipCard({ name, price, description, highlights }: MembershipCard
             background: 'var(--color-dark-navy)'
           }}
         >
-          <h3 className="text-[var(--color-gold-accent)] font-heading mb-2 md:mb-3 text-base sm:text-lg md:text-2xl tracking-wide uppercase leading-tight sm:font-bold md:font-bold">
-            {/* On mobile: font-normal, smaller size; on sm+/md+: bolder, larger */}
-            <span className="block text-lg sm:text-lg md:text-2xl sm:font-bold md:font-bold">{name}</span>
+          {/* Icon for Events-Driven Excellence */}
+          {name === 'Events-Driven Excellence' && (
+            <Wine size={48} strokeWidth={2.2} color="var(--color-gold-accent)" className="mb-4" />
+          )}
+          {/* Icon for Your Gateway to Connections */}
+          {name === 'Your Gateway to Connections' && (
+            <Globe size={48} strokeWidth={2.2} color="var(--color-gold-accent)" className="mb-4" />
+          )}
+          <h3 className="text-[var(--color-gold-accent)] font-heading mb-2 md:mb-3 text-xl sm:text-xl md:text-3xl tracking-wide uppercase leading-tight font-bold">
+            <span className="block text-xl sm:text-xl md:text-3xl font-bold">{name}</span>
           </h3>
           <div className="h-[2px] w-12 bg-gradient-to-r from-transparent via-[var(--color-gold-accent)] to-transparent mx-auto mb-4 rounded-full opacity-90"></div>
-          <p className="hidden sm:block text-sm sm:text-base md:text-lg text-[var(--color-cream)] leading-relaxed mb-2 font-normal sm:font-bold md:font-bold">
+          <p className="hidden sm:block text-sm sm:text-base md:text-lg text-[var(--color-cream)] leading-relaxed mb-2 font-normal">
             {/* Only show on sm+ */}
-            <span className="font-normal sm:font-bold md:font-bold text-sm sm:text-base md:text-lg">
-              {name === 'Corporate / Community' ? 'Group Membership' : 'Individual Membership'}
+            <span className="font-normal text-sm sm:text-base md:text-lg">
+              {(name === 'Corporate/Community' || name === 'Corporate/ Community' || name === 'Corporate / Community') ? 'Group Membership' : 'Individual Membership'}
             </span>
           </p>
           <span className="block text-sm md:text-base text-white font-semibold tracking-wider mt-2 italic">
@@ -68,7 +76,7 @@ function MembershipCard({ name, price, description, highlights }: MembershipCard
           title={name}
           price={price}
           description={
-            ((name === 'Corporate / Community' ? 'Group Membership' : 'Individual Membership') + '\n\n' + description + (highlights && highlights.length ? '\n\n' + highlights.join('\n\n') : ''))
+            description + (highlights && highlights.length ? '\n\n' + highlights.join('\n\n') : '')
           }
         />
       )}

@@ -10,14 +10,14 @@ interface PanelProps {
 function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [isLaptop, setIsLaptop] = useState(false);
+
   const videoRef = useRef<HTMLVideoElement>(null);
   const isVideo = imageUrl.endsWith('.mp4') || imageUrl.endsWith('.webm') || imageUrl.endsWith('.ogg');
 
   // Laptop-only optical centering and vertical alignment
   const getLetterTransform = (ch: string, isMobileView: boolean): string => {
     const upperChar = (ch || '').toUpperCase();
-    
+
     if (isMobileView) {
       // Mobile adjustments for better centering
       switch (upperChar) {
@@ -27,7 +27,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
           return 'none';
       }
     }
-    
+
     // Desktop adjustments
     switch (upperChar) {
       case 'A':
@@ -41,12 +41,11 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
     }
   };
 
-  // Detect mobile/tablet devices and a typical laptop band
+  // Detect mobile/tablet devices
   useEffect(() => {
     const checkMobile = () => {
       const w = window.innerWidth;
       setIsMobile(w <= 1024 || ('ontouchstart' in window));
-      setIsLaptop(w > 1024 && w < 1600);
     };
     checkMobile();
     window.addEventListener('resize', checkMobile);
@@ -134,7 +133,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
         <video
           ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-out"
-          style={{ 
+          style={{
             opacity: isMobile ? (isHovered ? 1 : 0) : (isHovered ? 0.75 : 0.001),
             pointerEvents: 'none',
             visibility: 'visible'
@@ -198,15 +197,13 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
 
         <div className="absolute bottom-3 md:bottom-6 flex flex-col items-center gap-1 md:gap-0 w-full px-2 sm:px-4">
           <div
-            className="text-[var(--color-gold-accent)] gold-mobile-large tracking-[0.18em] sm:tracking-[0.22em] md:tracking-[0.22em] lg:tracking-[0.18em] font-subheading transition-all duration-500 text-center max-w-full overflow-hidden"
+            className="text-[var(--color-gold-accent)] gold-mobile-large tracking-[0.08em] sm:tracking-[0.14em] md:tracking-[0.14em] lg:tracking-[0.12em] font-subheading transition-all duration-500 text-center max-w-full overflow-hidden"
             style={{
-              // Slightly reduce subheader size on large screens
-              fontSize: 'clamp(0.7rem, 1.1vw, 1.15rem)',
               fontFamily: "var(--font-subheading)",
               fontWeight: 400,
               textTransform: 'uppercase',
               opacity: isMobile ? 1 : (isHovered ? 1 : 0.85),
-              lineHeight: '1.1',
+              lineHeight: '1.2',
               whiteSpace: 'nowrap',
               textOverflow: 'ellipsis'
             }}
@@ -233,7 +230,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
               aria-hidden="true"
               focusable="false"
               // Height scales with viewport but capped to keep proportion with subheader
-              style={{ 
+              style={{
                 color: 'var(--color-gold-accent)',
                 height: 'clamp(0.6rem, 1.1vw, 1.2rem)'
               }}
