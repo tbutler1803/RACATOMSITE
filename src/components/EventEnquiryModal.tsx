@@ -34,6 +34,7 @@ function EventEnquiryModal({ isOpen, onClose }: EventEnquiryModalProps) {
 
     useEffect(() => {
         if (isOpen) {
+            document.documentElement.style.overflow = 'hidden';
             document.body.style.overflow = 'hidden';
             setIsVisible(true);
             setTimeout(() => setIsAnimating(true), 10);
@@ -42,10 +43,15 @@ function EventEnquiryModal({ isOpen, onClose }: EventEnquiryModalProps) {
             setIsAnimating(false);
             const timer = setTimeout(() => {
                 setIsVisible(false);
-                document.body.style.overflow = 'unset';
             }, 500);
             return () => clearTimeout(timer);
         }
+
+        // Cleanup function to ensure scroll is restored
+        return () => {
+            document.documentElement.style.overflow = 'unset';
+            document.body.style.overflow = 'unset';
+        };
     }, [isOpen]);
 
     useEffect(() => {
@@ -135,10 +141,10 @@ function EventEnquiryModal({ isOpen, onClose }: EventEnquiryModalProps) {
 
     return (
         <>
-            {/* Backdrop overlay */}
+            {/* Backdrop overlay - reduced blur to prevent distortion */}
             {isAnimating && (
                 <div
-                    className="fixed inset-0 z-[60] backdrop-blur-md transition-all duration-500 ease-out bg-black/40"
+                    className="fixed inset-0 z-[60] backdrop-blur-[2px] transition-all duration-500 ease-out bg-black/60"
                     onClick={onClose}
                     aria-hidden="true"
                 />

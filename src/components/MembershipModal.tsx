@@ -18,6 +18,7 @@ function MembershipModal({ isOpen, onClose, title, description, price }: Members
 
   useEffect(() => {
     if (isOpen) {
+      document.documentElement.style.overflow = 'hidden';
       document.body.style.overflow = 'hidden';
       setIsVisible(true);
       setTimeout(() => setIsAnimating(true), 10);
@@ -26,12 +27,12 @@ function MembershipModal({ isOpen, onClose, title, description, price }: Members
       setIsAnimating(false);
       const timer = setTimeout(() => {
         setIsVisible(false);
-        document.body.style.overflow = '';
       }, 400);
       return () => clearTimeout(timer);
     }
     // Cleanup: always restore scroll on unmount
     return () => {
+      document.documentElement.style.overflow = '';
       document.body.style.overflow = '';
     };
   }, [isOpen]);
@@ -82,7 +83,7 @@ function MembershipModal({ isOpen, onClose, title, description, price }: Members
     <>
       {isAnimating && (
         <div
-          className="fixed inset-0 z-40 backdrop-blur-sm md:backdrop-blur-md transition-all duration-400 ease-out bg-black/30"
+          className="fixed inset-0 z-40 backdrop-blur-[2px] transition-all duration-400 ease-out bg-black/60"
           onClick={onClose}
           aria-hidden="true"
         />
