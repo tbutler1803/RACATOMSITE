@@ -10,6 +10,7 @@ declare global {
 import ArtDecoDivider from '../components/ArtDecoDivider';
 import LazyImage from '../components/LazyImage';
 import BookTourModal from '../components/BookTourModal';
+import EventEnquiryModal from '../components/EventEnquiryModal';
 import { getAssetPath } from '../utils/paths';
 import { Calendar, Users, Music, Wine, Award } from 'lucide-react';
 import { useState, useEffect } from 'react';
@@ -38,6 +39,7 @@ function useMewsScript() {
 function Events() {
   useMewsScript();
   const [isBookTourOpen, setIsBookTourOpen] = useState(false);
+  const [isEnquiryModalOpen, setIsEnquiryModalOpen] = useState(false);
   const eventSpaces = [
     {
       name: 'Victoria Room',
@@ -177,7 +179,7 @@ function Events() {
               <button
                 className="btn-outline-gold max-w-xs w-full mx-auto"
                 type="button"
-                onClick={() => setIsBookTourOpen(true)}
+                onClick={() => setIsEnquiryModalOpen(true)}
               >
                 ENQUIRE HERE
               </button>
@@ -240,7 +242,7 @@ function Events() {
                   <button
                     type="button"
                     className="btn-outline-gold max-w-xs w-full mx-auto"
-                    onClick={() => setIsBookTourOpen(true)}
+                    onClick={() => setIsEnquiryModalOpen(true)}
                   >
                     Enquire Now
                   </button>
@@ -271,7 +273,12 @@ function Events() {
         isOpen={isBookTourOpen}
         onClose={() => setIsBookTourOpen(false)}
       />
-    </div>
+
+      <EventEnquiryModal
+        isOpen={isEnquiryModalOpen}
+        onClose={() => setIsEnquiryModalOpen(false)}
+      />
+    </div >
   );
 }
 
