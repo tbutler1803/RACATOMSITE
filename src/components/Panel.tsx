@@ -198,9 +198,9 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
 
         <div className="absolute bottom-3 md:bottom-6 flex flex-col items-center gap-1 md:gap-0 w-full px-2 sm:px-4">
           <div
-            className="text-[var(--color-gold-accent)] tracking-[0.18em] sm:tracking-[0.22em] md:tracking-[0.22em] lg:tracking-[0.18em] font-subheading transition-all duration-500 text-center max-w-full overflow-hidden"
+            className="text-[var(--color-gold-accent)] gold-mobile-large tracking-[0.18em] sm:tracking-[0.22em] md:tracking-[0.22em] lg:tracking-[0.18em] font-subheading transition-all duration-500 text-center max-w-full overflow-hidden"
             style={{
-              fontSize: isMobile ? '1.1rem' : '1.35rem', // Smaller on mobile
+              fontSize: '1.35rem', // Fixed, cross-browser-safe size
               fontFamily: "var(--font-subheading)",
               fontWeight: 400,
               textTransform: 'uppercase',
