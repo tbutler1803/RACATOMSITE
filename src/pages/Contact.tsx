@@ -233,6 +233,18 @@ function Contact() {
                 />
               </div>
             </div>
+
+            {/* Apply Here button below membership cards, before divider */}
+            <div className="flex justify-center mt-16 mb-0">
+              <a
+                href="https://royalautomobileclubofaustralia.peoplevine.co.uk/survey/group/620"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline-gold max-w-xs w-full mx-auto"
+              >
+                APPLY HERE
+              </a>
+            </div>
           </div>
         </section>
 
@@ -271,14 +283,6 @@ function Contact() {
                 Quick Actions
               </h2>
               <div className="space-y-4 mt-12">
-                <a 
-                  href="https://royalautomobileclubofaustralia.peoplevine.co.uk/survey/group/620" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="btn-outline-gold w-full"
-                >
-                  APPLY HERE
-                </a>
                 <button 
                   type="button"
                   onClick={() => setIsBookTourOpen(true)}

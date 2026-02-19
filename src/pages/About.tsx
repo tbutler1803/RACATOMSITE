@@ -3,15 +3,15 @@ import ArtDecoDivider from '../components/ArtDecoDivider';
 import { getAssetPath } from '../utils/paths';
 import { useState } from 'react';
 import BookTourModal from '../components/BookTourModal';
-import { CalendarCheck, BedDouble, Share2, Utensils } from 'lucide-react';
+import { Wine, Globe, BedDouble, Utensils } from 'lucide-react';
 
 function About() {
   const [isBookTourOpen, setIsBookTourOpen] = useState(false);
 
   const whyJoin = [
-    { icon: CalendarCheck, title: 'Events-Driven Excellence', description: 'Impeccable hosting tailored experiences, and flawless execution' },
+    { icon: Wine, title: 'Events-Driven Excellence', description: 'Impeccable hosting tailored experiences, and flawless execution' },
     { icon: BedDouble, title: 'Rest Assured', description: 'Heritage surroundings, contemporary luxury, and effortless comfort in our accommodation.' },
-    { icon: Share2, title: 'Your Gateway to Connections', description: 'Influential connections, shared experiences, and access to our worldwide reciprocal network' },
+    { icon: Globe, title: 'Your Gateway to Connections', description: 'Influential connections, shared experiences, and access to our worldwide reciprocal network' },
     { icon: Utensils, title: 'The Art of Hospitality', description: 'From intimate gatherings to grand occasions, hospitality that impresses at every turn.' }
   ];
 
@@ -222,7 +222,7 @@ function About() {
             </div>
             {/* 2. Breakfast Image */}
             <div className="art-deco-card overflow-hidden flex flex-col items-center">
-              <img src="https://images.pexels.com/photos/6364372/pexels-photo-6364372.jpeg?auto=compress&w=600&h=300&fit=crop" alt="Complimentary Breakfast - Bacon and Eggs" className="w-full h-48 object-cover mb-3" />
+              <img src={getAssetPath('/IMAGES/Breakfast.jpg')} alt="Complimentary Breakfast - Bacon and Eggs" className="w-full h-48 object-cover mb-3" />
                   <h3 className="text-lg gold-mobile-large md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">Complimentary Breakfast</h3>
               {/* Removed: Start your day with a delicious breakfast included in your stay */}
             </div>

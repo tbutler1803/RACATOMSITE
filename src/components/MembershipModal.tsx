@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { X } from 'lucide-react';
+import ArtDecoDivider from './ArtDecoDivider';
 
 interface MembershipModalProps {
   isOpen: boolean;
@@ -106,16 +107,25 @@ function MembershipModal({ isOpen, onClose, title, description, price }: Members
           >
             <X size={24} />
           </button>
-          <div className="p-6 sm:p-8">
+          <div className="p-6 sm:p-8 flex flex-col gap-4">
             <h2 id="membership-modal-title" className="text-2xl font-heading text-[var(--color-gold-accent)] mb-4">
               {title}
             </h2>
-            {price && (
-              <div className="text-lg font-semibold text-[var(--color-cream)] mb-2">{price}</div>
-            )}
-            <div className="text-[var(--color-cream)] font-light leading-relaxed whitespace-pre-line">
+            <div className="text-[var(--color-cream)] font-light leading-relaxed whitespace-pre-line mb-4">
               {description}
             </div>
+            <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-10" className="mb-4" />
+            {price && (
+              <div className="text-lg font-semibold text-[var(--color-cream)] mt-6">{price}</div>
+            )}
+            <a
+              href="https://royalautomobileclubofaustralia.peoplevine.co.uk/survey/group/620"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline-gold w-full mt-4"
+            >
+              APPLY HERE
+            </a>
           </div>
         </div>
       </div>
