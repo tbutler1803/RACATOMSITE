@@ -200,8 +200,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
           <div
             className="text-[var(--color-gold-accent)] gold-mobile-large tracking-[0.18em] sm:tracking-[0.22em] md:tracking-[0.22em] lg:tracking-[0.18em] font-subheading transition-all duration-500 text-center max-w-full overflow-hidden"
             style={{
-              // Slightly reduce subheader size on large screens
-              fontSize: 'clamp(0.7rem, 1.1vw, 1.15rem)',
+              fontSize: '1.35rem', // Fixed, cross-browser-safe size
               fontFamily: "var(--font-subheading)",
               fontWeight: 400,
               textTransform: 'uppercase',
