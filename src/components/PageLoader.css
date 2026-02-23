@@ -8,8 +8,9 @@
   bottom: 0;
   width: 100%;
   height: 100%;
-  background: rgba(4, 15, 42, 0.2);
-  backdrop-filter: blur(4px);
+  background: rgba(4, 15, 42, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,6 +27,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -55,6 +57,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -63,9 +66,12 @@
 /* loader text removed per request */
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.6;
   }
+
   50% {
     opacity: 1;
   }

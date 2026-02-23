@@ -6,7 +6,6 @@ import MembershipCard from '../components/MembershipCard';
 import { getAssetPath } from '../utils/paths';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
-import '../index.mobile.css';
 
 function Contact() {
   const location = useLocation();
