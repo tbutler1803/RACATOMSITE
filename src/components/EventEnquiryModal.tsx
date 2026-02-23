@@ -175,11 +175,11 @@ function EventEnquiryModal({ isOpen, onClose }: EventEnquiryModalProps) {
 
                     <div className="grid grid-cols-1 md:grid-cols-5">
                         {/* Left Side - Hero / Image */}
-                        <div className="md:col-span-2 p-5 sm:p-7 md:p-10 flex flex-col justify-between relative bg-cover bg-center overflow-hidden"
+                        <div className="md:col-span-2 p-5 sm:p-7 md:p-10 flex flex-col justify-between relative bg-cover bg-center overflow-hidden pt-12 sm:pt-14 md:pt-10"
                             style={{ backgroundImage: `url(${getAssetPath('/IMAGES/DSC_1595.jpg')})` }}>
                             <div className="absolute inset-0 bg-gradient-to-br from-gray-900/95 via-gray-900/90 to-gray-900/80"></div>
                             <div className="relative z-10">
-                                <h2 id="event-enquiry-title" className="text-[var(--color-gold-accent)] font-heading text-2xl sm:text-3xl md:text-4xl leading-tight mb-4 uppercase tracking-wider">
+                                <h2 id="event-enquiry-title" className="text-[var(--color-gold-accent)] font-heading text-2xl sm:text-3xl md:text-4xl leading-tight mb-4 uppercase tracking-wider pr-10 md:pr-0">
                                     Enquire Now
                                 </h2>
                                 <div className="w-12 h-0.5 bg-[var(--color-gold-accent)] mb-5 md:mb-6"></div>

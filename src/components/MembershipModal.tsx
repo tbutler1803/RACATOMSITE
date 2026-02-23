@@ -109,8 +109,16 @@ function MembershipModal({ isOpen, onClose, title, description, price }: Members
             <X size={24} />
           </button>
           <div className="p-6 sm:p-8 flex flex-col gap-4">
-            <h2 id="membership-modal-title" className="text-2xl font-heading text-[var(--color-gold-accent)] mb-4">
-              {title}
+            <h2 id="membership-modal-title" className="text-2xl md:text-3xl font-heading text-[var(--color-gold-accent)] mb-4 leading-tight tracking-[0.05em] uppercase">
+              {title.includes('/') ? (
+                title.split('/').map((part, i, arr) => (
+                  <span key={i} className="block md:inline">
+                    {part}{i < arr.length - 1 ? '/' : ''}
+                  </span>
+                ))
+              ) : (
+                title
+              )}
             </h2>
             <div className="text-[var(--color-cream)] font-light leading-relaxed whitespace-pre-line mb-4">
               {description}

@@ -12,14 +12,19 @@ function AppContent() {
 
   useEffect(() => {
     setIsLoading(true);
-    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-    
+
+    // Only scroll to top if we're not targeting a specific section
+    const params = new URLSearchParams(location.search);
+    if (!params.get('section')) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    }
+
     // Shorter delay on mobile for better perceived performance
     const isMobile = window.innerWidth <= 768;
     const delay = isMobile ? 800 : 2000;
     const timer = setTimeout(() => setIsLoading(false), delay);
     return () => clearTimeout(timer);
-  }, [location.pathname]);
+  }, [location.pathname, location.search]);
 
   return (
     <div className="page-textured-bg min-h-screen">

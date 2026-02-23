@@ -24,7 +24,7 @@ function Contact() {
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     if (params.get('section') === 'contact-information') {
-      // Wait for DOM to render, then scroll
+      // Wait for PageLoader to finish (max 2000ms) plus a small buffer
       const timer = setTimeout(() => {
         const element = document.getElementById('contact-information');
         if (element) {
@@ -36,10 +36,10 @@ function Contact() {
             behavior: 'smooth'
           });
         }
-      }, 300);
+      }, 2100);
       return () => clearTimeout(timer);
     }
-  }, [location]);
+  }, [location.search]);
 
   useEffect(() => {
     if ((location.state as any)?.focusMessage && messageFormRef.current) {
