@@ -203,15 +203,15 @@ function Events() {
                     </div>
                   </div>
 
-                  <div className={`w-[85%] md:w-1/2 mx-auto md:mx-0 flex flex-col text-left ${idx % 2 === 1 ? 'md:items-start' : 'md:items-end md:text-right'
+                  <div className={`w-[92%] md:w-1/2 mx-auto md:mx-0 flex flex-col text-center items-center ${idx % 2 === 1 ? 'md:items-start md:text-left' : 'md:items-end md:text-right'
                     }`}>
-                    <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading text-[var(--color-gold-accent)] mb-4 tracking-wider leading-none uppercase">
+                    <h2 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-heading text-[var(--color-gold-accent)] mb-4 tracking-wider leading-none uppercase">
                       {space.name}
                     </h2>
-                    <div className="text-[var(--color-gold-accent)] font-subheading text-lg md:text-xl lg:text-2xl mb-4 tracking-[0.15em] uppercase opacity-90">
+                    <div className="text-base md:text-xl lg:text-2xl text-[var(--color-gold-accent)] font-subheading mb-4 tracking-[0.15em] uppercase opacity-90">
                       {space.capacity}
                     </div>
-                    <p className="text-lg md:text-xl lg:text-2xl text-white font-light leading-relaxed max-w-xl">
+                    <p className="text-base md:text-xl lg:text-2xl text-white font-light leading-relaxed max-w-xl">
                       {space.description}
                     </p>
                   </div>

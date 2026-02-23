@@ -194,7 +194,7 @@ function EventEnquiryModal({ isOpen, onClose }: EventEnquiryModalProps) {
                                     </div>
                                     <div className="flex flex-col gap-1">
                                         <h3 className="text-[var(--color-gold-accent)] font-heading text-[10px] md:text-xs tracking-[0.2em] uppercase opacity-70">Contact</h3>
-                                        <p className="text-sm text-[var(--color-cream)]/70 font-light leading-snug">events@raca.com.au<br />+61 (02) 8273 2322</p>
+                                        <p className="text-sm text-[var(--color-cream)]/70 font-light leading-snug">ambassador@raca.com.au<br />+61 (02) 8273 2300</p>
                                     </div>
                                 </div>
                             </div>
