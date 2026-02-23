@@ -71,7 +71,7 @@ function Contact() {
   const contactInfo = [
     { icon: MapPin, label: 'Address', value: '89 Macquarie St, Sydney NSW 2000' },
     { icon: Phone, label: 'Phone', value: '+61 (02) 8273 2300' },
-    { icon: Mail, label: 'Email', value: 'membership@raca.com.au' },
+    { icon: Mail, label: 'Email', value: 'ambassador@raca.com.au' },
     { icon: Clock, label: 'Hours', value: '24/7 Reception Availability' }
   ];
 
@@ -104,7 +104,7 @@ function Contact() {
     },
     {
       name: 'Young Executive',
-      price: '',
+      price: '$1,520',
       description: 'For members ages 18-29 years',
       highlights: [
         "Young Executive Membership is designed for ambitious members aged 18 to 29 who want to experience the Royal Automobile Club of Australia in a vibrant, stylish, and connected way. With access to our iconic Macquarie Street clubhouse, established networks, industry leaders, and curated networking events, members step into a community rich in experience, influence, and opportunity. Join early, connect with purpose, and gain access to the relationships, resources, and environment that can shape your career."
@@ -112,7 +112,7 @@ function Contact() {
     },
     {
       name: "Under 40's",
-      price: '',
+      price: '$2,090',
       description: 'For members ages 30-39 years',
       highlights: [
         "Under 40s Membership connects you to the Royal Automobile Club of Australia in a way that fits your pace and lifestyle.\n\nEnjoy access to our iconic Macquarie Street clubhouse, standout events, refined dining and a dynamic community of driven, like-minded professionals. Whether you're building your network, hosting clients, or simply unwinding in the heart of the city, this is a membership that blends heritage with modern energy."
@@ -120,7 +120,7 @@ function Contact() {
     },
     {
       name: 'Defence/Emergency Services',
-      price: '$2,020',
+      price: '$1,940',
       description: 'Active or Retired',
       highlights: [
         "This membership is designed for active or retired members of Australia's defence and emergency services, as well as those who have served in affiliated international forces. It offers a welcoming home away from home where service is recognised and connections are celebrated. Members enjoy full access to our iconic Macquarie Street clubhouse, curated events, fine dining and a vibrant community of like-minded individuals. Experience the tradition, camaraderie, and privileges of RACA while staying connected to those who share your dedication and passion."
@@ -128,7 +128,7 @@ function Contact() {
     },
     {
       name: 'Corporate/Community',
-      price: '',
+      price: '$2,765',
       description: 'Designed for businesses, organisations, and community groups',
       highlights: [
         "Designed for organisations enrolling with multiple members, this membership offers preferential rates and collective access to the Club. Perfect for businesses and community groups, it provides a distinguished city base for team gatherings, client entertaining and business networking. Enjoy our Macquarie Street clubhouse, boardrooms, and refined dining all in a setting built for connection and collaboration. Bring your team, host with confidence, and grow your network at RACA."

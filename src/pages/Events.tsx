@@ -43,59 +43,51 @@ function Events() {
   const eventSpaces = [
     {
       name: 'Victoria Room',
-      capacity: 'Banquet 130/Cocktail 180',
+      capacity: 'BANQUET 130 / COCKTAIL 180',
       description: 'Elegant space for large banquets or cocktail receptions.',
-      image: 'https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&w=400&h=300&fit=crop',
-      features: []
+      image: getAssetPath('/IMAGES/EVENT SPACES/Victoria Room.png'),
     },
     {
       name: 'Rooftop',
-      capacity: 'Cocktail 70',
+      capacity: 'COCKTAIL 70',
       description: 'Open-air rooftop with city views, perfect for cocktail events.',
-      image: 'https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&w=400&h=300&fit=crop',
-      features: []
+      image: getAssetPath('/IMAGES/EVENT SPACES/Rooftop.png'),
     },
     {
       name: 'Macquarie Room',
-      capacity: 'Banquet 120/Cocktail 150',
+      capacity: 'BANQUET 120 / COCKTAIL 150',
       description: 'Spacious room for banquets and cocktail functions.',
-      image: 'https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&w=400&h=300&fit=crop',
-      features: []
+      image: getAssetPath('/IMAGES/EVENT SPACES/Maquarie Room.png'),
     },
     {
-      name: 'ISC Room',
-      capacity: 'Banquet 60/Cocktail 70',
+      name: 'ISC Bar',
+      capacity: 'BANQUET 60 / COCKTAIL 70',
       description: 'Versatile space for mid-sized events.',
-      image: 'https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&w=400&h=300&fit=crop',
-      features: []
+      image: getAssetPath('/IMAGES/EVENT SPACES/ISC Room.png'),
     },
     {
       name: 'Pioneer Room',
-      capacity: 'Banquet 25 / Cocktail 30',
+      capacity: 'BANQUET 25 / COCKTAIL 30',
       description: 'Intimate room for small gatherings.',
-      image: 'https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&w=400&h=300&fit=crop',
-      features: []
+      image: getAssetPath('/IMAGES/EVENT SPACES/Pioneer Room.png'),
     },
     {
       name: 'Vintage Room',
-      capacity: 'Boardroom Style 20',
+      capacity: 'BOARDROOM STYLE 20',
       description: 'Classic boardroom for meetings and private dining.',
-      image: 'https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&w=400&h=300&fit=crop',
-      features: []
+      image: getAssetPath('/IMAGES/EVENT SPACES/Vintage Room.png'),
     },
     {
       name: 'Boardroom',
-      capacity: 'Boardroom Style 15',
+      capacity: 'BOARDROOM STYLE 15',
       description: 'Professional boardroom for executive meetings.',
-      image: 'https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&w=400&h=300&fit=crop',
-      features: []
+      image: getAssetPath('/IMAGES/EVENT SPACES/Board Room.png'),
     },
     {
       name: 'Hordern',
-      capacity: '',
-      description: 'Flexible event space.',
-      image: 'https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&w=400&h=300&fit=crop',
-      features: []
+      capacity: 'BOARDROOM STYLE 10',
+      description: 'Classic boardroom for meetings and private dining.',
+      image: getAssetPath('/IMAGES/EVENT SPACES/Hordern.png'),
     }
   ];
 
@@ -186,38 +178,42 @@ function Events() {
             </div>
           </div>
 
-          <section className="mb-16 md:mb-20">
-            <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-12" />
-            <h2>
+          <section className="mb-16 md:mb-32">
+            <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-16 mx-auto" />
+            <h2 className="text-4xl md:text-6xl font-heading text-[var(--color-gold-accent)] mb-16 md:mb-24 tracking-[0.1em] uppercase">
               Event Spaces
             </h2>
-            <div className="grid grid-cols-2 gap-4 md:space-y-16 lg:space-y-20 md:block">
+
+            <div className="space-y-24 md:space-y-32 lg:space-y-40">
               {eventSpaces.map((space, idx) => (
                 <div
                   key={idx}
-                  className={`grid grid-cols-1 md:grid-cols-2 md:gap-6 lg:gap-8 md:items-center ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
+                  className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 lg:gap-24 ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''
+                    }`}
                 >
-                  <div className={idx % 2 === 1 ? 'lg:order-2' : ''}>
-                    <div className="art-deco-card overflow-hidden mb-2 md:mb-0">
+                  <div className="w-[85%] md:w-1/2 mx-auto md:mx-0">
+                    <div className="relative group">
+                      <div className="absolute -inset-1 border-2 border-[var(--color-gold-accent)] pointer-events-none z-10" />
                       <LazyImage
                         src={space.image}
                         alt={space.name}
-                        className="w-full aspect-square md:h-64 lg:h-80 md:aspect-auto object-cover"
-                        containerClassName=""
+                        className="w-full aspect-[4/3] md:aspect-[3/2] object-cover"
+                        containerClassName="overflow-hidden"
                       />
                     </div>
                   </div>
-                  <div className={idx % 2 === 1 ? 'lg:order-1' : ''}>
-                    <h2 className="text-2xl md:text-4xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
+
+                  <div className={`w-[85%] md:w-1/2 mx-auto md:mx-0 flex flex-col text-left ${idx % 2 === 1 ? 'md:items-start' : 'md:items-end md:text-right'
+                    }`}>
+                    <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading text-[var(--color-gold-accent)] mb-4 tracking-wider leading-none uppercase">
                       {space.name}
                     </h2>
-                    <h3 className="text-lg sm:text-xl md:text-3xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
+                    <div className="text-[var(--color-gold-accent)] font-subheading text-lg md:text-xl lg:text-2xl mb-4 tracking-[0.15em] uppercase opacity-90">
                       {space.capacity}
-                    </h3>
-                    <p className="hidden sm:block text-sm sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2 mb-2 md:mb-3">
+                    </div>
+                    <p className="text-lg md:text-xl lg:text-2xl text-white font-light leading-relaxed max-w-xl">
                       {space.description}
                     </p>
-                    {/* Features list removed as requested */}
                   </div>
                 </div>
               ))}
