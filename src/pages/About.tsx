@@ -3,10 +3,12 @@ import ArtDecoDivider from '../components/ArtDecoDivider';
 import { getAssetPath } from '../utils/paths';
 import { useState } from 'react';
 import BookTourModal from '../components/BookTourModal';
+import BookStayModal from '../components/BookStayModal';
 import { Wine, Globe, BedDouble, Utensils } from 'lucide-react';
 
 function About() {
   const [isBookTourOpen, setIsBookTourOpen] = useState(false);
+  const [isBookStayOpen, setIsBookStayOpen] = useState(false);
 
   const whyJoin = [
     { icon: Wine, title: 'Events-Driven Excellence', description: 'Impeccable hosting tailored experiences, and flawless execution' },
@@ -234,14 +236,13 @@ function About() {
             </div>
 
             <div className="flex justify-center">
-              <a
-                href="https://app.mews.com/distributor/adee2521-407e-4c2f-af36-b38d01263bf4"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() => setIsBookStayOpen(true)}
                 className="btn-outline-gold max-w-xs w-full mx-auto"
               >
                 Book Your Stay
-              </a>
+              </button>
             </div>
           </section>
 
@@ -270,6 +271,10 @@ function About() {
       <BookTourModal
         isOpen={isBookTourOpen}
         onClose={() => setIsBookTourOpen(false)}
+      />
+      <BookStayModal
+        isOpen={isBookStayOpen}
+        onClose={() => setIsBookStayOpen(false)}
       />
     </div>
   );
