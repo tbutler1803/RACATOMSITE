@@ -23,8 +23,8 @@ function Header() {
   };
 
   return (
-    <div 
-      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 ${isHome ? 'pointer-events-none' : 'border-b border-[var(--color-gold-accent)]/40'}`}
+    <div
+      className={`fixed top-0 left-0 right-0 z-[80] flex items-center justify-between px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 ${isHome ? 'pointer-events-none' : 'border-b border-[var(--color-gold-accent)]/40'}`}
       style={!isHome ? {
         backgroundImage: `url(${getAssetPath('/textures/kseniya-lapteva-A4rqd2g-eLo-unsplash.png')})`,
         backgroundSize: 'cover',
@@ -42,7 +42,7 @@ function Header() {
             src={getAssetPath('/company_logo.png')}
             alt="RACA Logo"
             decoding="async"
-            fetchpriority="high"
+            fetchPriority="high"
             className="h-12 sm:h-16 md:h-20 w-auto cursor-pointer logo-img"
           />
           <div className="hidden md:flex flex-col leading-tight">
@@ -58,7 +58,7 @@ function Header() {
 
       {isHome ? (
         <div className="pointer-events-auto">
-          <HamburgerMenu />
+          <HamburgerMenu onOpen={closeModals} />
         </div>
       ) : (
         <div className="flex items-center gap-4">

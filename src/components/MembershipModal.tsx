@@ -38,6 +38,14 @@ function MembershipModal({ isOpen, onClose, title, description, price }: Members
   }, [isOpen]);
 
   useEffect(() => {
+    const handleCloseModals = () => {
+      onClose();
+    };
+    window.addEventListener('close-modals', handleCloseModals);
+    return () => window.removeEventListener('close-modals', handleCloseModals);
+  }, [onClose]);
+
+  useEffect(() => {
     if (!isOpen) return;
     const dialog = dialogRef.current;
     if (!dialog) return;

@@ -55,6 +55,14 @@ function EventEnquiryModal({ isOpen, onClose }: EventEnquiryModalProps) {
     }, [isOpen]);
 
     useEffect(() => {
+        const handleCloseModals = () => {
+            onClose();
+        };
+        window.addEventListener('close-modals', handleCloseModals);
+        return () => window.removeEventListener('close-modals', handleCloseModals);
+    }, [onClose]);
+
+    useEffect(() => {
         if (!isOpen) return;
 
         const dialog = dialogRef.current;
@@ -144,7 +152,7 @@ function EventEnquiryModal({ isOpen, onClose }: EventEnquiryModalProps) {
             {/* Backdrop overlay - reduced blur to prevent distortion */}
             {isAnimating && (
                 <div
-                    className="fixed inset-0 z-[60] backdrop-blur-[2px] transition-all duration-500 ease-out bg-black/60"
+                    className="fixed inset-0 z-[60] backdrop-blur-[2px] transition-all duration-500 ease-out"
                     onClick={onClose}
                     aria-hidden="true"
                 />

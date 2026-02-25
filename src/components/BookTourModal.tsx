@@ -41,13 +41,15 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
       document.documentElement.style.overflow = 'unset';
       document.body.style.overflow = 'unset';
     };
+  }, [isOpen]);
 
+  useEffect(() => {
     const handleCloseModals = () => {
       onClose();
     };
     window.addEventListener('close-modals', handleCloseModals);
     return () => window.removeEventListener('close-modals', handleCloseModals);
-  }, [isOpen, onClose]);
+  }, [onClose]);
 
   // Detect iPad devices
   useEffect(() => {
