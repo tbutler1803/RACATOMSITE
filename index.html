@@ -12,7 +12,10 @@
       connect-src 'self' https: https://app.mews.com https://distributor.mews.com https://apps.mews.com;
       frame-src https://www.google.com https://www.google.com.au https://app.mews.com https://distributor.mews.com https://apps.mews.com;
       worker-src 'self' blob: https://apps.mews.com;
+      upgrade-insecure-requests;
     ">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png?v=4" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=4" />
   <link rel="icon" type="image/png" sizes="180x180" href="/favicon.png?v=4" />
