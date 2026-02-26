@@ -198,7 +198,7 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
               <button
                 type="button"
                 onClick={() => handleNavigate(item.path)}
-                className="group w-full text-left px-6 py-4 text-[var(--color-gold-accent)] font-heading text-[22px] min-[400px]:text-2xl md:text-[28px] tracking-[0.24em] transition-all duration-300 relative"
+                className="group w-full text-left px-6 py-2.5 sm:py-4 text-[var(--color-gold-accent)] font-heading text-[26px] min-[400px]:text-[28px] md:text-[28px] tracking-[0.24em] transition-all duration-300 relative"
               >
                 <span className="relative z-10 group-hover:text-[var(--color-red-accent)] transition-all duration-300">
                   {item.label}
@@ -214,8 +214,8 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
           className="relative z-10 px-6 pt-6 pb-10 border-t border-[var(--color-gold-accent)]/20 space-y-2 text-[var(--color-cream)]/85 text-sm tracking-[0.18em]"
           style={{ paddingBottom: 'max(20px, env(safe-area-inset-bottom, 20px))' }}
         >
-          <p className="text-[var(--color-cream)]/75 font-normal">+61 (02) 8273 2300</p>
-          <p className="text-[var(--color-cream)]/75 font-normal">89 Macquarie St, Sydney NSW 2000</p>
+          <p className="text-[var(--color-cream)]/75 font-light">+61 (02) 8273 2300</p>
+          <p className="text-[var(--color-cream)]/75 font-light">89 Macquarie St, Sydney NSW 2000</p>
           <div className="flex items-center gap-4 pt-2 text-[var(--color-gold-accent)]">
             <a
               className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--color-gold-accent)]/35 hover:border-[var(--color-gold-accent)] hover:text-[var(--color-gold-light)] hover:bg-[var(--color-gold-accent)]/5 transition-all duration-300"
