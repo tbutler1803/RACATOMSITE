@@ -13,6 +13,7 @@ interface MembershipModalProps {
 function MembershipModal({ isOpen, onClose, title, description, price }: MembershipModalProps) {
   const [isAnimating, setIsAnimating] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isIPad, setIsIPad] = useState(false);
   const dialogRef = useRef<HTMLDivElement>(null);
   const previouslyFocusedRef = useRef<HTMLElement | null>(null);
 
@@ -44,6 +45,13 @@ function MembershipModal({ isOpen, onClose, title, description, price }: Members
     window.addEventListener('close-modals', handleCloseModals);
     return () => window.removeEventListener('close-modals', handleCloseModals);
   }, [onClose]);
+
+  // Detect iPad devices
+  useEffect(() => {
+    const ua = navigator.userAgent;
+    const isIPadDevice = /iPad|Mac/.test(ua) && 'ontouchstart' in window;
+    setIsIPad(isIPadDevice);
+  }, []);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -97,11 +105,12 @@ function MembershipModal({ isOpen, onClose, title, description, price }: Members
         />
       )}
       <div
-        className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 pointer-events-none"
+        className="fixed inset-0 z-50 flex items-start md:items-center justify-center p-2 sm:p-4 pt-10 pb-4 sm:pt-24 sm:pb-4 md:pt-6 lg:pt-8 pointer-events-none"
         onClick={onClose}
+        style={isIPad ? { paddingTop: '8rem' } : undefined}
       >
         <div
-          className={`relative bg-[var(--color-dark-navy)] border-2 border-[var(--color-gold-accent)] w-full max-w-[96%] sm:max-w-[640px] md:max-w-xl rounded-lg max-h-full overflow-y-auto shadow-2xl transition-all duration-400 ease-out pointer-events-auto ${isAnimating ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+          className={`relative bg-[var(--color-dark-navy)] border-2 border-[var(--color-gold-accent)] w-full max-w-[94%] sm:max-w-[540px] md:max-w-xl rounded-lg max-h-full overflow-y-auto shadow-2xl transition-all duration-400 ease-out pointer-events-auto ${isAnimating ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
           onClick={e => e.stopPropagation()}
           role="dialog"
           aria-modal="true"
@@ -116,7 +125,7 @@ function MembershipModal({ isOpen, onClose, title, description, price }: Members
           >
             <X size={24} />
           </button>
-          <div className="p-6 sm:p-8 flex flex-col gap-4">
+          <div className="p-5 sm:p-8 flex flex-col gap-4">
             <h2 id="membership-modal-title" className="text-2xl md:text-3xl font-heading text-[var(--color-gold-accent)] mb-4 leading-tight tracking-[0.05em] uppercase">
               {title.includes('/') ? (
                 title.split('/').map((part, i, arr) => (
@@ -128,18 +137,18 @@ function MembershipModal({ isOpen, onClose, title, description, price }: Members
                 title
               )}
             </h2>
-            <div className="text-[var(--color-cream)] font-light leading-relaxed whitespace-pre-line mb-4">
+            <div className="text-[var(--color-cream)] font-light leading-relaxed whitespace-pre-line mb-4 text-sm sm:text-base">
               {description}
             </div>
-            <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-10" className="mb-4" />
+            <ArtDecoDivider width="w-48 sm:w-56 md:w-72 lg:w-80" height="h-6 md:h-10" className="mb-4" />
             {price && (
-              <div className="text-lg font-semibold text-[var(--color-cream)] mt-6">{price}</div>
+              <div className="text-base sm:text-lg font-semibold text-[var(--color-cream)] mt-2 sm:mt-6">{price}</div>
             )}
             <a
               href="https://royalautomobileclubofaustralia.peoplevine.co.uk/survey/group/620"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline-gold w-full mt-4"
+              className="btn-outline-gold w-full mt-2 sm:mt-4 text-base"
             >
               APPLY HERE
             </a>
