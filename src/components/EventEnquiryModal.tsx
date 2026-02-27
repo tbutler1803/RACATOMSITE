@@ -159,12 +159,12 @@ function EventEnquiryModal({ isOpen, onClose }: EventEnquiryModalProps) {
             )}
 
             <div
-                className="fixed inset-0 z-[100] flex items-start md:items-center justify-center p-2 sm:p-4 pt-24 pb-4 sm:pt-24 sm:pb-4 md:pt-6 lg:pt-8 pointer-events-none"
+                className="fixed inset-0 z-[100] flex items-start md:items-center justify-center p-2 sm:p-4 pt-24 pb-10 sm:pb-4 md:pt-6 lg:pt-8 pointer-events-none"
                 onClick={onClose}
                 style={isIPad ? { paddingTop: '8rem' } : undefined}
             >
                 <div
-                    className={`relative bg-[var(--color-dark-navy)] border-2 border-[var(--color-gold-accent)] w-full max-w-[96%] sm:max-w-[640px] md:max-w-4xl lg:max-w-5xl rounded-lg max-h-[96vh] md:max-h-full overflow-y-auto shadow-2xl transition-all duration-500 ease-out pointer-events-auto ${isAnimating ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'}`}
+                    className={`relative bg-[var(--color-dark-navy)] border-2 border-[var(--color-gold-accent)] w-full max-w-[96%] sm:max-w-[640px] md:max-w-4xl lg:max-w-5xl rounded-lg max-h-full overflow-y-auto shadow-2xl transition-all duration-500 ease-out pointer-events-auto ${isAnimating ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'}`}
                     onClick={(e) => e.stopPropagation()}
                     role="dialog"
                     aria-modal="true"
