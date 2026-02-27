@@ -136,19 +136,19 @@ function BookStayModal({ isOpen, onClose }: BookStayModalProps) {
         <>
             {isAnimating && (
                 <div
-                    className="fixed inset-0 z-40 backdrop-blur-[2px] transition-all duration-500 ease-out bg-black/60"
+                    className="fixed inset-0 z-[90] backdrop-blur-[2px] transition-all duration-500 ease-out bg-black/60"
                     onClick={onClose}
                     aria-hidden="true"
                 />
             )}
 
             <div
-                className="fixed inset-0 z-50 flex items-start md:items-center justify-center p-2 sm:p-4 pt-10 pb-4 sm:pt-24 sm:pb-4 md:pt-6 lg:pt-8 pointer-events-none"
+                className="fixed inset-0 z-[100] flex items-start md:items-center justify-center p-2 sm:p-4 pt-24 pb-4 sm:pt-24 sm:pb-4 md:pt-6 lg:pt-8 pointer-events-none"
                 onClick={onClose}
                 style={isIPad ? { paddingTop: '8rem' } : undefined}
             >
                 <div
-                    className={`relative bg-[var(--color-dark-navy)] border-2 border-[var(--color-gold-accent)] w-full max-w-[96%] sm:max-w-[640px] md:w-full md:max-w-3xl lg:max-w-5xl rounded-lg max-h-full overflow-y-auto shadow-2xl transition-all duration-500 ease-out pointer-events-auto ${isAnimating ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+                    className={`relative bg-[var(--color-dark-navy)] border-2 border-[var(--color-gold-accent)] w-full max-w-[96%] sm:max-w-[640px] md:w-full md:max-w-3xl lg:max-w-5xl rounded-lg max-h-[96vh] md:max-h-full overflow-y-auto shadow-2xl transition-all duration-500 ease-out pointer-events-auto ${isAnimating ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
                     onClick={(e) => e.stopPropagation()}
                     role="dialog"
                     aria-modal="true"
@@ -214,7 +214,7 @@ function BookStayModal({ isOpen, onClose }: BookStayModalProps) {
                             <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 relative z-10">
                                 <div className="grid grid-cols-2 gap-2 md:gap-4">
                                     <div>
-                                        <label htmlFor="stay-first-name" className="text-[var(--color-gold-accent)] font-heading text-xs tracking-widest block mb-2">
+                                        <label htmlFor="stay-first-name" className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold block mb-1.5 uppercase">
                                             FIRST NAME <span className="text-red-400">*</span>
                                         </label>
                                         <input
@@ -224,11 +224,11 @@ function BookStayModal({ isOpen, onClose }: BookStayModalProps) {
                                             value={formData.firstName}
                                             onChange={handleInputChange}
                                             required
-                                            className="w-full bg-transparent border-2 border-[var(--color-gold-accent)] px-3 md:px-4 py-2 md:py-3 text-[var(--color-cream)] font-light text-sm md:text-base focus:outline-none transition-colors"
+                                            className="w-full bg-transparent border-2 border-[var(--color-gold-accent)] px-3 md:px-4 py-2 md:py-3 text-[var(--color-cream)] font-light text-sm md:text-base focus:outline-none transition-colors min-h-[44px]"
                                         />
                                     </div>
                                     <div>
-                                        <label htmlFor="stay-last-name" className="text-[var(--color-gold-accent)] font-heading text-xs tracking-widest block mb-2">
+                                        <label htmlFor="stay-last-name" className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold block mb-1.5 uppercase">
                                             LAST NAME <span className="text-red-400">*</span>
                                         </label>
                                         <input
@@ -238,13 +238,13 @@ function BookStayModal({ isOpen, onClose }: BookStayModalProps) {
                                             value={formData.lastName}
                                             onChange={handleInputChange}
                                             required
-                                            className="w-full bg-transparent border-2 border-[var(--color-gold-accent)] px-3 md:px-4 py-2 md:py-3 text-[var(--color-cream)] font-light text-sm md:text-base focus:outline-none transition-colors"
+                                            className="w-full bg-transparent border-2 border-[var(--color-gold-accent)] px-3 md:px-4 py-2 md:py-3 text-[var(--color-cream)] font-light text-sm md:text-base focus:outline-none transition-colors min-h-[44px]"
                                         />
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label htmlFor="stay-email" className="text-[var(--color-gold-accent)] font-heading text-xs tracking-widest block mb-2">
+                                    <label htmlFor="stay-email" className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold tracking-[0.05em] block mb-1.5 uppercase">
                                         EMAIL <span className="text-red-400">*</span>
                                     </label>
                                     <input
@@ -254,12 +254,12 @@ function BookStayModal({ isOpen, onClose }: BookStayModalProps) {
                                         value={formData.email}
                                         onChange={handleInputChange}
                                         required
-                                        className="w-full bg-transparent border-2 border-[var(--color-gold-accent)] px-3 md:px-4 py-2 md:py-3 text-[var(--color-cream)] font-light text-sm md:text-base focus:outline-none transition-colors"
+                                        className="w-full bg-transparent border-2 border-[var(--color-gold-accent)] px-3 md:px-4 py-2 md:py-3 text-[var(--color-cream)] font-light text-sm md:text-base focus:outline-none transition-colors min-h-[44px]"
                                     />
                                 </div>
 
                                 <div>
-                                    <label htmlFor="stay-message" className="text-[var(--color-gold-accent)] font-heading text-xs tracking-widest block mb-2">
+                                    <label htmlFor="stay-message" className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold tracking-[0.05em] block mb-1.5 uppercase">
                                         BOOKING DETAILS <span className="text-red-400">*</span>
                                     </label>
                                     <textarea

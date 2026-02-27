@@ -152,19 +152,19 @@ function EventEnquiryModal({ isOpen, onClose }: EventEnquiryModalProps) {
             {/* Backdrop overlay - reduced blur to prevent distortion */}
             {isAnimating && (
                 <div
-                    className="fixed inset-0 z-[60] backdrop-blur-[2px] transition-all duration-500 ease-out"
+                    className="fixed inset-0 z-[90] backdrop-blur-[2px] transition-all duration-500 ease-out bg-black/60"
                     onClick={onClose}
                     aria-hidden="true"
                 />
             )}
 
             <div
-                className="fixed inset-0 z-[70] flex items-start md:items-center justify-center p-2 sm:p-4 pt-10 pb-4 sm:pt-24 sm:pb-4 md:pt-6 lg:pt-8 pointer-events-none"
+                className="fixed inset-0 z-[100] flex items-start md:items-center justify-center p-2 sm:p-4 pt-24 pb-4 sm:pt-24 sm:pb-4 md:pt-6 lg:pt-8 pointer-events-none"
                 onClick={onClose}
                 style={isIPad ? { paddingTop: '8rem' } : undefined}
             >
                 <div
-                    className={`relative bg-[var(--color-dark-navy)] border-2 border-[var(--color-gold-accent)] w-full max-w-[96%] sm:max-w-[640px] md:max-w-4xl lg:max-w-5xl rounded-lg max-h-full overflow-y-auto shadow-2xl transition-all duration-500 ease-out pointer-events-auto ${isAnimating ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'}`}
+                    className={`relative bg-[var(--color-dark-navy)] border-2 border-[var(--color-gold-accent)] w-full max-w-[96%] sm:max-w-[640px] md:max-w-4xl lg:max-w-5xl rounded-lg max-h-[96vh] md:max-h-full overflow-y-auto shadow-2xl transition-all duration-500 ease-out pointer-events-auto ${isAnimating ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'}`}
                     onClick={(e) => e.stopPropagation()}
                     role="dialog"
                     aria-modal="true"
@@ -209,15 +209,15 @@ function EventEnquiryModal({ isOpen, onClose }: EventEnquiryModalProps) {
                         </div>
 
                         {/* Right Side - Form */}
-                        <div className="md:col-span-3 p-5 sm:p-7 md:p-10 bg-[var(--color-dark-navy)] relative overflow-hidden">
+                        <div className="md:col-span-3 p-4 sm:p-7 md:p-10 bg-[var(--color-dark-navy)] relative overflow-hidden">
                             {/* Pattern overlay */}
                             <div className="absolute inset-0 opacity-5 pointer-events-none"
                                 style={{ backgroundImage: `url(${getAssetPath('/textures/kseniya-lapteva-A4rqd2g-eLo-unsplash.png')})`, backgroundSize: 'cover' }}></div>
 
-                            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5 relative z-10">
+                            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-5 relative z-10">
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    <div className="space-y-1.5">
-                                        <label htmlFor="enquiry-first-name" className="text-[var(--color-gold-accent)] font-heading text-[10px] tracking-widest uppercase block">First Name *</label>
+                                    <div className="space-y-1">
+                                        <label htmlFor="enquiry-first-name" className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold tracking-[0.05em] uppercase block">First Name *</label>
                                         <input
                                             type="text"
                                             id="enquiry-first-name"
@@ -226,11 +226,11 @@ function EventEnquiryModal({ isOpen, onClose }: EventEnquiryModalProps) {
                                             onChange={handleInputChange}
                                             required
                                             placeholder="Jane"
-                                            className="w-full bg-white/5 border border-[var(--color-gold-accent)]/20 px-3.5 sm:px-4 py-2 sm:py-2.5 md:py-3 text-[var(--color-cream)] font-light focus:border-[var(--color-gold-accent)]/80 focus:bg-white/10 focus:outline-none transition-all duration-300 rounded-sm"
+                                            className="w-full bg-white/5 border border-[var(--color-gold-accent)]/20 px-3.5 sm:px-4 py-2 sm:py-2.5 md:py-3 text-[var(--color-cream)] font-light focus:border-[var(--color-gold-accent)]/80 focus:bg-white/10 focus:outline-none transition-all duration-300 rounded-sm min-h-[44px]"
                                         />
                                     </div>
-                                    <div className="space-y-1.5">
-                                        <label htmlFor="enquiry-last-name" className="text-[var(--color-gold-accent)] font-heading text-[10px] tracking-widest uppercase block">Last Name *</label>
+                                    <div className="space-y-1">
+                                        <label htmlFor="enquiry-last-name" className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold tracking-[0.05em] uppercase block">Last Name *</label>
                                         <input
                                             type="text"
                                             id="enquiry-last-name"
@@ -239,14 +239,14 @@ function EventEnquiryModal({ isOpen, onClose }: EventEnquiryModalProps) {
                                             onChange={handleInputChange}
                                             required
                                             placeholder="Doe"
-                                            className="w-full bg-white/5 border border-[var(--color-gold-accent)]/20 px-3.5 sm:px-4 py-2 sm:py-2.5 md:py-3 text-[var(--color-cream)] font-light focus:border-[var(--color-gold-accent)]/80 focus:bg-white/10 focus:outline-none transition-all duration-300 rounded-sm"
+                                            className="w-full bg-white/5 border border-[var(--color-gold-accent)]/20 px-3.5 sm:px-4 py-2 sm:py-2.5 md:py-3 text-[var(--color-cream)] font-light focus:border-[var(--color-gold-accent)]/80 focus:bg-white/10 focus:outline-none transition-all duration-300 rounded-sm min-h-[44px]"
                                         />
                                     </div>
                                 </div>
 
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    <div className="space-y-1.5">
-                                        <label htmlFor="enquiry-email" className="text-[var(--color-gold-accent)] font-heading text-[10px] tracking-widest uppercase block">Email *</label>
+                                    <div className="space-y-1">
+                                        <label htmlFor="enquiry-email" className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold tracking-[0.05em] uppercase block">Email *</label>
                                         <input
                                             type="email"
                                             id="enquiry-email"
@@ -255,11 +255,11 @@ function EventEnquiryModal({ isOpen, onClose }: EventEnquiryModalProps) {
                                             onChange={handleInputChange}
                                             required
                                             placeholder="jane@example.com"
-                                            className="w-full bg-white/5 border border-[var(--color-gold-accent)]/20 px-3.5 sm:px-4 py-2 sm:py-2.5 md:py-3 text-[var(--color-cream)] font-light focus:border-[var(--color-gold-accent)]/80 focus:bg-white/10 focus:outline-none transition-all duration-300 rounded-sm"
+                                            className="w-full bg-white/5 border border-[var(--color-gold-accent)]/20 px-3.5 sm:px-4 py-2 sm:py-2.5 md:py-3 text-[var(--color-cream)] font-light focus:border-[var(--color-gold-accent)]/80 focus:bg-white/10 focus:outline-none transition-all duration-300 rounded-sm min-h-[44px]"
                                         />
                                     </div>
-                                    <div className="space-y-1.5">
-                                        <label htmlFor="enquiry-phone" className="text-[var(--color-gold-accent)] font-heading text-[10px] tracking-widest uppercase block">Phone *</label>
+                                    <div className="space-y-1">
+                                        <label htmlFor="enquiry-phone" className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold tracking-[0.05em] uppercase block">Phone *</label>
                                         <input
                                             type="tel"
                                             id="enquiry-phone"
@@ -268,25 +268,25 @@ function EventEnquiryModal({ isOpen, onClose }: EventEnquiryModalProps) {
                                             onChange={handleInputChange}
                                             required
                                             placeholder="+61 400 000 000"
-                                            className="w-full bg-white/5 border border-[var(--color-gold-accent)]/20 px-3.5 sm:px-4 py-2 sm:py-2.5 md:py-3 text-[var(--color-cream)] font-light focus:border-[var(--color-gold-accent)]/80 focus:bg-white/10 focus:outline-none transition-all duration-300 rounded-sm"
+                                            className="w-full bg-white/5 border border-[var(--color-gold-accent)]/20 px-3.5 sm:px-4 py-2 sm:py-2.5 md:py-3 text-[var(--color-cream)] font-light focus:border-[var(--color-gold-accent)]/80 focus:bg-white/10 focus:outline-none transition-all duration-300 rounded-sm min-h-[44px]"
                                         />
                                     </div>
                                 </div>
 
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    <div className="space-y-1.5">
-                                        <label htmlFor="enquiry-date" className="text-[var(--color-gold-accent)] font-heading text-[10px] tracking-widest uppercase block">Preferred Date</label>
+                                    <div className="space-y-1">
+                                        <label htmlFor="enquiry-date" className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold tracking-[0.05em] uppercase block">Preferred Date</label>
                                         <input
                                             type="date"
                                             id="enquiry-date"
                                             name="eventDate"
                                             value={formData.eventDate}
                                             onChange={handleInputChange}
-                                            className="w-full bg-white/5 border border-[var(--color-gold-accent)]/20 px-3.5 sm:px-4 py-2 sm:py-2.5 md:py-3 text-[var(--color-cream)] font-light focus:border-[var(--color-gold-accent)]/80 focus:bg-white/10 focus:outline-none transition-all duration-300 rounded-sm color-scheme-dark"
+                                            className="w-full bg-white/5 border border-[var(--color-gold-accent)]/20 px-3.5 sm:px-4 py-1.5 sm:py-2.5 md:py-3 text-[var(--color-cream)] font-light focus:border-[var(--color-gold-accent)]/80 focus:bg-white/10 focus:outline-none transition-all duration-300 rounded-sm color-scheme-dark min-h-[44px]"
                                         />
                                     </div>
-                                    <div className="space-y-1.5">
-                                        <label htmlFor="enquiry-guests" className="text-[var(--color-gold-accent)] font-heading text-[10px] tracking-widest uppercase block">Expected Guests</label>
+                                    <div className="space-y-1">
+                                        <label htmlFor="enquiry-guests" className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold tracking-[0.05em] uppercase block">Expected Guests</label>
                                         <input
                                             type="text"
                                             id="enquiry-guests"
@@ -294,19 +294,19 @@ function EventEnquiryModal({ isOpen, onClose }: EventEnquiryModalProps) {
                                             value={formData.guestCount}
                                             onChange={handleInputChange}
                                             placeholder="Approx. 50"
-                                            className="w-full bg-white/5 border border-[var(--color-gold-accent)]/20 px-3.5 sm:px-4 py-2 sm:py-2.5 md:py-3 text-[var(--color-cream)] font-light focus:border-[var(--color-gold-accent)]/80 focus:bg-white/10 focus:outline-none transition-all duration-300 rounded-sm"
+                                            className="w-full bg-white/5 border border-[var(--color-gold-accent)]/20 px-3.5 sm:px-4 py-2 sm:py-2.5 md:py-3 text-[var(--color-cream)] font-light focus:border-[var(--color-gold-accent)]/80 focus:bg-white/10 focus:outline-none transition-all duration-300 rounded-sm min-h-[44px]"
                                         />
                                     </div>
                                 </div>
 
-                                <div className="space-y-1.5">
-                                    <label htmlFor="enquiry-space" className="text-[var(--color-gold-accent)] font-heading text-[10px] tracking-widest uppercase block">Interested Space</label>
+                                <div className="space-y-1">
+                                    <label htmlFor="enquiry-space" className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold tracking-[0.05em] uppercase block">Interested Space</label>
                                     <select
                                         id="enquiry-space"
                                         name="space"
                                         value={formData.space}
                                         onChange={handleInputChange}
-                                        className="w-full bg-white/5 border border-[var(--color-gold-accent)]/20 px-3.5 sm:px-4 py-2 sm:py-2.5 md:py-3 text-[var(--color-cream)] font-light focus:border-[var(--color-gold-accent)]/80 focus:bg-white/10 focus:outline-none transition-all duration-300 rounded-sm appearance-none cursor-pointer"
+                                        className="w-full bg-white/5 border border-[var(--color-gold-accent)]/20 px-3.5 sm:px-4 py-2 sm:py-2.5 md:py-3 text-[var(--color-cream)] font-light focus:border-[var(--color-gold-accent)]/80 focus:bg-white/10 focus:outline-none transition-all duration-300 rounded-sm appearance-none cursor-pointer min-h-[44px]"
                                     >
                                         <option value="" className="bg-[var(--color-dark-navy)]">Please select</option>
                                         <option value="victoria" className="bg-[var(--color-dark-navy)]">Victoria Room</option>
@@ -319,8 +319,8 @@ function EventEnquiryModal({ isOpen, onClose }: EventEnquiryModalProps) {
                                     </select>
                                 </div>
 
-                                <div className="space-y-1.5">
-                                    <label htmlFor="enquiry-message" className="text-[var(--color-gold-accent)] font-heading text-[10px] tracking-widest uppercase block">Message</label>
+                                <div className="space-y-1">
+                                    <label htmlFor="enquiry-message" className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold tracking-[0.05em] uppercase block">Message</label>
                                     <textarea
                                         name="message"
                                         id="enquiry-message"

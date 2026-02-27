@@ -99,13 +99,13 @@ function MembershipModal({ isOpen, onClose, title, description, price }: Members
     <>
       {isAnimating && (
         <div
-          className="fixed inset-0 z-40 backdrop-blur-[2px] transition-all duration-400 ease-out bg-black/60"
+          className="fixed inset-0 z-[90] backdrop-blur-[2px] transition-all duration-400 ease-out bg-black/60"
           onClick={onClose}
           aria-hidden="true"
         />
       )}
       <div
-        className="fixed inset-0 z-50 flex items-start md:items-center justify-center p-2 sm:p-4 pt-10 pb-4 sm:pt-24 sm:pb-4 md:pt-6 lg:pt-8 pointer-events-none"
+        className="fixed inset-0 z-[100] flex items-start md:items-center justify-center p-2 sm:p-4 pt-24 pb-4 sm:pt-24 sm:pb-4 md:pt-6 lg:pt-8 pointer-events-none"
         onClick={onClose}
         style={isIPad ? { paddingTop: '8rem' } : undefined}
       >
