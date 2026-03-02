@@ -51,8 +51,8 @@ function MembershipCard({ name, price, description, highlights, membershipFee, a
           {name === 'Your Gateway to Connections' && (
             <Globe size={48} strokeWidth={2.2} color="var(--color-gold-accent)" className="mb-4" />
           )}
-          <h3 className="text-[var(--color-gold-accent)] font-heading mb-3 md:mb-4 text-[1.2rem] sm:text-xl md:text-[1.95rem] tracking-[0.05em] uppercase leading-tight font-bold">
-            <span className="block font-bold">
+          <h3 className="text-[var(--color-gold-accent)] font-heading mb-3 md:mb-4 text-[1.2rem] sm:text-xl md:text-[1.95rem] tracking-[0.05em] uppercase leading-tight font-medium md:font-bold">
+            <span className="block font-medium md:font-bold">
               {name.includes('/') ? (
                 name.split('/').map((part, i, arr) => (
                   <span key={i} className="block md:inline">
@@ -65,14 +65,14 @@ function MembershipCard({ name, price, description, highlights, membershipFee, a
             </span>
           </h3>
           <div className="h-[2px] w-12 bg-gradient-to-r from-transparent via-[var(--color-gold-accent)] to-transparent mx-auto mb-4 rounded-full opacity-90"></div>
-          <p className="hidden sm:block text-sm sm:text-base md:text-lg text-[var(--color-cream)] leading-relaxed mb-2 font-normal">
+          <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)] leading-relaxed mb-2 font-normal">
             {/* Only show on sm+ */}
             <span className="font-normal text-sm sm:text-base md:text-lg">
               {(name === 'Corporate/Community' || name === 'Corporate/ Community' || name === 'Corporate / Community') ? 'Group Membership' : 'Individual Membership'}
             </span>
           </p>
-          <div className="mt-auto w-full pb-12">
-            <span className="block text-xs md:text-sm text-white/90 tracking-widest uppercase italic font-semibold">
+          <div className="mt-auto w-full pb-8 md:pb-12">
+            <span className="block text-xs md:text-sm text-white/70 md:text-white/90 tracking-[0.15em] md:tracking-widest uppercase font-medium md:font-semibold">
               Click for details
             </span>
           </div>

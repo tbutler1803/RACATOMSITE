@@ -149,29 +149,29 @@ function MembershipModal({ isOpen, onClose, title, description, price, membershi
               {membershipFee && (
                 <div className="flex justify-between items-center text-sm md:text-base text-[var(--color-cream)]">
                   <span>Membership Fee:</span>
-                  <span className="font-bold">{membershipFee}</span>
+                  <span className="font-medium md:font-bold">{membershipFee}</span>
                 </div>
               )}
               {adminFee && (
                 <div className="flex justify-between items-center text-sm md:text-base text-[var(--color-cream)]">
                   <span>Admin Fee:</span>
-                  <span className="font-bold">{adminFee}</span>
+                  <span className="font-medium md:font-bold">{adminFee}</span>
                 </div>
               )}
               {preSpendCredit && (
                 <div className="flex justify-between items-center text-sm md:text-base text-[var(--color-cream)]">
                   <span>Pre-Spend Credit:</span>
-                  <span className="font-bold">{preSpendCredit}</span>
+                  <span className="font-medium md:font-bold">{preSpendCredit}</span>
                 </div>
               )}
 
               <div className="pt-2 border-t border-[var(--color-gold-accent)]/20 mt-2">
                 <div className="flex justify-between items-baseline">
                   <div className="flex flex-col">
-                    <span className="text-lg md:text-xl text-[var(--color-gold-accent)] font-bold">Yearly Subscription incl GST</span>
+                    <span className="text-base md:text-xl text-[var(--color-gold-accent)] font-medium md:font-bold">Yearly Subscription incl GST</span>
                   </div>
                   {price && (
-                    <div className="text-xl md:text-2xl text-[var(--color-gold-accent)] font-bold">{price}</div>
+                    <div className="text-lg md:text-2xl text-[var(--color-gold-accent)] font-medium md:font-bold">{price}</div>
                   )}
                 </div>
               </div>
@@ -181,7 +181,7 @@ function MembershipModal({ isOpen, onClose, title, description, price, membershi
               href="https://royalautomobileclubofaustralia.peoplevine.co.uk/survey/group/620"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline-gold w-full mt-4 text-lg md:text-xl tracking-[0.12em] font-bold"
+              className="btn-outline-gold w-full mt-4 text-base md:text-xl tracking-[0.08em] md:tracking-[0.12em] font-medium md:font-bold"
             >
               APPLY HERE
             </a>
