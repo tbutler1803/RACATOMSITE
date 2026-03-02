@@ -81,6 +81,9 @@ function Contact() {
     {
       name: 'Town',
       price: '$3,590',
+      membershipFee: '$2,750',
+      adminFee: '-',
+      preSpendCredit: '$840',
       description: 'Permanently reside within the area bounded by the City of Wollongong to the south, Katoomba to the west, and the City of Newcastle to the north.',
       highlights: [
         "Exclusively for residents within the region from Wollongong to Newcastle and Katoomba, Town Membership brings the Royal Automobile Club of Australia's heritage, events, and privileges closer to home. Access our iconic Macquarie Street clubhouse, curated motoring experiences, fine dining, and a vibrant community, where tradition meets innovation at RACA."
@@ -89,6 +92,9 @@ function Contact() {
     {
       name: 'Country',
       price: '$2,440',
+      membershipFee: '$1,600',
+      adminFee: '-',
+      preSpendCredit: '$840',
       description: 'NSW Country & ACT',
       highlights: [
         "Country Membership offers a trusted city base for members living outside Sydney. Located on Macquarie Street, moments from the Opera House and Circular Quay, the Club provides a convenient place to stay, with easy access to ferries, trains, and light rail. Enjoy full access to our iconic Macquarie Street clubhouse, where welcoming spaces, curated motoring events, fine dining, and a vibrant community of fellow enthusiasts await."
@@ -97,6 +103,9 @@ function Contact() {
     {
       name: 'Interstate',
       price: '$2,020',
+      membershipFee: '$1,600',
+      adminFee: '-',
+      preSpendCredit: '$420',
       description: 'All Australian states and territories except NSW & ACT',
       highlights: [
         "Interstate Membership provides a welcoming home away from home for members who visit Sydney for leisure or business. Enjoy full access to our iconic Macquarie Street clubhouse, where refined spaces, curated events, fine dining, and a friendly community await. Whether for work, relaxation, or social connection, RACA offers a place to feel at home while experiencing the tradition, comfort, and vibrant spirit of Australia's premier automotive and social club."
@@ -105,6 +114,9 @@ function Contact() {
     {
       name: 'Young Executive',
       price: '$1,520',
+      membershipFee: '$1,100',
+      adminFee: '-',
+      preSpendCredit: '$420',
       description: 'For members ages 18-29 years',
       highlights: [
         "Young Executive Membership is designed for ambitious members aged 18 to 29 who want to experience the Royal Automobile Club of Australia in a vibrant, stylish, and connected way. With access to our iconic Macquarie Street clubhouse, established networks, industry leaders, and curated networking events, members step into a community rich in experience, influence, and opportunity. Join early, connect with purpose, and gain access to the relationships, resources, and environment that can shape your career."
@@ -113,6 +125,9 @@ function Contact() {
     {
       name: "Under 40's",
       price: '$2,090',
+      membershipFee: '$1,250',
+      adminFee: '-',
+      preSpendCredit: '$840',
       description: 'For members ages 30-39 years',
       highlights: [
         "Under 40s Membership connects you to the Royal Automobile Club of Australia in a way that fits your pace and lifestyle.\n\nEnjoy access to our iconic Macquarie Street clubhouse, standout events, refined dining and a dynamic community of driven, like-minded professionals. Whether you're building your network, hosting clients, or simply unwinding in the heart of the city, this is a membership that blends heritage with modern energy."
@@ -121,6 +136,9 @@ function Contact() {
     {
       name: 'Defence/Emergency Services',
       price: '$1,940',
+      membershipFee: '$1,100',
+      adminFee: '-',
+      preSpendCredit: '$840',
       description: 'Active or Retired',
       highlights: [
         "This membership is designed for active or retired members of Australia's defence and emergency services, as well as those who have served in affiliated international forces. It offers a welcoming home away from home where service is recognised and connections are celebrated. Members enjoy full access to our iconic Macquarie Street clubhouse, curated events, fine dining and a vibrant community of like-minded individuals. Experience the tradition, camaraderie, and privileges of RACA while staying connected to those who share your dedication and passion."
@@ -129,6 +147,9 @@ function Contact() {
     {
       name: 'Corporate/Community',
       price: '$2,765',
+      membershipFee: '$1,925',
+      adminFee: '-',
+      preSpendCredit: '$840',
       description: 'Designed for businesses, organisations, and community groups',
       highlights: [
         "Designed for organisations enrolling with multiple members, this membership offers preferential rates and collective access to the Club. Perfect for businesses and community groups, it provides a distinguished city base for team gatherings, client entertaining and business networking. Enjoy our Macquarie Street clubhouse, boardrooms, and refined dining all in a setting built for connection and collaboration. Bring your team, host with confidence, and grow your network at RACA."
@@ -181,6 +202,9 @@ function Contact() {
                     <MembershipCard
                       name={cat.name}
                       price={cat.price}
+                      membershipFee={(cat as any).membershipFee}
+                      adminFee={(cat as any).adminFee}
+                      preSpendCredit={(cat as any).preSpendCredit}
                       description={cat.description}
                       highlights={cat.highlights}
                     />
@@ -198,6 +222,9 @@ function Contact() {
                       <MembershipCard
                         name={cat.name}
                         price={cat.price}
+                        membershipFee={(cat as any).membershipFee}
+                        adminFee={(cat as any).adminFee}
+                        preSpendCredit={(cat as any).preSpendCredit}
                         description={cat.description}
                         highlights={cat.highlights}
                       />
@@ -210,6 +237,9 @@ function Contact() {
                     <MembershipCard
                       name={categories[6].name}
                       price={categories[6].price}
+                      membershipFee={(categories[6] as any).membershipFee}
+                      adminFee={(categories[6] as any).adminFee}
+                      preSpendCredit={(categories[6] as any).preSpendCredit}
                       description={categories[6].description}
                       highlights={categories[6].highlights}
                     />
@@ -222,6 +252,9 @@ function Contact() {
                   <MembershipCard
                     name={categories[6].name}
                     price={categories[6].price}
+                    membershipFee={(categories[6] as any).membershipFee}
+                    adminFee={(categories[6] as any).adminFee}
+                    preSpendCredit={(categories[6] as any).preSpendCredit}
                     description={categories[6].description}
                     highlights={categories[6].highlights}
                   />
@@ -234,7 +267,7 @@ function Contact() {
                   href="https://royalautomobileclubofaustralia.peoplevine.co.uk/survey/group/620"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-outline-gold max-w-xs w-full mx-auto"
+                  className="btn-outline-gold max-w-xs w-full mx-auto text-lg md:text-xl tracking-[0.12em] font-bold"
                 >
                   APPLY HERE
                 </a>

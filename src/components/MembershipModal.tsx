@@ -8,9 +8,12 @@ interface MembershipModalProps {
   title: string;
   description: string;
   price?: string;
+  membershipFee?: string;
+  adminFee?: string;
+  preSpendCredit?: string;
 }
 
-function MembershipModal({ isOpen, onClose, title, description, price }: MembershipModalProps) {
+function MembershipModal({ isOpen, onClose, title, description, price, membershipFee, adminFee, preSpendCredit }: MembershipModalProps) {
   const [isAnimating, setIsAnimating] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isIPad, setIsIPad] = useState(false);
@@ -141,14 +144,44 @@ function MembershipModal({ isOpen, onClose, title, description, price }: Members
               {description}
             </div>
             <ArtDecoDivider width="w-48 sm:w-56 md:w-72 lg:w-80" height="h-6 md:h-10" className="mb-4" />
-            {price && (
-              <div className="text-base sm:text-lg font-semibold text-[var(--color-cream)] mt-2 sm:mt-6">{price}</div>
-            )}
+
+            <div className="space-y-2 mt-2 sm:mt-6">
+              {membershipFee && (
+                <div className="flex justify-between items-center text-sm md:text-base text-[var(--color-cream)]">
+                  <span>Membership Fee:</span>
+                  <span className="font-bold">{membershipFee}</span>
+                </div>
+              )}
+              {adminFee && (
+                <div className="flex justify-between items-center text-sm md:text-base text-[var(--color-cream)]">
+                  <span>Admin Fee:</span>
+                  <span className="font-bold">{adminFee}</span>
+                </div>
+              )}
+              {preSpendCredit && (
+                <div className="flex justify-between items-center text-sm md:text-base text-[var(--color-cream)]">
+                  <span>Pre-Spend Credit:</span>
+                  <span className="font-bold">{preSpendCredit}</span>
+                </div>
+              )}
+
+              <div className="pt-2 border-t border-[var(--color-gold-accent)]/20 mt-2">
+                <div className="flex justify-between items-baseline">
+                  <div className="flex flex-col">
+                    <span className="text-lg md:text-xl text-[var(--color-gold-accent)] font-bold">Yearly Subscription incl GST</span>
+                  </div>
+                  {price && (
+                    <div className="text-xl md:text-2xl text-[var(--color-gold-accent)] font-bold">{price}</div>
+                  )}
+                </div>
+              </div>
+            </div>
+
             <a
               href="https://royalautomobileclubofaustralia.peoplevine.co.uk/survey/group/620"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline-gold w-full mt-2 sm:mt-4 text-base"
+              className="btn-outline-gold w-full mt-4 text-lg md:text-xl tracking-[0.12em] font-bold"
             >
               APPLY HERE
             </a>

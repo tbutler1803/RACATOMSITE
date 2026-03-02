@@ -12,6 +12,8 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
     firstName: '',
     lastName: '',
     email: '',
+    tourDate: '',
+    tourTime: '',
     message: ''
   });
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -108,7 +110,7 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
     };
   }, [isOpen, onClose]);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
@@ -120,7 +122,7 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
     try {
       await new Promise(resolve => setTimeout(resolve, 1000));
       setSubmitStatus('success');
-      setFormData({ firstName: '', lastName: '', email: '', message: '' });
+      setFormData({ firstName: '', lastName: '', email: '', tourDate: '', tourTime: '', message: '' });
       setTimeout(() => {
         setSubmitStatus('idle');
         onClose();
@@ -182,29 +184,29 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
 
               <div className="space-y-4 sm:space-y-5 md:space-y-7 relative z-10">
                 <div>
-                  <h3 className="text-[var(--color-gold-accent)] font-heading text-xs sm:text-[11px] md:text-sm tracking-widest mb-2 uppercase">
+                  <h3 className="text-[var(--color-gold-accent)] font-heading text-xs sm:text-[11px] md:text-base tracking-widest mb-2 uppercase">
                     Address
                   </h3>
-                  <p className="text-[var(--color-cream)] font-light text-sm sm:text-xs md:text-sm leading-relaxed">
+                  <p className="text-[var(--color-cream)] font-light text-sm sm:text-xs md:text-base lg:text-lg leading-relaxed">
                     89 Macquarie Street,<br className="hidden sm:inline" />
                     <span className="sm:hidden"> </span>Sydney, NSW 2000, Australia
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-[var(--color-gold-accent)] font-heading text-xs sm:text-[11px] md:text-sm tracking-widest mb-2 uppercase">
+                  <h3 className="text-[var(--color-gold-accent)] font-heading text-xs sm:text-[11px] md:text-base tracking-widest mb-2 uppercase">
                     Contact
                   </h3>
-                  <p className="text-[var(--color-cream)] font-light text-sm sm:text-xs md:text-sm leading-relaxed">
+                  <p className="text-[var(--color-cream)] font-light text-sm sm:text-xs md:text-base lg:text-lg leading-relaxed">
                     +61 (02) 8273 2300 · ambassador@raca.com.au
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-[var(--color-gold-accent)] font-heading text-xs sm:text-[11px] md:text-sm tracking-widest mb-2 uppercase">
+                  <h3 className="text-[var(--color-gold-accent)] font-heading text-xs sm:text-[11px] md:text-base tracking-widest mb-2 uppercase">
                     Hours
                   </h3>
-                  <p className="text-[var(--color-cream)] font-light text-sm sm:text-xs md:text-sm leading-relaxed">
+                  <p className="text-[var(--color-cream)] font-light text-sm sm:text-xs md:text-base lg:text-lg leading-relaxed">
                     Club Reception is accessible 24 hours, 7 days a week
                   </p>
                 </div>
@@ -259,6 +261,45 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
                     required
                     className="w-full bg-transparent border-2 border-[var(--color-gold-accent)] px-3 md:px-4 py-2 md:py-3 text-[var(--color-cream)] font-light text-sm md:text-base focus:outline-none transition-colors min-h-[44px]"
                   />
+                </div>
+
+                <div className="grid grid-cols-2 gap-2 md:gap-4">
+                  <div>
+                    <label htmlFor="tour-date" className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold tracking-[0.05em] block mb-1.5 uppercase">
+                      PREFERRED DATE <span className="text-red-400">*</span>
+                    </label>
+                    <input
+                      type="date"
+                      id="tour-date"
+                      name="tourDate"
+                      value={formData.tourDate}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full bg-transparent border-2 border-[var(--color-gold-accent)] px-3 md:px-4 py-2 md:py-3 text-[var(--color-cream)] font-light text-sm md:text-base focus:outline-none transition-colors min-h-[44px] [color-scheme:dark]"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="tour-time" className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold tracking-[0.05em] block mb-1.5 uppercase">
+                      PREFERRED TIME <span className="text-red-400">*</span>
+                    </label>
+                    <select
+                      id="tour-time"
+                      name="tourTime"
+                      value={formData.tourTime}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full bg-[var(--color-dark-navy)] border-2 border-[var(--color-gold-accent)] px-3 md:px-4 py-2 md:py-3 text-[var(--color-cream)] font-light text-sm md:text-base focus:outline-none transition-colors min-h-[44px] appearance-none cursor-pointer"
+                    >
+                      <option value="">Select a time</option>
+                      <option value="10:00 AM">10:00 AM</option>
+                      <option value="11:00 AM">11:00 AM</option>
+                      <option value="12:00 PM">12:00 PM</option>
+                      <option value="1:00 PM">1:00 PM</option>
+                      <option value="2:00 PM">2:00 PM</option>
+                      <option value="3:00 PM">3:00 PM</option>
+                      <option value="4:00 PM">4:00 PM</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div>

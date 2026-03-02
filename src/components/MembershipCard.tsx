@@ -7,11 +7,14 @@ import { getAssetPath } from '../utils/paths';
 interface MembershipCardProps {
   name: string;
   price: string;
+  membershipFee?: string;
+  adminFee?: string;
+  preSpendCredit?: string;
   description: string;
   highlights: string[];
 }
 
-function MembershipCard({ name, price, description, highlights }: MembershipCardProps) {
+function MembershipCard({ name, price, description, highlights, membershipFee, adminFee, preSpendCredit }: MembershipCardProps) {
 
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -68,9 +71,11 @@ function MembershipCard({ name, price, description, highlights }: MembershipCard
               {(name === 'Corporate/Community' || name === 'Corporate/ Community' || name === 'Corporate / Community') ? 'Group Membership' : 'Individual Membership'}
             </span>
           </p>
-          <span className="block text-sm md:text-base text-white tracking-wider mt-2 italic font-normal">
-            Click for more information
-          </span>
+          <div className="mt-auto w-full pb-12">
+            <span className="block text-xs md:text-sm text-white/90 tracking-widest uppercase italic font-semibold">
+              Click for details
+            </span>
+          </div>
           <img
             src={getAssetPath('/company_logo.png')}
             alt="RACA Logo"
@@ -85,6 +90,9 @@ function MembershipCard({ name, price, description, highlights }: MembershipCard
           onClose={handleCloseModal}
           title={name}
           price={price}
+          membershipFee={membershipFee}
+          adminFee={adminFee}
+          preSpendCredit={preSpendCredit}
           description={
             description + (highlights && highlights.length ? '\n\n' + highlights.join('\n\n') : '')
           }

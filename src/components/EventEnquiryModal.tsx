@@ -197,12 +197,12 @@ function EventEnquiryModal({ isOpen, onClose }: EventEnquiryModalProps) {
 
                                 <div className="space-y-4 sm:space-y-6">
                                     <div className="flex flex-col gap-1">
-                                        <h3 className="text-[var(--color-gold-accent)] font-heading text-[10px] md:text-xs tracking-[0.2em] uppercase opacity-70">Location</h3>
-                                        <p className="text-sm text-[var(--color-cream)]/70 font-light leading-snug">89 Macquarie Street, Sydney CBD</p>
+                                        <h3 className="text-[var(--color-gold-accent)] font-heading text-[10px] md:text-base tracking-[0.2em] uppercase opacity-70">Location</h3>
+                                        <p className="text-sm md:text-base lg:text-lg text-[var(--color-cream)]/70 font-light leading-snug">89 Macquarie Street, Sydney CBD</p>
                                     </div>
                                     <div className="flex flex-col gap-1">
-                                        <h3 className="text-[var(--color-gold-accent)] font-heading text-[10px] md:text-xs tracking-[0.2em] uppercase opacity-70">Contact</h3>
-                                        <p className="text-sm text-[var(--color-cream)]/70 font-light leading-snug">ambassador@raca.com.au<br />+61 (02) 8273 2300</p>
+                                        <h3 className="text-[var(--color-gold-accent)] font-heading text-[10px] md:text-base tracking-[0.2em] uppercase opacity-70">Contact</h3>
+                                        <p className="text-sm md:text-base lg:text-lg text-[var(--color-cream)]/70 font-light leading-snug">ambassador@raca.com.au<br />+61 (02) 8273 2300</p>
                                     </div>
                                 </div>
                             </div>

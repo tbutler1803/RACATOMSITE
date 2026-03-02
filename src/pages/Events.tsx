@@ -69,7 +69,8 @@ function Events() {
       name: 'Pioneer Room',
       capacity: 'BANQUET 25 / COCKTAIL 30',
       description: 'Intimate room for small gatherings.',
-      image: getAssetPath('/IMAGES/EVENT SPACES/Pioneer Room.png'),
+      image: getAssetPath('/IMAGES/images/DSC_1669.jpg'),
+      position: 'object-bottom'
     },
     {
       name: 'Vintage Room',
@@ -197,7 +198,7 @@ function Events() {
                       <LazyImage
                         src={space.image}
                         alt={space.name}
-                        className="w-full aspect-[4/3] md:aspect-[3/2] object-cover"
+                        className={`w-full aspect-[4/3] md:aspect-[3/2] object-cover ${(space as any).position || 'object-center'}`}
                         containerClassName="overflow-hidden"
                       />
                     </div>
