@@ -72,7 +72,7 @@ function MembershipCard({ name, price, description, highlights, membershipFee, a
             </span>
           </p>
           <div className="mt-auto w-full pb-8 md:pb-12">
-            <span className="block text-xs md:text-sm text-white/70 md:text-white/90 tracking-[0.15em] md:tracking-widest uppercase font-medium md:font-semibold">
+            <span className="block text-xs md:text-sm text-[var(--color-gold-accent)]/80 md:text-[var(--color-gold-accent)] tracking-[0.15em] md:tracking-widest uppercase font-medium md:font-semibold">
               Click for details
             </span>
           </div>
