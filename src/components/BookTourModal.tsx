@@ -268,15 +268,30 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
                     <label htmlFor="tour-date" className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold tracking-[0.05em] block mb-1.5 uppercase">
                       PREFERRED DATE <span className="text-red-400">*</span>
                     </label>
-                    <input
-                      type="date"
-                      id="tour-date"
-                      name="tourDate"
-                      value={formData.tourDate}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full bg-transparent border-2 border-[var(--color-gold-accent)] px-3 md:px-4 py-2 md:py-3 text-[var(--color-cream)] font-light text-sm md:text-base focus:outline-none transition-colors min-h-[44px] [color-scheme:dark]"
-                    />
+                    <div className="relative group">
+                      <input
+                        type="date"
+                        id="tour-date"
+                        name="tourDate"
+                        value={formData.tourDate}
+                        onChange={handleInputChange}
+                        onClick={(e) => e.currentTarget.showPicker?.()}
+                        onKeyDown={(e) => e.preventDefault()}
+                        required
+                        className="absolute inset-0 w-full h-full opacity-0 z-10 cursor-pointer"
+                      />
+                      <div className="w-full bg-transparent border-2 border-[var(--color-gold-accent)] px-3 md:px-4 py-2 md:py-3 text-[var(--color-cream)] font-light text-sm md:text-base flex justify-between items-center min-h-[44px]">
+                        <span className={formData.tourDate ? 'text-[var(--color-cream)]' : 'text-gray-400'}>
+                          {formData.tourDate ? new Date(formData.tourDate).toLocaleDateString('en-AU') : 'Select a date'}
+                        </span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-gold-accent)] opacity-70">
+                          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                          <line x1="16" y1="2" x2="16" y2="6"></line>
+                          <line x1="8" y1="2" x2="8" y2="6"></line>
+                          <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                      </div>
+                    </div>
                   </div>
                   <div>
                     <label htmlFor="tour-time" className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold tracking-[0.05em] block mb-1.5 uppercase">
@@ -313,7 +328,7 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
                     onChange={handleInputChange}
                     required
                     rows={3}
-                    placeholder="Let us know your preferred tour times or any questions you have..."
+                    placeholder="Let us know your preferred tour times, any questions, and if you are a member, guest of a member, or visiting from a reciprocal club..."
                     className="w-full bg-transparent border-2 border-[var(--color-gold-accent)] px-3 md:px-4 py-2 md:py-3 text-[var(--color-cream)] placeholder-gray-500 font-light text-sm md:text-base focus:outline-none resize-none transition-colors"
                   />
                 </div>

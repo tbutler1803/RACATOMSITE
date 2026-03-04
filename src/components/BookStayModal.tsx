@@ -269,7 +269,7 @@ function BookStayModal({ isOpen, onClose }: BookStayModalProps) {
                                         onChange={handleInputChange}
                                         required
                                         rows={3}
-                                        placeholder="Tell us your preferred dates, number of guests, or any specific requirements..."
+                                        placeholder="Tell us your preferred dates, number of guests, or any specific requirements. Please also let us know if you are a member, visiting from a reciprocal club, or a guest of a member..."
                                         className="w-full bg-transparent border-2 border-[var(--color-gold-accent)] px-3 md:px-4 py-2 md:py-3 text-[var(--color-cream)] placeholder-gray-500 font-light text-sm md:text-base focus:outline-none resize-none transition-colors"
                                     />
                                 </div>

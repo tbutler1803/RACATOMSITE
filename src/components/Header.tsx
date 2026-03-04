@@ -45,7 +45,7 @@ function Header() {
             fetchPriority="high"
             className="h-12 sm:h-16 md:h-20 w-auto cursor-pointer logo-img"
           />
-          <div className="hidden md:flex flex-col leading-tight">
+          <div className="hidden md:flex flex-col leading-tight header-title-text">
             <span className="text-[var(--color-gold-accent)] font-heading text-base lg:text-lg tracking-[0.02em]">
               ROYAL AUTOMOBILE CLUB OF AUSTRALIA
             </span>

@@ -17,13 +17,13 @@ function Home() {
     {
       letter: 'R',
       label: 'ABOUT US',
-      imageUrl: getAssetPath('/About Us Images/About Us Background Image.JPG'),
+      imageUrl: getAssetPath('/IMAGES/About-Us-Background.jpg'),
       path: '/about'
     },
     {
       letter: 'A',
       label: 'EVENTS',
-      imageUrl: getAssetPath('/IMAGES/DSC_1595.jpg'),
+      imageUrl: getAssetPath('/IMAGES/images/DSC_1304.jpg'),
       path: '/events'
     },
     {

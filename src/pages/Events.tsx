@@ -251,12 +251,6 @@ function Events() {
                   >
                     Book Your Event
                   </a>
-                  <a
-                    href="/#/contact?section=contact-information"
-                    className="btn-outline-gold max-w-xs w-full mx-auto"
-                  >
-                    Contact Info
-                  </a>
                 </div>
               </div>
             </div>

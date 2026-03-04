@@ -82,7 +82,6 @@ function Contact() {
       name: 'Town',
       price: '$3,590',
       membershipFee: '$2,750',
-      adminFee: '-',
       preSpendCredit: '$840',
       description: 'Permanently reside within the area bounded by the City of Wollongong to the south, Katoomba to the west, and the City of Newcastle to the north.',
       highlights: [
@@ -93,7 +92,6 @@ function Contact() {
       name: 'Country',
       price: '$2,440',
       membershipFee: '$1,600',
-      adminFee: '-',
       preSpendCredit: '$840',
       description: 'NSW Country & ACT',
       highlights: [
@@ -104,7 +102,6 @@ function Contact() {
       name: 'Interstate',
       price: '$2,020',
       membershipFee: '$1,600',
-      adminFee: '-',
       preSpendCredit: '$420',
       description: 'All Australian states and territories except NSW & ACT',
       highlights: [
@@ -115,7 +112,6 @@ function Contact() {
       name: 'Young Executive',
       price: '$1,520',
       membershipFee: '$1,100',
-      adminFee: '-',
       preSpendCredit: '$420',
       description: 'For members ages 18-29 years',
       highlights: [
@@ -126,7 +122,6 @@ function Contact() {
       name: "Under 40's",
       price: '$2,090',
       membershipFee: '$1,250',
-      adminFee: '-',
       preSpendCredit: '$840',
       description: 'For members ages 30-39 years',
       highlights: [
@@ -137,7 +132,6 @@ function Contact() {
       name: 'Defence/Emergency Services',
       price: '$1,940',
       membershipFee: '$1,100',
-      adminFee: '-',
       preSpendCredit: '$840',
       description: 'Active or Retired',
       highlights: [
@@ -148,7 +142,6 @@ function Contact() {
       name: 'Corporate/Community',
       price: '$2,765',
       membershipFee: '$1,925',
-      adminFee: '-',
       preSpendCredit: '$840',
       description: 'Designed for businesses, organisations, and community groups',
       highlights: [
@@ -203,7 +196,6 @@ function Contact() {
                       name={cat.name}
                       price={cat.price}
                       membershipFee={(cat as any).membershipFee}
-                      adminFee={(cat as any).adminFee}
                       preSpendCredit={(cat as any).preSpendCredit}
                       description={cat.description}
                       highlights={cat.highlights}
@@ -223,7 +215,6 @@ function Contact() {
                         name={cat.name}
                         price={cat.price}
                         membershipFee={(cat as any).membershipFee}
-                        adminFee={(cat as any).adminFee}
                         preSpendCredit={(cat as any).preSpendCredit}
                         description={cat.description}
                         highlights={cat.highlights}
@@ -238,7 +229,6 @@ function Contact() {
                       name={categories[6].name}
                       price={categories[6].price}
                       membershipFee={(categories[6] as any).membershipFee}
-                      adminFee={(categories[6] as any).adminFee}
                       preSpendCredit={(categories[6] as any).preSpendCredit}
                       description={categories[6].description}
                       highlights={categories[6].highlights}
@@ -253,7 +243,6 @@ function Contact() {
                     name={categories[6].name}
                     price={categories[6].price}
                     membershipFee={(categories[6] as any).membershipFee}
-                    adminFee={(categories[6] as any).adminFee}
                     preSpendCredit={(categories[6] as any).preSpendCredit}
                     description={categories[6].description}
                     highlights={categories[6].highlights}
@@ -262,7 +251,10 @@ function Contact() {
               </div>
 
               {/* Apply Here button below membership cards, before divider */}
-              <div className="flex justify-center mt-16 mb-0">
+              <div className="mt-16 flex flex-col items-center gap-6">
+                <p className="text-base md:text-lg text-white font-light max-w-2xl mx-auto italic">
+                  * Monthly Membership plans available. One off Administration Fee applicable.
+                </p>
                 <a
                   href="https://royalautomobileclubofaustralia.peoplevine.co.uk/survey/group/620"
                   target="_blank"
@@ -355,7 +347,7 @@ function Contact() {
                   <textarea
                     name="message"
                     id="contact-message"
-                    placeholder="Your Message"
+                    placeholder="Your Message (Please also let us know if you are a member, guest of a member, or from a reciprocal club)"
                     value={formData.message}
                     onChange={handleInputChange}
                     required

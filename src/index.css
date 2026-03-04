@@ -196,6 +196,19 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+/* Hide scrollbars globally but keep functionality (matches macOS/iOS behavior) */
+* {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari and Opera */
+}
+
 /* Larger base sizing on smaller screens for elderly users and better readability */
 @media (max-width: 900px) {
   html {
@@ -435,6 +448,20 @@ button {
 }
 
 /* Art Deco Container Shine Effects */
+/* Global fix for Caret Browsing blinking cursor in Edge */
+button,
+a,
+.no-caret {
+  caret-color: transparent;
+}
+
+/* Ensure inputs still have a caret */
+input,
+textarea,
+[contenteditable="true"] {
+  caret-color: auto;
+}
+
 .art-deco-container {
   background: linear-gradient(135deg, var(--color-gold-accent) 0%, var(--color-gold-light) 100%);
   box-shadow: 0 8px 16px rgba(223, 189, 114, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
@@ -475,10 +502,19 @@ button {
 .logo-img {
   filter: drop-shadow(0 0 8px rgba(223, 189, 114, 0.3));
   transition: filter 0.3s ease;
+  user-select: none;
+  -webkit-user-drag: none;
+  caret-color: transparent;
 }
 
 .logo-img:hover {
   filter: drop-shadow(0 0 12px rgba(223, 189, 114, 0.5));
+}
+
+/* Prevent blinking cursor on structural text elements in Edge */
+.header-title-text {
+  user-select: none;
+  caret-color: transparent;
 }
 
 /* Responsive gold subheading text hierarchy */

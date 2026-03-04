@@ -8,13 +8,12 @@ interface MembershipCardProps {
   name: string;
   price: string;
   membershipFee?: string;
-  adminFee?: string;
   preSpendCredit?: string;
   description: string;
   highlights: string[];
 }
 
-function MembershipCard({ name, price, description, highlights, membershipFee, adminFee, preSpendCredit }: MembershipCardProps) {
+function MembershipCard({ name, price, description, highlights, membershipFee, preSpendCredit }: MembershipCardProps) {
 
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -91,7 +90,6 @@ function MembershipCard({ name, price, description, highlights, membershipFee, a
           title={name}
           price={price}
           membershipFee={membershipFee}
-          adminFee={adminFee}
           preSpendCredit={preSpendCredit}
           description={
             description + (highlights && highlights.length ? '\n\n' + highlights.join('\n\n') : '')

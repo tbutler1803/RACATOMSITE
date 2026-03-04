@@ -9,11 +9,10 @@ interface MembershipModalProps {
   description: string;
   price?: string;
   membershipFee?: string;
-  adminFee?: string;
   preSpendCredit?: string;
 }
 
-function MembershipModal({ isOpen, onClose, title, description, price, membershipFee, adminFee, preSpendCredit }: MembershipModalProps) {
+function MembershipModal({ isOpen, onClose, title, description, price, membershipFee, preSpendCredit }: MembershipModalProps) {
   const [isAnimating, setIsAnimating] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isIPad, setIsIPad] = useState(false);
@@ -152,12 +151,6 @@ function MembershipModal({ isOpen, onClose, title, description, price, membershi
                   <span className="font-medium md:font-bold">{membershipFee}</span>
                 </div>
               )}
-              {adminFee && (
-                <div className="flex justify-between items-center text-sm md:text-base text-[var(--color-cream)]">
-                  <span>Admin Fee:</span>
-                  <span className="font-medium md:font-bold">{adminFee}</span>
-                </div>
-              )}
               {preSpendCredit && (
                 <div className="flex justify-between items-center text-sm md:text-base text-[var(--color-cream)]">
                   <span>Pre-Spend Credit:</span>
@@ -168,7 +161,7 @@ function MembershipModal({ isOpen, onClose, title, description, price, membershi
               <div className="pt-2 border-t border-[var(--color-gold-accent)]/20 mt-2">
                 <div className="flex justify-between items-baseline">
                   <div className="flex flex-col">
-                    <span className="text-base md:text-xl text-[var(--color-gold-accent)] font-medium md:font-bold">Yearly Subscription incl GST</span>
+                    <span className="text-base md:text-xl text-[var(--color-gold-accent)] font-medium md:font-bold">Yearly Subscription <span className="text-xs md:text-sm opacity-70">incl GST</span></span>
                   </div>
                   {price && (
                     <div className="text-lg md:text-2xl text-[var(--color-gold-accent)] font-medium md:font-bold">{price}</div>

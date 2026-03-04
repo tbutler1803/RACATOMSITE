@@ -276,14 +276,29 @@ function EventEnquiryModal({ isOpen, onClose }: EventEnquiryModalProps) {
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div className="space-y-1">
                                         <label htmlFor="enquiry-date" className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold tracking-[0.05em] uppercase block">Preferred Date</label>
-                                        <input
-                                            type="date"
-                                            id="enquiry-date"
-                                            name="eventDate"
-                                            value={formData.eventDate}
-                                            onChange={handleInputChange}
-                                            className="w-full bg-white/5 border border-[var(--color-gold-accent)]/20 px-3.5 sm:px-4 py-1.5 sm:py-2.5 md:py-3 text-[var(--color-cream)] font-light focus:border-[var(--color-gold-accent)]/80 focus:bg-white/10 focus:outline-none transition-all duration-300 rounded-sm color-scheme-dark min-h-[44px]"
-                                        />
+                                        <div className="relative group">
+                                            <input
+                                                type="date"
+                                                id="enquiry-date"
+                                                name="eventDate"
+                                                value={formData.eventDate}
+                                                onChange={handleInputChange}
+                                                onClick={(e) => e.currentTarget.showPicker?.()}
+                                                onKeyDown={(e) => e.preventDefault()}
+                                                className="absolute inset-0 w-full h-full opacity-0 z-10 cursor-pointer"
+                                            />
+                                            <div className="w-full bg-white/5 border border-[var(--color-gold-accent)]/20 px-3.5 sm:px-4 py-2 sm:py-2.5 md:py-3 text-[var(--color-cream)] font-light focus:border-[var(--color-gold-accent)]/80 focus:bg-white/10 focus:outline-none transition-all duration-300 rounded-sm min-h-[44px] flex justify-between items-center color-scheme-dark">
+                                                <span className={formData.eventDate ? 'text-[var(--color-cream)]' : 'text-gray-500'}>
+                                                    {formData.eventDate ? new Date(formData.eventDate).toLocaleDateString('en-AU') : 'Select a date'}
+                                                </span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-gold-accent)] opacity-70">
+                                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                </svg>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div className="space-y-1">
                                         <label htmlFor="enquiry-guests" className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold tracking-[0.05em] uppercase block">Expected Guests</label>
@@ -327,7 +342,7 @@ function EventEnquiryModal({ isOpen, onClose }: EventEnquiryModalProps) {
                                         value={formData.message}
                                         onChange={handleInputChange}
                                         rows={3}
-                                        placeholder="Tell us more about your event..."
+                                        placeholder="Tell us more about your event. Please also note if you are a member, guest of a member, or from a reciprocal club..."
                                         className="w-full bg-white/5 border border-[var(--color-gold-accent)]/20 px-3.5 sm:px-4 py-2 sm:py-2.5 md:py-3 text-[var(--color-cream)] font-light focus:border-[var(--color-gold-accent)]/80 focus:bg-white/10 focus:outline-none transition-all duration-300 rounded-sm resize-none"
                                     />
                                 </div>
