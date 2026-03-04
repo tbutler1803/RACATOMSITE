@@ -177,14 +177,14 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
                 <h2 id="book-tour-title" className="pr-10 md:pr-0">
                   BOOK A CLUB TOUR<br className="hidden sm:inline" />
                 </h2>
-                <p className="text-[var(--color-cream)] font-light leading-relaxed mb-3 sm:mb-5 md:mb-7 text-sm md:text-base mobile-large-text">
+                <p className="text-[var(--color-cream)] font-light text-sm sm:text-xs md:text-base lg:text-lg leading-relaxed mb-3 sm:mb-5 md:mb-7">
                   Tour the club, gym, parking, and dining—our team tailors your visit to what matters most.
                 </p>
               </div>
 
               <div className="space-y-4 sm:space-y-5 md:space-y-7 relative z-10">
                 <div>
-                  <h3 className="text-[var(--color-gold-accent)] font-heading text-xs sm:text-[11px] md:text-base tracking-widest mb-2 uppercase">
+                  <h3 className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold tracking-[0.05em] block mb-1.5 uppercase">
                     Address
                   </h3>
                   <p className="text-[var(--color-cream)] font-light text-sm sm:text-xs md:text-base lg:text-lg leading-relaxed">
@@ -194,7 +194,7 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
                 </div>
 
                 <div>
-                  <h3 className="text-[var(--color-gold-accent)] font-heading text-xs sm:text-[11px] md:text-base tracking-widest mb-2 uppercase">
+                  <h3 className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold tracking-[0.05em] block mb-1.5 uppercase">
                     Contact
                   </h3>
                   <p className="text-[var(--color-cream)] font-light text-sm sm:text-xs md:text-base lg:text-lg leading-relaxed">
@@ -203,7 +203,7 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
                 </div>
 
                 <div>
-                  <h3 className="text-[var(--color-gold-accent)] font-heading text-xs sm:text-[11px] md:text-base tracking-widest mb-2 uppercase">
+                  <h3 className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold tracking-[0.05em] block mb-1.5 uppercase">
                     Hours
                   </h3>
                   <p className="text-[var(--color-cream)] font-light text-sm sm:text-xs md:text-base lg:text-lg leading-relaxed">

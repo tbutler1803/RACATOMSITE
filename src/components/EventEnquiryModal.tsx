@@ -191,17 +191,17 @@ function EventEnquiryModal({ isOpen, onClose }: EventEnquiryModalProps) {
                                     Enquire Now
                                 </h2>
                                 <div className="w-12 h-0.5 bg-[var(--color-gold-accent)] mb-5 md:mb-6"></div>
-                                <p className="text-[var(--color-cream)] font-light leading-relaxed mb-6 md:mb-8 text-sm sm:text-base italic opacity-90">
+                                <p className="text-white font-light leading-snug mb-6 md:mb-8 text-sm md:text-base lg:text-lg">
                                     Celebrate, connect, and create lasting memories in one of our iconic event spaces.
                                 </p>
 
                                 <div className="space-y-4 sm:space-y-6">
                                     <div className="flex flex-col gap-1">
-                                        <h3 className="text-[var(--color-gold-accent)] font-heading text-[10px] md:text-base tracking-[0.2em] uppercase opacity-70">Location</h3>
+                                        <h3 className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold tracking-[0.05em] uppercase block">Location</h3>
                                         <p className="text-sm md:text-base lg:text-lg text-[var(--color-cream)]/70 font-light leading-snug">89 Macquarie Street, Sydney CBD</p>
                                     </div>
                                     <div className="flex flex-col gap-1">
-                                        <h3 className="text-[var(--color-gold-accent)] font-heading text-[10px] md:text-base tracking-[0.2em] uppercase opacity-70">Contact</h3>
+                                        <h3 className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold tracking-[0.05em] uppercase block">Contact</h3>
                                         <p className="text-sm md:text-base lg:text-lg text-[var(--color-cream)]/70 font-light leading-snug">ambassador@raca.com.au<br />+61 (02) 8273 2300</p>
                                     </div>
                                 </div>
@@ -350,7 +350,7 @@ function EventEnquiryModal({ isOpen, onClose }: EventEnquiryModalProps) {
                                 <button
                                     type="submit"
                                     disabled={submitStatus === 'loading'}
-                                    className="w-full py-3 bg-[var(--color-gold-accent)] text-[var(--color-dark-navy)] font-heading text-lg tracking-[0.2em] hover:bg-white transition-all duration-300 disabled:opacity-50 uppercase font-bold"
+                                    className="w-full py-3 md:py-4 bg-transparent border-2 border-[var(--color-gold-accent)] text-[var(--color-gold-accent)] font-heading text-base md:text-lg tracking-widest hover:bg-[var(--color-gold-accent)] hover:text-[var(--color-dark-navy)] transition-all duration-300 disabled:opacity-50 uppercase"
                                 >
                                     {submitStatus === 'loading' ? 'Sending Enquiry...' : 'Submit Enquiry'}
                                 </button>

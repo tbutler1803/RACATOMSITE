@@ -179,29 +179,29 @@ function BookStayModal({ isOpen, onClose }: BookStayModalProps) {
 
                             <div className="space-y-4 sm:space-y-5 md:space-y-7 relative z-10">
                                 <div>
-                                    <h3 className="text-[var(--color-gold-accent)] font-heading text-xs sm:text-[11px] md:text-sm tracking-widest mb-2 uppercase">
+                                    <h3 className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold tracking-[0.05em] block mb-1.5 uppercase">
                                         Location
                                     </h3>
-                                    <p className="text-[var(--color-cream)] font-light text-sm sm:text-xs md:text-sm leading-relaxed">
+                                    <p className="text-[var(--color-cream)] font-light text-sm sm:text-xs md:text-base lg:text-lg leading-relaxed">
                                         89 Macquarie Street,<br className="hidden sm:inline" />
                                         Sydney, NSW 2000, Australia
                                     </p>
                                 </div>
 
                                 <div>
-                                    <h3 className="text-[var(--color-gold-accent)] font-heading text-xs sm:text-[11px] md:text-sm tracking-widest mb-2 uppercase">
+                                    <h3 className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold tracking-[0.05em] block mb-1.5 uppercase">
                                         Reservations
                                     </h3>
-                                    <p className="text-[var(--color-cream)] font-light text-sm sm:text-xs md:text-sm leading-relaxed">
+                                    <p className="text-[var(--color-cream)] font-light text-sm sm:text-xs md:text-base lg:text-lg leading-relaxed">
                                         +61 (02) 8273 2300 · reception@raca.com.au
                                     </p>
                                 </div>
 
                                 <div>
-                                    <h3 className="text-[var(--color-gold-accent)] font-heading text-xs sm:text-[11px] md:text-sm tracking-widest mb-2 uppercase">
+                                    <h3 className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold tracking-[0.05em] block mb-1.5 uppercase">
                                         Check-in
                                     </h3>
-                                    <p className="text-[var(--color-cream)] font-light text-sm sm:text-xs md:text-sm leading-relaxed">
+                                    <p className="text-[var(--color-cream)] font-light text-sm sm:text-xs md:text-base lg:text-lg leading-relaxed">
                                         Reception is available 24/7 for your convenience
                                     </p>
                                 </div>
