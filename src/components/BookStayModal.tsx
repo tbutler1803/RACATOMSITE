@@ -172,7 +172,7 @@ function BookStayModal({ isOpen, onClose }: BookStayModalProps) {
                                 <h2 id="book-stay-title" className="pr-10 md:pr-0">
                                     BOOK YOUR STAY<br className="hidden sm:inline" />
                                 </h2>
-                                <p className="text-[var(--color-cream)] font-light leading-relaxed mb-3 sm:mb-5 md:mb-7 text-sm md:text-base mobile-large-text">
+                                <p className="text-[var(--color-cream)] font-light text-sm sm:text-xs md:text-base lg:text-lg leading-relaxed mb-3 sm:mb-5 md:mb-7">
                                     Experience heritage surroundings and contemporary luxury. Our team is here to ensure your overnight stay is effortless and comfortable.
                                 </p>
                             </div>
