@@ -207,23 +207,37 @@ function Contact() {
               <div className="my-6 md:my-10"></div>
               {/* Bottom row: 3 cards, centered and constrained in width on desktop/tablet, 2 columns on mobile with last card centered */}
               <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 justify-center">
-                {/* First two cards in a row on mobile, all three in a row on desktop */}
-                {categories.slice(4, 6).map((cat, idx) => (
-                  <div key={4 + idx} className="flex justify-center items-stretch">
-                    <div className="w-full max-w-[370px]">
-                      <MembershipCard
-                        name={cat.name}
-                        price={cat.price}
-                        membershipFee={(cat as any).membershipFee}
-                        preSpendCredit={(cat as any).preSpendCredit}
-                        description={cat.description}
-                        highlights={cat.highlights}
-                      />
-                    </div>
+                {/* Card 5: Young Executive (Position 1 on both) */}
+                <div className="flex justify-center items-stretch">
+                  <div className="w-full max-w-[370px]">
+                    <MembershipCard
+                      name={categories[4].name}
+                      price={categories[4].price}
+                      membershipFee={(categories[4] as any).membershipFee}
+                      preSpendCredit={(categories[4] as any).preSpendCredit}
+                      description={categories[4].description}
+                      highlights={categories[4].highlights}
+                    />
                   </div>
-                ))}
-                {/* On desktop, show the third card in the row; on mobile, show it centered below */}
+                </div>
+
+                {/* Card 6: Defence/Emergency (Position 2 on Desktop, Position 3 on Mobile) */}
+                {/* On mobile, this will be hidden in this grid and shown below */}
                 <div className="hidden lg:flex justify-center items-stretch">
+                  <div className="w-full max-w-[370px]">
+                    <MembershipCard
+                      name={categories[5].name}
+                      price={categories[5].price}
+                      membershipFee={(categories[5] as any).membershipFee}
+                      preSpendCredit={(categories[5] as any).preSpendCredit}
+                      description={categories[5].description}
+                      highlights={categories[5].highlights}
+                    />
+                  </div>
+                </div>
+
+                {/* Card 7: Corporate/Community (Position 3 on Desktop, Position 2 on Mobile) */}
+                <div className="flex justify-center items-stretch">
                   <div className="w-full max-w-[370px]">
                     <MembershipCard
                       name={categories[6].name}
@@ -236,16 +250,17 @@ function Contact() {
                   </div>
                 </div>
               </div>
-              {/* On mobile only, center the last card below the two above */}
+
+              {/* On mobile only, center the Defence/Emergency card below the Young Executive and Corporate cards */}
               <div className="flex lg:hidden justify-center mt-4">
                 <div className="w-full max-w-[370px]">
                   <MembershipCard
-                    name={categories[6].name}
-                    price={categories[6].price}
-                    membershipFee={(categories[6] as any).membershipFee}
-                    preSpendCredit={(categories[6] as any).preSpendCredit}
-                    description={categories[6].description}
-                    highlights={categories[6].highlights}
+                    name={categories[5].name}
+                    price={categories[5].price}
+                    membershipFee={(categories[5] as any).membershipFee}
+                    preSpendCredit={(categories[5] as any).preSpendCredit}
+                    description={categories[5].description}
+                    highlights={categories[5].highlights}
                   />
                 </div>
               </div>
