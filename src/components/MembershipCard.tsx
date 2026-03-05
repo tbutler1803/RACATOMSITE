@@ -63,14 +63,13 @@ function MembershipCard({ name, price, description, highlights, membershipFee, p
               )}
             </span>
           </h3>
-          <div className="h-[2px] w-12 bg-gradient-to-r from-transparent via-[var(--color-gold-accent)] to-transparent mx-auto mb-4 rounded-full opacity-90"></div>
-          <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)] leading-relaxed mb-2 font-normal">
-            {/* Only show on sm+ */}
-            <span className="font-normal text-sm sm:text-base md:text-lg">
-              {(name === 'Corporate/Community' || name === 'Corporate/ Community' || name === 'Corporate / Community') ? 'Group Membership' : 'Individual Membership'}
-            </span>
-          </p>
-          <div className="mt-auto w-full pb-8 md:pb-12">
+          <div className="h-[3px] w-14 bg-gradient-to-r from-transparent via-[var(--color-gold-accent)] to-transparent mx-auto mb-5 rounded-full opacity-100 relative z-10" />
+          <div className="mt-auto w-full pb-10 md:pb-14">
+            <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)] leading-relaxed mb-2 font-normal">
+              <span className="font-normal text-sm sm:text-base md:text-lg">
+                {(name === 'Corporate/Community' || name === 'Corporate/ Community' || name === 'Corporate / Community') ? 'Group Membership' : 'Individual Membership'}
+              </span>
+            </p>
             <span className="block text-xs md:text-sm text-[var(--color-gold-accent)]/80 md:text-[var(--color-gold-accent)] tracking-[0.15em] md:tracking-widest uppercase font-medium md:font-semibold">
               Click for details
             </span>
