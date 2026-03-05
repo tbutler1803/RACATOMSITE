@@ -109,16 +109,6 @@ function Contact() {
       ]
     },
     {
-      name: 'Young Executive',
-      price: '$1,520',
-      membershipFee: '$1,100',
-      preSpendCredit: '$420',
-      description: 'For members ages 18-29 years',
-      highlights: [
-        "Young Executive Membership is designed for ambitious members aged 18 to 29 who want to experience the Royal Automobile Club of Australia in a vibrant, stylish, and connected way. With access to our iconic Macquarie Street clubhouse, established networks, industry leaders, and curated networking events, members step into a community rich in experience, influence, and opportunity. Join early, connect with purpose, and gain access to the relationships, resources, and environment that can shape your career."
-      ]
-    },
-    {
       name: "Under 40's",
       price: '$2,090',
       membershipFee: '$1,250',
@@ -126,6 +116,16 @@ function Contact() {
       description: 'For members ages 30-39 years',
       highlights: [
         "Under 40s Membership connects you to the Royal Automobile Club of Australia in a way that fits your pace and lifestyle.\n\nEnjoy access to our iconic Macquarie Street clubhouse, standout events, refined dining and a dynamic community of driven, like-minded professionals. Whether you're building your network, hosting clients, or simply unwinding in the heart of the city, this is a membership that blends heritage with modern energy."
+      ]
+    },
+    {
+      name: 'Young Executive',
+      price: '$1,520',
+      membershipFee: '$1,100',
+      preSpendCredit: '$420',
+      description: 'For members ages 18-29 years',
+      highlights: [
+        "Young Executive Membership is designed for ambitious members aged 18 to 29 who want to experience the Royal Automobile Club of Australia in a vibrant, stylish, and connected way. With access to our iconic Macquarie Street clubhouse, established networks, industry leaders, and curated networking events, members step into a community rich in experience, influence, and opportunity. Join early, connect with purpose, and gain access to the relationships, resources, and environment that can shape your career."
       ]
     },
     {
