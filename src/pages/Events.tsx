@@ -181,15 +181,15 @@ function Events() {
 
           <section className="mb-16 md:mb-32">
             <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-16 mx-auto" />
-            <h2 className="text-4xl md:text-6xl font-heading text-[var(--color-gold-accent)] mb-16 md:mb-24 tracking-[0.1em] uppercase">
+            <h2 className="text-4xl md:text-6xl font-heading text-[var(--color-gold-accent)] mb-10 md:mb-24 tracking-[0.1em] uppercase">
               Event Spaces
             </h2>
 
-            <div className="space-y-24 md:space-y-32 lg:space-y-40">
+            <div className="space-y-12 md:space-y-32 lg:space-y-40">
               {eventSpaces.map((space, idx) => (
                 <div
                   key={idx}
-                  className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 lg:gap-24 ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''
+                  className={`flex flex-col md:flex-row items-center gap-6 md:gap-16 lg:gap-24 ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''
                     }`}
                 >
                   <div className="w-[85%] md:w-1/2 mx-auto md:mx-0">
