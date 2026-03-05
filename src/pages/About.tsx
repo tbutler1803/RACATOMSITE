@@ -91,7 +91,7 @@ function About() {
                 {/* Full text for md and up */}
                 <div className="hidden sm:block">
                   <p className="text-sm md:text-lg text-[var(--color-cream)]/80 font-light mb-4 text-left">
-                    Since 1903, the Royal Automobile Club of Australia (RACA) has championed motoring excellence as Australia’s first automobile club. Founded to advocate for motorists, the Club has played a leading role in shaping the nation’s automotive landscape — from campaigning for improved roads to hosting distinguished motoring events across generations — while remaining true to its heritage.
+                    Since 1903, the Royal Automobile Club of Australia (RACA) has championed motoring excellence as Australia’s first automobile club. Founded to advocate for motorists, the Club has played a leading role in shaping the nation’s automotive landscape, from campaigning for improved roads to hosting distinguished motoring events across generations, while remaining true to its heritage.
                   </p>
                   <p className="text-sm md:text-lg text-[var(--color-cream)]/80 font-light mb-4 text-left">
                     Today, RACA’s landmark Macquarie Street clubhouse in Sydney’s CBD reflects both tradition and modernity, welcoming members who value heritage, hospitality, and meaningful connection. While its origins are rooted in motoring, the Club is now equally defined by its strong sense of community, fostering belonging, professional networks, and enduring social ties.
@@ -100,7 +100,7 @@ function About() {
                 {/* Reduced text for mobile only */}
                 <div className="block sm:hidden">
                   <p className="text-lg text-[var(--color-cream)]/80 font-light mb-3 mobile-large-text">
-                    Since 1903, the Royal Automobile Club of Australia (RACA) has championed motoring excellence as the nation’s first automobile club. From advocating for motorists to welcoming members at its Macquarie Street clubhouse in Sydney’s CBD, RACA today blends heritage with contemporary hospitality — a community built on connection, belonging, and shared tradition.
+                    Since 1903, the Royal Automobile Club of Australia (RACA) has championed motoring excellence as the nation’s first automobile club. From advocating for motorists to welcoming members at its Macquarie Street clubhouse in Sydney’s CBD, RACA today blends heritage with contemporary hospitality, a community built on connection, belonging, and shared tradition.
                   </p>
                 </div>
               </div>
