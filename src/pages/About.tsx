@@ -86,21 +86,30 @@ function About() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-5xl mx-auto px-4">
               <div className="text-center md:text-left">
                 <h3 className="hidden md:block text-2xl sm:text-2xl md:text-3xl font-heading text-[var(--color-gold-accent)] mb-4 md:mb-6 tracking-wide leading-tight opacity-90 italic">
-                  Innovation is in our DNA
+                  A Legacy of Connection Since 1903
                 </h3>
                 {/* Full text for md and up */}
                 <div className="hidden sm:block">
                   <p className="text-sm md:text-lg text-[var(--color-cream)]/80 font-light mb-4 text-left">
-                    Since 1903, the Royal Automobile Club of Australia (RACA) has championed motoring excellence as Australia’s first automobile club. Founded to advocate for motorists, the Club has played a leading role in shaping the nation’s automotive landscape, from campaigning for improved roads to hosting distinguished motoring events across generations, while remaining true to its heritage.
+                    Since 1903, the Royal Automobile Club of Australia has brought together individuals who value connection, shared experience and purposeful belonging. Established in the early days of motoring, RACA quickly became more than an advocate for motorists. It quickly became a gathering place for people united by curiosity, ambition and a desire to shape the world around them.
                   </p>
                   <p className="text-sm md:text-lg text-[var(--color-cream)]/80 font-light mb-4 text-left">
-                    Today, RACA’s landmark Macquarie Street clubhouse in Sydney’s CBD reflects both tradition and modernity, welcoming members who value heritage, hospitality, and meaningful connection. While its origins are rooted in motoring, the Club is now equally defined by its strong sense of community, fostering belonging, professional networks, and enduring social ties.
+                    Today, RACA’s landmark Macquarie Street clubhouse in Sydney’s CBD stands as a living expression of that legacy. Rich in tradition and architectural character, the Club blends timeless elegance with contemporary comfort. The space honours more than a century of history while continually evolving to meet the expectations of a modern membership.
+                  </p>
+                  <p className="text-sm md:text-lg text-[var(--color-cream)]/80 font-light mb-4 text-left">
+                    Grounded in tradition yet forward looking in its offering, RACA fosters meaningful social engagement, professional exchange and enduring friendships across generations. It remains a place where heritage provides the foundation and innovation shapes what comes next, carrying its legacy confidently into the future.
                   </p>
                 </div>
                 {/* Reduced text for mobile only */}
-                <div className="block sm:hidden">
+                <div className="block sm:hidden text-left">
+                  <h3 className="text-2xl font-heading text-[var(--color-gold-accent)] mb-4 tracking-wide leading-tight opacity-90 italic">
+                    A Legacy of Connection Since 1903
+                  </h3>
                   <p className="text-lg text-[var(--color-cream)]/80 font-light mb-3 mobile-large-text">
-                    Since 1903, the Royal Automobile Club of Australia (RACA) has championed motoring excellence as the nation’s first automobile club. From advocating for motorists to welcoming members at its Macquarie Street clubhouse in Sydney’s CBD, RACA today blends heritage with contemporary hospitality, a community built on connection, belonging, and shared tradition.
+                    Since 1903, the Royal Automobile Club of Australia has brought together individuals who value connection, shared experience and purposeful belonging. Established in the early days of motoring, RACA quickly became more than an advocate for motorists and a gathering place for people united by curiosity, ambition and a desire to shape the world around them.
+                  </p>
+                  <p className="text-lg text-[var(--color-cream)]/80 font-light mb-3 mobile-large-text">
+                    Grounded in tradition yet forward looking in its offering, RACA fosters meaningful social engagement and enduring friendships across generations, carrying its legacy confidently into the future.
                   </p>
                 </div>
               </div>

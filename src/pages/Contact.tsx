@@ -95,7 +95,7 @@ function Contact() {
       preSpendCredit: '$840',
       description: 'NSW Country & ACT',
       highlights: [
-        "Country Membership offers a trusted city base for members living outside Sydney. Located on Macquarie Street, moments from the Opera House and Circular Quay, the Club provides a convenient place to stay, with easy access to ferries, trains, and light rail. Enjoy full access to our iconic Macquarie Street clubhouse, where welcoming spaces, curated motoring events, fine dining, and a vibrant community of fellow enthusiasts await."
+        "Country Membership offers a trusted city base for members living outside of the Sydney basin (Newcastle, Katoomba and Wollongong). Located on Macquarie Street, moments from the Opera House and Circular Quay, the Club provides a convenient place to stay, with easy access to ferries, trains, and light rail. Enjoy full access to our iconic Macquarie Street clubhouse, where welcoming spaces, curated motoring events, fine dining, and a vibrant community of fellow enthusiasts await."
       ]
     },
     {
@@ -268,7 +268,7 @@ function Contact() {
               {/* Apply Here button below membership cards, before divider */}
               <div className="mt-16 flex flex-col items-center gap-6">
                 <p className="text-base md:text-lg text-white font-light max-w-2xl mx-auto italic">
-                  * Monthly Membership plans available. One off Administration Fee applicable.
+                  * Monthly Membership plans available. One-off $250 Administration Fee applicable to all new applications.
                 </p>
                 <a
                   href="https://royalautomobileclubofaustralia.peoplevine.co.uk/survey/group/620"
