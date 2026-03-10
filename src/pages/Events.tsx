@@ -168,7 +168,7 @@ function Events() {
             </div>
           </section>
           <div className="mt-6 flex justify-center">
-            <div className="event-btn-group mt-0 mb-10">
+            <div className="event-btn-group mt-0 mb-10 flex flex-col gap-4">
               <button
                 className="btn-outline-gold max-w-xs w-full mx-auto"
                 type="button"
@@ -176,6 +176,14 @@ function Events() {
               >
                 ENQUIRE HERE
               </button>
+              <a
+                href="https://royalautomobileclubofaustralia.peoplevine.co.uk/events"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline-gold max-w-xs w-full mx-auto"
+              >
+                EVENTS
+              </a>
             </div>
           </div>
 
