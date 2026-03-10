@@ -89,27 +89,27 @@ function About() {
                   A Legacy of Connection Since 1903
                 </h3>
                 {/* Full text for md and up */}
-                <div className="hidden sm:block">
-                  <p className="text-sm md:text-lg text-[var(--color-cream)]/80 font-light mb-4 text-left">
+                <div className="hidden md:block">
+                  <p className="text-lg text-[var(--color-cream)]/80 font-light mb-4 text-left">
                     Since 1903, the Royal Automobile Club of Australia has brought together individuals who value connection, shared experience and purposeful belonging. Established in the early days of motoring, RACA quickly became more than an advocate for motorists. It quickly became a gathering place for people united by curiosity, ambition and a desire to shape the world around them.
                   </p>
-                  <p className="text-sm md:text-lg text-[var(--color-cream)]/80 font-light mb-4 text-left">
+                  <p className="text-lg text-[var(--color-cream)]/80 font-light mb-4 text-left">
                     Today, RACA’s landmark Macquarie Street clubhouse in Sydney’s CBD stands as a living expression of that legacy. Rich in tradition and architectural character, the Club blends timeless elegance with contemporary comfort. The space honours more than a century of history while continually evolving to meet the expectations of a modern membership.
                   </p>
-                  <p className="text-sm md:text-lg text-[var(--color-cream)]/80 font-light mb-4 text-left">
+                  <p className="text-lg text-[var(--color-cream)]/80 font-light mb-4 text-left">
                     Grounded in tradition yet forward looking in its offering, RACA fosters meaningful social engagement, professional exchange and enduring friendships across generations. It remains a place where heritage provides the foundation and innovation shapes what comes next, carrying its legacy confidently into the future.
                   </p>
                 </div>
-                {/* Reduced text for mobile only */}
-                <div className="block sm:hidden text-left">
+                {/* Reduced text for mobile and tablet below md */}
+                <div className="block md:hidden text-center px-4">
                   <h3 className="text-2xl font-heading text-[var(--color-gold-accent)] mb-4 tracking-wide leading-tight opacity-90 italic">
                     A Legacy of Connection Since 1903
                   </h3>
-                  <p className="text-lg text-[var(--color-cream)]/80 font-light mb-3 mobile-large-text">
-                    Since 1903, the Royal Automobile Club of Australia has brought together individuals who value connection, shared experience and purposeful belonging. Established in the early days of motoring, RACA quickly became more than an advocate for motorists and a gathering place for people united by curiosity, ambition and a desire to shape the world around them.
+                  <p className="text-lg text-[var(--color-cream)]/80 font-light mb-4 mobile-large-text">
+                    Since 1903, the Royal Automobile Club of Australia has brought together individuals who value connection and shared experience. From its early days as a motoring advocate, RACA has evolved into a landmark gathering place in Sydney’s CBD, blending timeless elegance with contemporary comfort for a modern membership.
                   </p>
-                  <p className="text-lg text-[var(--color-cream)]/80 font-light mb-3 mobile-large-text">
-                    Grounded in tradition yet forward looking in its offering, RACA fosters meaningful social engagement and enduring friendships across generations, carrying its legacy confidently into the future.
+                  <p className="text-lg text-[var(--color-cream)]/80 font-light mb-4 mobile-large-text">
+                    Grounded in tradition yet forward-looking, the Club fosters meaningful social engagement and enduring friendships across generations. It remains a place where heritage provides the foundation and innovation shapes the future, carrying its legacy confidently forward.
                   </p>
                 </div>
               </div>
