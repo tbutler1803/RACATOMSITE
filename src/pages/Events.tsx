@@ -182,7 +182,7 @@ function Events() {
                 rel="noopener noreferrer"
                 className="btn-outline-gold max-w-xs w-full mx-auto"
               >
-                EVENTS
+                UPCOMING EVENTS
               </a>
             </div>
           </div>
@@ -206,6 +206,7 @@ function Events() {
                       <LazyImage
                         src={space.image}
                         alt={space.name}
+                        priority={idx === 0}
                         className={`w-full aspect-[4/3] md:aspect-[3/2] object-cover ${(space as any).position || 'object-center'}`}
                         containerClassName="overflow-hidden"
                       />

@@ -6,14 +6,24 @@ interface LazyImageProps {
   className?: string;
   containerClassName?: string;
   onLoad?: () => void;
+  priority?: boolean;
 }
 
-export default function LazyImage({ src, alt, className = '', containerClassName = '', onLoad }: LazyImageProps) {
-  const [imageSrc, setImageSrc] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+export default function LazyImage({
+  src,
+  alt,
+  className = '',
+  containerClassName = '',
+  onLoad,
+  priority = false
+}: LazyImageProps) {
+  const [imageSrc, setImageSrc] = useState<string | null>(priority ? src : null);
+  const [isLoading, setIsLoading] = useState(!priority);
   const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
+    if (priority || imageSrc !== null) return;
+
     // Use Intersection Observer to lazy load images
     const observer = new IntersectionObserver(
       (entries) => {
@@ -24,7 +34,7 @@ export default function LazyImage({ src, alt, className = '', containerClassName
           }
         });
       },
-      { rootMargin: '50px' } // Start loading 50px before image enters viewport
+      { rootMargin: '400px' } // Start loading 400px before image enters viewport
     );
 
     if (imgRef.current) {
@@ -32,7 +42,7 @@ export default function LazyImage({ src, alt, className = '', containerClassName
     }
 
     return () => observer.disconnect();
-  }, [src, imageSrc]);
+  }, [src, imageSrc, priority]);
 
   const handleLoad = () => {
     setIsLoading(false);
@@ -40,13 +50,16 @@ export default function LazyImage({ src, alt, className = '', containerClassName
   };
 
   return (
-    <div className={containerClassName}>
+    <div className={`relative ${containerClassName} bg-white/5 overflow-hidden`}>
+      {isLoading && (
+        <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+      )}
       <img
         ref={imgRef}
         src={imageSrc || 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"%3E%3C/svg%3E'}
         alt={alt}
-        className={`${className} ${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
-        loading="lazy"
+        className={`${className} ${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-700`}
+        loading={priority ? "eager" : "lazy"}
         onLoad={handleLoad}
       />
     </div>
