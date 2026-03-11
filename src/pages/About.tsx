@@ -76,14 +76,14 @@ function About() {
           </div>
         </div>
 
-        <div className="max-w-6xl mx-auto px-6 py-14 md:py-18 text-center">
+        <div className="max-w-6xl mx-auto px-4 md:px-6 py-14 md:py-18 text-center">
           <section className="mb-16 md:mb-20">
             <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 md:mb-10 mx-auto" />
             <h2 className="mb-2 md:mb-6">
               Driving the Future, Honouring the Past
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-5xl mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-5xl mx-auto px-0 md:px-4">
               <div className="text-center md:text-left">
                 <h3 className="hidden md:block text-2xl sm:text-2xl md:text-3xl font-heading text-[var(--color-gold-accent)] mb-4 md:mb-6 tracking-wide leading-tight opacity-90 italic">
                   A Legacy of Connection Since 1903
@@ -101,7 +101,7 @@ function About() {
                   </p>
                 </div>
                 {/* Reduced text for mobile and tablet below md */}
-                <div className="block md:hidden text-center px-4">
+                <div className="block md:hidden text-center px-0">
                   <h3 className="text-2xl font-heading text-[var(--color-gold-accent)] mb-4 tracking-wide leading-tight opacity-90 italic">
                     A Legacy of Connection Since 1903
                   </h3>
@@ -181,7 +181,7 @@ function About() {
             <h2>
               Members Perks
             </h2>
-            <p className="text-lg mobile-large-text text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10 px-4">
+            <p className="text-lg mobile-large-text text-[var(--color-cream)]/90 font-light max-w-3xl mx-auto mb-8 md:mb-10 px-0">
               From secure parking and a fully-equipped gym to dining, reciprocal clubs, and our iconic rooms, membership is designed to serve every visit.
             </p>
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
