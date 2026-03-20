@@ -45,50 +45,49 @@ function Events() {
       name: 'Victoria Room',
       capacity: 'BANQUET 130 / COCKTAIL 180',
       description: 'Elegant space for large banquets or cocktail receptions.',
-      image: getAssetPath('/IMAGES/EVENT SPACES/Victoria Room.png'),
+      image: getAssetPath('/Kezia - Studio La Tessa March 2026/Victoria Room.jpg'),
     },
     {
       name: 'Rooftop',
       capacity: 'COCKTAIL 70',
       description: 'Open-air rooftop with city views, perfect for cocktail events.',
-      image: getAssetPath('/IMAGES/EVENT SPACES/Rooftop.png'),
+      image: getAssetPath('/Kezia - Studio La Tessa March 2026/Rooftop.jpg'),
     },
     {
       name: 'Macquarie Room',
       capacity: 'BANQUET 120 / COCKTAIL 150',
       description: 'Spacious room for banquets and cocktail functions.',
-      image: getAssetPath('/IMAGES/EVENT SPACES/Maquarie Room.png'),
+      image: getAssetPath('/Kezia - Studio La Tessa March 2026/Macquarie Room.jpg'),
     },
     {
       name: 'ISC Bar',
       capacity: 'BANQUET 60 / COCKTAIL 70',
       description: 'Versatile space for mid-sized events.',
-      image: getAssetPath('/IMAGES/EVENT SPACES/ISC Room.png'),
+      image: getAssetPath('/Kezia - Studio La Tessa March 2026/ISC Bar.jpg'),
     },
     {
       name: 'Pioneer Room',
       capacity: 'BANQUET 25 / COCKTAIL 30',
       description: 'Intimate room for small gatherings.',
-      image: getAssetPath('/IMAGES/images/DSC_1669.jpg'),
-      position: 'object-bottom'
+      image: getAssetPath('/Kezia - Studio La Tessa March 2026/Pioneers Room.jpg'),
     },
     {
       name: 'Vintage Room',
       capacity: 'BOARDROOM STYLE 20',
       description: 'Classic boardroom for meetings and private dining.',
-      image: getAssetPath('/IMAGES/EVENT SPACES/Vintage Room.png'),
+      image: getAssetPath('/Kezia - Studio La Tessa March 2026/Vintage Room.jpg'),
     },
     {
       name: 'Boardroom',
       capacity: 'BOARDROOM STYLE 15',
       description: 'Professional boardroom for executive meetings.',
-      image: getAssetPath('/IMAGES/EVENT SPACES/Board Room.png'),
+      image: getAssetPath('/Kezia - Studio La Tessa March 2026/Boardroom.jpg'),
     },
     {
       name: 'Hordern',
       capacity: 'BOARDROOM STYLE 10',
       description: 'Classic boardroom for meetings and private dining.',
-      image: getAssetPath('/IMAGES/EVENT SPACES/Hordern.png'),
+      image: getAssetPath('/Kezia - Studio La Tessa March 2026/Hordern.jpg'),
     }
   ];
 

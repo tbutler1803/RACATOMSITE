@@ -226,7 +226,7 @@ function About() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
               {/* 1. Deluxe Harbour Suite image */}
               <div className="art-deco-card overflow-hidden flex flex-col items-center">
-                <img src={getAssetPath('/IMAGES/images/DSC_1304.jpg')} alt="Deluxe Harbour Suite" className="w-full h-48 object-cover mb-3" />
+                <img src={getAssetPath('/Kezia - Studio La Tessa March 2026/Deluxe Harbour Suite.jpg')} alt="Deluxe Harbour Suite" className="w-full h-48 object-cover mb-3" />
                 <h3 className="text-2xl sm:text-2xl md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">Deluxe Harbour Suite</h3>
                 {/* Removed: Breathtaking Sydney Harbour Views */}
               </div>
@@ -238,7 +238,7 @@ function About() {
               </div>
               {/* 3. Room Image - Quiet sophistication */}
               <div className="art-deco-card overflow-hidden flex flex-col items-center">
-                <img src={getAssetPath('/IMAGES/images/DSC_1302.jpg')} alt="Room - Quiet Sophistication" className="w-full h-48 object-cover mb-3" />
+                <img src={getAssetPath('/Kezia - Studio La Tessa March 2026/Quiet Sophistication.jpg')} alt="Room - Quiet Sophistication" className="w-full h-48 object-cover mb-3" />
                 <h3 className="text-2xl sm:text-2xl md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">Quiet Sophistication</h3>
                 {/* Removed: Enjoy peaceful comfort and elegant design */}
               </div>
