@@ -120,7 +120,7 @@ function About() {
                     Heritage & Prestige
                   </h3>
                   <p className="text-sm md:text-lg text-[var(--color-cream)]/80 font-light">
-                    Over 120 years of automotive excellence and club traditions.
+                    Over 120 years of club engagement and service to its members.
                   </p>
                 </div>
 

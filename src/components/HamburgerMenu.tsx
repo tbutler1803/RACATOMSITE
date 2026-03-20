@@ -18,7 +18,7 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
     { label: 'ABOUT', path: '/about' },
     { label: 'EVENTS', path: '/events' },
     { label: 'CONTACT', path: '/contact' },
-    { label: 'MEMBERSHIP LOGIN', path: 'http://raca.k8.membershiphouse.com/login' }
+    { label: 'MEMBERSHIP LOGIN', path: 'https://member.raca.com.au/' }
   ];
 
   const toggleMenu = useCallback((next: boolean) => {
