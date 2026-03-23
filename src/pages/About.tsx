@@ -116,29 +116,29 @@ function About() {
 
               <div className="space-y-3 md:space-y-4">
                 <div className="art-deco-card p-4 md:p-5">
-                  <h3 className="text-2xl sm:text-2xl md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
-                    Heritage & Prestige
+                  <h3 className="text-2xl sm:text-2xl md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide text-center">
+                    Community & Connection
                   </h3>
-                  <p className="text-sm md:text-lg text-[var(--color-cream)]/80 font-light">
-                    Over 120 years of club engagement and service to its members.
+                  <p className="text-sm md:text-lg text-[var(--color-cream)]/80 font-light text-center">
+                    A vibrant community where members forge lifelong friendships through shared interests and social engagement.
                   </p>
                 </div>
 
                 <div className="art-deco-card p-4 md:p-5">
-                  <h3 className="text-2xl sm:text-2xl md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
-                    Premium Location
+                  <h3 className="text-2xl sm:text-2xl md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide text-center">
+                    Social Excellence
                   </h3>
-                  <p className="text-sm md:text-lg text-[var(--color-cream)]/80 font-light">
-                    Centrally positioned at Circular Quay, with direct transport access and moments from Sydney Airport.
+                  <p className="text-sm md:text-lg text-[var(--color-cream)]/80 font-light text-center">
+                    From elegant dining to casual gatherings, our social calendar is designed to bring people together.
                   </p>
                 </div>
 
                 <div className="art-deco-card p-4 md:p-5">
-                  <h3 className="text-2xl sm:text-2xl md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
-                    Progressive Spirit
+                  <h3 className="text-2xl sm:text-2xl md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide text-center">
+                    Shared Experiences
                   </h3>
-                  <p className="text-sm md:text-lg text-[var(--color-cream)]/80 font-light">
-                    Connecting motoring enthusiasts with industry leaders and emerging technology.
+                  <p className="text-sm md:text-lg text-[var(--color-cream)]/80 font-light text-center">
+                    A welcoming environment where every visit is an opportunity for meaningful social interaction.
                   </p>
                 </div>
               </div>
@@ -147,6 +147,27 @@ function About() {
 
           <section className="mb-16 md:mb-20">
             <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 md:mb-10 mx-auto" />
+            
+            <div className="max-w-6xl mx-auto mb-12">
+              <a 
+                href="https://www.raca.com.au/web/pages/motoring" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block art-deco-card overflow-hidden group relative h-48 md:h-64"
+              >
+                <img
+                  src={getAssetPath('/IMAGES/pexels-collin-hanson-80608099-8756271.jpg')}
+                  alt="Motoring"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+                  <h2 className="text-4xl md:text-6xl text-[var(--color-gold-accent)] font-heading tracking-widest drop-shadow-lg">
+                    MOTORING
+                  </h2>
+                </div>
+              </a>
+            </div>
+
             <h2>
               Why Join RACA
             </h2>
