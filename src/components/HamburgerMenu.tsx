@@ -17,6 +17,7 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
     { label: 'HOME', path: '/' },
     { label: 'ABOUT', path: '/about' },
     { label: 'EVENTS', path: '/events' },
+    { label: 'MOTORING', path: '/motoring' },
     { label: 'CONTACT', path: '/contact' },
     { label: 'MEMBERSHIP LOGIN', path: 'https://member.raca.com.au/' }
   ];

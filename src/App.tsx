@@ -4,6 +4,7 @@ const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Events = lazy(() => import('./pages/Events'));
+const Motoring = lazy(() => import('./pages/Motoring'));
 import PageLoader from './components/PageLoader';
 
 function AppContent() {
@@ -44,6 +45,7 @@ function AppContent() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/events" element={<Events />} />
+            <Route path="/motoring" element={<Motoring />} />
           </Routes>
         </Suspense>
       </main>

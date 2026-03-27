@@ -150,9 +150,7 @@ function About() {
             
             <div className="max-w-6xl mx-auto mb-12">
               <a 
-                href="https://www.raca.com.au/web/pages/motoring" 
-                target="_blank" 
-                rel="noopener noreferrer"
+                href="/#/motoring" 
                 className="block art-deco-card overflow-hidden group relative h-48 md:h-64"
               >
                 <img
