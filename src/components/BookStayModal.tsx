@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { X } from 'lucide-react';
 import { getAssetPath } from '../utils/paths';
+import { sendEmail } from '../utils/emailService';
 
 interface BookStayModalProps {
     isOpen: boolean;
@@ -115,15 +116,26 @@ function BookStayModal({ isOpen, onClose }: BookStayModalProps) {
         e.preventDefault();
         setSubmitStatus('loading');
 
-        // In a real app, this would send an email to reception@raca.com.au
         try {
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            setSubmitStatus('success');
-            setFormData({ firstName: '', lastName: '', email: '', message: '' });
-            setTimeout(() => {
-                setSubmitStatus('idle');
-                onClose();
-            }, 2000);
+            const success = await sendEmail({
+                from_name: `${formData.firstName} ${formData.lastName}`,
+                from_email: formData.email,
+                recipient_email: 'reception@raca.com.au',
+                subject: 'Stay Booking Request',
+                message: formData.message
+            });
+
+            if (success) {
+                setSubmitStatus('success');
+                setFormData({ firstName: '', lastName: '', email: '', message: '' });
+                setTimeout(() => {
+                    setSubmitStatus('idle');
+                    onClose();
+                }, 2000);
+            } else {
+                setSubmitStatus('error');
+                setTimeout(() => setSubmitStatus('idle'), 3000);
+            }
         } catch {
             setSubmitStatus('error');
             setTimeout(() => setSubmitStatus('idle'), 3000);

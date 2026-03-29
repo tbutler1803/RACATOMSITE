@@ -6,6 +6,7 @@ import MembershipCard from '../components/MembershipCard';
 import { getAssetPath } from '../utils/paths';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
+import { sendEmail } from '../utils/emailService';
 
 function Contact() {
   const location = useLocation();
@@ -58,10 +59,23 @@ function Contact() {
     setSubmitStatus('loading');
 
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', phone: '', message: '' });
-      setTimeout(() => setSubmitStatus('idle'), 3000);
+      const success = await sendEmail({
+        from_name: formData.name,
+        from_email: formData.email,
+        recipient_email: 'ambassador@raca.com.au',
+        subject: 'New Contact Form Submission - Ambassador',
+        message: formData.message,
+        phone: formData.phone || 'Not provided'
+      });
+
+      if (success) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+        setTimeout(() => setSubmitStatus('idle'), 3000);
+      } else {
+        setSubmitStatus('error');
+        setTimeout(() => setSubmitStatus('idle'), 3000);
+      }
     } catch {
       setSubmitStatus('error');
       setTimeout(() => setSubmitStatus('idle'), 3000);
@@ -74,8 +88,6 @@ function Contact() {
     { icon: Mail, label: 'Email', value: 'ambassador@raca.com.au' },
     { icon: Clock, label: 'Hours', value: '24/7 Reception Availability' }
   ];
-
-
 
   const categories = [
     {

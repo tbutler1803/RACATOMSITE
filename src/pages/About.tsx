@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import ArtDecoDivider from '../components/ArtDecoDivider';
 import { getAssetPath } from '../utils/paths';
@@ -149,8 +150,8 @@ function About() {
             <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 md:mb-10 mx-auto" />
             
             <div className="max-w-6xl mx-auto mb-12">
-              <a 
-                href="/#/motoring" 
+              <Link 
+                to="/motoring" 
                 className="block art-deco-card overflow-hidden group relative h-48 md:h-64"
               >
                 <img
@@ -163,7 +164,7 @@ function About() {
                     MOTORING
                   </h2>
                 </div>
-              </a>
+              </Link>
             </div>
 
             <h2>

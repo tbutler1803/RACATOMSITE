@@ -1,8 +1,12 @@
 import Header from '../components/Header';
 import ArtDecoDivider from '../components/ArtDecoDivider';
 import { getAssetPath } from '../utils/paths';
+import { useState } from 'react';
+import BookTourModal from '../components/BookTourModal';
 
 function Motoring() {
+  const [isBookTourOpen, setIsBookTourOpen] = useState(false);
+
   return (
     <div className="min-h-screen text-[var(--color-cream)] overflow-x-hidden">
       <Header />
@@ -187,26 +191,33 @@ function Motoring() {
             </div>
           </section>
 
-          {/* Events Section Placeholder */}
-          <section className="mb-16 md:mb-24" id="events">
-            <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8 md:mb-10 mx-auto" />
+          {/* Book a Tour Section */}
+          <section className="mb-16 md:mb-20">
+            <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-10 md:mb-12 mx-auto" />
             <div className="art-deco-card p-10 md:p-12 text-center max-w-4xl mx-auto">
               <h2 className="mb-6 md:mb-8 font-heading text-4xl md:text-5xl text-[var(--color-gold-accent)] uppercase">
-                UPCOMING EVENTS
+                Discover In Style
               </h2>
-              <p className="text-lg md:text-xl text-[var(--color-cream)]/90 font-light mb-8 leading-relaxed max-w-2xl mx-auto">
-                Discover the latest motoring events, car shows, and club meets. From classic rallies to modern showcases, there's always something happening at the RACA.
+              <p className="text-sm sm:text-base md:text-lg text-[var(--color-cream)]/80 font-light mb-8 md:mb-10 max-w-2xl mx-auto">
+                <span className="hidden sm:inline">Explore the main room, see the gym and parking, and experience our dining venues firsthand. Our team will tailor the visit to what matters most to you.</span>
+                <span className="inline sm:hidden text-lg">Tour the club, gym, parking, and dining—our team tailors your visit to what matters most.</span>
               </p>
-              <a 
-                href="/#/events" 
-                className="btn-outline-gold px-12 py-4 tracking-[0.2em] text-xl inline-block uppercase"
+              <button
+                type="button"
+                onClick={() => setIsBookTourOpen(true)}
+                className="btn-outline-gold w-full max-w-xs mx-auto text-xl uppercase"
               >
-                View Events Calendar
-              </a>
+                Book a Tour
+              </button>
             </div>
           </section>
         </div>
       </div>
+
+      <BookTourModal
+        isOpen={isBookTourOpen}
+        onClose={() => setIsBookTourOpen(false)}
+      />
     </div>
   );
 }
