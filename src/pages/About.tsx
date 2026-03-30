@@ -305,6 +305,18 @@ function About() {
         isOpen={isBookStayOpen}
         onClose={() => setIsBookStayOpen(false)}
       />
+
+      {/* Privacy Policy Link at bottom */}
+      <div className="max-w-6xl mx-auto px-4 md:px-6 pt-2 pb-10 flex justify-center text-center">
+        <a 
+          href={getAssetPath('/IMAGES/RACA Privacy 2026.pdf')} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-[var(--color-gold-accent)] hover:text-[var(--color-gold-light)] transition-all duration-300 font-heading tracking-[0.2em] text-lg uppercase font-light"
+        >
+          Privacy Policy
+        </a>
+      </div>
     </div>
   );
 }
