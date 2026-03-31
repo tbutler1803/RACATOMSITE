@@ -155,7 +155,7 @@ function About() {
                 className="block art-deco-card overflow-hidden group relative h-48 md:h-64"
               >
                 <img
-                  src={getAssetPath('/IMAGES/pexels-collin-hanson-80608099-8756271.jpg')}
+                  src={getAssetPath('/IMAGES/pexels-antoine-bovy-2027803158-29105285.jpg')}
                   alt="Motoring"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />

@@ -16,7 +16,7 @@ function Motoring() {
         <div
           className="relative h-[70vh] md:h-[80vh] w-full bg-cover bg-center flex items-center justify-center overflow-hidden pt-16 md:pt-20"
           style={{
-            backgroundImage: `url(${getAssetPath('/IMAGES/pexels-jonathanborba-34722754.jpg')})`,
+            backgroundImage: `url(${getAssetPath('/IMAGES/pexels-antoine-bovy-2027803158-29105285.jpg')})`,
           }}
         >
           <div
@@ -38,26 +38,13 @@ function Motoring() {
               MOTORING NEWS
             </h2>
             
-            <div className="max-w-3xl mx-auto mb-16">
+            <div className="max-w-6xl mx-auto mb-16">
               <p className="text-lg md:text-xl text-[var(--color-cream)]/90 font-light leading-relaxed">
                 Welcome to the motoring heart of the Royal Automobile Club of Australia. Established in 1903, RACA has been the go-to on all things motoring for over a century. Buckle up as we bring you the latest motoring industry news and events. From the best cars in Australia to the most anticipated car shows and events happening this weekend, we've got you covered.
               </p>
-            </div>
-
-            {/* Podcast Widget */}
-            <div className="art-deco-card overflow-hidden bg-[#1a1a1a] p-1 md:p-2 max-w-4xl mx-auto shadow-2xl">
-              <div className="relative w-full h-[450px]">
-                <iframe 
-                  src="https://embed.podcasts.apple.com/au/podcast/motor-torque-with-david-berthon/id903763071?itsct=podcast_box_player&amp;itscg=30200&amp;ls=1&amp;theme=dark" 
-                  width="100%" 
-                  height="100%" 
-                  frameBorder="0" 
-                  title="Motor Torque with David Berthon"
-                  allow="autoplay *; encrypted-media *; clipboard-write"
-                  className="rounded-sm"
-                  style={{ width: '100%', maxWidth: '100%', overflow: 'hidden', borderRadius: '10px' }}
-                ></iframe>
-              </div>
+              <p className="mt-6 text-lg md:text-xl text-[var(--color-cream)]/90 font-light leading-relaxed">
+                Stay informed with practical updates on new technologies, road trends, safety developments, and the changing future of mobility. Discover stories from club drives, rally highlights, and member experiences that celebrate both classic motoring heritage and modern performance. Whether you are a lifelong enthusiast or simply curious about what is next, this is your home for trusted motoring insight.
+              </p>
             </div>
           </section>
 
