@@ -174,7 +174,7 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
         </div>
 
         {/* Header with close button */}
-        <div className="relative z-10 px-6 py-6 border-b border-[var(--color-gold-accent)]/20">
+        <div className="relative z-10 px-6 py-3 sm:py-6 border-b border-[var(--color-gold-accent)]/20">
           <div className="flex items-center justify-end">
             <button
               type="button"
@@ -188,7 +188,7 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
         </div>
 
         {/* Menu items with stagger animation */}
-        <nav className="relative z-10 flex-1 flex flex-col justify-center py-6 px-6 overflow-y-auto" aria-label="Main navigation">
+        <nav className="relative z-10 flex-1 flex flex-col justify-center py-2 sm:py-6 px-6 overflow-y-auto" aria-label="Main navigation">
           {menuItems.map((item, index) => (
             <div
               key={item.path}
@@ -199,7 +199,7 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
               <button
                 type="button"
                 onClick={() => handleNavigate(item.path)}
-                className="group w-full text-left px-6 py-2.5 sm:py-4 text-[var(--color-gold-accent)] font-heading text-[26px] min-[400px]:text-[28px] md:text-[28px] tracking-[0.24em] transition-all duration-300 relative"
+                className="group w-full text-left px-6 py-1.5 sm:py-4 text-[var(--color-gold-accent)] font-heading text-[20px] min-[400px]:text-[22px] sm:text-[26px] md:text-[28px] tracking-[0.24em] transition-all duration-300 relative"
               >
                 <span className="relative z-10 group-hover:text-[var(--color-red-accent)] transition-all duration-300">
                   {item.label}
@@ -212,7 +212,7 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
 
         {/* Contact/footer block */}
         <div
-          className="relative z-10 px-6 pt-6 pb-10 border-t border-[var(--color-gold-accent)]/20 space-y-2 text-[var(--color-cream)]/85 text-sm tracking-[0.18em]"
+          className="relative z-10 px-6 pt-2 sm:pt-6 pb-6 border-t border-[var(--color-gold-accent)]/20 space-y-2 text-[var(--color-cream)]/85 text-sm tracking-[0.18em]"
           style={{ paddingBottom: 'max(20px, env(safe-area-inset-bottom, 20px))' }}
         >
           <p className="text-[var(--color-cream)]/75 font-light">+61 (02) 8273 2300</p>
