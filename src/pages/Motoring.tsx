@@ -155,7 +155,7 @@ function Motoring() {
               <div className="art-deco-card flex flex-col h-full group">
                 <div className="relative h-56 overflow-hidden">
                   <img 
-                    src="https://www.raca.com.au/documents/46980/0/Audi+S5+Avant.jpg/audi-s5-avant-tfsi-quattro?t=1770180000000" 
+                    src={getAssetPath('/IMAGES/Audi-S5-Avant.jpg')}
                     alt="Audi S5 Avant TFSI quattro"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
