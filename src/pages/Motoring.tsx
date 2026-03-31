@@ -150,6 +150,25 @@ function Motoring() {
                   </p>
                 </div>
               </div>
+
+              {/* Article 6 */}
+              <div className="art-deco-card flex flex-col h-full group">
+                <div className="relative h-56 overflow-hidden">
+                  <img 
+                    src="https://www.raca.com.au/documents/46980/0/Audi+S5+Avant.jpg/audi-s5-avant-tfsi-quattro?t=1770180000000" 
+                    alt="Audi S5 Avant TFSI quattro"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-6 flex flex-col flex-1 text-left">
+                  <h3 className="text-2xl font-heading text-[var(--color-gold-accent)] mb-4 min-h-[5rem] flex items-start uppercase">
+                    Behind the Wheel - Audi's S5 Avant TFSI quattro
+                  </h3>
+                  <p className="text-[var(--color-cream)]/80 font-light text-lg leading-relaxed mb-6 flex-1">
+                    S definitely stands for sporty. Audi's sports skewed S5 Avant replaces the S4 with a larger body, new hybrid technology, and exhilarating performance – delivering 0 to 100km/h in just 4.5 seconds with a sharp looking European touring wagon.
+                  </p>
+                </div>
+              </div>
             </div>
           </section>
 
