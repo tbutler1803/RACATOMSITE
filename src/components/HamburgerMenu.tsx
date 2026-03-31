@@ -199,7 +199,7 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
               <button
                 type="button"
                 onClick={() => handleNavigate(item.path)}
-                className="group w-full text-left px-6 py-1.5 sm:py-4 text-[var(--color-gold-accent)] font-heading text-[20px] min-[400px]:text-[22px] sm:text-[26px] md:text-[28px] tracking-[0.24em] transition-all duration-300 relative"
+                className="group w-full text-left px-6 py-1.5 sm:py-4 text-[var(--color-gold-accent)] font-heading text-[22px] min-[400px]:text-[24px] sm:text-[26px] md:text-[28px] tracking-[0.24em] transition-all duration-300 relative"
               >
                 <span className="relative z-10 group-hover:text-[var(--color-red-accent)] transition-all duration-300">
                   {item.label}
@@ -212,11 +212,11 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
 
         {/* Contact/footer block */}
         <div
-          className="relative z-10 px-6 pt-2 sm:pt-6 pb-6 border-t border-[var(--color-gold-accent)]/20 space-y-2 text-[var(--color-cream)]/85 text-sm tracking-[0.18em]"
+          className="relative z-10 px-6 pt-2 sm:pt-6 pb-6 border-t border-[var(--color-gold-accent)]/20 space-y-1.5 text-[var(--color-cream)]/85 text-sm tracking-[0.18em]"
           style={{ paddingBottom: 'max(20px, env(safe-area-inset-bottom, 20px))' }}
         >
-          <p className="text-[var(--color-cream)]/75 font-light">+61 (02) 8273 2300</p>
-          <p className="text-[var(--color-cream)]/75 font-light">89 Macquarie St, Sydney NSW 2000</p>
+          <p className="text-[var(--color-cream)]/75 font-light text-xs sm:text-sm tracking-[0.1em] whitespace-nowrap">+61 (02) 8273 2300</p>
+          <p className="text-[var(--color-cream)]/75 font-light text-xs sm:text-sm tracking-[0.1em] whitespace-nowrap">89 Macquarie St, Sydney NSW 2000</p>
           
           <div className="pt-1">
             <a 
