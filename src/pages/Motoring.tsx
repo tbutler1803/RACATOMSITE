@@ -165,7 +165,7 @@ function Motoring() {
                     Behind the Wheel - Audi's S5 Avant TFSI quattro
                   </h3>
                   <p className="text-[var(--color-cream)]/80 font-light text-lg leading-relaxed mb-6 flex-1">
-                    S definitely stands for sporty. Audi's sports skewed S5 Avant replaces the S4 with a larger body, new hybrid technology, and exhilarating performance – delivering 0 to 100km/h in just 4.5 seconds with a sharp looking European touring wagon.
+                    A sharp looking European touring wagon delivering 0 to 100km/h in just 4.5 seconds. With 270kW, quattro all-wheel drive, optional panoramic glass roof, and a driver-focused interior, this replacement for the S4 Avant combines exhilarating performance with refined touring wagon comfort.
                   </p>
                 </div>
               </div>
