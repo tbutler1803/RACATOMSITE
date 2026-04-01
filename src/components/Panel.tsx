@@ -56,11 +56,14 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
   useEffect(() => {
     if (!isMobile || !isVideo || !videoRef.current) return;
 
+    const currentVideo = videoRef.current; // Copy for cleanup closure
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && videoRef.current) {
-            videoRef.current.play().catch(() => {
+          if (entry.isIntersecting && currentVideo) {
+            currentVideo.load(); // Vital for Safari when preload="metadata"
+            currentVideo.play().catch(() => {
               // Autoplay failed, user interaction needed
             });
           }
@@ -69,7 +72,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
       { threshold: 0.5 }
     );
 
-    observer.observe(videoRef.current);
+    observer.observe(currentVideo);
     return () => observer.disconnect();
   }, [isMobile, isVideo]);
 
@@ -78,6 +81,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
     setIsHovered(true);
     // Play video immediately on hover (during user interaction)
     if (videoRef.current && isVideo) {
+      videoRef.current.load(); // Vital for Safari when preload="metadata"
       const playPromise = videoRef.current.play();
       if (playPromise !== undefined) {
         playPromise.catch(() => {
@@ -92,7 +96,13 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
     // Pause and reset video
     if (videoRef.current && isVideo) {
       videoRef.current.pause();
-      videoRef.current.currentTime = 0;
+      // On some versions of Safari, currentTime = 0 might 
+      // interfere with the next play() call if called too quickly
+      try {
+        videoRef.current.currentTime = 0;
+      } catch (e) {
+        // Ignore errors from setting currentTime
+      }
     }
   };
 
@@ -100,6 +110,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
   const handleTouchStart = () => {
     setIsHovered(true);
     if (videoRef.current && isVideo) {
+      videoRef.current.load(); // Vital for Safari
       const playPromise = videoRef.current.play();
       if (playPromise !== undefined) {
         playPromise.catch(() => {
