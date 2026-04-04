@@ -35,7 +35,7 @@ function Home() {
     {
       letter: 'A',
       label: 'MEMBER LOGIN',
-      imageUrl: getAssetPath('/IMAGES/attached_assets/SloMo.mp4'),
+      imageUrl: getAssetPath('/IMAGES/RACA FRONT ENTRANCE.mp4'),
       path: 'https://member.raca.com.au/'
     }
   ];
