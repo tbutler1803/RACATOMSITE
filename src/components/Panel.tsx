@@ -81,11 +81,19 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
     setIsHovered(true);
     // Play video immediately on hover (during user interaction)
     if (videoRef.current && isVideo) {
-      videoRef.current.load(); // Vital for Safari when preload="metadata"
+      // Ensure video is muted and playsinline for Safari
+      videoRef.current.muted = true;
+      videoRef.current.playsInline = true;
+      
       const playPromise = videoRef.current.play();
       if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // Autoplay failed, user interaction needed
+        playPromise.catch((error) => {
+          console.error("Video play failed:", error);
+          // If play fails, try loading then playing
+          if (videoRef.current) {
+            videoRef.current.load();
+            videoRef.current.play().catch(e => console.error("Video play retry failed:", e));
+          }
         });
       }
     }
@@ -145,16 +153,17 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
           ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-out"
           style={{
-            opacity: isMobile ? (isHovered ? 1 : 0) : (isHovered ? 0.75 : 0.001),
+            opacity: isMobile ? (isHovered ? 1 : 0) : (isHovered ? 1 : 0.001),
             pointerEvents: 'none',
-            visibility: 'visible'
+            visibility: 'visible',
+            minWidth: '100%',
+            minHeight: '100%'
           }}
           aria-hidden="true"
-          autoPlay={isMobile || isHovered}
-          loop
           muted
           playsInline
-          preload="metadata"
+          loop
+          preload="auto"
         >
           <source src={imageUrl} type="video/mp4" />
         </video>
