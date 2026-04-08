@@ -129,7 +129,7 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
         message: formData.message,
         tour_date: formData.tourDate,
         tour_time: formData.tourTime
-      });
+      }, 'tour');
 
       if (success) {
         setSubmitStatus('success');

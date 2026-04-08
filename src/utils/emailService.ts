@@ -5,7 +5,14 @@
  * 2. Replace the placeholder below with your key.
  */
 
-const WEB3_FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE"; // Need to replace this with a real key
+export type FormType = 'contact' | 'tour' | 'stay' | 'events';
+
+const WEB3_FORMS_KEYS: Record<FormType, string> = {
+  contact: "81e86e52-317b-4059-9a3c-41d3c1d477e9",
+  tour: "81e86e52-317b-4059-9a3c-41d3c1d477e9",       // shares Contact key
+  stay: "4a00051a-fa9d-4d22-979c-70fd2bd2fde3",         // About Us key
+  events: "cf953fea-ea3c-47ff-a064-12acc2f1a2db",
+};
 
 export interface EmailData {
   from_name: string;
@@ -16,14 +23,8 @@ export interface EmailData {
   [key: string]: string; // Support for additional fields
 }
 
-export async function sendEmail(data: EmailData): Promise<boolean> {
-  // If no access key is provided, log a warning and return true for "simulated success"
-  if (WEB3_FORMS_ACCESS_KEY === "YOUR_ACCESS_KEY_HERE") {
-    console.warn("Email submission: No access key provided. This is a simulated success for development.");
-    console.log("Form Data that would be sent:", data);
-    await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate delay
-    return true;
-  }
+export async function sendEmail(data: EmailData, formType: FormType = 'contact'): Promise<boolean> {
+  const accessKey = WEB3_FORMS_KEYS[formType];
 
   try {
     const response = await fetch("https://api.web3forms.com/submit", {
@@ -33,7 +34,7 @@ export async function sendEmail(data: EmailData): Promise<boolean> {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        access_key: WEB3_FORMS_ACCESS_KEY,
+        access_key: accessKey,
         ...data,
       }),
     });

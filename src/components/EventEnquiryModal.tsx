@@ -133,7 +133,7 @@ function EventEnquiryModal({ isOpen, onClose }: EventEnquiryModalProps) {
                 event_date: formData.eventDate,
                 guest_count: formData.guestCount,
                 space: formData.space
-            });
+            }, 'events');
 
             if (success) {
                 setSubmitStatus('success');

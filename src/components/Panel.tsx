@@ -11,8 +11,175 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const isVideo = imageUrl.endsWith('.mp4') || imageUrl.endsWith('.webm') || imageUrl.endsWith('.ogg');
+  const panelRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const videoContainerRef = useRef<HTMLDivElement>(null);
+  const rafRef = useRef(0);
+  const panelSizeRef = useRef({ w: 0, h: 0 });
+
+  const normalizedMediaUrl = imageUrl.split(/[?#]/)[0].toLowerCase();
+  const isVideo = /\.(mp4|webm|ogg)$/.test(normalizedMediaUrl);
+
+  // Track actual panel dimensions with ResizeObserver so the canvas buffer
+  // is always correctly sized — iOS Safari can report stale clientWidth/Height
+  // during opacity transitions and touch-triggered reflows.
+  useEffect(() => {
+    const el = panelRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const { width, height } = entry.contentRect;
+        panelSizeRef.current = { w: width, h: height };
+      }
+    });
+    ro.observe(el);
+    // Seed initial size immediately
+    const rect = el.getBoundingClientRect();
+    panelSizeRef.current = { w: rect.width, h: rect.height };
+    return () => ro.disconnect();
+  }, []);
+
+  // Video-to-canvas pipeline that works WITHOUT calling play().
+  // Safari blocks play() without a user gesture, but allows currentTime
+  // seeking freely.  We manually advance currentTime each frame based on
+  // the wall clock and paint the decoded frame to a <canvas>.
+  useEffect(() => {
+    if (!isVideo || !videoContainerRef.current) return;
+
+    const container = videoContainerRef.current;
+    container.innerHTML = '';
+
+    const video = document.createElement('video');
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.preload = 'auto';
+    video.setAttribute('muted', '');
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', '');
+    // In DOM so Safari allocates the decoder, but visually hidden.
+    video.style.cssText =
+      'position:absolute;width:1px;height:1px;opacity:0.01;pointer-events:none;z-index:-1;';
+    container.appendChild(video);
+    video.src = imageUrl;
+    video.load();
+
+    let startWall = 0;
+    let running = false;
+
+    const drawFrame = () => {
+      const canvas = canvasRef.current;
+      if (!canvas || video.readyState < 2) return;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      // Use observed panel size instead of canvas.clientWidth/Height which
+      // can be stale on iOS during opacity transitions.
+      const cw = panelSizeRef.current.w;
+      const ch = panelSizeRef.current.h;
+      if (cw === 0 || ch === 0) return;
+
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const bw = Math.round(cw * dpr);
+      const bh = Math.round(ch * dpr);
+      if (canvas.width !== bw || canvas.height !== bh) {
+        canvas.width = bw;
+        canvas.height = bh;
+      }
+
+      // object-fit: cover logic
+      const vw = video.videoWidth;
+      const vh = video.videoHeight;
+      const canvasAspect = bw / bh;
+      const videoAspect = vw / vh;
+      let sx = 0, sy = 0, sw = vw, sh = vh;
+      if (videoAspect > canvasAspect) {
+        sw = vh * canvasAspect;
+        sx = (vw - sw) / 2;
+      } else {
+        sh = vw / canvasAspect;
+        sy = (vh - sh) / 2;
+      }
+      ctx.drawImage(video, sx, sy, sw, sh, 0, 0, bw, bh);
+    };
+
+    // Advance currentTime manually each animation frame.  No play() needed.
+    const tick = (now: number) => {
+      if (!running) return;
+      if (!startWall) startWall = now;
+      const elapsed = (now - startWall) / 1000;
+      const duration = video.duration;
+      if (duration && duration > 0) {
+        const target = elapsed % duration;
+        // Only seek if we've moved enough (avoids redundant seeks)
+        if (Math.abs(video.currentTime - target) > 0.02) {
+          video.currentTime = target;
+        }
+      }
+      drawFrame();
+      rafRef.current = requestAnimationFrame(tick);
+    };
+
+    const start = () => {
+      if (running) return;
+      running = true;
+      startWall = 0;
+      rafRef.current = requestAnimationFrame(tick);
+    };
+
+    // Also try native play() — if the browser allows it, the hardware
+    // decoder will run and drawImage will grab perfectly smooth frames.
+    // The manual currentTime approach is the fallback.
+    const tryNativePlay = () => {
+      video.muted = true;
+      video.loop = true;
+      video.play().catch(() => {
+        // play() blocked — rely on manual currentTime stepping (already running)
+      });
+    };
+
+    // Start the manual loop as soon as metadata arrives
+    const onMeta = () => {
+      start();
+      tryNativePlay();
+    };
+    if (video.readyState >= 1) {
+      onMeta();
+    } else {
+      video.addEventListener('loadedmetadata', onMeta, { once: true });
+    }
+
+    return () => {
+      running = false;
+      cancelAnimationFrame(rafRef.current);
+      video.removeEventListener('loadedmetadata', onMeta);
+      video.pause();
+      video.removeAttribute('src');
+      video.load();
+      container.innerHTML = '';
+    };
+  }, [isVideo, imageUrl]);
+
+  // Prevent iOS from firing both touch and synthesized mouse events
+  const touchActiveRef = useRef(false);
+
+  const handleTouchStart = () => {
+    touchActiveRef.current = true;
+    setIsHovered(true);
+  };
+
+  const handleTouchEnd = () => {
+    touchActiveRef.current = false;
+    setIsHovered(false);
+  };
+
+  const handleMouseEnter = () => {
+    if (!touchActiveRef.current) setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    if (!touchActiveRef.current) setIsHovered(false);
+  };
 
   // Laptop-only optical centering and vertical alignment
   const getLetterTransform = (ch: string, isMobileView: boolean): string => {
@@ -52,93 +219,11 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Autoplay video on mobile when in viewport
-  useEffect(() => {
-    if (!isMobile || !isVideo || !videoRef.current) return;
-
-    const currentVideo = videoRef.current; // Copy for cleanup closure
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && currentVideo) {
-            currentVideo.load(); // Vital for Safari when preload="metadata"
-            currentVideo.play().catch(() => {
-              // Autoplay failed, user interaction needed
-            });
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    observer.observe(currentVideo);
-    return () => observer.disconnect();
-  }, [isMobile, isVideo]);
-
-  // Handle hover with direct video control for Safari compatibility
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-    // Play video immediately on hover (during user interaction)
-    if (videoRef.current && isVideo) {
-      // Ensure video is muted and playsinline for Safari
-      videoRef.current.muted = true;
-      videoRef.current.playsInline = true;
-      
-      const playPromise = videoRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.catch((error) => {
-          console.error("Video play failed:", error);
-          // If play fails, try loading then playing
-          if (videoRef.current) {
-            videoRef.current.load();
-            videoRef.current.play().catch(e => console.error("Video play retry failed:", e));
-          }
-        });
-      }
-    }
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-    // Pause and reset video
-    if (videoRef.current && isVideo) {
-      videoRef.current.pause();
-      // On some versions of Safari, currentTime = 0 might 
-      // interfere with the next play() call if called too quickly
-      try {
-        videoRef.current.currentTime = 0;
-      } catch (e) {
-        // Ignore errors from setting currentTime
-      }
-    }
-  };
-
-  // Handle touch events for mobile
-  const handleTouchStart = () => {
-    setIsHovered(true);
-    if (videoRef.current && isVideo) {
-      videoRef.current.load(); // Vital for Safari
-      const playPromise = videoRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // Autoplay failed
-        });
-      }
-    }
-  };
-
-  const handleTouchEnd = () => {
-    setIsHovered(false);
-    if (videoRef.current && isVideo) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-    }
-  };
-
   return (
-    <button
-      type="button"
+    <div
+      ref={panelRef}
+      role="button"
+      tabIndex={0}
       aria-label={label}
       className="relative flex-1 cursor-pointer overflow-hidden group text-left bg-transparent border-0 p-0"
       onMouseEnter={handleMouseEnter}
@@ -146,27 +231,23 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
       onClick={onClick}
+      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick(); } }}
     >
-      {/* Background media - video or image */}
+      {/* Background media */}
       {isVideo ? (
-        <video
-          ref={videoRef}
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-out"
-          style={{
-            opacity: isMobile ? (isHovered ? 1 : 0) : (isHovered ? 1 : 0.001),
-            pointerEvents: 'none',
-            visibility: 'visible',
-            minWidth: '100%',
-            minHeight: '100%'
-          }}
-          aria-hidden="true"
-          muted
-          playsInline
-          loop
-          preload="auto"
-        >
-          <source src={imageUrl} type="video/mp4" />
-        </video>
+        <>
+          {/* Hidden container for the real <video> element (Safari needs it in DOM to decode) */}
+          <div ref={videoContainerRef} aria-hidden="true" style={{ position: 'absolute', overflow: 'hidden', width: 1, height: 1, opacity: 0.01 }} />
+          <canvas
+            ref={canvasRef}
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full transition-opacity duration-500 ease-out"
+            style={{
+              opacity: isMobile ? (isHovered ? 1 : 0) : (isHovered ? 0.75 : 0),
+              pointerEvents: 'none',
+            }}
+          />
+        </>
       ) : (
         <img
           src={imageUrl}
@@ -189,7 +270,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
 
       <div
         className="absolute inset-0 bg-gradient-to-b from-[var(--color-dark-navy)]/60 via-[var(--color-dark-navy)]/50 to-[var(--color-dark-navy)]/70 transition-opacity duration-500"
-        style={{ opacity: isHovered ? 1 : 0 }}
+        style={{ opacity: isHovered ? (isVideo ? 0.35 : 1) : 0 }}
       />
 
       <div className="relative h-full flex flex-col items-center justify-center px-4 md:px-8 z-10">
@@ -308,7 +389,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
       </div>
 
       {/* removed vertical separator between panels */}
-    </button>
+    </div>
   );
 }
 

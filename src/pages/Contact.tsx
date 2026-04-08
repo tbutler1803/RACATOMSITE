@@ -66,7 +66,7 @@ function Contact() {
         subject: 'New Contact Form Submission - Ambassador',
         message: formData.message,
         phone: formData.phone || 'Not provided'
-      });
+      }, 'contact');
 
       if (success) {
         setSubmitStatus('success');

@@ -123,7 +123,7 @@ function BookStayModal({ isOpen, onClose }: BookStayModalProps) {
                 recipient_email: 'reception@raca.com.au',
                 subject: 'Stay Booking Request',
                 message: formData.message
-            });
+            }, 'stay');
 
             if (success) {
                 setSubmitStatus('success');
