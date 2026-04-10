@@ -10,9 +10,10 @@ interface MembershipModalProps {
   price?: string;
   membershipFee?: string;
   preSpendCredit?: string;
+  monthlySubscription?: string;
 }
 
-function MembershipModal({ isOpen, onClose, title, description, price, membershipFee, preSpendCredit }: MembershipModalProps) {
+function MembershipModal({ isOpen, onClose, title, description, price, membershipFee, preSpendCredit, monthlySubscription }: MembershipModalProps) {
   const [isAnimating, setIsAnimating] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isIPad, setIsIPad] = useState(false);
@@ -155,6 +156,12 @@ function MembershipModal({ isOpen, onClose, title, description, price, membershi
                 <div className="flex justify-between items-center text-sm md:text-base text-[var(--color-cream)]">
                   <span>Pre-Spend Credit:</span>
                   <span className="font-medium md:font-bold">{preSpendCredit}</span>
+                </div>
+              )}
+              {monthlySubscription && (
+                <div className="flex justify-between items-center text-sm md:text-base text-[var(--color-cream)]">
+                  <span>Monthly Subscription:</span>
+                  <span className="font-medium md:font-bold">{monthlySubscription}/mo</span>
                 </div>
               )}
 

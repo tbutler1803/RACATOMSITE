@@ -3,8 +3,8 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // Use different base paths for development and production
-  base: process.env.NODE_ENV === 'production' ? '/RACATOMSITE/' : '/',
+  // Custom domain raca.com.au — serve from root
+  base: '/',
   build: {
     outDir: 'docs', // match GitHub Pages source (main/docs)
     emptyOutDir: true,
