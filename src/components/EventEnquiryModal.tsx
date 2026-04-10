@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { X } from 'lucide-react';
 import { getAssetPath } from '../utils/paths';
-import { sendEmail } from '../utils/emailService';
 
 interface EventEnquiryModalProps {
     isOpen: boolean;
@@ -118,47 +117,9 @@ function EventEnquiryModal({ isOpen, onClose }: EventEnquiryModalProps) {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        setSubmitStatus('loading');
-
-        try {
-            const success = await sendEmail({
-                from_name: `${formData.firstName} ${formData.lastName}`,
-                from_email: formData.email,
-                recipient_email: 'eventsadmin@raca.com.au',
-                subject: `Event Enquiry - ${formData.space || 'General'}`,
-                message: formData.message,
-                phone: formData.phone,
-                event_date: formData.eventDate,
-                guest_count: formData.guestCount,
-                space: formData.space
-            }, 'events');
-
-            if (success) {
-                setSubmitStatus('success');
-                setFormData({
-                    firstName: '',
-                    lastName: '',
-                    email: '',
-                    phone: '',
-                    eventDate: '',
-                    guestCount: '',
-                    space: '',
-                    message: ''
-                });
-                setTimeout(() => {
-                    setSubmitStatus('idle');
-                    onClose();
-                }, 2000);
-            } else {
-                setSubmitStatus('error');
-                setTimeout(() => setSubmitStatus('idle'), 3000);
-            }
-        } catch {
-            setSubmitStatus('error');
-            setTimeout(() => setSubmitStatus('idle'), 3000);
-        }
+        // Form submission temporarily disabled
     };
 
     if (!isVisible) return null;

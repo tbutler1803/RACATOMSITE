@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { X } from 'lucide-react';
 import { getAssetPath } from '../utils/paths';
-import { sendEmail } from '../utils/emailService';
 
 interface BookStayModalProps {
     isOpen: boolean;
@@ -112,34 +111,9 @@ function BookStayModal({ isOpen, onClose }: BookStayModalProps) {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        setSubmitStatus('loading');
-
-        try {
-            const success = await sendEmail({
-                from_name: `${formData.firstName} ${formData.lastName}`,
-                from_email: formData.email,
-                recipient_email: 'reception@raca.com.au',
-                subject: 'Stay Booking Request',
-                message: formData.message
-            }, 'stay');
-
-            if (success) {
-                setSubmitStatus('success');
-                setFormData({ firstName: '', lastName: '', email: '', message: '' });
-                setTimeout(() => {
-                    setSubmitStatus('idle');
-                    onClose();
-                }, 2000);
-            } else {
-                setSubmitStatus('error');
-                setTimeout(() => setSubmitStatus('idle'), 3000);
-            }
-        } catch {
-            setSubmitStatus('error');
-            setTimeout(() => setSubmitStatus('idle'), 3000);
-        }
+        // Form submission temporarily disabled
     };
 
     if (!isVisible) return null;

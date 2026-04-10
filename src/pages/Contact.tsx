@@ -6,7 +6,6 @@ import MembershipCard from '../components/MembershipCard';
 import { getAssetPath } from '../utils/paths';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
-import { sendEmail } from '../utils/emailService';
 
 function Contact() {
   const location = useLocation();
@@ -54,32 +53,9 @@ function Contact() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitStatus('loading');
-
-    try {
-      const success = await sendEmail({
-        from_name: formData.name,
-        from_email: formData.email,
-        recipient_email: 'ambassador@raca.com.au',
-        subject: 'New Contact Form Submission - Ambassador',
-        message: formData.message,
-        phone: formData.phone || 'Not provided'
-      }, 'contact');
-
-      if (success) {
-        setSubmitStatus('success');
-        setFormData({ name: '', email: '', phone: '', message: '' });
-        setTimeout(() => setSubmitStatus('idle'), 3000);
-      } else {
-        setSubmitStatus('error');
-        setTimeout(() => setSubmitStatus('idle'), 3000);
-      }
-    } catch {
-      setSubmitStatus('error');
-      setTimeout(() => setSubmitStatus('idle'), 3000);
-    }
+    // Form submission temporarily disabled
   };
 
   const contactInfo = [
