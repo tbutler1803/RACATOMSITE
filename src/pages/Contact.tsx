@@ -55,7 +55,35 @@ function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission temporarily disabled
+
+    // Submit to PeopleVine Survey ID: 4363
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = 'https://royalautomobileclubofaustralia.peoplevine.co.uk/survey/4363';
+    form.target = '_blank';
+
+    const fields: Record<string, string> = {
+      'field_40899_40263': formData.name,
+      'field_40900_40264': formData.email,
+      'field_40901_40265': formData.phone,
+      'field_40903_40267': formData.message,
+    };
+
+    for (const [name, value] of Object.entries(fields)) {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = name;
+      input.value = value;
+      form.appendChild(input);
+    }
+
+    document.body.appendChild(form);
+    form.submit();
+    document.body.removeChild(form);
+
+    setSubmitStatus('success');
+    setFormData({ name: '', email: '', phone: '', message: '' });
+    setTimeout(() => setSubmitStatus('idle'), 3000);
   };
 
   const contactInfo = [
