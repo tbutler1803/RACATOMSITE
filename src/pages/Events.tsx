@@ -176,7 +176,7 @@ function Events() {
                 ENQUIRE HERE
               </button>
               <a
-                href="https://royalautomobileclubofaustralia.peoplevine.co.uk/events"
+                href="https://membership.raca.com.au/events"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline-gold max-w-xs w-full mx-auto"

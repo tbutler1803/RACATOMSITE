@@ -178,7 +178,7 @@ function MembershipModal({ isOpen, onClose, title, description, price, membershi
             </div>
 
             <a
-              href="https://royalautomobileclubofaustralia.peoplevine.co.uk/survey/group/620"
+              href="https://membership.raca.com.au/apply"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline-gold w-full mt-4 text-base md:text-xl tracking-[0.08em] md:tracking-[0.12em] font-medium md:font-bold"

@@ -299,7 +299,7 @@ function Contact() {
                   * One-off $250 Administration Fee applicable to all new applications.
                 </p>
                 <a
-                  href="https://royalautomobileclubofaustralia.peoplevine.co.uk/survey/group/620"
+                  href="https://membership.raca.com.au/apply"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-outline-gold max-w-xs w-full mx-auto text-lg md:text-xl tracking-[0.12em] font-bold"
