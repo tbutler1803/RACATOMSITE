@@ -42,53 +42,53 @@ function Events() {
   const [isEnquiryModalOpen, setIsEnquiryModalOpen] = useState(false);
   const eventSpaces = [
     {
-      name: 'Victoria Room',
-      capacity: 'BANQUET 130 / COCKTAIL 180',
-      description: 'Elegant space for large banquets or cocktail receptions.',
-      image: getAssetPath('/Kezia - Studio La Tessa March 2026/Victoria Room.jpg'),
-    },
-    {
       name: 'Rooftop',
-      capacity: 'COCKTAIL 70',
-      description: 'Open-air rooftop with city views, perfect for cocktail events.',
-      image: getAssetPath('/Kezia - Studio La Tessa March 2026/Rooftop.jpg'),
+      capacity: 'Up to 80 guests',
+      description: 'Perched atop our heritage building, the RACA Rooftop boasts breathtaking views of the Sydney Harbour and Botanic Gardens, an unforgettable backdrop for exceptional events.',
+      image: getAssetPath('/IMAGES/Rooftop 4.jpg'),
     },
     {
       name: 'Macquarie Room',
-      capacity: 'BANQUET 120 / COCKTAIL 150',
-      description: 'Spacious room for banquets and cocktail functions.',
-      image: getAssetPath('/Kezia - Studio La Tessa March 2026/Macquarie Room.jpg'),
+      capacity: 'Up to 120 guests',
+      description: 'Bright, open and beautifully lit, this space features floor-to-ceiling windows that create a welcoming atmosphere.\n\nAvailable individually or combined with the I.S.C and Reading Room for an exclusive floor hire.',
+      image: getAssetPath('/IMAGES/Macquarie Room 2.jpg'),
     },
     {
-      name: 'ISC Bar',
-      capacity: 'BANQUET 60 / COCKTAIL 70',
-      description: 'Versatile space for mid-sized events.',
+      name: 'ISC Room',
+      capacity: 'Up to 80 guests',
+      description: 'The newly refreshed Imperial Service Club (I.S.C.) is an intimate, mood-lit space. With its own private bar and rich, atmospheric styling, it provides the perfect setting for exclusive events and elevated celebrations.',
       image: getAssetPath('/Kezia - Studio La Tessa March 2026/ISC Bar.jpg'),
     },
     {
+      name: 'Victoria Room',
+      capacity: 'Up to 200 guests',
+      description: 'An impressive, character-filled space, featuring a stunning stained-glass ceiling and statement chandelier. A favourite for galas, wedding receptions and conferences, it offers an elegant setting designed to leave a lasting impression.',
+      image: getAssetPath('/Kezia - Studio La Tessa March 2026/Victoria Room.jpg'),
+    },
+    {
       name: 'Pioneer Room',
-      capacity: 'BANQUET 25 / COCKTAIL 30',
-      description: 'Intimate room for small gatherings.',
+      capacity: 'Up to 60 guests',
+      description: "This intimate space by design, showcases curated memorabilia that offers a charming glimpse into Australia's storied past. A refined setting where heritage and sophistication meet, it is perfect for private gatherings and smaller celebrations.",
       image: getAssetPath('/Kezia - Studio La Tessa March 2026/Pioneers Room.jpg'),
     },
     {
       name: 'Vintage Room',
-      capacity: 'BOARDROOM STYLE 20',
-      description: 'Classic boardroom for meetings and private dining.',
+      capacity: 'Up to 30 guests',
+      description: 'The Vintage Room is ideal for private dining, intimate meetings, and refined lunches. Complete with its own reception area, this discreet space offers privacy, comfort, and understated elegance for more personal occasions.',
       image: getAssetPath('/Kezia - Studio La Tessa March 2026/Vintage Room.jpg'),
     },
     {
       name: 'Boardroom',
-      capacity: 'BOARDROOM STYLE 15',
-      description: 'Professional boardroom for executive meetings.',
+      capacity: 'Up to 16 guests',
+      description: 'The Boardroom is your ideal setting for hosting refined private events or high-level executive meetings. Designed with discretion and elegance in mind, it provides a sophisticated backdrop for both intimate gatherings and strategic discussions.',
       image: getAssetPath('/Kezia - Studio La Tessa March 2026/Boardroom.jpg'),
     },
     {
       name: 'Hordern',
-      capacity: 'BOARDROOM STYLE 10',
-      description: 'Classic boardroom for meetings and private dining.',
+      capacity: 'Up to 8 guests',
+      description: 'This room is perfectly suited to small board meetings. Seating up to eight guests, it offers a refined and private setting for focused discussions.',
       image: getAssetPath('/Kezia - Studio La Tessa March 2026/Hordern.jpg'),
-    }
+    },
   ];
 
   const eventCategories = [
@@ -220,13 +220,18 @@ function Events() {
                     <div className="text-base md:text-xl lg:text-2xl text-[var(--color-gold-accent)] font-subheading mb-4 tracking-[0.15em] uppercase opacity-90">
                       {space.capacity}
                     </div>
-                    <p className="text-base md:text-xl lg:text-2xl text-white font-light leading-relaxed max-w-xl">
-                      {space.description}
-                    </p>
+                    {space.description.split('\n\n').map((para, i) => (
+                      <p key={i} className="text-base md:text-xl lg:text-2xl text-white font-light leading-relaxed max-w-xl mb-3 last:mb-0">
+                        {para}
+                      </p>
+                    ))}
                   </div>
                 </div>
               ))}
             </div>
+            <p className="mt-12 md:mt-16 text-sm md:text-base text-[var(--color-cream)]/60 font-light italic text-center max-w-2xl mx-auto">
+              * All stated capacities may vary depending on the selected event configuration, including seated or cocktail-style arrangements.
+            </p>
           </section>
 
           <section className="mb-16 md:mb-20">

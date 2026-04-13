@@ -14,8 +14,13 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
   const panelRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const videoContainerRef = useRef<HTMLDivElement>(null);
+  const directVideoRef = useRef<HTMLVideoElement>(null);
   const rafRef = useRef(0);
   const panelSizeRef = useRef({ w: 0, h: 0 });
+
+  // Safari blocks muted autoplay; Chrome/Firefox allow it.
+  // Only use the canvas+hidden-video workaround for Safari.
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
   const normalizedMediaUrl = imageUrl.split(/[?#]/)[0].toLowerCase();
   const isVideo = /\.(mp4|webm|ogg)$/.test(normalizedMediaUrl);
@@ -43,8 +48,9 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
   // Safari blocks play() without a user gesture, but allows currentTime
   // seeking freely.  We manually advance currentTime each frame based on
   // the wall clock and paint the decoded frame to a <canvas>.
+  // For Firefox/Chrome we render <video> directly (see JSX below).
   useEffect(() => {
-    if (!isVideo || !videoContainerRef.current) return;
+    if (!isVideo || !isSafari || !videoContainerRef.current) return;
 
     const container = videoContainerRef.current;
     container.innerHTML = '';
@@ -66,6 +72,9 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
 
     let startWall = 0;
     let running = false;
+    // When native play() succeeds (Firefox/Chrome), skip manual currentTime
+    // seeks — they cause full decoder seeks every frame, which is very expensive.
+    let nativePlaying = false;
 
     const drawFrame = () => {
       const canvas = canvasRef.current;
@@ -104,16 +113,20 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
     };
 
     // Advance currentTime manually each animation frame.  No play() needed.
+    // When nativePlaying is true (Firefox/Chrome), skip seeking entirely and
+    // just paint the frame the browser has already decoded.
     const tick = (now: number) => {
       if (!running) return;
-      if (!startWall) startWall = now;
-      const elapsed = (now - startWall) / 1000;
-      const duration = video.duration;
-      if (duration && duration > 0) {
-        const target = elapsed % duration;
-        // Only seek if we've moved enough (avoids redundant seeks)
-        if (Math.abs(video.currentTime - target) > 0.02) {
-          video.currentTime = target;
+      if (!nativePlaying) {
+        if (!startWall) startWall = now;
+        const elapsed = (now - startWall) / 1000;
+        const duration = video.duration;
+        if (duration && duration > 0) {
+          const target = elapsed % duration;
+          // Only seek if we've moved enough (avoids redundant seeks)
+          if (Math.abs(video.currentTime - target) > 0.02) {
+            video.currentTime = target;
+          }
         }
       }
       drawFrame();
@@ -127,13 +140,15 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
       rafRef.current = requestAnimationFrame(tick);
     };
 
-    // Also try native play() — if the browser allows it, the hardware
-    // decoder will run and drawImage will grab perfectly smooth frames.
-    // The manual currentTime approach is the fallback.
+    // Try native play() first — Firefox/Chrome allow muted autoplay and
+    // decode much more efficiently via the hardware pipeline.
+    // If play() is blocked (Safari), fall back to manual currentTime stepping.
     const tryNativePlay = () => {
       video.muted = true;
       video.loop = true;
-      video.play().catch(() => {
+      video.play().then(() => {
+        nativePlaying = true;
+      }).catch(() => {
         // play() blocked — rely on manual currentTime stepping (already running)
       });
     };
@@ -235,19 +250,41 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
     >
       {/* Background media */}
       {isVideo ? (
-        <>
-          {/* Hidden container for the real <video> element (Safari needs it in DOM to decode) */}
-          <div ref={videoContainerRef} aria-hidden="true" style={{ position: 'absolute', overflow: 'hidden', width: 1, height: 1, opacity: 0.01 }} />
-          <canvas
-            ref={canvasRef}
+        isSafari ? (
+          <>
+            {/* Hidden container for the real <video> element (Safari needs it in DOM to decode) */}
+            <div ref={videoContainerRef} aria-hidden="true" style={{ position: 'absolute', overflow: 'hidden', width: 1, height: 1, opacity: 0.01 }} />
+            <canvas
+              ref={canvasRef}
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full transition-opacity duration-500 ease-out"
+              style={{
+                opacity: isMobile ? (isHovered ? 1 : 0) : (isHovered ? 0.75 : 0),
+                pointerEvents: 'none',
+              }}
+            />
+          </>
+        ) : (
+          // Firefox/Chrome: render <video> directly — muted autoplay is supported
+          // and is far smoother than the canvas+hidden-video workaround.
+          // Use 0.001 instead of 0 for the hidden state — Firefox suspends/throttles
+          // video decode when opacity is exactly 0, causing a stall on first hover.
+          <video
+            ref={directVideoRef}
+            src={imageUrl}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
             aria-hidden="true"
-            className="absolute inset-0 w-full h-full transition-opacity duration-500 ease-out"
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-out"
             style={{
-              opacity: isMobile ? (isHovered ? 1 : 0) : (isHovered ? 0.75 : 0),
+              opacity: isMobile ? (isHovered ? 1 : 0.001) : (isHovered ? 0.75 : 0.001),
               pointerEvents: 'none',
             }}
           />
-        </>
+        )
       ) : (
         <img
           src={imageUrl}
