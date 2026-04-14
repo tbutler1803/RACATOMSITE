@@ -360,7 +360,7 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
                 </button>
 
                 {submitStatus === 'success' && (
-                  <p className="text-green-400 text-sm text-center font-light">
+                  <p className="text-green-400 text-base md:text-sm font-semibold md:font-light text-center py-2 md:py-0 border md:border-0 border-green-400/40 rounded md:rounded-none bg-green-400/10 md:bg-transparent px-3 md:px-0">
                     Thank You - your response has been successfully submitted.
                   </p>
                 )}

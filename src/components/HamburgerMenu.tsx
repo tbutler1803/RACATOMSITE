@@ -174,7 +174,7 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
         </div>
 
         {/* Header with close button */}
-        <div className="relative z-10 px-6 py-3 sm:py-6 border-b border-[var(--color-gold-accent)]/20">
+        <div className="relative z-10 px-6 py-2 sm:py-6 [@media(max-height:640px)]:py-1 border-b border-[var(--color-gold-accent)]/20">
           <div className="flex items-center justify-end">
             <button
               type="button"
@@ -188,7 +188,7 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
         </div>
 
         {/* Menu items with stagger animation */}
-        <nav className="relative z-10 flex-1 flex flex-col justify-center py-2 sm:py-6 px-6 overflow-y-auto" aria-label="Main navigation">
+        <nav className="relative z-10 flex-1 min-h-0 flex flex-col justify-center [@media(max-height:640px)]:justify-start py-2 sm:py-6 [@media(max-height:640px)]:py-1 px-6 overflow-y-auto" aria-label="Main navigation">
           {menuItems.map((item, index) => (
             <div
               key={item.path}
@@ -199,7 +199,7 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
               <button
                 type="button"
                 onClick={() => handleNavigate(item.path)}
-                className="group w-full text-left px-6 py-1.5 sm:py-4 text-[var(--color-gold-accent)] font-heading text-[22px] min-[400px]:text-[24px] sm:text-[26px] md:text-[28px] tracking-[0.24em] transition-all duration-300 relative"
+                className="group w-full text-left px-2 sm:px-6 py-1 sm:py-4 [@media(max-height:640px)]:py-0.5 text-[var(--color-gold-accent)] font-heading text-[22px] min-[400px]:text-[24px] sm:text-[26px] md:text-[28px] [@media(max-height:640px)]:!text-[18px] tracking-[0.24em] transition-all duration-300 relative"
               >
                 <span className="relative z-10 group-hover:text-[var(--color-red-accent)] transition-all duration-300">
                   {item.label}
@@ -212,18 +212,18 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
 
         {/* Contact/footer block */}
         <div
-          className="relative z-10 px-6 pt-2 sm:pt-6 pb-6 border-t border-[var(--color-gold-accent)]/20 space-y-1.5 text-[var(--color-cream)]/85 text-sm tracking-[0.18em]"
+          className="relative z-10 px-6 pt-1 sm:pt-6 [@media(max-height:640px)]:pt-1 pb-3 sm:pb-6 border-t border-[var(--color-gold-accent)]/20 space-y-1 sm:space-y-1.5 text-[var(--color-cream)]/85 text-sm tracking-[0.18em]"
           style={{ paddingBottom: 'max(20px, env(safe-area-inset-bottom, 20px))' }}
         >
-          <p className="text-[var(--color-cream)]/75 font-light text-xs sm:text-sm tracking-[0.1em] whitespace-nowrap">+61 (02) 8273 2300</p>
-          <p className="text-[var(--color-cream)]/75 font-light text-xs sm:text-sm tracking-[0.1em] whitespace-nowrap">89 Macquarie St, Sydney NSW 2000</p>
+          <p className="text-[var(--color-cream)]/75 font-light text-xs sm:text-sm tracking-[0.1em]">+61 (02) 8273 2300</p>
+          <p className="text-[var(--color-cream)]/75 font-light text-xs sm:text-sm tracking-[0.1em]">89 Macquarie St,<br className="sm:hidden" /> Sydney NSW 2000</p>
           
           <div className="pt-1 flex items-center gap-4">
             <a 
               href={getAssetPath('/IMAGES/RACA Privacy 2026.pdf')} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-[var(--color-gold-accent)] hover:text-[var(--color-gold-light)] transition-all duration-300 tracking-[0.2em] text-base uppercase no-underline"
+              className="text-[var(--color-gold-accent)] hover:text-[var(--color-gold-light)] transition-all duration-300 tracking-[0.1em] sm:tracking-[0.2em] text-xs sm:text-base uppercase no-underline"
               style={{ fontFamily: 'var(--font-heading)', textDecoration: 'none' }}
             >
               Privacy Policy
@@ -233,14 +233,14 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
               href={getAssetPath('/IMAGES/RACA Club Rules 2026.pdf')} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-[var(--color-gold-accent)] hover:text-[var(--color-gold-light)] transition-all duration-300 tracking-[0.2em] text-base uppercase no-underline"
+              className="text-[var(--color-gold-accent)] hover:text-[var(--color-gold-light)] transition-all duration-300 tracking-[0.1em] sm:tracking-[0.2em] text-xs sm:text-base uppercase no-underline"
               style={{ fontFamily: 'var(--font-heading)', textDecoration: 'none' }}
             >
               Club Rules
             </a>
           </div>
 
-          <div className="flex items-center gap-4 pt-2 text-[var(--color-gold-accent)]">
+          <div className="flex items-center gap-4 pt-2 text-[var(--color-gold-accent)] [@media(max-height:640px)]:hidden">
             <a
               className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--color-gold-accent)]/35 hover:border-[var(--color-gold-accent)] hover:text-[var(--color-gold-light)] hover:bg-[var(--color-gold-accent)]/5 transition-all duration-300"
               href="https://www.google.com/maps/search/?api=1&query=Royal+Automobile+Club+of+Australia+89+Macquarie+St+Sydney"
