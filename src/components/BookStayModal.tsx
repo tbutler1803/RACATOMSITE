@@ -235,6 +235,8 @@ function BookStayModal({ isOpen, onClose }: BookStayModalProps) {
                         <div className="p-3 sm:p-5 md:p-8 relative bg-cover bg-center" style={{ backgroundImage: `url(${getAssetPath('/textures/kseniya-lapteva-A4rqd2g-eLo-unsplash.png')})` }}>
                             <div className="absolute inset-0 bg-[var(--color-dark-navy)]/95"></div>
                             <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 relative z-10">
+                                {/* Honeypot field — hidden from real users, bots fill it; Web3Forms rejects if checked */}
+                                <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} tabIndex={-1} aria-hidden="true" />
                                 <div className="grid grid-cols-2 gap-2 md:gap-4">
                                     <div>
                                         <label htmlFor="stay-first-name" className="text-[var(--color-gold-accent)] font-subheading text-sm font-semibold block mb-1.5 uppercase">
