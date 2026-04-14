@@ -259,7 +259,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
               aria-hidden="true"
               className="absolute inset-0 w-full h-full transition-opacity duration-500 ease-out"
               style={{
-                opacity: isMobile ? (isHovered ? 1 : 0) : (isHovered ? 0.75 : 0),
+                opacity: isMobile ? (isHovered ? 1 : 0) : (isHovered ? 1 : 0),
                 pointerEvents: 'none',
               }}
             />
@@ -280,7 +280,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
             aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-out"
             style={{
-              opacity: isMobile ? (isHovered ? 1 : 0.001) : (isHovered ? 0.75 : 0.001),
+              opacity: isMobile ? (isHovered ? 1 : 0.001) : (isHovered ? 1 : 0.001),
               pointerEvents: 'none',
             }}
           />
@@ -294,7 +294,7 @@ function Panel({ letter, label, imageUrl, onClick }: PanelProps) {
           decoding="async"
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-out"
           style={{
-            opacity: isMobile ? (isHovered ? 1 : 0) : (isHovered ? 0.75 : 0),
+            opacity: isMobile ? (isHovered ? 1 : 0) : (isHovered ? 1 : 0),
             objectPosition: (isMobile && letter === 'R') ? 'bottom' : 'center'
           }}
         />

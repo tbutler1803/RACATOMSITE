@@ -6,6 +6,7 @@ const Contact = lazy(() => import('./pages/Contact'));
 const Events = lazy(() => import('./pages/Events'));
 const Motoring = lazy(() => import('./pages/Motoring'));
 import PageLoader from './components/PageLoader';
+import Footer from './components/Footer';
 
 function AppContent() {
   const location = useLocation();
@@ -49,6 +50,7 @@ function AppContent() {
           </Routes>
         </Suspense>
       </main>
+      <Footer />
     </div>
   );
 }

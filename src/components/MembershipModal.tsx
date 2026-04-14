@@ -13,7 +13,7 @@ interface MembershipModalProps {
   monthlySubscription?: string;
 }
 
-function MembershipModal({ isOpen, onClose, title, description, price, membershipFee, preSpendCredit, monthlySubscription }: MembershipModalProps) {
+function MembershipModal({ isOpen, onClose, title, description, preSpendCredit, monthlySubscription }: MembershipModalProps) {
   const [isAnimating, setIsAnimating] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isIPad, setIsIPad] = useState(false);
@@ -146,35 +146,18 @@ function MembershipModal({ isOpen, onClose, title, description, price, membershi
             <ArtDecoDivider width="w-48 sm:w-56 md:w-72 lg:w-80" height="h-6 md:h-10" className="mb-4" />
 
             <div className="space-y-2 mt-2 sm:mt-6">
-              {membershipFee && (
+              {monthlySubscription && (
                 <div className="flex justify-between items-center text-sm md:text-base text-[var(--color-cream)]">
                   <span>Membership Fee:</span>
-                  <span className="font-medium md:font-bold">{membershipFee}</span>
+                  <span>{monthlySubscription}/mo</span>
                 </div>
               )}
               {preSpendCredit && (
                 <div className="flex justify-between items-center text-sm md:text-base text-[var(--color-cream)]">
-                  <span>Pre-Spend Credit:</span>
-                  <span className="font-medium md:font-bold">{preSpendCredit}</span>
+                  <span>Pre-Spend Charge:</span>
+                  <span>{preSpendCredit}</span>
                 </div>
               )}
-              {monthlySubscription && (
-                <div className="flex justify-between items-center text-sm md:text-base text-[var(--color-cream)]">
-                  <span>Monthly Subscription:</span>
-                  <span className="font-medium md:font-bold">{monthlySubscription}/mo</span>
-                </div>
-              )}
-
-              <div className="pt-2 border-t border-[var(--color-gold-accent)]/20 mt-2">
-                <div className="flex justify-between items-baseline">
-                  <div className="flex flex-col">
-                    <span className="text-base md:text-xl text-[var(--color-gold-accent)] font-medium md:font-bold">Yearly Subscription <span className="text-xs md:text-sm opacity-70">incl GST</span></span>
-                  </div>
-                  {price && (
-                    <div className="text-lg md:text-2xl text-[var(--color-gold-accent)] font-medium md:font-bold">{price}</div>
-                  )}
-                </div>
-              </div>
             </div>
 
             <a

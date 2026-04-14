@@ -111,9 +111,46 @@ function BookStayModal({ isOpen, onClose }: BookStayModalProps) {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // Form submission temporarily disabled
+
+        setSubmitStatus('loading');
+
+        const submission = new FormData(e.currentTarget);
+        submission.append('access_key', 'cf953fea-ea3c-47ff-a064-12acc2f1a2db');
+        submission.append('subject', 'Book Your Stay Enquiry');
+        submission.append('name', `${formData.firstName} ${formData.lastName}`.trim());
+        submission.append('recipient_email', 'reception@raca.com.au');
+
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: submission,
+            });
+
+            const data = await response.json();
+
+            if (!data.success) {
+                setSubmitStatus('error');
+                return;
+            }
+
+            setSubmitStatus('success');
+            setFormData({
+                firstName: '',
+                lastName: '',
+                email: '',
+                message: ''
+            });
+
+            setTimeout(() => {
+                setSubmitStatus('idle');
+                onClose();
+            }, 2000);
+        } catch {
+            setSubmitStatus('error');
+            return;
+        }
     };
 
     if (!isVisible) return null;
@@ -270,7 +307,7 @@ function BookStayModal({ isOpen, onClose }: BookStayModalProps) {
 
                                 {submitStatus === 'success' && (
                                     <p className="text-green-400 text-sm text-center font-light">
-                                        Thank you! Your request has been sent to our reception team.
+                                        Thank You - your response has been successfully submitted.
                                     </p>
                                 )}
                                 {submitStatus === 'error' && (

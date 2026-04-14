@@ -168,13 +168,14 @@ function Events() {
           </section>
           <div className="mt-6 flex justify-center">
             <div className="event-btn-group mt-0 mb-10 flex flex-col gap-4">
-              <button
+              <a
+                href="https://royalautomobileclubofaustralia.tripleseat.com/party_request/47431"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-outline-gold max-w-xs w-full mx-auto"
-                type="button"
-                onClick={() => setIsEnquiryModalOpen(true)}
               >
                 ENQUIRE HERE
-              </button>
+              </a>
               <a
                 href="https://membership.raca.com.au/events"
                 target="_blank"
@@ -247,15 +248,7 @@ function Events() {
                 Reserve your table or book an event space through our convenient online booking system.
               </p>
               <div className="flex justify-center max-w-4xl mx-auto px-4 md:px-0 mt-2 md:mt-8">
-                {/* Fallback direct booking link */}
                 <div className="event-btn-group flex flex-col md:flex-row gap-3 md:gap-8 w-full items-center">
-                  <button
-                    type="button"
-                    className="btn-outline-gold max-w-xs w-full mx-auto"
-                    onClick={() => setIsEnquiryModalOpen(true)}
-                  >
-                    Enquire Now
-                  </button>
                   <a
                     href="https://royalautomobileclubofaustralia.tripleseat.com/party_request/47431"
                     target="_blank"

@@ -115,42 +115,40 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Submit to PeopleVine Survey ID: 4161
-    const form = document.createElement('form');
-    form.method = 'POST';
-    form.action = 'https://royalautomobileclubofaustralia.peoplevine.co.uk/survey/4161';
-    form.target = '_blank';
+    setSubmitStatus('loading');
 
-    const fields: Record<string, string> = {
-      'field_39210_38584': formData.firstName,
-      'field_39211_38585': formData.lastName,
-      'field_39212_38586': formData.email,
-      'field_40641_40005': formData.tourDate,
-      'field_40039_39409': formData.tourTime,
-      'field_39213_38587': formData.message,
-    };
+    const submission = new FormData(e.currentTarget);
+    submission.append('access_key', '81e86e52-317b-4059-9a3c-41d3c1d477e9');
+    submission.append('subject', 'Book a Club Tour Enquiry');
+    submission.append('name', `${formData.firstName} ${formData.lastName}`.trim());
+    submission.append('recipient_email', 'ambassador@raca.com.au');
 
-    for (const [name, value] of Object.entries(fields)) {
-      const input = document.createElement('input');
-      input.type = 'hidden';
-      input.name = name;
-      input.value = value;
-      form.appendChild(input);
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: submission,
+      });
+
+      const data = await response.json();
+
+      if (!data.success) {
+        setSubmitStatus('error');
+        return;
+      }
+
+      setSubmitStatus('success');
+      setFormData({ firstName: '', lastName: '', email: '', tourDate: '', tourTime: '', message: '' });
+      setTimeout(() => {
+        setSubmitStatus('idle');
+        onClose();
+      }, 2000);
+    } catch {
+      setSubmitStatus('error');
+      return;
     }
-
-    document.body.appendChild(form);
-    form.submit();
-    document.body.removeChild(form);
-
-    setSubmitStatus('success');
-    setFormData({ firstName: '', lastName: '', email: '', tourDate: '', tourTime: '', message: '' });
-    setTimeout(() => {
-      setSubmitStatus('idle');
-      onClose();
-    }, 2000);
   };
 
   if (!isVisible) return null;
@@ -363,7 +361,7 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
 
                 {submitStatus === 'success' && (
                   <p className="text-green-400 text-sm text-center font-light">
-                    Thank you! We'll be in touch soon.
+                    Thank You - your response has been successfully submitted.
                   </p>
                 )}
                 {submitStatus === 'error' && (

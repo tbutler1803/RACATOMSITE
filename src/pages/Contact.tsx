@@ -353,63 +353,16 @@ function Contact() {
                 <h2>
                   Send us a Message
                 </h2>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <label htmlFor="contact-name" className="sr-only">Your Name</label>
-                  <input
-                    type="text"
-                    id="contact-name"
-                    name="name"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full bg-[var(--color-dark-navy)] bg-opacity-80 border border-[var(--color-gold-accent)]/20 px-4 py-3 text-[var(--color-cream)] placeholder-gray-500 font-light focus:border-[var(--color-gold-accent)] focus:outline-none transition-colors text-left"
-                  />
-                  <label htmlFor="contact-email" className="sr-only">Email Address</label>
-                  <input
-                    type="email"
-                    id="contact-email"
-                    name="email"
-                    placeholder="Email Address"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full bg-[var(--color-dark-navy)] bg-opacity-80 border border-[var(--color-gold-accent)]/20 px-4 py-3 text-[var(--color-cream)] placeholder-gray-500 font-light focus:border-[var(--color-gold-accent)] focus:outline-none transition-colors text-left"
-                  />
-                  <label htmlFor="contact-phone" className="sr-only">Phone (optional)</label>
-                  <input
-                    type="tel"
-                    id="contact-phone"
-                    name="phone"
-                    placeholder="Phone (optional)"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    className="w-full bg-[var(--color-dark-navy)] bg-opacity-80 border border-[var(--color-gold-accent)]/20 px-4 py-3 text-[var(--color-cream)] placeholder-gray-500 font-light focus:border-[var(--color-gold-accent)] focus:outline-none transition-colors text-left"
-                  />
-                  <label htmlFor="contact-message" className="sr-only">Your Message</label>
-                  <textarea
-                    name="message"
-                    id="contact-message"
-                    placeholder="Your Message (Please also let us know if you are a member, guest of a member, or from a reciprocal club)"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    rows={4}
-                    className="w-full bg-[var(--color-dark-navy)] bg-opacity-80 border border-[var(--color-gold-accent)]/20 px-4 py-3 text-[var(--color-cream)] placeholder-gray-500 font-light focus:border-[var(--color-gold-accent)] focus:outline-none transition-colors resize-none text-left"
-                  />
-                  <button
-                    type="submit"
-                    disabled={submitStatus === 'loading'}
-                    className="btn-outline-gold w-full disabled:opacity-50"
+                <div className="flex justify-center mt-8">
+                  <a
+                    href="https://royalautomobileclubofaustralia.peoplevine.co.uk/survey/4363"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-outline-gold max-w-xs w-full mx-auto"
                   >
-                    {submitStatus === 'loading' ? 'Sending...' : 'SEND MESSAGE'}
-                  </button>
-                  {submitStatus === 'success' && (
-                    <p className="text-green-400 text-sm text-center font-light">
-                      Message sent successfully!
-                    </p>
-                  )}
-                </form>
+                    SEND US A MESSAGE
+                  </a>
+                </div>
               </div>
             </div>
           </section>

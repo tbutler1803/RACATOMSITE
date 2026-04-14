@@ -218,14 +218,25 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
           <p className="text-[var(--color-cream)]/75 font-light text-xs sm:text-sm tracking-[0.1em] whitespace-nowrap">+61 (02) 8273 2300</p>
           <p className="text-[var(--color-cream)]/75 font-light text-xs sm:text-sm tracking-[0.1em] whitespace-nowrap">89 Macquarie St, Sydney NSW 2000</p>
           
-          <div className="pt-1">
+          <div className="pt-1 flex items-center gap-4">
             <a 
               href={getAssetPath('/IMAGES/RACA Privacy 2026.pdf')} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-[var(--color-gold-accent)] hover:text-[var(--color-gold-light)] transition-all duration-300 font-light tracking-[0.2em] text-xs uppercase underline decoration-[var(--color-gold-accent)]/30 underline-offset-4"
+              className="text-[var(--color-gold-accent)] hover:text-[var(--color-gold-light)] transition-all duration-300 tracking-[0.2em] text-base uppercase no-underline"
+              style={{ fontFamily: 'var(--font-heading)', textDecoration: 'none' }}
             >
               Privacy Policy
+            </a>
+            <span className="text-[var(--color-gold-accent)]/30">|</span>
+            <a 
+              href={getAssetPath('/IMAGES/RACA Club Rules 2026.pdf')} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-[var(--color-gold-accent)] hover:text-[var(--color-gold-light)] transition-all duration-300 tracking-[0.2em] text-base uppercase no-underline"
+              style={{ fontFamily: 'var(--font-heading)', textDecoration: 'none' }}
+            >
+              Club Rules
             </a>
           </div>
 
