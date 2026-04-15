@@ -50,7 +50,7 @@ function AppContent() {
           </Routes>
         </Suspense>
       </main>
-      <Footer />
+      {location.pathname !== '/' && <Footer />}
     </div>
   );
 }
