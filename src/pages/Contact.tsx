@@ -355,7 +355,7 @@ function Contact() {
                 </h2>
                 <div className="flex justify-center mt-8">
                   <a
-                    href="https://royalautomobileclubofaustralia.peoplevine.co.uk/survey/4363"
+                    href="https://membership.raca.com.au/form/4363"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-outline-gold max-w-xs w-full mx-auto"
