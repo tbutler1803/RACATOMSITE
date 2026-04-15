@@ -60,7 +60,7 @@ function Motoring() {
               <div className="art-deco-card flex flex-col h-full group">
                 <div className="relative h-56 overflow-hidden">
                   <img 
-                    src="https://www.raca.com.au/documents/46980/0/Kia+EV5+v1.jpg/8ddc00c5-e0ae-beae-c15e-84df2929907e?t=1770173933623" 
+                    src={getAssetPath('/IMAGES/Kia-EV5.jpg')}
                     alt="Kia EV5 Earth electric SUV"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -79,7 +79,7 @@ function Motoring() {
               <div className="art-deco-card flex flex-col h-full group">
                 <div className="relative h-56 overflow-hidden">
                   <img 
-                    src="https://www.raca.com.au/documents/46980/0/BMW+iX3.jpg/7d4bfb8f-dc39-ff96-3214-10ad6975283c?t=1770173338107" 
+                    src={getAssetPath('/IMAGES/BMW-iX3-outdoor.jpg')}
                     alt="BMW iX3 M-Sport SUV"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -98,7 +98,7 @@ function Motoring() {
               <div className="art-deco-card flex flex-col h-full group">
                 <div className="relative h-56 overflow-hidden">
                   <img 
-                    src="https://www.raca.com.au/documents/46980/0/Kia%27s+EV6.jpg/aef1125c-9ba6-3c2d-bf31-2b7e8607979b?t=1770172853925" 
+                    src={getAssetPath('/IMAGES/Kia-EV6-Denver-2023.jpg')}
                     alt="Kia EV6 GT-line"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -117,8 +117,8 @@ function Motoring() {
               <div className="art-deco-card flex flex-col h-full group">
                 <div className="relative h-56 overflow-hidden">
                   <img 
-                    src="https://www.raca.com.au/documents/46980/0/image001+%281%29.jpg/10fed529-83ba-8ad5-b4fe-c0f7d45e0750?t=1770163712651" 
-                    alt="Porsche’s turbo Cayenne E-Hybrid Coupe SUV"
+                    src={getAssetPath('/IMAGES/Porsche-Cayenne-2024.jpg')}
+                    alt="Porsche's turbo Cayenne E-Hybrid Coupe SUV"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -136,10 +136,11 @@ function Motoring() {
               <div className="art-deco-card flex flex-col h-full group">
                 <div className="relative h-56 overflow-hidden">
                   <img 
-                    src="https://www.raca.com.au/documents/46980/0/image001.jpg/2686f65d-8fbc-074c-2606-e1adabb02a5f?t=1770163351846" 
+                    src={getAssetPath('/IMAGES/Peugeot-5008-C-2024.jpg')}
                     alt="Peugeot 5008 GT Premium Hybrid SUV"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
+                  <p className="absolute bottom-0 right-0 text-[10px] text-white/60 bg-black/40 px-1">Alexander Migl, CC BY-SA 4.0</p>
                 </div>
                 <div className="p-6 flex flex-col flex-1 text-left">
                   <h3 className="text-2xl font-heading text-[var(--color-gold-accent)] mb-4 min-h-[5rem] flex items-start uppercase">
