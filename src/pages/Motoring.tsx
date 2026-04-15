@@ -60,7 +60,7 @@ function Motoring() {
               <div className="art-deco-card flex flex-col h-full group">
                 <div className="relative h-56 overflow-hidden">
                   <img 
-                    src={getAssetPath('/IMAGES/Kia-EV5.jpg')}
+                    src={getAssetPath('/IMAGES/EV5.jpg')}
                     alt="Kia EV5 Earth electric SUV"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -79,7 +79,7 @@ function Motoring() {
               <div className="art-deco-card flex flex-col h-full group">
                 <div className="relative h-56 overflow-hidden">
                   <img 
-                    src={getAssetPath('/IMAGES/BMW-iX3-outdoor.jpg')}
+                    src={getAssetPath('/IMAGES/IX3.jpeg')}
                     alt="BMW iX3 M-Sport SUV"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -98,7 +98,7 @@ function Motoring() {
               <div className="art-deco-card flex flex-col h-full group">
                 <div className="relative h-56 overflow-hidden">
                   <img 
-                    src={getAssetPath('/IMAGES/Kia-EV6-Denver-2023.jpg')}
+                    src={getAssetPath('/IMAGES/EV6.jpg')}
                     alt="Kia EV6 GT-line"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
