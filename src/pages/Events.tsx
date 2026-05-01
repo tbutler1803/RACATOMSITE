@@ -92,12 +92,11 @@ function Events() {
   ];
 
   const eventCategories = [
-    { icon: Wine, title: 'Social Events', description: 'Galas, dinners, and member gatherings' },
-    { icon: Users, title: 'Networking', description: 'Business lunches and professional connections' },
-    { icon: Music, title: 'Entertainment', description: 'Live performances and cultural experiences' },
-    { icon: Award, title: 'Private Functions', description: 'Bespoke events for members and guests' }
+    { icon: Wine, title: 'Social Events' },
+    { icon: Users, title: 'Networking' },
+    { icon: Music, title: 'Entertainment' },
+    { icon: Award, title: 'Private Functions' }
   ];
-
 
   return (
     <div className="min-h-screen text-[var(--color-cream)] overflow-x-hidden">
@@ -144,9 +143,12 @@ function Events() {
         <div className="max-w-6xl mx-auto px-6 py-14 md:py-18 text-center">
           <section className="mb-16 md:mb-20">
             <ArtDecoDivider width="w-56 md:w-72 lg:w-80" height="h-6 md:h-16" className="mb-8" />
-            <h2>
-              Event Categories
+            <h2 className="text-[clamp(2.25rem,4.6vw,2.9rem)]">
+              Host your Event at RACA
             </h2>
+            <p className="mt-6 text-lg sm:text-lg md:text-xl lg:text-2xl text-[var(--color-cream)] max-w-5xl mx-auto font-light px-2 md:px-4 leading-relaxed">
+              Whether corporate or personal, our versatile spaces provide the flexibility to bring any event to life. With curated menus, Audio Visual facilities, and tailored event support, we make every event seamless and effortless.
+            </p>
             <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
               {eventCategories.map((category, idx) => {
                 const Icon = category.icon;
@@ -158,31 +160,28 @@ function Events() {
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">
                       {category.title}
                     </h3>
-                    <p className="text-base sm:text-base md:text-lg lg:text-xl text-[var(--color-cream)] max-w-2xl mx-auto font-light px-2 mb-3 md:mb-6">
-                      {category.description}
-                    </p>
                   </div>
                 );
               })}
             </div>
           </section>
           <div className="mt-6 flex justify-center">
-            <div className="event-btn-group mt-0 mb-10 flex flex-col gap-4">
+            <div className="event-btn-group mt-0 mb-10 flex flex-row gap-4">
               <a
                 href="https://royalautomobileclubofaustralia.tripleseat.com/party_request/47431"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-outline-gold max-w-xs w-full mx-auto"
+                className="btn-outline-gold max-w-none w-auto min-w-[340px] whitespace-nowrap"
               >
-                ENQUIRE HERE
+                ENQUIRE FOR YOUR PRIVATE EVENT
               </a>
               <a
                 href="https://membership.raca.com.au/events"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-outline-gold max-w-xs w-full mx-auto"
+                className="btn-outline-gold max-w-none w-auto min-w-[340px] whitespace-nowrap"
               >
-                UPCOMING EVENTS
+                UPCOMING MEMBER EVENTS
               </a>
             </div>
           </div>
@@ -219,7 +218,7 @@ function Events() {
                       {space.name}
                     </h2>
                     <div className="text-base md:text-xl lg:text-2xl text-[var(--color-gold-accent)] font-subheading mb-4 tracking-[0.15em] uppercase opacity-90">
-                      {space.capacity}
+                      {`${space.capacity}*`}
                     </div>
                     {space.description.split('\n\n').map((para, i) => (
                       <p key={i} className="text-base md:text-xl lg:text-2xl text-white font-light leading-relaxed max-w-xl mb-3 last:mb-0">
@@ -230,7 +229,7 @@ function Events() {
                 </div>
               ))}
             </div>
-            <p className="mt-12 md:mt-16 text-sm md:text-base text-[var(--color-cream)]/60 font-light italic text-center max-w-2xl mx-auto">
+            <p className="mt-12 md:mt-16 text-base md:text-lg text-[var(--color-cream)]/60 font-light italic text-center max-w-2xl mx-auto">
               * All stated capacities may vary depending on the selected event configuration, including seated or cocktail-style arrangements.
             </p>
           </section>
@@ -242,11 +241,8 @@ function Events() {
                 <Calendar size={40} className="text-[var(--color-gold-accent)]" />
               </div>
               <h2>
-                Book Your Event
+                TO BOOK YOUR EVENt
               </h2>
-              <p className="text-[var(--color-cream)]/80 font-light mb-6 md:mb-8 max-w-2xl mx-auto text-sm md:text-base">
-                Reserve your table or book an event space through our convenient online booking system.
-              </p>
               <div className="flex justify-center max-w-4xl mx-auto px-4 md:px-0 mt-2 md:mt-8">
                 <div className="event-btn-group flex flex-col md:flex-row gap-3 md:gap-8 w-full items-center">
                   <a
@@ -255,11 +251,14 @@ function Events() {
                     rel="noopener noreferrer"
                     className="btn-outline-gold max-w-xs w-full mx-auto"
                   >
-                    Book Your Event
+                    Enquire here
                   </a>
                 </div>
               </div>
             </div>
+            <p className="mt-8 text-base md:text-lg text-[var(--color-cream)]/70 font-light italic text-center max-w-2xl mx-auto">
+              * To contact our events team, email Eventsadmin@raca.com.au or call (02) 8273 2300.
+            </p>
           </section>
 
           <section />
