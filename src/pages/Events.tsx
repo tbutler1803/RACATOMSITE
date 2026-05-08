@@ -181,7 +181,7 @@ function Events() {
                 rel="noopener noreferrer"
                 className="btn-outline-gold max-w-none w-auto min-w-[340px] whitespace-nowrap"
               >
-                UPCOMING MEMBER EVENTS
+                CLUB EVENT CALENDAR
               </a>
             </div>
           </div>
