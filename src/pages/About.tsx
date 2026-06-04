@@ -40,14 +40,14 @@ function About() {
       description: 'Need help with your Historic Vehicle Registration (HVS)? The Club offers a complimentary service to guide current members through the process. This service is exclusive to members, and is provided at no additional cost.'
     },
     {
-      title: 'Onsite Car Wash',
-      image: getAssetPath('/IMAGES/Images for Members Perks/Image5.jpg'),
-      description: 'Your vehicle deserves the VIP treatment. You can now enjoy our premium car wash service! Rinseless, convenient, and available for booking every Monday and Friday. Using only top-tier products and techniques found in luxury showrooms, we ensure your car gleams inside and out, all while you relax at your Club'
+      title: 'Valet Parking',
+      image: getAssetPath('/IMAGES/253A7396.JPG'),
+      description: 'Enjoy premium valet parking services for members, delivering convenience and care for your vehicle while you relax at the Club.'
     },
     {
-      title: 'Best Possible Car Insurance',
-      image: getAssetPath('/IMAGES/Images for Members Perks/Image6.jpg'),
-      description: 'RACA has formed an association with Compare the Market to obtain the best possible car insurance premium for our members'
+      title: 'Premium Club Gym and Sauna',
+      image: getAssetPath('/IMAGES/Gymandroofshots/253A5251.JPG'),
+      description: 'Access our premium club gym and sauna, designed to support wellness, strength and restorative routines for members.'
     }
 
   ];

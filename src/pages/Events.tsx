@@ -89,6 +89,18 @@ function Events() {
       description: 'This room is perfectly suited to small board meetings. Seating up to eight guests, it offers a refined and private setting for focused discussions.',
       image: getAssetPath('/Kezia - Studio La Tessa March 2026/Hordern.jpg'),
     },
+    {
+      name: 'Reading Room',
+      capacity: 'Up to 15 guests',
+      description: 'The Reading Room is a light-filled sanctuary designed for private dining, intimate meetings, and refined gatherings. The space is bathed in natural light and offers a calm, elegant atmosphere. Perfect for more personal occasions.',
+      image: getAssetPath('/IMAGES/EVENT SPACES/Reading ROOM.jpg'),
+    },
+    {
+      name: 'Sherwood Room',
+      capacity: 'Up to 26 guests',
+      description: 'The Sherwood Room is a practical and versatile space suited to board meetings, presentations, and small private gatherings. With a simple, functional layout, it provides an ideal setting for productive discussions and day-to-day corporate events.',
+      image: getAssetPath('/IMAGES/EVENT SPACES/Sherwood.jpg'),
+    },
   ];
 
   const eventCategories = [
@@ -205,7 +217,7 @@ function Events() {
                       <LazyImage
                         src={space.image}
                         alt={space.name}
-                        priority={idx === 0}
+                        priority={idx < 3}
                         className={`w-full aspect-[4/3] md:aspect-[3/2] object-cover ${(space as any).position || 'object-center'}`}
                         containerClassName="overflow-hidden"
                       />

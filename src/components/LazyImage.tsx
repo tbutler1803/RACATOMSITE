@@ -34,7 +34,7 @@ export default function LazyImage({
           }
         });
       },
-      { rootMargin: '400px' } // Start loading 400px before image enters viewport
+      { rootMargin: '1000px' } // Start loading well before image enters viewport
     );
 
     if (imgRef.current) {
@@ -59,7 +59,8 @@ export default function LazyImage({
         src={imageSrc || 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"%3E%3C/svg%3E'}
         alt={alt}
         className={`${className} ${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-700`}
-        loading={priority ? "eager" : "lazy"}
+        loading={priority ? 'eager' : 'lazy'}
+        fetchPriority={priority ? 'high' : 'auto'}
         onLoad={handleLoad}
       />
     </div>
