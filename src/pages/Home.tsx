@@ -17,19 +17,19 @@ function Home() {
     {
       letter: 'R',
       label: 'ABOUT US',
-      imageUrl: getAssetPath('/IMAGES/About-Us-Background.jpg'),
+      imageUrl: getAssetPath('/IMAGES/About-Us-Background.webp'),
       path: '/about'
     },
     {
       letter: 'A',
       label: 'EVENTS',
-      imageUrl: getAssetPath('/IMAGES/images/DSC_1304.jpg'),
+      imageUrl: getAssetPath('/IMAGES/images/DSC_1304.webp'),
       path: '/events'
     },
     {
       letter: 'C',
       label: 'APPLICATION & CONTACT',
-      imageUrl: getAssetPath('/IMAGES/images/DSC_1653-Enhanced-NR.jpg'),
+      imageUrl: getAssetPath('/IMAGES/images/DSC_1653-Enhanced-NR.webp'),
       path: '/contact'
     },
     {

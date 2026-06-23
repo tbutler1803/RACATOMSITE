@@ -45,61 +45,61 @@ function Events() {
       name: 'Rooftop',
       capacity: 'Up to 80 guests',
       description: 'Perched atop our heritage building, the RACA Rooftop boasts breathtaking views of the Sydney Harbour and Botanic Gardens, an unforgettable backdrop for exceptional events.',
-      image: getAssetPath('/IMAGES/Rooftop 4.jpg'),
+      image: getAssetPath('/IMAGES/Rooftop 4.webp'),
     },
     {
       name: 'Macquarie Room',
       capacity: 'Up to 120 guests',
       description: 'Bright, open and beautifully lit, this space features floor-to-ceiling windows that create a welcoming atmosphere.\n\nAvailable individually or combined with the I.S.C and Reading Room for an exclusive floor hire.',
-      image: getAssetPath('/IMAGES/Macquarie Room 2.jpg'),
+      image: getAssetPath('/IMAGES/Macquarie Room 2.webp'),
     },
     {
       name: 'ISC Room',
       capacity: 'Up to 80 guests',
       description: 'The newly refreshed Imperial Service Club (I.S.C.) is an intimate, mood-lit space. With its own private bar and rich, atmospheric styling, it provides the perfect setting for exclusive events and elevated celebrations.',
-      image: getAssetPath('/Kezia - Studio La Tessa March 2026/ISC Bar.jpg'),
+      image: getAssetPath('/Kezia - Studio La Tessa March 2026/ISC Bar.webp'),
     },
     {
       name: 'Victoria Room',
       capacity: 'Up to 200 guests',
       description: 'An impressive, character-filled space, featuring a stunning stained-glass ceiling and statement chandelier. A favourite for galas, wedding receptions and conferences, it offers an elegant setting designed to leave a lasting impression.',
-      image: getAssetPath('/Kezia - Studio La Tessa March 2026/Victoria Room.jpg'),
+      image: getAssetPath('/Kezia - Studio La Tessa March 2026/Victoria Room.webp'),
     },
     {
       name: 'Pioneer Room',
       capacity: 'Up to 60 guests',
       description: "This intimate space by design, showcases curated memorabilia that offers a charming glimpse into Australia's storied past. A refined setting where heritage and sophistication meet, it is perfect for private gatherings and smaller celebrations.",
-      image: getAssetPath('/Kezia - Studio La Tessa March 2026/Pioneers Room.jpg'),
+      image: getAssetPath('/Kezia - Studio La Tessa March 2026/Pioneers Room.webp'),
     },
     {
       name: 'Vintage Room',
       capacity: 'Up to 30 guests',
       description: 'The Vintage Room is ideal for private dining, intimate meetings, and refined lunches. Complete with its own reception area, this discreet space offers privacy, comfort, and understated elegance for more personal occasions.',
-      image: getAssetPath('/Kezia - Studio La Tessa March 2026/Vintage Room.jpg'),
+      image: getAssetPath('/Kezia - Studio La Tessa March 2026/Vintage Room.webp'),
     },
     {
       name: 'Boardroom',
       capacity: 'Up to 16 guests',
       description: 'The Boardroom is your ideal setting for hosting refined private events or high-level executive meetings. Designed with discretion and elegance in mind, it provides a sophisticated backdrop for both intimate gatherings and strategic discussions.',
-      image: getAssetPath('/Kezia - Studio La Tessa March 2026/Boardroom.jpg'),
+      image: getAssetPath('/Kezia - Studio La Tessa March 2026/Boardroom.webp'),
     },
     {
       name: 'Hordern',
       capacity: 'Up to 8 guests',
       description: 'This room is perfectly suited to small board meetings. Seating up to eight guests, it offers a refined and private setting for focused discussions.',
-      image: getAssetPath('/Kezia - Studio La Tessa March 2026/Hordern.jpg'),
+      image: getAssetPath('/Kezia - Studio La Tessa March 2026/Hordern.webp'),
     },
     {
       name: 'Reading Room',
       capacity: 'Up to 15 guests',
       description: 'The Reading Room is a light-filled sanctuary designed for private dining, intimate meetings, and refined gatherings. The space is bathed in natural light and offers a calm, elegant atmosphere. Perfect for more personal occasions.',
-      image: getAssetPath('/IMAGES/EVENT SPACES/Reading ROOM.jpg'),
+      image: getAssetPath('/IMAGES/EVENT SPACES/Reading ROOM.webp'),
     },
     {
       name: 'Sherwood Room',
       capacity: 'Up to 26 guests',
       description: 'The Sherwood Room is a practical and versatile space suited to board meetings, presentations, and small private gatherings. With a simple, functional layout, it provides an ideal setting for productive discussions and day-to-day corporate events.',
-      image: getAssetPath('/IMAGES/EVENT SPACES/Sherwood.jpg'),
+      image: getAssetPath('/IMAGES/EVENT SPACES/Sherwood.webp'),
     },
   ];
 
@@ -135,7 +135,7 @@ function Events() {
         <div
           className="relative h-[70vh] md:h-screen w-full bg-cover bg-center flex items-center justify-center overflow-hidden pt-16 md:pt-20"
           style={{
-            backgroundImage: `url(${getAssetPath('/IMAGES/DSC_1595.jpg')})`,
+            backgroundImage: `url(${getAssetPath('/IMAGES/DSC_1595.webp')})`,
           }}
         >
           <div

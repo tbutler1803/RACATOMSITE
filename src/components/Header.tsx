@@ -26,7 +26,7 @@ function Header() {
     <div
       className={`fixed top-0 left-0 right-0 z-[80] flex items-center justify-between px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 ${isHome ? 'pointer-events-none' : 'border-b border-[var(--color-gold-accent)]/40'}`}
       style={!isHome ? {
-        backgroundImage: `url(${getAssetPath('/textures/kseniya-lapteva-A4rqd2g-eLo-unsplash.png')})`,
+        backgroundImage: `url(${getAssetPath('/textures/kseniya-lapteva-A4rqd2g-eLo-unsplash.webp')})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       } : undefined}

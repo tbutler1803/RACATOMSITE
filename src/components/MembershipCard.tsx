@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Wine, Globe } from 'lucide-react';
 import MembershipModal from './MembershipModal';
 import { getAssetPath } from '../utils/paths';
+import OptimizedImage from './OptimizedImage';
 
 
 interface MembershipCardProps {

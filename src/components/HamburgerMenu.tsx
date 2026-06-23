@@ -153,7 +153,7 @@ function HamburgerMenu({ onOpen }: HamburgerMenuProps) {
         aria-label="Site menu"
         ref={menuRef}
         style={{
-          backgroundImage: `url(${getAssetPath('/textures/kseniya-lapteva-A4rqd2g-eLo-unsplash.png')})`,
+          backgroundImage: `url(${getAssetPath('/textures/kseniya-lapteva-A4rqd2g-eLo-unsplash.webp')})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',

@@ -5,6 +5,7 @@ import { getAssetPath } from '../utils/paths';
 import { useState } from 'react';
 import BookTourModal from '../components/BookTourModal';
 import BookStayModal from '../components/BookStayModal';
+import OptimizedImage from '../components/OptimizedImage';
 import { Wine, Globe, BedDouble, Utensils } from 'lucide-react';
 
 function About() {
@@ -21,32 +22,32 @@ function About() {
   const perkCards = [
     {
       title: 'Accessing Club Facilities',
-      image: getAssetPath('/IMAGES/Images for Members Perks/Image1.jpg'),
+      image: getAssetPath('/IMAGES/Images for Members Perks/Image1.webp'),
       description: 'Including: Harbour Dining Room, Sydney CBD accommodation & parking, Member’s Bar, Gymnasium, Business Centre and function rooms for hire.'
     },
     {
       title: 'Getting Social with Club Communities',
-      image: getAssetPath('/IMAGES/Images for Members Perks/Image2.jpg'),
+      image: getAssetPath('/IMAGES/Images for Members Perks/Image2.webp'),
       description: 'Explore arts and culture, savour fine wines and dining, perfect your snooker skills, or simply connect with fellow members. These groups aren’t just about hobbies, they are engines of discovery.'
     },
     {
       title: 'Global Reciprocal Club Access',
-      image: getAssetPath('/IMAGES/Images for Members Perks/Image3.jpg'),
+      image: getAssetPath('/IMAGES/Images for Members Perks/Image3.webp'),
       description: 'A RACA membership opens the doors to an exclusive network spanning over 200 reciprocal clubs. From Sydney to Singapore, our members enjoy privileged access to a diverse range of services.'
     },
     {
       title: 'Historic Vehicle Rego Covered',
-      image: getAssetPath('/IMAGES/Images for Members Perks/Image4.jpg'),
+      image: getAssetPath('/IMAGES/Images for Members Perks/Image4.webp'),
       description: 'Need help with your Historic Vehicle Registration (HVS)? The Club offers a complimentary service to guide current members through the process. This service is exclusive to members, and is provided at no additional cost.'
     },
     {
       title: 'Valet Parking',
-      image: getAssetPath('/IMAGES/253A7396.JPG'),
+      image: getAssetPath('/IMAGES/253A7396.webp'),
       description: 'Enjoy premium valet parking services for members, delivering convenience and care for your vehicle while you relax at the Club.'
     },
     {
       title: 'Premium Club Gym and Sauna',
-      image: getAssetPath('/IMAGES/Gymandroofshots/253A5251.JPG'),
+      image: getAssetPath('/IMAGES/Gymandroofshots/253A5251.webp'),
       description: 'Access our premium club gym and sauna, designed to support wellness, strength and restorative routines for members.'
     }
 
@@ -60,7 +61,7 @@ function About() {
         <div
           className="relative h-[70vh] md:h-screen w-full bg-cover bg-center flex items-center justify-center overflow-hidden pt-16 md:pt-20"
           style={{
-            backgroundImage: `url(${getAssetPath('/IMAGES/DSC_1641.jpg')})`,
+            backgroundImage: `url(${getAssetPath('/IMAGES/DSC_1641.webp')})`,
           }}
         >
           <div
@@ -155,7 +156,7 @@ function About() {
                 className="block art-deco-card overflow-hidden group relative h-48 md:h-64"
               >
                 <img
-                  src={getAssetPath('/IMAGES/pexels-antoine-bovy-2027803158-29105285.jpg')}
+                  src={getAssetPath('/IMAGES/pexels-antoine-bovy-2027803158-29105285.webp')}
                   alt="Motoring"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
@@ -246,19 +247,19 @@ function About() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-8">
               {/* 1. Deluxe Harbour Suite image */}
               <div className="art-deco-card overflow-hidden flex flex-col items-center">
-                <img src={getAssetPath('/Kezia - Studio La Tessa March 2026/Deluxe Harbour Suite.jpg')} alt="Deluxe Harbour Suite" className="w-full h-48 object-cover mb-3" />
+                <img src={getAssetPath('/Kezia - Studio La Tessa March 2026/Deluxe Harbour Suite.webp')} alt="Deluxe Harbour Suite" className="w-full h-48 object-cover mb-3" />
                 <h3 className="text-2xl sm:text-2xl md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">Deluxe Harbour Suite</h3>
                 {/* Removed: Breathtaking Sydney Harbour Views */}
               </div>
               {/* 2. Breakfast Image */}
               <div className="art-deco-card overflow-hidden flex flex-col items-center">
-                <img src={getAssetPath('/IMAGES/Breakfast.jpg')} alt="Complimentary Breakfast - Bacon and Eggs" className="w-full h-48 object-cover mb-3" />
+                <img src={getAssetPath('/IMAGES/Breakfast.webp')} alt="Complimentary Breakfast - Bacon and Eggs" className="w-full h-48 object-cover mb-3" />
                 <h3 className="text-2xl sm:text-2xl md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">Complimentary Breakfast</h3>
                 {/* Removed: Start your day with a delicious breakfast included in your stay */}
               </div>
               {/* 3. Room Image - Quiet sophistication */}
               <div className="art-deco-card overflow-hidden flex flex-col items-center">
-                <img src={getAssetPath('/Kezia - Studio La Tessa March 2026/Quiet Sophistication.jpg')} alt="Room - Quiet Sophistication" className="w-full h-48 object-cover mb-3" />
+                <img src={getAssetPath('/Kezia - Studio La Tessa March 2026/Quiet Sophistication.webp')} alt="Room - Quiet Sophistication" className="w-full h-48 object-cover mb-3" />
                 <h3 className="text-2xl sm:text-2xl md:text-2xl font-heading text-[var(--color-gold-accent)] mb-2 tracking-wide">Quiet Sophistication</h3>
                 {/* Removed: Enjoy peaceful comfort and elegant design */}
               </div>

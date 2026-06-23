@@ -189,7 +189,7 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-2">
             {/* Left Side - Information */}
-            <div className="p-6 sm:p-8 md:p-8 flex flex-col justify-between relative bg-cover bg-bottom pt-14 md:pt-8" style={{ backgroundImage: `url(${getAssetPath('/IMAGES/About-Us-Background.jpg')})` }}>
+            <div className="p-6 sm:p-8 md:p-8 flex flex-col justify-between relative bg-cover bg-bottom pt-14 md:pt-8" style={{ backgroundImage: `url(${getAssetPath('/IMAGES/About-Us-Background.webp')})` }}>
               <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 to-gray-900/70"></div>
               <div className="relative z-10">
                 <h2 id="book-tour-title" className="pr-10 md:pr-0">
@@ -232,7 +232,7 @@ function BookTourModal({ isOpen, onClose }: BookTourModalProps) {
             </div>
 
             {/* Right Side - Form */}
-            <div className="p-3 sm:p-5 md:p-8 relative bg-cover bg-center" style={{ backgroundImage: `url(${getAssetPath('/textures/kseniya-lapteva-A4rqd2g-eLo-unsplash.png')})` }}>
+            <div className="p-3 sm:p-5 md:p-8 relative bg-cover bg-center" style={{ backgroundImage: `url(${getAssetPath('/textures/kseniya-lapteva-A4rqd2g-eLo-unsplash.webp')})` }}>
               <div className="absolute inset-0 bg-[var(--color-dark-navy)]/95"></div>
               <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 relative z-10">
                 {/* Honeypot field — hidden from real users, bots fill it; Web3Forms rejects if checked */}

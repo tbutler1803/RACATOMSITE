@@ -3,6 +3,7 @@ import ArtDecoDivider from '../components/ArtDecoDivider';
 import { getAssetPath } from '../utils/paths';
 import { useState } from 'react';
 import BookTourModal from '../components/BookTourModal';
+import OptimizedImage from '../components/OptimizedImage';
 
 function Motoring() {
   const [isBookTourOpen, setIsBookTourOpen] = useState(false);
@@ -16,7 +17,7 @@ function Motoring() {
         <div
           className="relative h-[70vh] md:h-[80vh] w-full bg-cover bg-center flex items-center justify-center overflow-hidden pt-16 md:pt-20"
           style={{
-            backgroundImage: `url(${getAssetPath('/IMAGES/pexels-antoine-bovy-2027803158-29105285.jpg')})`,
+            backgroundImage: `url(${getAssetPath('/IMAGES/pexels-antoine-bovy-2027803158-29105285.webp')})`,
           }}
         >
           <div
@@ -60,7 +61,7 @@ function Motoring() {
               <div className="art-deco-card flex flex-col h-full group">
                 <div className="relative h-56 overflow-hidden">
                   <img 
-                    src={getAssetPath('/IMAGES/EV5.jpg')}
+                    src={getAssetPath('/IMAGES/EV5.webp')}
                     alt="Kia EV5 Earth electric SUV"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -79,7 +80,7 @@ function Motoring() {
               <div className="art-deco-card flex flex-col h-full group">
                 <div className="relative h-56 overflow-hidden">
                   <img 
-                    src={getAssetPath('/IMAGES/IX3.jpeg')}
+                    src={getAssetPath('/IMAGES/IX3.webp')}
                     alt="BMW iX3 M-Sport SUV"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -98,7 +99,7 @@ function Motoring() {
               <div className="art-deco-card flex flex-col h-full group">
                 <div className="relative h-56 overflow-hidden">
                   <img 
-                    src={getAssetPath('/IMAGES/EV6.jpg')}
+                    src={getAssetPath('/IMAGES/EV6.webp')}
                     alt="Kia EV6 GT-line"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -117,7 +118,7 @@ function Motoring() {
               <div className="art-deco-card flex flex-col h-full group">
                 <div className="relative h-56 overflow-hidden">
                   <img 
-                    src={getAssetPath('/IMAGES/Porsche-Cayenne-2024.jpg')}
+                    src={getAssetPath('/IMAGES/Porsche-Cayenne-2024.webp')}
                     alt="Porsche's turbo Cayenne E-Hybrid Coupe SUV"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -136,7 +137,7 @@ function Motoring() {
               <div className="art-deco-card flex flex-col h-full group">
                 <div className="relative h-56 overflow-hidden">
                   <img 
-                    src={getAssetPath('/IMAGES/Peugeot-5008-C-2024.jpg')}
+                    src={getAssetPath('/IMAGES/Peugeot-5008-C-2024.webp')}
                     alt="Peugeot 5008 GT Premium Hybrid SUV"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -156,7 +157,7 @@ function Motoring() {
               <div className="art-deco-card flex flex-col h-full group">
                 <div className="relative h-56 overflow-hidden">
                   <img 
-                    src={getAssetPath('/IMAGES/Audi-S5-Avant.jpg')}
+                    src={getAssetPath('/IMAGES/Audi-S5-Avant.webp')}
                     alt="Audi S5 Avant TFSI quattro"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
