@@ -178,12 +178,12 @@ function Events() {
             </div>
           </section>
           <div className="mt-6 flex justify-center">
-            <div className="event-btn-group mt-0 mb-10 flex flex-row gap-4">
+            <div className="event-btn-group mt-0 mb-10 flex flex-col md:flex-row gap-4 items-center w-full">
               <a
                 href="https://royalautomobileclubofaustralia.tripleseat.com/party_request/47431"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-outline-gold max-w-none w-auto min-w-[340px] whitespace-nowrap"
+                className="btn-outline-gold w-full max-w-xs mx-auto md:max-w-none md:w-auto md:min-w-[340px] whitespace-nowrap"
               >
                 ENQUIRE FOR YOUR PRIVATE EVENT
               </a>
@@ -191,7 +191,7 @@ function Events() {
                 href="https://membership.raca.com.au/events"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-outline-gold max-w-none w-auto min-w-[340px] whitespace-nowrap"
+                className="btn-outline-gold w-full max-w-xs mx-auto md:max-w-none md:w-auto md:min-w-[340px] whitespace-nowrap"
               >
                 CLUB EVENT CALENDAR
               </a>
